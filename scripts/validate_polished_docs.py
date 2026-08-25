@@ -96,8 +96,6 @@ def validate_directories(original_root: Path, polished_root: Path) -> list[str]:
             f"{display_path}: {violation}"
             for violation in validate_document(original, polished)
         )
-    for relative_path in sorted(polished_paths - original_paths):
-        violations.append(f"{relative_path.as_posix()}: unexpected document")
     return violations
 
 

@@ -203,3 +203,31 @@ def test_cli_validates_matching_document_trees(tmp_path: Path) -> None:
 
     assert broken.returncode != 0
     assert "Entity.md: signature changed" in broken.stdout
+
+
+def test_cli_allows_unrelated_polished_documents_for_subset_batch(tmp_path: Path) -> None:
+    original = tmp_path / "original"
+    polished = tmp_path / "polished"
+    original.mkdir()
+    polished.mkdir()
+    (original / "Entity.md").write_text("# Entity\n\nAdds fire.\n", encoding="utf-8")
+    (polished / "Entity.md").write_text(
+        "# Entity\n\nAdds a burning effect.\n", encoding="utf-8"
+    )
+    (polished / "Unrelated.md").write_text("# Unrelated\n", encoding="utf-8")
+
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(VALIDATOR_PATH),
+            "--original",
+            str(original),
+            "--polished",
+            str(polished),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert result.returncode == 0
