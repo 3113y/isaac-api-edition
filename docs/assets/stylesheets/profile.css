@@ -1,0 +1,11 @@
+.isaac-profile-bar {
+  background: var(--md-primary-fg-color--dark);
+  color: var(--md-primary-bg-color);
+  font-size: .72rem;
+}
+.isaac-profile-inner { display: flex; align-items: center; gap: .7rem; min-height: 2.6rem; }
+.isaac-profile-inner select, .isaac-profile-inner button { border: 1px solid currentColor; border-radius: .18rem; background: transparent; color: inherit; padding: .18rem .4rem; }
+.isaac-profile-inner button { cursor: pointer; }
+.isaac-spacer { flex: 1; }
+.isaac-correction { color: inherit; text-decoration: underline; }
+@media screen and (max-width: 44.9375em) { .isaac-profile-inner { flex-wrap: wrap; padding: .45rem .8rem; } .isaac-spacer { display: none; } }

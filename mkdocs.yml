@@ -1,0 +1,28 @@
+site_name: Isaac LLM Wiki
+site_url: https://3113y.github.io/isaac-llm-wiki/
+repo_url: https://github.com/3113y/isaac-wiki-mcp
+repo_name: 3113y/isaac-wiki-mcp
+theme:
+  name: material
+  language: en
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+plugins:
+  - search
+markdown_extensions:
+  - admonition
+  - pymdownx.highlight
+  - pymdownx.superfences
+extra_css:
+  - assets/stylesheets/profile.css
+extra_javascript:
+  - assets/javascripts/profile.js
+nav:
+  - Home: index.md
+  - English: en/index.md
+  - 中文: zh/index.md

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block tabs %}
+  {{ super() }}
+  <div class="isaac-profile-bar" id="environment-profile">
+    <div class="md-grid isaac-profile-inner">
+      <label>Game
+        <select id="profile-game" aria-label="Game version">
+          <option value="rep">REP</option>
+          <option value="rep+">REP+</option>
+        </select>
+      </label>
+      <label><input id="profile-rgon" type="checkbox" value="rgon"> RGON</label>
+      <label><input id="profile-rgon-plus" type="checkbox" value="rgon+"> RGON+</label>
+      <label><input id="profile-eid" type="checkbox" value="eid"> EID</label>
+      <span class="isaac-spacer"></span>
+      <button type="button" data-language-toggle="zh">中文</button>
+      <span aria-hidden="true">/</span>
+      <button type="button" data-language-toggle="en">EN</button>
+      <a class="isaac-correction" href="https://github.com/3113y/isaac-wiki-mcp/issues/new?template=description-correction.yml">Correct this description</a>
+    </div>
+  </div>
+{% endblock %}
