@@ -2,6 +2,8 @@ from __future__ import annotations
 
 import importlib.util
 from pathlib import Path
+import subprocess
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -86,3 +88,95 @@ def test_reports_inline_code_changes() -> None:
     polished = "Use `Entity:AddEffect(effect, duration)` to add an effect."
 
     assert "inline code changed" in validate_document(original, polished)
+
+
+def test_reports_indented_fenced_code_contents_changes() -> None:
+    original = """    ```lua
+    entity:AddEffect(effect, amount)
+    ```
+"""
+    polished = """    ```lua
+    entity:AddEffect(effect, duration)
+    ```
+"""
+
+    assert "fenced code changed" in validate_document(original, polished)
+
+
+def test_reports_real_api_signature_heading_change() -> None:
+    original = "#### void AddBurn ( [EntityRef](EntityRef.md) integer Duration ) {: .copyable }"
+    polished = "#### void AddBurn ( [EntityRef](EntityRef.md) integer Frames ) {: .copyable }"
+
+    assert validate_document(original, polished) == ["signature changed"]
+
+
+def test_reports_front_matter_badge_and_html_tag_changes() -> None:
+    original = """---
+title: Example
+---
+
+[DLC](#){: .badge }
+
+<span class="api">Example</span>
+"""
+    polished = """---
+title: Renamed
+---
+
+[DLC](#){: .tag }
+
+<em class="api">Example</em>
+"""
+
+    assert validate_document(original, polished) == [
+        "front matter changed",
+        "badge changed",
+        "HTML tag changed",
+    ]
+
+
+def test_cli_validates_matching_document_trees(tmp_path: Path) -> None:
+    original = tmp_path / "original"
+    polished = tmp_path / "polished"
+    original.mkdir()
+    polished.mkdir()
+    source = "#### void AddBurn ( [EntityRef](EntityRef.md) integer Duration ) {: .copyable }\n\nAdds fire.\n"
+    (original / "Entity.md").write_text(source, encoding="utf-8")
+    (polished / "Entity.md").write_text(
+        source.replace("Adds fire.", "Adds a burning effect."), encoding="utf-8"
+    )
+
+    safe = subprocess.run(
+        [
+            sys.executable,
+            str(VALIDATOR_PATH),
+            "--original",
+            str(original),
+            "--polished",
+            str(polished),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert safe.returncode == 0
+    (polished / "Entity.md").write_text(
+        source.replace("Duration", "Frames"), encoding="utf-8"
+    )
+    broken = subprocess.run(
+        [
+            sys.executable,
+            str(VALIDATOR_PATH),
+            "--original",
+            str(original),
+            "--polished",
+            str(polished),
+        ],
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+
+    assert broken.returncode != 0
+    assert "Entity.md: signature changed" in broken.stdout
