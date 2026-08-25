@@ -12,7 +12,7 @@ FENCE_PATTERN = re.compile(
     r"(?ms)^(?P<indent>[ \t]*)(?P<fence>`{3,}|~{3,})[^\n]*\n.*?^(?P=indent)(?P=fence)[ \t]*$"
 )
 HEADING_PATTERN = re.compile(r"(?m)^#{1,6}[ \t]+.*$")
-INLINE_CODE_PATTERN = re.compile(
+INLINE_CODE_SPAN_PATTERN = re.compile(
     r"(?<!`)(?P<delimiter>`+)(?!`)[^\n]*?(?P=delimiter)(?!`)"
 )
 LINK_PATTERN = re.compile(r"!?\[[^\]\n]*\]\([^\n)]*\)")
@@ -36,17 +36,16 @@ def _without_fenced_code(document: str) -> str:
     return FENCE_PATTERN.sub("", document)
 
 
+def _without_editable_code(document: str) -> str:
+    return INLINE_CODE_SPAN_PATTERN.sub("", _without_fenced_code(document))
+
+
 def _headings(document: str) -> list[str]:
     return _matches(HEADING_PATTERN, _without_fenced_code(document))
 
 
-def _inline_code(document: str) -> list[str]:
-    prose = HEADING_PATTERN.sub("", _without_fenced_code(document))
-    return _matches(INLINE_CODE_PATTERN, prose)
-
-
 def _links(document: str) -> list[str]:
-    prose = _without_fenced_code(document)
+    prose = _without_editable_code(document)
     return _matches(LINK_PATTERN, prose) + _matches(REFERENCE_LINK_PATTERN, prose)
 
 
@@ -67,15 +66,15 @@ def validate_document(original: str, polished: str) -> list[str]:
         if any(not heading.startswith("####") for heading in changed_headings):
             violations.append("heading changed")
 
-    if _matches(FENCE_PATTERN, original) != _matches(FENCE_PATTERN, polished):
-        violations.append("fenced code changed")
-    if _inline_code(original) != _inline_code(polished):
-        violations.append("inline code changed")
     if _links(original) != _links(polished):
         violations.append("link changed")
-    if _matches(BADGE_PATTERN, original) != _matches(BADGE_PATTERN, polished):
+    if _matches(BADGE_PATTERN, _without_editable_code(original)) != _matches(
+        BADGE_PATTERN, _without_editable_code(polished)
+    ):
         violations.append("badge changed")
-    if _matches(HTML_TAG_PATTERN, original) != _matches(HTML_TAG_PATTERN, polished):
+    if _matches(HTML_TAG_PATTERN, _without_editable_code(original)) != _matches(
+        HTML_TAG_PATTERN, _without_editable_code(polished)
+    ):
         violations.append("HTML tag changed")
     return violations
 

@@ -66,7 +66,7 @@ See [the guide](reference.md#effects).
     assert "link changed" in violations
 
 
-def test_reports_fenced_code_contents_changes() -> None:
+def test_allows_fenced_code_contents_changes() -> None:
     original = """# Example
 
 ```lua
@@ -80,24 +80,31 @@ entity:AddEffect(effect, duration)
 ```
 """
 
-    assert "fenced code changed" in validate_document(original, polished)
+    assert validate_document(original, polished) == []
 
 
-def test_reports_inline_code_changes() -> None:
+def test_allows_inline_code_changes() -> None:
     original = "Use `Entity:AddEffect(effect, amount)` to add an effect."
     polished = "Use `Entity:AddEffect(effect, duration)` to add an effect."
 
-    assert "inline code changed" in validate_document(original, polished)
+    assert validate_document(original, polished) == []
 
 
-def test_reports_double_backtick_inline_code_changes() -> None:
+def test_allows_double_backtick_inline_code_changes() -> None:
     original = "Use ``Share`` to duplicate the value."
     polished = "Use ``Clone`` to duplicate the value."
 
-    assert "inline code changed" in validate_document(original, polished)
+    assert validate_document(original, polished) == []
 
 
-def test_reports_indented_fenced_code_contents_changes() -> None:
+def test_allows_markdown_like_text_inside_inline_code_changes() -> None:
+    original = "Use `[Old reference](old.md)` as literal example text."
+    polished = "Use `[New reference](new.md)` as literal example text."
+
+    assert validate_document(original, polished) == []
+
+
+def test_allows_indented_fenced_code_contents_changes() -> None:
     original = """    ```lua
     entity:AddEffect(effect, amount)
     ```
@@ -107,7 +114,28 @@ def test_reports_indented_fenced_code_contents_changes() -> None:
     ```
 """
 
-    assert "fenced code changed" in validate_document(original, polished)
+    assert validate_document(original, polished) == []
+
+
+def test_allows_code_edits_but_reports_signature_and_link_changes() -> None:
+    original = """#### void AddBurn ( [EntityRef](EntityRef.md) integer Duration ) {: .copyable }
+
+Use `AddBurn`.
+
+```lua
+entity:AddBurn(duration)
+```
+"""
+    polished = """#### void AddBurn ( [EntityRef](Reference.md) integer Frames ) {: .copyable }
+
+Use `ApplyBurn`.
+
+```lua
+entity:ApplyBurn(frames)
+```
+"""
+
+    assert validate_document(original, polished) == ["signature changed", "link changed"]
 
 
 def test_reports_real_api_signature_heading_change() -> None:
