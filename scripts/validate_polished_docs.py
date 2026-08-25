@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import re
+from collections import Counter
 from pathlib import Path
 
 
@@ -11,7 +12,9 @@ FENCE_PATTERN = re.compile(
     r"(?ms)^(?P<indent>[ \t]*)(?P<fence>`{3,}|~{3,})[^\n]*\n.*?^(?P=indent)(?P=fence)[ \t]*$"
 )
 HEADING_PATTERN = re.compile(r"(?m)^#{1,6}[ \t]+.*$")
-INLINE_CODE_PATTERN = re.compile(r"(?<!`)`[^`\n]+`")
+INLINE_CODE_PATTERN = re.compile(
+    r"(?<!`)(?P<delimiter>`+)(?!`)[^\n]*?(?P=delimiter)(?!`)"
+)
 LINK_PATTERN = re.compile(r"!?\[[^\]\n]*\]\([^\n)]*\)")
 REFERENCE_LINK_PATTERN = re.compile(r"(?m)^\[[^\]\n]+\]:\s*\S+.*$")
 BADGE_PATTERN = re.compile(r"(?mi)^.*\bbadge\b.*$")
@@ -56,9 +59,12 @@ def validate_document(original: str, polished: str) -> list[str]:
     original_headings = _headings(original)
     polished_headings = _headings(polished)
     if original_headings != polished_headings:
-        if any(heading.startswith("####") for heading in original_headings + polished_headings):
+        changed_headings = list(
+            (Counter(original_headings) - Counter(polished_headings)).elements()
+        ) + list((Counter(polished_headings) - Counter(original_headings)).elements())
+        if any(heading.startswith("####") for heading in changed_headings):
             violations.append("signature changed")
-        else:
+        if any(not heading.startswith("####") for heading in changed_headings):
             violations.append("heading changed")
 
     if _matches(FENCE_PATTERN, original) != _matches(FENCE_PATTERN, polished):

@@ -90,6 +90,13 @@ def test_reports_inline_code_changes() -> None:
     assert "inline code changed" in validate_document(original, polished)
 
 
+def test_reports_double_backtick_inline_code_changes() -> None:
+    original = "Use ``Share`` to duplicate the value."
+    polished = "Use ``Clone`` to duplicate the value."
+
+    assert "inline code changed" in validate_document(original, polished)
+
+
 def test_reports_indented_fenced_code_contents_changes() -> None:
     original = """    ```lua
     entity:AddEffect(effect, amount)
@@ -108,6 +115,22 @@ def test_reports_real_api_signature_heading_change() -> None:
     polished = "#### void AddBurn ( [EntityRef](EntityRef.md) integer Frames ) {: .copyable }"
 
     assert validate_document(original, polished) == ["signature changed"]
+
+
+def test_reports_non_signature_heading_change_in_api_document() -> None:
+    original = """## Notes
+
+#### void AddBurn ( [EntityRef](EntityRef.md) integer Duration ) {: .copyable }
+"""
+    polished = """## Details
+
+#### void AddBurn ( [EntityRef](EntityRef.md) integer Duration ) {: .copyable }
+"""
+
+    violations = validate_document(original, polished)
+
+    assert "heading changed" in violations
+    assert "signature changed" not in violations
 
 
 def test_reports_front_matter_badge_and_html_tag_changes() -> None:
