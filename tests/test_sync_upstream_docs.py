@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-from scripts.sync_upstream_docs import sync_documents
+from scripts.sync_upstream_docs import sync_documents, sync_extension_documents
 
 
 def write_source(root: Path, language: str, body: str) -> None:
@@ -73,3 +73,36 @@ def test_sync_removes_stale_language_pages(tmp_path: Path) -> None:
     sync_documents(english, chinese, output, "english-sha", "chinese-sha")
 
     assert not stale_page.exists()
+
+
+def test_sync_extension_writes_an_independent_document_root(tmp_path: Path) -> None:
+    source = tmp_path / "rgon-source"
+    output = tmp_path / "docs"
+    source.mkdir()
+    (source / "Entity.md").write_text("# Entity\n\nRGON entity reference.", encoding="utf-8")
+
+    summary = sync_extension_documents(source, output, "rgon", "zh", "rgon-sha")
+
+    assert summary.page_count == 1
+    assert (output / "rgon" / "zh" / "Entity.md").exists()
+    manifest = json.loads((output / "assets" / "source-release.json").read_text(encoding="utf-8"))
+    assert manifest["extensions"]["rgon"]["revision"] == "rgon-sha"
+
+
+def test_sync_preserves_extension_provenance(tmp_path: Path) -> None:
+    english = tmp_path / "english"
+    chinese = tmp_path / "chinese"
+    output = tmp_path / "docs"
+    write_source(english, "English", "# Entity")
+    write_source(chinese, "Chinese", "# Entity")
+    manifest_path = output / "assets" / "source-release.json"
+    manifest_path.parent.mkdir(parents=True)
+    manifest_path.write_text(
+        json.dumps({"extensions": {"rgon": {"revision": "rgon-sha", "page_count": 1}}}),
+        encoding="utf-8",
+    )
+
+    sync_documents(english, chinese, output, "english-sha", "chinese-sha")
+
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert manifest["extensions"]["rgon"]["revision"] == "rgon-sha"

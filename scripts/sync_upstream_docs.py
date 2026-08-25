@@ -61,6 +61,13 @@ def _write_index(destination: Path, language: str, pages: list[Path]) -> None:
     )
 
 
+def _read_manifest(path: Path) -> dict[str, object]:
+    if not path.exists():
+        return {}
+    content = json.loads(path.read_text(encoding="utf-8"))
+    return content if isinstance(content, dict) else {}
+
+
 def sync_documents(
     english_source: Path,
     chinese_source: Path,
@@ -88,13 +95,18 @@ def sync_documents(
     assets = output_docs / "assets"
     assets.mkdir(parents=True, exist_ok=True)
     page_count = len([page for page in paired_pages if page.name != "index.md"])
-    (assets / "source-release.json").write_text(
+    manifest_path = assets / "source-release.json"
+    manifest = _read_manifest(manifest_path)
+    manifest.update(
+        {
+            "english_revision": english_revision,
+            "chinese_revision": chinese_revision,
+            "page_count": page_count,
+        }
+    )
+    manifest_path.write_text(
         json.dumps(
-            {
-                "english_revision": english_revision,
-                "chinese_revision": chinese_revision,
-                "page_count": page_count,
-            },
+            manifest,
             ensure_ascii=False,
             indent=2,
         )
@@ -102,6 +114,37 @@ def sync_documents(
         encoding="utf-8",
     )
     return SyncSummary(page_count=page_count)
+
+
+def sync_extension_documents(
+    source: Path,
+    output: Path,
+    extension: str,
+    language: str,
+    revision: str,
+) -> SyncSummary:
+    """Write an independent, pinned extension documentation snapshot."""
+    pages = sorted(_pages(source))
+    language_root = output / extension / language
+    if language_root.exists():
+        shutil.rmtree(language_root)
+    _copy_assets(source, language_root)
+    for relative in pages:
+        _copy_page(source / relative, language_root / relative, f"{extension}/{language}")
+    _write_index(language_root / "index.md", language, pages)
+
+    assets = output / "assets"
+    assets.mkdir(parents=True, exist_ok=True)
+    manifest_path = assets / "source-release.json"
+    manifest = _read_manifest(manifest_path)
+    extensions = manifest.setdefault("extensions", {})
+    if not isinstance(extensions, dict):
+        raise ValueError("source-release manifest extensions must be an object")
+    extensions[extension] = {"revision": revision, "page_count": len(pages)}
+    manifest_path.write_text(
+        json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    return SyncSummary(page_count=len(pages))
 
 
 def main() -> None:
