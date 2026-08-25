@@ -4,20 +4,30 @@
   {{ super() }}
   <div class="isaac-profile-bar" id="environment-profile">
     <div class="md-grid isaac-profile-inner">
-      <label>Game
-        <select id="profile-game" aria-label="Game version">
-          <option value="rep">REP</option>
-          <option value="rep+">REP+</option>
-        </select>
-      </label>
-      <label><input id="profile-rgon" type="checkbox" value="rgon"> RGON</label>
-      <label><input id="profile-rgon-plus" type="checkbox" value="rgon+"> RGON+</label>
-      <label><input id="profile-eid" type="checkbox" value="eid"> EID</label>
+      <div class="profile-control" id="base-version-control" role="group" aria-label="Base API version">
+        <span class="profile-label">Base API</span>
+        <div class="profile-pill-group">
+          <button type="button" class="profile-pill" data-game="rep" aria-pressed="false">REP</button>
+          <button type="button" class="profile-pill" data-game="rep+" aria-pressed="false">REP+</button>
+        </div>
+      </div>
+      <div class="profile-control" id="extension-control" role="group" aria-label="API extension">
+        <span class="profile-label">Extension</span>
+        <div class="profile-pill-group">
+          <button type="button" class="profile-pill" data-extension="" aria-pressed="false">Original</button>
+          <button type="button" class="profile-pill" data-extension-toggle="rgon" aria-pressed="false">RGON</button>
+        </div>
+      </div>
       <span class="isaac-spacer"></span>
-      <button type="button" data-language-toggle="zh">中文</button>
-      <span aria-hidden="true">/</span>
-      <button type="button" data-language-toggle="en">EN</button>
+      <div class="profile-control" id="language-switch" role="group" aria-label="Documentation language">
+        <span class="profile-label">Language</span>
+        <div class="profile-pill-group">
+          <button type="button" class="profile-pill" data-language-toggle="zh" aria-pressed="false">中文</button>
+          <button type="button" class="profile-pill" data-language-toggle="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
       <a class="isaac-correction" href="https://github.com/3113y/isaac-wiki-mcp/issues/new?template=description-correction.yml">Correct this description</a>
+      <span class="profile-status" aria-live="polite"></span>
     </div>
   </div>
 {% endblock %}
