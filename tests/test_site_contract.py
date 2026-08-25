@@ -78,6 +78,18 @@ def test_profile_script_routes_extensions_to_their_available_source_roots() -> N
     assert '"rgon+": { language: "en", root: "/rgon-plus/en/" }' in script
 
 
+def test_original_extension_handler_routes_back_to_the_vanilla_profile() -> None:
+    script = (ROOT / "docs" / "assets" / "javascripts" / "profile.js").read_text(
+        encoding="utf-8"
+    )
+
+    original_handler = script.split('originalButton.addEventListener("click", () => {', 1)[1].split(
+        "  });", 1
+    )[0]
+    assert "render();" in original_handler
+    assert original_handler.index("render();") < original_handler.index("navigateToProfile();")
+
+
 def test_api_pages_are_present_in_the_primary_navigation() -> None:
     build_site()
 

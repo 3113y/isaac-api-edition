@@ -159,6 +159,7 @@
   originalButton.addEventListener("click", () => {
     profile.extension = "";
     render();
+    navigateToProfile();
   });
   extensionButton.addEventListener("click", () => {
     profile.extension = profile.extension ? "" : extensionButton.dataset.extensionToggle;
