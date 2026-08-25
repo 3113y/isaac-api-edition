@@ -5,6 +5,11 @@
   const extensionButton = document.querySelector("[data-extension-toggle]");
   const languageButtons = Array.from(document.querySelectorAll("[data-language-toggle]"));
   const status = document.querySelector(".profile-status");
+  const profileBar = document.querySelector("#environment-profile");
+  const extensionRoots = {
+    "rgon": { language: "zh", root: "/rgon/zh/" },
+    "rgon+": { language: "en", root: "/rgon-plus/en/" },
+  };
   if (!baseButtons.length || !originalButton || !extensionButton) return;
 
   const query = new URLSearchParams(window.location.search);
@@ -22,6 +27,38 @@
 
   function currentLanguage() {
     return /\/(zh)(?:\/|$)/.test(window.location.pathname) ? "zh" : "en";
+  }
+
+  function profilePath(language, extension) {
+    return extensionRoots[extension] ? extensionRoots[extension].root : `/${language}/`;
+  }
+
+  function currentProfileRoot() {
+    return Object.values(extensionRoots).map((extension) => extension.root).find(
+      (root) => window.location.pathname.startsWith(root)
+    ) || ["/en/", "/zh/"].find((root) => window.location.pathname.startsWith(root));
+  }
+
+  function profileUrl(root, page = "") {
+    const url = new URL(`${root}${page}`, window.location.origin);
+    url.searchParams.set("game", profile.game);
+    if (profile.extension) url.searchParams.set("extension", profile.extension);
+    url.hash = window.location.hash;
+    return url;
+  }
+
+  function navigateToProfile(language = currentLanguage()) {
+    const root = profilePath(language, profile.extension);
+    const currentRoot = currentProfileRoot();
+    const page = currentRoot ? window.location.pathname.slice(currentRoot.length) : "";
+    const target = profileUrl(root, page);
+    if (!page || target.pathname === window.location.pathname) {
+      window.location.assign(target.toString());
+      return;
+    }
+    fetch(target.pathname, { method: "HEAD" })
+      .then((response) => window.location.assign(response.ok ? target.toString() : profileUrl(root).toString()))
+      .catch(() => window.location.assign(profileUrl(root).toString()));
   }
 
   function saveProfile() {
@@ -70,6 +107,24 @@
     });
   }
 
+  function renderSourceNotice() {
+    const extensionRoot = extensionRoots[profile.extension];
+    let notice = document.querySelector(".profile-source-notice");
+    if (!extensionRoot) {
+      if (notice) notice.remove();
+      return;
+    }
+    if (!notice) {
+      notice = document.createElement("span");
+      notice.className = "profile-source-notice";
+      notice.setAttribute("role", "status");
+      profileBar.append(notice);
+    }
+    notice.textContent = extensionRoot.language === "zh"
+      ? "RGON 扩展文档仅提供中文源快照。"
+      : "RGON+ extension documentation is available from its English source snapshot.";
+  }
+
   function render() {
     normalizeProfile();
     const rgonLabel = profile.game === "rep+" ? "RGON+" : "RGON";
@@ -91,6 +146,7 @@
       button.setAttribute("aria-pressed", String(active));
     });
     if (status) status.textContent = `${profile.game.toUpperCase()}${activeExtension ? ` + ${rgonLabel}` : ""}`;
+    renderSourceNotice();
     saveProfile();
     applyCompatibility();
   }
@@ -98,6 +154,7 @@
   baseButtons.forEach((button) => button.addEventListener("click", () => {
     profile.game = button.dataset.game;
     render();
+    if (profile.extension) navigateToProfile();
   }));
   originalButton.addEventListener("click", () => {
     profile.extension = "";
@@ -106,16 +163,16 @@
   extensionButton.addEventListener("click", () => {
     profile.extension = profile.extension ? "" : extensionButton.dataset.extensionToggle;
     render();
+    navigateToProfile();
   });
   languageButtons.forEach((button) => button.addEventListener("click", () => {
-    const url = new URL(window.location.href);
     const language = button.dataset.languageToggle;
     localStorage.setItem("isaac-wiki-language", language);
-    url.pathname = /\/(en|zh)(?=\/|$)/.test(url.pathname)
-      ? url.pathname.replace(/\/(en|zh)(?=\/|$)/, `/${language}`)
-      : `${url.pathname.replace(/\/$/, "")}/${language}/`;
-    window.location.assign(url.toString());
+    navigateToProfile(language);
   }));
   annotateUpstreamEntries();
   render();
+  if (profile.extension && currentProfileRoot() !== profilePath(currentLanguage(), profile.extension)) {
+    navigateToProfile();
+  }
 }());
