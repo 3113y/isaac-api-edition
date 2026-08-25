@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import shutil
 from dataclasses import dataclass
 from pathlib import Path
@@ -11,6 +12,9 @@ from pathlib import Path
 
 EXCLUDED_PARTS = {"customData", "css", "js", "images"}
 EXCLUDED_NAMES = {"PLACEHOLDER.md", "tags.md"}
+MARKDOWN_LINK_PATTERN = re.compile(
+    r"(?<!!)\[[^\]]*\]\(\s*(?:<)?(?P<target>[^)\s>]+\.md(?:#[^)\s>]*)?)(?:>)?(?:\s+[^)]*)?\)"
+)
 
 
 @dataclass(frozen=True)
@@ -59,6 +63,33 @@ def _write_index(destination: Path, language: str, pages: list[Path]) -> None:
         f"# {title}\n\n{intro}\n\n## API Pages\n\n" + "\n".join(links) + "\n",
         encoding="utf-8",
     )
+
+
+def _write_missing_extension_link_placeholders(
+    destination: Path, pages: list[Path], language: str
+) -> None:
+    root = destination.resolve()
+    title = "Upstream reference unavailable" if language == "en" else "上游参考页面不可用"
+    message = (
+        "The pinned upstream source links here but supplies no reference page."
+        if language == "en"
+        else "固定版本的上游源代码链接到此处，但未提供参考页面。"
+    )
+    for page in pages:
+        page_path = destination / page
+        for match in MARKDOWN_LINK_PATTERN.finditer(page_path.read_text(encoding="utf-8")):
+            link_target = match.group("target").split("#", maxsplit=1)[0]
+            if link_target.startswith(("/", "\\")) or "://" in link_target:
+                continue
+            target_path = (page_path.parent / link_target).resolve()
+            try:
+                target_path.relative_to(root)
+            except ValueError:
+                continue
+            if target_path.exists():
+                continue
+            target_path.parent.mkdir(parents=True, exist_ok=True)
+            target_path.write_text(f"# {title}\n\n{message}\n", encoding="utf-8")
 
 
 def _read_manifest(path: Path) -> dict[str, object]:
@@ -132,6 +163,7 @@ def sync_extension_documents(
     for relative in pages:
         _copy_page(source / relative, language_root / relative, f"{extension}/{language}")
     _write_index(language_root / "index.md", language, pages)
+    _write_missing_extension_link_placeholders(language_root, pages, language)
 
     assets = output / "assets"
     assets.mkdir(parents=True, exist_ok=True)

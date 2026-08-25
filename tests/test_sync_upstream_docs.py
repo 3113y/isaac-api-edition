@@ -106,3 +106,33 @@ def test_sync_preserves_extension_provenance(tmp_path: Path) -> None:
 
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     assert manifest["extensions"]["rgon"]["revision"] == "rgon-sha"
+
+
+def test_sync_extension_adds_placeholder_for_missing_relative_markdown_link(
+    tmp_path: Path,
+) -> None:
+    source = tmp_path / "rgon-plus-source"
+    output = tmp_path / "docs"
+    source.mkdir()
+    (source / "Renderer.md").write_text(
+        "# Renderer\n\n[Transformer](renderer/Transformer.md)\n", encoding="utf-8"
+    )
+
+    sync_extension_documents(source, output, "rgon-plus", "en", "rgon-plus-sha")
+
+    placeholder = output / "rgon-plus" / "en" / "renderer" / "Transformer.md"
+    assert placeholder.exists()
+    assert "pinned upstream source links here" in placeholder.read_text(encoding="utf-8")
+
+
+def test_sync_extension_ignores_absolute_markdown_links(tmp_path: Path) -> None:
+    source = tmp_path / "rgon-plus-source"
+    output = tmp_path / "docs"
+    source.mkdir()
+    (source / "Renderer.md").write_text(
+        "# Renderer\n\n[Upstream](https://example.invalid/Transformer.md)\n", encoding="utf-8"
+    )
+
+    sync_extension_documents(source, output, "rgon-plus", "en", "rgon-plus-sha")
+
+    assert not (output / "rgon-plus" / "en" / "https:").exists()
