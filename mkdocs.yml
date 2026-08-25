@@ -16,13 +16,22 @@ plugins:
   - search
 markdown_extensions:
   - admonition
+  - attr_list
   - pymdownx.highlight
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      base_path: docs
+      check_paths: true
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
 extra_css:
   - assets/stylesheets/profile.css
 extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
   - assets/javascripts/profile.js
-nav:
-  - Home: index.md
-  - English: en/index.md
-  - 中文: zh/index.md

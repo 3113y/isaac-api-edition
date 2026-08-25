@@ -28,3 +28,60 @@ def test_header_uses_profile_pills_and_a_sliding_language_switch() -> None:
     assert 'data-game="rep"' in page
     assert 'data-game="rep+"' in page
     assert '<select id="profile-game"' not in page
+
+
+def test_api_badges_are_rendered_as_metadata_classes() -> None:
+    build_site()
+
+    entity_page = (ROOT / "site" / "en" / "Entity" / "index.html").read_text(encoding="utf-8")
+
+    assert 'class="abrep tooltip badge"' in entity_page
+    assert '{: .abrep .tooltip .badge }' not in entity_page
+
+
+def test_api_snippets_are_included_in_rendered_pages() -> None:
+    build_site()
+
+    entity_page = (ROOT / "site" / "en" / "Entity" / "index.html").read_text(encoding="utf-8")
+
+    assert 'class="mermaid"' in entity_page
+    assert "classDiagram" in entity_page
+    assert '--8&lt;-- "docs/snippets/EntityClassDiagram.md"' not in entity_page
+
+
+def test_version_badge_styles_preserve_rep_and_all_dlcs() -> None:
+    stylesheet = (ROOT / "docs" / "assets" / "stylesheets" / "profile.css").read_text(
+        encoding="utf-8"
+    )
+
+    assert '.rep::before { content: "REP"; }' in stylesheet
+    assert '.repplus::before { content: "REP+"; }' in stylesheet
+    assert '.alldlc::before { content: "ALL DLCs"; }' in stylesheet
+
+
+def test_profile_script_marks_upstream_badges_as_compatible_entries() -> None:
+    script = (ROOT / "docs" / "assets" / "javascripts" / "profile.js").read_text(
+        encoding="utf-8"
+    )
+
+    assert "annotateUpstreamEntries" in script
+    assert "reporplus" in script
+    assert "all-dlcs" in script
+
+
+def test_api_pages_are_present_in_the_primary_navigation() -> None:
+    build_site()
+
+    entity_page = (ROOT / "site" / "en" / "Entity" / "index.html").read_text(encoding="utf-8")
+
+    assert 'href="../EntityPlayer/" class="md-nav__link"' in entity_page
+
+
+def test_deployment_generates_docs_from_both_upstream_sources() -> None:
+    workflow = (ROOT / ".github" / "workflows" / "deploy-pages.yml").read_text(encoding="utf-8")
+
+    assert "schedule:" in workflow
+    assert "https://github.com/wofsauge/IsaacDocs.git" in workflow
+    assert "https://github.com/cuerzor/IsaacDocs.git" in workflow
+    assert "scripts/sync_upstream_docs.py" in workflow
+    assert workflow.index("scripts/sync_upstream_docs.py") < workflow.index("mkdocs build --strict")

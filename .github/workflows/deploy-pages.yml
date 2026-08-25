@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1"
 
 permissions:
   contents: read
@@ -26,6 +28,18 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - name: Fetch upstream documentation snapshots
+        run: |
+          git clone --depth 1 https://github.com/wofsauge/IsaacDocs.git .upstream/english
+          git clone --depth 1 https://github.com/cuerzor/IsaacDocs.git .upstream/chinese
+      - name: Generate paired bilingual API documentation
+        run: |
+          python scripts/sync_upstream_docs.py \
+            --english-source .upstream/english/docs \
+            --chinese-source .upstream/chinese/docs \
+            --output docs \
+            --english-revision "$(git -C .upstream/english rev-parse HEAD)" \
+            --chinese-revision "$(git -C .upstream/chinese rev-parse HEAD)"
       - run: mkdocs build --strict
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

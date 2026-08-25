@@ -1,3 +1,6 @@
 site/
 .uv-mkdocs-cache/
 .uv-mkdocs-python/
+.pytest_cache/
+__pycache__/
+.upstream/

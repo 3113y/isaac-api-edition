@@ -15,6 +15,27 @@
 .isaac-spacer { flex: 1; }
 .isaac-correction { color: inherit; text-decoration: underline; }
 .profile-status { color: var(--md-default-fg-color--lighter); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.md-typeset a.badge { border-radius: .18rem; color: #fff; display: inline-block; font-size: .7rem; font-weight: 700; letter-spacing: .02em; line-height: 1.6; min-width: 3.4rem; padding: 0 .35rem; text-align: center; text-decoration: none; }
+.rep { background: #d63838; }
+.rep::before { content: "REP"; }
+.repplus { background: #bd5f9d; }
+.repplus::before { content: "REP+"; }
+.reporplus { background: linear-gradient(90deg, #d63838 0 50%, #bd5f9d 50% 100%); }
+.reporplus::before { content: "REP / REP+"; }
+.abrep { background: #d63838; }
+.abrep::before { content: "REP"; }
+.abp { background: #b89717; }
+.abp::before { content: "AB+"; }
+.alldlc { background: #277ecf; }
+.alldlc::before { content: "ALL DLCs"; }
+.md-typeset a.tooltip { position: relative; }
+.md-typeset a.rep.tooltip::after { content: "Compatible with REP"; }
+.md-typeset a.repplus.tooltip::after { content: "Compatible with REP+"; }
+.md-typeset a.reporplus.tooltip::after { content: "Compatible with REP and REP+"; }
+.md-typeset a.abrep.tooltip::after { content: "Compatible with REP (also available on legacy AB+)"; }
+.md-typeset a.alldlc.tooltip::after { content: "Compatible with all DLCs: AB, AB+, REP, and REP+"; }
+.md-typeset a.tooltip:hover::after { background: var(--md-code-bg-color); border: 1px solid var(--md-default-fg-color--lighter); border-radius: .2rem; color: var(--md-default-fg-color); font-size: .7rem; inset: auto auto calc(100% + .35rem) 50%; padding: .35rem .5rem; position: absolute; transform: translateX(-50%); white-space: nowrap; z-index: 2; }
+.api-entry.is-unavailable { filter: grayscale(1); opacity: .38; }
 @media (prefers-reduced-motion: reduce) { .profile-pill { transition: none; } }
 @media screen and (max-width: 59.9375em) { .isaac-profile-inner { flex-wrap: wrap; gap: .65rem 1rem; padding: .5rem .8rem; } .isaac-spacer { display: none; } .isaac-correction { margin-inline-start: auto; } }
 @media screen and (max-width: 29.9375em) { .profile-control { width: 100%; justify-content: space-between; } .profile-pill-group { flex: 1; justify-content: flex-end; } .profile-pill { flex: 1; min-width: 0; } .isaac-correction, .profile-status { display: none; } }

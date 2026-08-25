@@ -1,4 +1,5 @@
 (function () {
+  if (window.mermaid) window.mermaid.initialize({ startOnLoad: true });
   const baseButtons = Array.from(document.querySelectorAll("[data-game]"));
   const originalButton = document.querySelector("[data-extension='']");
   const extensionButton = document.querySelector("[data-extension-toggle]");
@@ -31,6 +32,33 @@
     localStorage.setItem("isaac-wiki-game", profile.game);
     localStorage.setItem("isaac-wiki-extension", profile.extension);
     window.history.replaceState({}, "", url);
+  }
+
+  function gamesForBadge(badge) {
+    if (badge.classList.contains("alldlc")) return ["all-dlcs"];
+    if (badge.classList.contains("reporplus")) return ["rep", "rep+"];
+    if (badge.classList.contains("repplus")) return ["rep+"];
+    if (badge.classList.contains("rep") || badge.classList.contains("abrep")) return ["rep"];
+    if (badge.classList.contains("abp")) return ["legacy"];
+    return null;
+  }
+
+  function versionBadge(block) {
+    return Array.from(block.querySelectorAll("a.badge")).find(gamesForBadge);
+  }
+
+  function annotateUpstreamEntries() {
+    document.querySelectorAll("p").forEach((markerBlock) => {
+      const badge = versionBadge(markerBlock);
+      if (!badge || markerBlock.dataset.compatibilityAnnotated) return;
+      const games = gamesForBadge(badge);
+      for (let node = markerBlock; node; node = node.nextElementSibling) {
+        if (node !== markerBlock && (node.matches("h3") || versionBadge(node))) break;
+        node.classList.add("api-entry");
+        node.dataset.games = games.join(" ");
+        node.dataset.compatibilityAnnotated = "true";
+      }
+    });
   }
 
   function applyCompatibility() {
@@ -88,5 +116,6 @@
       : `${url.pathname.replace(/\/$/, "")}/${language}/`;
     window.location.assign(url.toString());
   }));
+  annotateUpstreamEntries();
   render();
 }());
