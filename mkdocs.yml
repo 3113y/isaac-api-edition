@@ -2,6 +2,60 @@ site_name: Isaac LLM Wiki
 site_url: https://3113y.github.io/isaac-llm-wiki/
 repo_url: https://github.com/3113y/isaac-wiki-mcp
 repo_name: 3113y/isaac-wiki-mcp
+exclude_docs: rgon-plus/**
+nav:
+  - Home: en/index.md
+  - API reference:
+      - Core:
+          - Globals: en/Globals.md
+          - Global functions: en/GlobalFunctions.md
+          - Isaac: en/Isaac.md
+          - Game: en/Game.md
+          - Level: en/Level.md
+          - Room: en/Room.md
+          - Input: en/Input.md
+      - Entity:
+          - Entity: en/Entity.md
+          - EntityBomb: en/EntityBomb.md
+          - EntityEffect: en/EntityEffect.md
+          - EntityFamiliar: en/EntityFamiliar.md
+          - EntityKnife: en/EntityKnife.md
+          - EntityLaser: en/EntityLaser.md
+          - EntityNPC: en/EntityNPC.md
+          - EntityPickup: en/EntityPickup.md
+          - EntityPlayer: en/EntityPlayer.md
+          - EntityProjectile: en/EntityProjectile.md
+          - EntityTear: en/EntityTear.md
+      - GridEntity:
+          - GridEntity: en/GridEntity.md
+          - GridEntityDoor: en/GridEntityDoor.md
+          - GridEntityPit: en/GridEntityPit.md
+          - GridEntityPoop: en/GridEntityPoop.md
+          - GridEntityPressurePlate: en/GridEntityPressurePlate.md
+          - GridEntityRock: en/GridEntityRock.md
+          - GridEntitySpikes: en/GridEntitySpikes.md
+          - GridEntityTNT: en/GridEntityTNT.md
+      - Item configuration:
+          - ItemConfig: en/ItemConfig.md
+          - Card: en/ItemConfig_Card.md
+          - Costume: en/ItemConfig_Costume.md
+          - Item: en/ItemConfig_Item.md
+          - Pill effect: en/ItemConfig_PillEffect.md
+      - Room configuration:
+          - RoomConfig entry: en/RoomConfig_Entry.md
+          - RoomConfig room: en/RoomConfig_Room.md
+          - RoomConfig spawn: en/RoomConfig_Spawn.md
+      - Other API:
+          - Color: en/Color.md
+          - EntityRef: en/EntityRef.md
+          - EntityPtr: en/EntityPtr.md
+          - GridEntityDesc: en/GridEntityDesc.md
+          - HUD: en/HUD.md
+          - ItemPool: en/ItemPool.md
+          - MusicManager: en/MusicManager.md
+          - RNG: en/RNG.md
+          - Sprite: en/Sprite.md
+          - Vector: en/Vector.md
 theme:
   name: material
   language: en

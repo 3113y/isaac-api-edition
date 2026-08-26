@@ -10,10 +10,11 @@ from pathlib import Path
 
 HEADING = re.compile(r"(?m)^### (?P<name>.+)$")
 BADGES = {
-    "rgon": "[ ](#){: .rgon .tooltip .badge }\n",
-    "rgonplus": "[ ](#){: .rgonplus .tooltip .badge }\n",
-    "rgonorplus": "[ ](#){: .rgonorplus .tooltip .badge }\n",
+    "rgon": "[ ](#){: .rgon .tooltip .badge }",
+    "rgonplus": "[ ](#){: .rgonplus .tooltip .badge }",
+    "rgonorplus": "[ ](#){: .rgonorplus .tooltip .badge }",
 }
+SIGNATURE = re.compile(r"(?m)^(#### .+?)(\s*\{:\s*[^\n]+\})?$")
 
 
 def _sections(text: str) -> tuple[str, dict[str, str], list[str]]:
@@ -42,7 +43,15 @@ def _render(rgon_text: str, plus_text: str) -> str:
         in_rgon = name in rgon
         in_plus = name in plus
         badge = "rgonorplus" if in_rgon and in_plus else "rgon" if in_rgon else "rgonplus"
-        rendered.extend([BADGES[badge].rstrip(), rgon.get(name, plus.get(name, "")).rstrip(), ""])
+        section = rgon.get(name, plus.get(name, "")).rstrip()
+        signature = SIGNATURE.search(section)
+        if signature:
+            section = (
+                section[: signature.start()]
+                + f"{signature.group(1)} {BADGES[badge]}{signature.group(2) or ''}"
+                + section[signature.end() :]
+            )
+        rendered.extend([section, ""])
     return "\n".join(rendered).rstrip() + "\n"
 
 

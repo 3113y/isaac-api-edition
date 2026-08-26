@@ -19,7 +19,7 @@ def build_site() -> str:
     return (ROOT / "site" / "index.html").read_text(encoding="utf-8")
 
 
-def test_header_uses_profile_pills_and_a_sliding_language_switch() -> None:
+def test_header_uses_compact_profile_pills_and_a_sliding_language_switch() -> None:
     page = build_site()
 
     assert 'id="base-version-control"' in page
@@ -27,6 +27,7 @@ def test_header_uses_profile_pills_and_a_sliding_language_switch() -> None:
     assert 'id="language-switch"' in page
     assert 'data-game="rep"' in page
     assert 'data-game="rep+"' in page
+    assert 'class="profile-pill-indicator"' in page
     assert '<select id="profile-game"' not in page
 
 
@@ -70,6 +71,34 @@ def test_profile_script_marks_upstream_badges_as_compatible_entries() -> None:
     assert "annotateUpstreamEntries" in script
     assert "reporplus" in script
     assert "all-dlcs" in script
+    assert "signature.classList.add(\"api-signature\")" in script
+    assert "markerBlock.remove()" in script
+
+
+def test_sidebar_uses_entity_and_grid_entity_sections() -> None:
+    config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+
+    assert '      - Entity:' in config
+    assert '          - EntityPlayer: en/EntityPlayer.md' in config
+    assert '      - GridEntity:' in config
+    assert '          - GridEntityDoor: en/GridEntityDoor.md' in config
+
+
+def test_unified_site_excludes_the_rgon_plus_source_tree() -> None:
+    config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+
+    assert "exclude_docs: rgon-plus/**" in config
+
+
+def test_signature_and_unavailable_entry_styles_are_scoped_to_the_call_line() -> None:
+    stylesheet = (ROOT / "docs" / "assets" / "stylesheets" / "profile.css").read_text(
+        encoding="utf-8"
+    )
+
+    assert ".md-typeset h4.api-signature" in stylesheet
+    assert ".api-signature.is-unavailable" in stylesheet
+    assert ".api-entry.is-unavailable" not in stylesheet
+    assert '[data-md-color-scheme="slate"]' in stylesheet
 
 
 def test_profile_script_uses_only_original_and_unified_rgon_roots() -> None:

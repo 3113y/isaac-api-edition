@@ -4,7 +4,6 @@
   const originalButton = document.querySelector("[data-extension='']");
   const extensionButton = document.querySelector("[data-extension-toggle]");
   const languageButtons = Array.from(document.querySelectorAll("[data-language-toggle]"));
-  const status = document.querySelector(".profile-status");
   const profileBar = document.querySelector("#environment-profile");
   const extensionRoots = {
     "rgon": "/rgon/",
@@ -86,17 +85,21 @@
       const badge = versionBadge(markerBlock);
       if (!badge || markerBlock.dataset.compatibilityAnnotated) return;
       const games = gamesForBadge(badge);
-      for (let node = markerBlock; node; node = node.nextElementSibling) {
-        if (node !== markerBlock && (node.matches("h3") || versionBadge(node))) break;
-        node.classList.add("api-entry");
-        node.dataset.games = games.join(" ");
-        node.dataset.compatibilityAnnotated = "true";
-      }
+      const signature = markerBlock.nextElementSibling;
+      if (!signature || !signature.matches("h4")) return;
+      signature.append(" ", badge);
+      signature.classList.add("api-signature");
+      signature.dataset.games = games.join(" ");
+      markerBlock.dataset.compatibilityAnnotated = "true";
+      markerBlock.remove();
+    });
+    document.querySelectorAll("h4.copyable, h4:has(a.badge)").forEach((signature) => {
+      signature.classList.add("api-signature");
     });
   }
 
   function applyCompatibility() {
-    document.querySelectorAll(".api-entry[data-games]").forEach((entry) => {
+    document.querySelectorAll(".api-signature[data-games]").forEach((entry) => {
       const games = entry.dataset.games.split(" ");
       const extension = entry.dataset.extension || "";
       const baseMatches = games.includes("all-dlcs") || games.includes(profile.game);
@@ -104,20 +107,15 @@
     });
   }
 
-  function renderSourceNotice() {
-    const extensionRoot = extensionRoots[profile.extension];
-    let notice = document.querySelector(".profile-source-notice");
-    if (!extensionRoot) {
-      if (notice) notice.remove();
-      return;
-    }
-    if (!notice) {
-      notice = document.createElement("span");
-      notice.className = "profile-source-notice";
-      notice.setAttribute("role", "status");
-      profileBar.append(notice);
-    }
-    notice.textContent = "RGON documentation combines RGON and RGON+ API entries.";
+  function rewriteProfileNavigation() {
+    const targetRoot = profilePath(currentLanguage(), profile.extension);
+    document.querySelectorAll(".md-nav a[href]").forEach((link) => {
+      const url = new URL(link.href, window.location.origin);
+      if (url.origin !== window.location.origin || !url.pathname.startsWith("/en/")) return;
+      const target = profileUrl(targetRoot, url.pathname.slice("/en/".length));
+      target.hash = url.hash;
+      link.href = target.toString();
+    });
   }
 
   function render() {
@@ -140,10 +138,10 @@
       button.classList.toggle("is-selected", active);
       button.setAttribute("aria-pressed", String(active));
     });
-    if (status) status.textContent = `${profile.game.toUpperCase()}${activeExtension ? ` + ${rgonLabel}` : ""}`;
-    renderSourceNotice();
+    profileBar.classList.toggle("is-rgon", activeExtension);
     saveProfile();
     applyCompatibility();
+    rewriteProfileNavigation();
   }
 
   baseButtons.forEach((button) => button.addEventListener("click", () => {
