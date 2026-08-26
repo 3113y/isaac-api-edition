@@ -2,7 +2,7 @@
 
 {% block tabs %}
   {{ super() }}
-  <div class="isaac-profile-bar" id="environment-profile" role="region" aria-label="Documentation profile controls">
+  <div class="isaac-profile-bar" id="environment-profile" data-site-base="{{ config.site_url }}" role="region" aria-label="Documentation profile controls">
     <div class="md-grid isaac-profile-inner">
       <div class="profile-control" id="base-version-control" role="group" aria-label="Base API version">
         <div class="profile-pill-group" title="Base API version">

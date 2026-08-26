@@ -97,4 +97,4 @@ extra_css:
   - assets/stylesheets/profile.css
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
-  - assets/javascripts/profile.js?rev=overlay2
+  - assets/javascripts/profile.js?rev=overlay3

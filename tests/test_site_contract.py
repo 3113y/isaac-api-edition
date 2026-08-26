@@ -241,3 +241,14 @@ def test_primary_home_navigation_points_to_the_bilingual_landing_page() -> None:
     config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
 
     assert "  - Home: index.md" in config
+
+
+def test_language_switch_uses_the_configured_pages_base_from_the_landing_page() -> None:
+    page = build_site()
+    script = (ROOT / "docs" / "assets" / "javascripts" / "profile.js").read_text(
+        encoding="utf-8"
+    )
+
+    assert 'data-site-base="https://3113y.github.io/isaac-api-edition/"' in page
+    assert "const configuredSiteBase = profileBar.dataset.siteBase;" in script
+    assert "new URL(configuredSiteBase, window.location.origin).pathname" in script

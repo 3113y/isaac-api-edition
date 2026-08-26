@@ -6,6 +6,7 @@
   const languageButtons = Array.from(document.querySelectorAll("[data-language-toggle]"));
   const profileBar = document.querySelector("#environment-profile");
   if (!baseButtons.length || !originalButton || !extensionButton) return;
+  const configuredSiteBase = profileBar.dataset.siteBase;
 
   const query = new URLSearchParams(window.location.search);
   const profile = {
@@ -23,6 +24,10 @@
   }
 
   function siteBasePath() {
+    if (configuredSiteBase) {
+      const configuredPath = new URL(configuredSiteBase, window.location.origin).pathname;
+      return configuredPath.endsWith("/") ? configuredPath : `${configuredPath}/`;
+    }
     const match = window.location.pathname.match(/^(.*?)(?:\/en|\/zh)(?:\/|$)/);
     return match && match[1] ? `${match[1]}/` : "/";
   }
