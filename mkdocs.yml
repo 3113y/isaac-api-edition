@@ -1,7 +1,7 @@
-site_name: Isaac LLM Wiki
-site_url: https://3113y.github.io/isaac-llm-wiki/
-repo_url: https://github.com/3113y/isaac-wiki-mcp
-repo_name: 3113y/isaac-wiki-mcp
+site_name: Isaac API Edition
+site_url: https://3113y.github.io/isaac-api-edition/
+repo_url: https://github.com/3113y/isaac-api-edition
+repo_name: 3113y/isaac-api-edition
 docs_dir: .generated-docs
 exclude_docs: rgon-plus/**
 validation:
@@ -9,7 +9,7 @@ validation:
     not_found: ignore
     anchors: ignore
 nav:
-  - Home: en/index.md
+  - Home: index.md
   - API reference:
       - Core:
           - Globals: en/Globals.md

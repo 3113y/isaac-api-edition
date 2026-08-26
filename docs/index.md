@@ -1,8 +1,28 @@
-# Isaac LLM Wiki
+<div class="edition-hero" markdown>
 
-Bilingual, version-aware API reference for The Binding of Isaac mod development.
+# Isaac API Edition
 
-- [English documentation](en/index.md)
-- [中文文档](zh/index.md)
+An API reference for *The Binding of Isaac* mod development, organized for direct lookup instead of a sprawling page list.
 
-The site is generated from the verified weekly release of [isaac-wiki-mcp](https://github.com/3113y/isaac-wiki-mcp). API descriptions marked as LLM-inferred explicitly say so at the end of the description.
+</div>
+
+<div class="edition-language-grid">
+  <a class="edition-language-card" href="en/" lang="en">
+    <strong>English API reference</strong>
+    <span>Browse original APIs, REP / REP+ compatibility, and RGON additions.</span>
+  </a>
+  <a class="edition-language-card" href="zh/" lang="zh-CN">
+    <strong>中文 API 文档</strong>
+    <span>浏览原版 API、REP / REP+ 兼容性与 RGON 扩展说明。</span>
+  </a>
+</div>
+
+<div class="edition-note" markdown>
+
+## How versioning works
+
+Open a language reference, then use the compact controls below the header. REP and REP+ only affect compatibility display; enabling RGON reveals extension blocks while retaining the original API in place. Version badges describe the supported editions of an individual call.
+
+</div>
+
+The human-readable documentation source lives in [3113y/isaac-api-edition](https://github.com/3113y/isaac-api-edition). Descriptions explicitly marked as inferred are fallbacks used only when no original English wording is available.

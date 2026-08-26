@@ -209,3 +209,35 @@ def test_deployment_builds_committed_sources_without_fetching_upstream() -> None
     assert "scripts/sync_upstream_docs.py" not in workflow
     assert workflow.index("scripts/build_overlay_docs.py") < workflow.index("scripts/build_mkdocs_config.py")
     assert workflow.index("scripts/build_mkdocs_config.py") < workflow.index("mkdocs build --config-file")
+
+
+def test_site_identity_uses_the_renamed_human_documentation_repository() -> None:
+    config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+
+    assert "site_name: Isaac API Edition" in config
+    assert "site_url: https://3113y.github.io/isaac-api-edition/" in config
+    assert "repo_url: https://github.com/3113y/isaac-api-edition" in config
+    assert "repo_name: 3113y/isaac-api-edition" in config
+
+
+def test_homepages_provide_compact_language_and_api_starting_points() -> None:
+    root_home = (ROOT / "docs" / "index.md").read_text(encoding="utf-8")
+    english_home = (ROOT / "docs" / "en" / "index.md").read_text(encoding="utf-8")
+    chinese_home = (ROOT / "docs" / "zh" / "index.md").read_text(encoding="utf-8")
+
+    assert "# Isaac API Edition" in root_home
+    assert "English API reference" in root_home
+    assert "中文 API 文档" in root_home
+    assert "docs/index.md" not in root_home
+    assert "## API Pages" not in english_home
+    assert "## API 页面" not in chinese_home
+    assert "Browse the reference" in english_home
+    assert "浏览 API 参考" in chinese_home
+    assert "RGON" in english_home
+    assert "RGON" in chinese_home
+
+
+def test_primary_home_navigation_points_to_the_bilingual_landing_page() -> None:
+    config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+
+    assert "  - Home: index.md" in config
