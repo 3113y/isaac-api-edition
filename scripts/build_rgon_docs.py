@@ -67,6 +67,8 @@ def build_rgon_documents(rgon_source: Path, rgon_plus_source: Path, output: Path
             for language in ("zh", "en"):
                 target = output / language / relative
                 target.parent.mkdir(parents=True, exist_ok=True)
+                if asset.resolve() == target.resolve():
+                    continue
                 shutil.copy2(asset, target)
 
 

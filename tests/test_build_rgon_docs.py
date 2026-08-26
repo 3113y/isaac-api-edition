@@ -25,3 +25,19 @@ def test_build_marks_shared_and_version_specific_api_entries(tmp_path: Path) -> 
         assert "[ ](#){: .rgon .tooltip .badge }\n### RgonOnly ()" in rendered
         assert "[ ](#){: .rgonplus .tooltip .badge }\n### RgonPlusOnly ()" in rendered
         assert (output / rendered_language / "img" / "guide.png").read_bytes() == b"image"
+
+
+def test_build_allows_output_to_contain_the_rgon_source_tree(tmp_path: Path) -> None:
+    docs = tmp_path / "docs"
+    rgon = docs / "rgon" / "zh"
+    plus = docs / "rgon-plus" / "en"
+    rgon.mkdir(parents=True)
+    plus.mkdir(parents=True)
+    (rgon / "Entity.md").write_text("# Entity\n", encoding="utf-8")
+    (rgon / "img").mkdir()
+    (rgon / "img" / "guide.png").write_bytes(b"image")
+    (plus / "Entity.md").write_text("# Entity\n", encoding="utf-8")
+
+    build_rgon_documents(rgon, plus, docs / "rgon")
+
+    assert (docs / "rgon" / "zh" / "img" / "guide.png").read_bytes() == b"image"
