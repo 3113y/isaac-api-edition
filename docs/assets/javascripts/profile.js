@@ -128,6 +128,19 @@
     });
   }
 
+  function syncNavigationState() {
+    const currentPath = window.location.pathname.replace(/\/+$/, "/");
+    document.querySelectorAll(".md-sidebar--primary a.md-nav__link").forEach((link) => {
+      const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/+$/, "/");
+      if (linkPath !== currentPath) return;
+      link.classList.add("md-nav__link--active");
+      for (let nav = link.closest("nav.md-nav"); nav; nav = nav.parentElement?.closest("nav.md-nav")) {
+        const toggle = nav.querySelector(":scope > input.md-nav__toggle[type='checkbox']");
+        if (toggle) toggle.checked = true;
+      }
+    });
+  }
+
   function render() {
     normalizeProfile();
     const rgonLabel = "RGON";
@@ -152,6 +165,7 @@
     saveProfile();
     applyCompatibility();
     rewriteProfileNavigation();
+    syncNavigationState();
   }
 
   baseButtons.forEach((button) => button.addEventListener("click", () => {

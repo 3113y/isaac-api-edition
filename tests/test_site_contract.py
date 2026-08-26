@@ -73,6 +73,9 @@ def test_profile_script_marks_upstream_badges_as_compatible_entries() -> None:
     assert "all-dlcs" in script
     assert "signature.classList.add(\"api-signature\")" in script
     assert "markerBlock.remove()" in script
+    assert "function syncNavigationState()" in script
+    assert 'link.classList.add("md-nav__link--active")' in script
+    assert "toggle.checked = true" in script
 
 
 def test_sidebar_uses_entity_and_grid_entity_sections() -> None:
