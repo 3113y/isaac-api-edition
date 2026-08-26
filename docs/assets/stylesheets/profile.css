@@ -16,7 +16,6 @@
 .profile-pill.is-selected { color: var(--md-accent-bg-color); }
 .profile-pill:focus-visible { outline: 2px solid var(--md-accent-fg-color); outline-offset: -2px; }
 .isaac-spacer { flex: 1; }
-.isaac-profile-bar.is-rgon #base-version-control { display: none; }
 .md-typeset h3[aria-label$="Functions"], .md-typeset h3[aria-label$="Variables"], .md-typeset h3[aria-label$="Operators"], .md-typeset h3[aria-label$="Constants"], .md-typeset h3[aria-label$="Constructors"] { background: var(--isaac-heading-color, #90caf9); border-radius: .3rem .3rem 0 0; display: inline-block; margin: 1.4rem 0 0; padding: .12rem .65rem; }
 .md-typeset h4[aria-label$="Functions"], .md-typeset h4[aria-label$="Variables"], .md-typeset h4[aria-label$="Operators"], .md-typeset h4[aria-label$="Constants"], .md-typeset h4[aria-label$="Constructors"], .md-typeset h4.api-signature { background: var(--isaac-heading-light, #bbdefb); border-radius: 0 .3rem .3rem .3rem; font-family: var(--md-code-font-family); font-size: .85em; font-weight: 400; margin: 0; padding: .18rem .65rem; }
 .md-typeset h3[aria-label$="Variables"], .md-typeset h4[aria-label$="Variables"] { --isaac-heading-color: #a5d6a7; --isaac-heading-light: #e8f5e9; }
@@ -66,6 +65,9 @@
 .md-typeset a.rgonorplus.tooltip::after { content: "Available in both RGON and RGON+"; }
 .md-typeset a.tooltip:hover::after, .md-typeset a.tooltip:focus-visible::after { background: var(--md-code-bg-color); border: 1px solid var(--md-default-fg-color--lighter); border-radius: .2rem; color: var(--md-default-fg-color); display: block; font-size: .7rem; inset: auto 0 calc(100% + .35rem) auto; padding: .35rem .5rem; position: absolute; white-space: nowrap; z-index: 2; }
 .api-signature.is-unavailable { filter: grayscale(1); opacity: .38; }
+.md-typeset .rgon-extension, .md-typeset .rgon-only { border-inline-start: .2rem solid #2f8c68; margin: 1rem 0; padding-inline-start: .8rem; }
+.md-typeset .rgon-extension[hidden], .md-typeset .rgon-only[hidden] { display: none !important; }
+[data-md-color-scheme="slate"] .md-typeset .rgon-extension, [data-md-color-scheme="slate"] .md-typeset .rgon-only { border-inline-start-color: #58b88d; }
 @media (prefers-reduced-motion: reduce) { .profile-pill, .profile-pill-indicator { transition: none; } }
 @media screen and (max-width: 59.9375em) { .isaac-profile-inner { gap: .45rem; padding: .35rem .8rem; } }
 @media screen and (max-width: 29.9375em) { .profile-pill { min-width: 2.85rem; padding-inline: .45rem; } }

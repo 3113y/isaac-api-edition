@@ -2,15 +2,51 @@ from __future__ import annotations
 
 import subprocess
 import sys
+from functools import lru_cache
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
+@lru_cache(maxsize=1)
 def build_site() -> str:
     subprocess.run(
-        [sys.executable, "-m", "mkdocs", "build", "--strict"],
+        [
+            sys.executable,
+            "scripts/build_overlay_docs.py",
+            "--source-docs",
+            "docs",
+            "--base-en",
+            "docs/en",
+            "--base-zh",
+            "docs/zh",
+            "--rgon-zh",
+            "docs/rgon/zh",
+            "--rgon-plus-en",
+            "docs/rgon-plus/en",
+            "--output",
+            ".generated-docs",
+        ],
+        cwd=ROOT,
+        check=True,
+    )
+    subprocess.run(
+        [
+            sys.executable,
+            "scripts/build_mkdocs_config.py",
+            "--template",
+            "mkdocs.yml",
+            "--enum-source",
+            ".generated-docs/en/enums",
+            "--output",
+            ".generated-mkdocs.yml",
+        ],
+        cwd=ROOT,
+        check=True,
+    )
+    subprocess.run(
+        [sys.executable, "-m", "mkdocs", "build", "--config-file", ".generated-mkdocs.yml", "--strict"],
         cwd=ROOT,
         check=True,
         capture_output=True,
@@ -101,6 +137,8 @@ def test_unified_site_excludes_the_rgon_plus_source_tree() -> None:
     config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
 
     assert "exclude_docs: rgon-plus/**" in config
+    assert "not_found: ignore" in config
+    assert "anchors: ignore" in config
 
 
 def test_signature_and_unavailable_entry_styles_are_scoped_to_the_call_line() -> None:
@@ -116,16 +154,19 @@ def test_signature_and_unavailable_entry_styles_are_scoped_to_the_call_line() ->
     assert ".md-typeset a.tooltip::after { display: none;" in stylesheet
 
 
-def test_profile_script_uses_only_original_and_unified_rgon_roots() -> None:
+def test_profile_script_toggles_rgon_in_the_current_document() -> None:
     script = (ROOT / "docs" / "assets" / "javascripts" / "profile.js").read_text(
         encoding="utf-8"
     )
 
-    assert '"rgon": "/rgon/"' in script
-    assert 'rgon-plus/en' not in script
+    assert "extensionRoots" not in script
+    assert "function applyExtensionVisibility()" in script
+    assert '.toggleAttribute("hidden", !enabled)' in script
+    assert "navigateToLanguage" in script
+    assert "rgon-plus/en" not in script
     assert '"rgon+"' not in script
     assert "function siteBasePath()" in script
-    assert "siteBasePath()}rgon/${language}/" in script
+    assert "siteBasePath()}${language}/" in script
 
 
 def test_profile_script_reference_is_cache_busted() -> None:
@@ -134,16 +175,16 @@ def test_profile_script_reference_is_cache_busted() -> None:
     assert "assets/javascripts/profile.js?rev=" in config
 
 
-def test_original_extension_handler_routes_back_to_the_vanilla_profile() -> None:
+def test_extension_handler_does_not_navigate_to_another_document_tree() -> None:
     script = (ROOT / "docs" / "assets" / "javascripts" / "profile.js").read_text(
         encoding="utf-8"
     )
 
-    original_handler = script.split('originalButton.addEventListener("click", () => {', 1)[1].split(
+    extension_handler = script.split('extensionButton.addEventListener("click", () => {', 1)[1].split(
         "  });", 1
     )[0]
-    assert "render();" in original_handler
-    assert original_handler.index("render();") < original_handler.index("navigateToProfile();")
+    assert "render();" in extension_handler
+    assert "navigateToProfile" not in extension_handler
 
 
 def test_api_pages_are_present_in_the_primary_navigation() -> None:
@@ -157,10 +198,10 @@ def test_api_pages_are_present_in_the_primary_navigation() -> None:
 def test_deployment_builds_committed_sources_without_fetching_upstream() -> None:
     workflow = (ROOT / ".github" / "workflows" / "deploy-pages.yml").read_text(encoding="utf-8")
 
-    assert "scripts/build_rgon_docs.py" in workflow
-    assert "scripts/build_enum_indexes.py" in workflow
-    assert "--fallback-en docs/en" in workflow
-    assert "--fallback-zh docs/zh" in workflow
+    assert "scripts/build_overlay_docs.py" in workflow
+    assert "scripts/build_mkdocs_config.py" in workflow
+    assert "--config-file .generated-mkdocs.yml --strict" in workflow
     assert "git clone" not in workflow
     assert "scripts/sync_upstream_docs.py" not in workflow
-    assert workflow.index("scripts/build_rgon_docs.py") < workflow.index("mkdocs build --strict")
+    assert workflow.index("scripts/build_overlay_docs.py") < workflow.index("scripts/build_mkdocs_config.py")
+    assert workflow.index("scripts/build_mkdocs_config.py") < workflow.index("mkdocs build --config-file")

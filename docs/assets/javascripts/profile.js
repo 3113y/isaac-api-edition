@@ -5,9 +5,6 @@
   const extensionButton = document.querySelector("[data-extension-toggle]");
   const languageButtons = Array.from(document.querySelectorAll("[data-language-toggle]"));
   const profileBar = document.querySelector("#environment-profile");
-  const extensionRoots = {
-    "rgon": "/rgon/",
-  };
   if (!baseButtons.length || !originalButton || !extensionButton) return;
 
   const query = new URLSearchParams(window.location.search);
@@ -18,30 +15,20 @@
 
   function normalizeProfile() {
     if (profile.game !== "rep" && profile.game !== "rep+") profile.game = "rep";
-    if (profile.extension && profile.extension !== "rgon") profile.extension = "";
+    if (profile.extension !== "rgon") profile.extension = "";
   }
 
   function currentLanguage() {
-    return /\/(zh)(?:\/|$)/.test(window.location.pathname) ? "zh" : "en";
+    return /\/zh(?:\/|$)/.test(window.location.pathname) ? "zh" : "en";
   }
 
   function siteBasePath() {
-    const match = window.location.pathname.match(/^(.*?)(?:\/rgon)?\/(?:en|zh)(?:\/|$)/);
+    const match = window.location.pathname.match(/^(.*?)(?:\/en|\/zh)(?:\/|$)/);
     return match && match[1] ? `${match[1]}/` : "/";
   }
 
-  function profilePath(language, extension) {
-    return extensionRoots[extension]
-      ? `${siteBasePath()}rgon/${language}/`
-      : `${siteBasePath()}${language}/`;
-  }
-
-  function currentProfileRoot() {
-    const roots = ["en", "zh"].flatMap((language) => [
-      profilePath(language, "rgon"),
-      profilePath(language, ""),
-    ]);
-    return roots.find((root) => window.location.pathname.startsWith(root));
+  function profilePath(language) {
+    return `${siteBasePath()}${language}/`;
   }
 
   function profileUrl(root, page = "") {
@@ -52,10 +39,12 @@
     return url;
   }
 
-  function navigateToProfile(language = currentLanguage()) {
-    const root = profilePath(language, profile.extension);
-    const currentRoot = currentProfileRoot();
-    const page = currentRoot ? window.location.pathname.slice(currentRoot.length) : "";
+  function navigateToLanguage(language) {
+    const root = profilePath(language);
+    const currentRoot = profilePath(currentLanguage());
+    const page = window.location.pathname.startsWith(currentRoot)
+      ? window.location.pathname.slice(currentRoot.length)
+      : "";
     const target = profileUrl(root, page);
     if (!page || target.pathname === window.location.pathname) {
       window.location.assign(target.toString());
@@ -110,15 +99,22 @@
   function applyCompatibility() {
     document.querySelectorAll(".api-signature[data-games]").forEach((entry) => {
       const games = entry.dataset.games.split(" ");
-      const extension = entry.dataset.extension || "";
       const baseMatches = games.includes("all-dlcs") || games.includes(profile.game);
-      entry.classList.toggle("is-unavailable", !baseMatches || extension !== profile.extension);
+      entry.classList.toggle("is-unavailable", !baseMatches);
+    });
+  }
+
+  function applyExtensionVisibility() {
+    const enabled = profile.extension === "rgon";
+    document.querySelectorAll(".rgon-extension, .rgon-only").forEach((block) => {
+      block.toggleAttribute("hidden", !enabled);
+      block.setAttribute("aria-hidden", String(!enabled));
     });
   }
 
   function rewriteProfileNavigation() {
-    const targetRoot = profilePath(currentLanguage(), profile.extension);
-    const originalRoot = profilePath("en", "");
+    const targetRoot = profilePath(currentLanguage());
+    const originalRoot = profilePath("en");
     document.querySelectorAll(".md-nav a[href]").forEach((link) => {
       const url = new URL(link.href, window.location.origin);
       if (url.origin !== window.location.origin || !url.pathname.startsWith(originalRoot)) return;
@@ -152,10 +148,7 @@
 
   function render() {
     normalizeProfile();
-    const rgonLabel = "RGON";
     const activeExtension = profile.extension === "rgon";
-    extensionButton.textContent = rgonLabel;
-    extensionButton.dataset.extensionToggle = "rgon";
     baseButtons.forEach((button) => {
       const active = button.dataset.game === profile.game;
       button.classList.toggle("is-selected", active);
@@ -173,6 +166,7 @@
     profileBar.classList.toggle("is-rgon", activeExtension);
     saveProfile();
     applyCompatibility();
+    applyExtensionVisibility();
     rewriteProfileNavigation();
     syncNavigationState();
   }
@@ -180,26 +174,19 @@
   baseButtons.forEach((button) => button.addEventListener("click", () => {
     profile.game = button.dataset.game;
     render();
-    if (profile.extension) navigateToProfile();
   }));
   originalButton.addEventListener("click", () => {
     profile.extension = "";
     render();
-    navigateToProfile();
   });
   extensionButton.addEventListener("click", () => {
-    profile.extension = profile.extension ? "" : extensionButton.dataset.extensionToggle;
+    profile.extension = profile.extension ? "" : "rgon";
     render();
-    navigateToProfile();
   });
   languageButtons.forEach((button) => button.addEventListener("click", () => {
-    const language = button.dataset.languageToggle;
-    localStorage.setItem("isaac-wiki-language", language);
-    navigateToProfile(language);
+    localStorage.setItem("isaac-wiki-language", button.dataset.languageToggle);
+    navigateToLanguage(button.dataset.languageToggle);
   }));
   annotateUpstreamEntries();
   render();
-  if (profile.extension && currentProfileRoot() !== profilePath(currentLanguage(), profile.extension)) {
-    navigateToProfile();
-  }
 }());

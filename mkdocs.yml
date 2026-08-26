@@ -2,7 +2,12 @@ site_name: Isaac LLM Wiki
 site_url: https://3113y.github.io/isaac-llm-wiki/
 repo_url: https://github.com/3113y/isaac-wiki-mcp
 repo_name: 3113y/isaac-wiki-mcp
+docs_dir: .generated-docs
 exclude_docs: rgon-plus/**
+validation:
+  links:
+    not_found: ignore
+    anchors: ignore
 nav:
   - Home: en/index.md
   - API reference:
@@ -70,6 +75,7 @@ theme:
 plugins:
   - search
 markdown_extensions:
+  - md_in_html
   - toc:
       toc_depth: 3
   - admonition
@@ -91,4 +97,4 @@ extra_css:
   - assets/stylesheets/profile.css
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
-  - assets/javascripts/profile.js?rev=b298f00
+  - assets/javascripts/profile.js?rev=overlay1

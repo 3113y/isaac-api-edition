@@ -1,4 +1,6 @@
 site/
+.generated-docs/
+.generated-mkdocs.yml
 .uv-mkdocs-cache/
 .uv-mkdocs-python/
 .pytest_cache/

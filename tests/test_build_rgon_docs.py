@@ -1,6 +1,7 @@
 from pathlib import Path
 
 from scripts.build_rgon_docs import build_rgon_documents
+from scripts.build_overlay_docs import build_overlay_documents
 
 
 def test_build_marks_shared_and_version_specific_api_entries(tmp_path: Path) -> None:
@@ -106,3 +107,85 @@ def test_build_creates_enum_indexes_for_both_published_languages(tmp_path: Path)
         index = (output / language / "enums" / "index.md").read_text(encoding="utf-8")
         assert "StatusEffect" in index
         assert "WeaponModifier" in index
+
+
+def test_overlay_retains_original_method_and_appends_rgon_variant(tmp_path: Path) -> None:
+    base_en, base_zh, rgon_zh, plus_en, output = (
+        tmp_path / "en",
+        tmp_path / "zh",
+        tmp_path / "rgon-zh",
+        tmp_path / "rgon-plus-en",
+        tmp_path / "generated",
+    )
+    for root, text in (
+        (base_en, "# Entity\n\n### AddKnockback ()\n\n#### void AddKnockback ( int Duration )\n\nBase description.\n"),
+        (base_zh, "# Entity\n\n### AddKnockback ()\n\n#### void AddKnockback ( int Duration )\n\n原版说明。\n"),
+        (rgon_zh, "# Entity\n\n### AddKnockback () 添加击退效果\n\n#### void AddKnockback ( int Duration, boolean TakeImpactDamage )\n\nRGON 中文说明。\n\n### AddBaited ()\n\n#### void AddBaited ( )\n\n仅 RGON。\n"),
+        (plus_en, "# Entity\n\n### AddKnockback ()\n\n#### void AddKnockback ( int Duration, boolean TakeImpactDamage )\n\nRGON English description.\n"),
+    ):
+        root.mkdir()
+        (root / "Entity.md").write_text(text, encoding="utf-8")
+
+    build_overlay_documents(base_en, base_zh, rgon_zh, plus_en, output)
+
+    english = (output / "en" / "Entity.md").read_text(encoding="utf-8")
+    chinese = (output / "zh" / "Entity.md").read_text(encoding="utf-8")
+    assert "#### void AddKnockback ( int Duration )" in english
+    assert '<div class="rgon-extension" markdown="1">' in english
+    assert "#### void AddKnockback ( int Duration, boolean TakeImpactDamage )" in english
+    assert "RGON English description." in english
+    assert english.index("### AddKnockback ()") < english.index('<div class="rgon-only"')
+    assert "### AddBaited ()" in english
+    assert "### AddKnockback () 添加击退效果" not in chinese
+    assert "添加击退效果" in chinese.split("#### void AddKnockback", 1)[1]
+    assert ".rgonorplus" in english
+
+
+def test_overlay_uses_original_english_when_rgon_has_no_english_source(tmp_path: Path) -> None:
+    base_en, base_zh, rgon_zh, plus_en, output = (
+        tmp_path / "en",
+        tmp_path / "zh",
+        tmp_path / "rgon-zh",
+        tmp_path / "rgon-plus-en",
+        tmp_path / "generated",
+    )
+    for root, text in (
+        (base_en, "# Entity\n\n### Shared ()\n\n#### void Shared ( )\n\nOriginal English.\n"),
+        (base_zh, "# Entity\n\n### Shared ()\n\n#### void Shared ( )\n\n原版中文。\n"),
+        (rgon_zh, "# Entity\n\n### Shared ()\n\n#### void Shared ( )\n\nRGON 中文。\n"),
+        (plus_en, "# Entity\n"),
+    ):
+        root.mkdir()
+        (root / "Entity.md").write_text(text, encoding="utf-8")
+
+    build_overlay_documents(base_en, base_zh, rgon_zh, plus_en, output)
+
+    english = (output / "en" / "Entity.md").read_text(encoding="utf-8")
+    assert "Original English." in english
+    assert "RGON 中文。" not in english
+
+
+def test_overlay_appends_rgon_enum_table_to_the_original_enum(tmp_path: Path) -> None:
+    base_en, base_zh, rgon_zh, plus_en, output = (
+        tmp_path / "en",
+        tmp_path / "zh",
+        tmp_path / "rgon-zh",
+        tmp_path / "rgon-plus-en",
+        tmp_path / "generated",
+    )
+    for root, text in (
+        (base_en, '# Enum "Status"\n\n|Value|Enumerator|\n|:--|:--|\n|0|BASE|\n'),
+        (base_zh, '# 枚举 "Status"\n\n|值|枚举|\n|:--|:--|\n|0|BASE|\n'),
+        (rgon_zh, '# 枚举 "Status"\n\n|值|枚举|\n|:--|:--|\n|1|RGON|\n'),
+        (plus_en, '# Enum "Status"\n\n|Value|Enumerator|\n|:--|:--|\n|2|RGON_PLUS|\n'),
+    ):
+        (root / "enums").mkdir(parents=True)
+        (root / "enums" / "Status.md").write_text(text, encoding="utf-8")
+
+    build_overlay_documents(base_en, base_zh, rgon_zh, plus_en, output)
+
+    english = (output / "en" / "enums" / "Status.md").read_text(encoding="utf-8")
+    assert "|0|BASE|" in english
+    assert '<div class="rgon-extension" markdown="1">' in english
+    assert "|2|RGON_PLUS|" in english
+    assert ".rgonorplus" in english

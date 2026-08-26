@@ -28,20 +28,22 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Generate source enumeration indexes
+      - name: Generate unified Original and RGON documentation
         run: |
-          python scripts/build_enum_indexes.py \
-            --english-source docs/en \
-            --chinese-source docs/zh
-      - name: Generate unified RGON documentation from committed sources
+          python scripts/build_overlay_docs.py \
+            --source-docs docs \
+            --base-en docs/en \
+            --base-zh docs/zh \
+            --rgon-zh docs/rgon/zh \
+            --rgon-plus-en docs/rgon-plus/en \
+            --output .generated-docs
+      - name: Generate expandable API navigation
         run: |
-          python scripts/build_rgon_docs.py \
-            --rgon-source docs/rgon/zh \
-            --rgon-plus-source docs/rgon-plus/en \
-            --fallback-en docs/en \
-            --fallback-zh docs/zh \
-            --output docs/rgon
-      - run: mkdocs build --strict
+          python scripts/build_mkdocs_config.py \
+            --template mkdocs.yml \
+            --enum-source .generated-docs/en/enums \
+            --output .generated-mkdocs.yml
+      - run: mkdocs build --config-file .generated-mkdocs.yml --strict
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
