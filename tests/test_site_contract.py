@@ -99,6 +99,8 @@ def test_signature_and_unavailable_entry_styles_are_scoped_to_the_call_line() ->
     assert ".api-signature.is-unavailable" in stylesheet
     assert ".api-entry.is-unavailable" not in stylesheet
     assert '[data-md-color-scheme="slate"]' in stylesheet
+    assert ".md-typeset h4.api-signature a.badge { float: right;" in stylesheet
+    assert ".md-typeset a.tooltip::after { display: none;" in stylesheet
 
 
 def test_profile_script_uses_only_original_and_unified_rgon_roots() -> None:
@@ -109,6 +111,8 @@ def test_profile_script_uses_only_original_and_unified_rgon_roots() -> None:
     assert '"rgon": "/rgon/"' in script
     assert 'rgon-plus/en' not in script
     assert '"rgon+"' not in script
+    assert "function siteBasePath()" in script
+    assert "siteBasePath()}rgon/${language}/" in script
 
 
 def test_original_extension_handler_routes_back_to_the_vanilla_profile() -> None:

@@ -25,14 +25,23 @@
     return /\/(zh)(?:\/|$)/.test(window.location.pathname) ? "zh" : "en";
   }
 
+  function siteBasePath() {
+    const match = window.location.pathname.match(/^(.*?)(?:\/rgon)?\/(?:en|zh)(?:\/|$)/);
+    return match && match[1] ? `${match[1]}/` : "/";
+  }
+
   function profilePath(language, extension) {
-    return extensionRoots[extension] ? `${extensionRoots[extension]}${language}/` : `/${language}/`;
+    return extensionRoots[extension]
+      ? `${siteBasePath()}rgon/${language}/`
+      : `${siteBasePath()}${language}/`;
   }
 
   function currentProfileRoot() {
-    return Object.values(extensionRoots).map((extension) => extension).find(
-      (root) => window.location.pathname.startsWith(root)
-    ) || ["/en/", "/zh/"].find((root) => window.location.pathname.startsWith(root));
+    const roots = ["en", "zh"].flatMap((language) => [
+      profilePath(language, "rgon"),
+      profilePath(language, ""),
+    ]);
+    return roots.find((root) => window.location.pathname.startsWith(root));
   }
 
   function profileUrl(root, page = "") {
@@ -109,10 +118,11 @@
 
   function rewriteProfileNavigation() {
     const targetRoot = profilePath(currentLanguage(), profile.extension);
+    const originalRoot = profilePath("en", "");
     document.querySelectorAll(".md-nav a[href]").forEach((link) => {
       const url = new URL(link.href, window.location.origin);
-      if (url.origin !== window.location.origin || !url.pathname.startsWith("/en/")) return;
-      const target = profileUrl(targetRoot, url.pathname.slice("/en/".length));
+      if (url.origin !== window.location.origin || !url.pathname.startsWith(originalRoot)) return;
+      const target = profileUrl(targetRoot, url.pathname.slice(originalRoot.length));
       target.hash = url.hash;
       link.href = target.toString();
     });

@@ -52,7 +52,10 @@
 .rgonplus::before { content: "RGON+"; }
 .rgonorplus { background: linear-gradient(90deg, #2f8c68 0 50%, #5e55b6 50% 100%); }
 .rgonorplus::before { content: "RGON / RGON+"; }
+.md-typeset h4.api-signature { display: flow-root; }
+.md-typeset h4.api-signature a.badge { float: right; margin-inline: .65rem 0; }
 .md-typeset a.tooltip { position: relative; }
+.md-typeset a.tooltip::after { display: none; }
 .md-typeset a.rep.tooltip::after { content: "Compatible with REP"; }
 .md-typeset a.repplus.tooltip::after { content: "Compatible with REP+"; }
 .md-typeset a.reporplus.tooltip::after { content: "Compatible with REP and REP+"; }
@@ -61,7 +64,7 @@
 .md-typeset a.rgon.tooltip::after { content: "Available in RGON"; }
 .md-typeset a.rgonplus.tooltip::after { content: "Available in RGON+"; }
 .md-typeset a.rgonorplus.tooltip::after { content: "Available in both RGON and RGON+"; }
-.md-typeset a.tooltip:hover::after { background: var(--md-code-bg-color); border: 1px solid var(--md-default-fg-color--lighter); border-radius: .2rem; color: var(--md-default-fg-color); font-size: .7rem; inset: auto auto calc(100% + .35rem) 50%; padding: .35rem .5rem; position: absolute; transform: translateX(-50%); white-space: nowrap; z-index: 2; }
+.md-typeset a.tooltip:hover::after, .md-typeset a.tooltip:focus-visible::after { background: var(--md-code-bg-color); border: 1px solid var(--md-default-fg-color--lighter); border-radius: .2rem; color: var(--md-default-fg-color); display: block; font-size: .7rem; inset: auto 0 calc(100% + .35rem) auto; padding: .35rem .5rem; position: absolute; white-space: nowrap; z-index: 2; }
 .api-signature.is-unavailable { filter: grayscale(1); opacity: .38; }
 @media (prefers-reduced-motion: reduce) { .profile-pill, .profile-pill-indicator { transition: none; } }
 @media screen and (max-width: 59.9375em) { .isaac-profile-inner { gap: .45rem; padding: .35rem .8rem; } }
