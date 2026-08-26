@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import re
+import shutil
 from pathlib import Path
 
 
@@ -58,6 +59,15 @@ def build_rgon_documents(rgon_source: Path, rgon_plus_source: Path, output: Path
             target = output / language / page
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_text(rendered, encoding="utf-8")
+    for source in (rgon_source, rgon_plus_source):
+        for asset in source.rglob("*"):
+            if not asset.is_file() or asset.suffix.lower() == ".md":
+                continue
+            relative = asset.relative_to(source)
+            for language in ("zh", "en"):
+                target = output / language / relative
+                target.parent.mkdir(parents=True, exist_ok=True)
+                shutil.copy2(asset, target)
 
 
 def main() -> None:

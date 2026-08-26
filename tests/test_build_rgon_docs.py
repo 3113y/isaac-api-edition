@@ -13,12 +13,15 @@ def test_build_marks_shared_and_version_specific_api_entries(tmp_path: Path) -> 
     ):
         root.mkdir(parents=True)
         (root / "Entity.md").write_text(text, encoding="utf-8")
+    (rgon / "zh" / "img").mkdir()
+    (rgon / "zh" / "img" / "guide.png").write_bytes(b"image")
 
     build_rgon_documents(rgon / "zh", rgon_plus / "en", output)
 
     zh = (output / "zh" / "Entity.md").read_text(encoding="utf-8")
     en = (output / "en" / "Entity.md").read_text(encoding="utf-8")
-    for rendered in (zh, en):
+    for rendered_language, rendered in (("zh", zh), ("en", en)):
         assert "[ ](#){: .rgonorplus .tooltip .badge }\n### Shared ()" in rendered
         assert "[ ](#){: .rgon .tooltip .badge }\n### RgonOnly ()" in rendered
         assert "[ ](#){: .rgonplus .tooltip .badge }\n### RgonPlusOnly ()" in rendered
+        assert (output / rendered_language / "img" / "guide.png").read_bytes() == b"image"
