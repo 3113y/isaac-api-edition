@@ -119,6 +119,12 @@ def test_profile_script_uses_only_original_and_unified_rgon_roots() -> None:
     assert "siteBasePath()}rgon/${language}/" in script
 
 
+def test_profile_script_reference_is_cache_busted() -> None:
+    config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+
+    assert "assets/javascripts/profile.js?rev=" in config
+
+
 def test_original_extension_handler_routes_back_to_the_vanilla_profile() -> None:
     script = (ROOT / "docs" / "assets" / "javascripts" / "profile.js").read_text(
         encoding="utf-8"
