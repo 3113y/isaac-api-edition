@@ -189,3 +189,28 @@ def test_overlay_appends_rgon_enum_table_to_the_original_enum(tmp_path: Path) ->
     assert '<div class="rgon-extension" markdown="1">' in english
     assert "|2|RGON_PLUS|" in english
     assert ".rgonorplus" in english
+
+
+def test_overlay_matches_decorated_original_callable_names(tmp_path: Path) -> None:
+    base_en, base_zh, rgon_zh, plus_en, output = (
+        tmp_path / "en",
+        tmp_path / "zh",
+        tmp_path / "rgon-zh",
+        tmp_path / "rgon-plus-en",
+        tmp_path / "generated",
+    )
+    for root, text in (
+        (base_en, "# Isaac\n\n### Find·By·Type ()\n\n#### table FindByType ( )\n\nOriginal.\n\n### Next ()\n\n#### void Next ( )\n"),
+        (base_zh, "# Isaac\n\n### Find·By·Type ()\n\n#### table FindByType ( )\n\n原版。\n"),
+        (rgon_zh, "# Isaac\n\n### FindByType ()\n\n#### Entity[] FindByType ( )\n\nRGON 中文。\n"),
+        (plus_en, "# Isaac\n\n### FindByType ()\n\n#### Entity[] FindByType ( )\n\nRGON English.\n"),
+    ):
+        root.mkdir()
+        (root / "Isaac.md").write_text(text, encoding="utf-8")
+
+    build_overlay_documents(base_en, base_zh, rgon_zh, plus_en, output)
+
+    page = (output / "en" / "Isaac.md").read_text(encoding="utf-8")
+    extension = page.index('<div class="rgon-extension"')
+    assert page.index("### Find·By·Type ()") < extension < page.index("### Next ()")
+    assert '<div class="rgon-only"' not in page

@@ -65,9 +65,17 @@
 .md-typeset a.rgonorplus.tooltip::after { content: "Available in both RGON and RGON+"; }
 .md-typeset a.tooltip:hover::after, .md-typeset a.tooltip:focus-visible::after { background: var(--md-code-bg-color); border: 1px solid var(--md-default-fg-color--lighter); border-radius: .2rem; color: var(--md-default-fg-color); display: block; font-size: .7rem; inset: auto 0 calc(100% + .35rem) auto; padding: .35rem .5rem; position: absolute; white-space: nowrap; z-index: 2; }
 .api-signature.is-unavailable { filter: grayscale(1); opacity: .38; }
-.md-typeset .rgon-extension, .md-typeset .rgon-only { border-inline-start: .2rem solid #2f8c68; margin: 1rem 0; padding-inline-start: .8rem; }
+.md-typeset .rgon-extension, .md-typeset .rgon-only { border-inline-start: .2rem solid #2f8c68; margin: 1.35rem 0; padding: 1.55rem 0 .1rem .8rem; position: relative; }
+.md-typeset .rgon-extension::before, .md-typeset .rgon-only::before { background: #2f8c68; border-radius: 999px; color: #fff; content: "RGON extension"; font-size: .62rem; font-weight: 700; inset: .35rem auto auto .75rem; letter-spacing: .04em; padding: .12rem .42rem; position: absolute; text-transform: uppercase; }
+.md-typeset .rgon-only::before { content: "RGON-only API"; }
 .md-typeset .rgon-extension[hidden], .md-typeset .rgon-only[hidden] { display: none !important; }
+[data-md-color-scheme="slate"] .md-typeset .rgon-extension::before, [data-md-color-scheme="slate"] .md-typeset .rgon-only::before { background: #58b88d; color: #10251b; }
 [data-md-color-scheme="slate"] .md-typeset .rgon-extension, [data-md-color-scheme="slate"] .md-typeset .rgon-only { border-inline-start-color: #58b88d; }
-@media (prefers-reduced-motion: reduce) { .profile-pill, .profile-pill-indicator { transition: none; } }
+.md-typeset .rgon-extension.is-visible, .md-typeset .rgon-only.is-visible { animation: rgon-reveal .18s ease-out both; }
+.md-sidebar--secondary .rgon-toc-entry.is-rgon-active { border-inline-start: .12rem solid #2f8c68; padding-inline-start: .35rem; }
+.md-sidebar--secondary .rgon-toc-entry.is-first { border-top: .05rem solid #2f8c68; margin-top: .65rem; padding-top: 1.15rem; position: relative; }
+.md-sidebar--secondary .rgon-toc-entry.is-first::before { color: #2f8c68; content: "RGON additions"; font-size: .58rem; font-weight: 700; inset: .22rem auto auto .35rem; letter-spacing: .04em; position: absolute; text-transform: uppercase; }
+@keyframes rgon-reveal { from { opacity: 0; transform: translateY(-.25rem); } to { opacity: 1; transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .profile-pill, .profile-pill-indicator { transition: none; } .md-typeset .rgon-extension.is-visible, .md-typeset .rgon-only.is-visible { animation: none; } }
 @media screen and (max-width: 59.9375em) { .isaac-profile-inner { gap: .45rem; padding: .35rem .8rem; } }
 @media screen and (max-width: 29.9375em) { .profile-pill { min-width: 2.85rem; padding-inline: .45rem; } }

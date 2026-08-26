@@ -112,7 +112,7 @@ def test_profile_script_marks_upstream_badges_as_compatible_entries() -> None:
     assert "function syncNavigationState()" in script
     assert 'link.classList.add("md-nav__link--active")' in script
     assert 'item.classList.add("md-nav__item--active")' in script
-    assert 'item.classList.add("md-nav__item--section")' in script
+    assert 'item.classList.remove("md-nav__item--section")' in script
     assert 'item.querySelector(":scope > input.md-nav__toggle[type=\'checkbox\']")' in script
     assert "toggle.checked = true" in script
 
@@ -152,6 +152,8 @@ def test_signature_and_unavailable_entry_styles_are_scoped_to_the_call_line() ->
     assert '[data-md-color-scheme="slate"]' in stylesheet
     assert ".md-typeset h4.api-signature a.badge { float: right;" in stylesheet
     assert ".md-typeset a.tooltip::after { display: none;" in stylesheet
+    assert 'content: "RGON extension";' in stylesheet
+    assert ".rgon-toc-entry.is-first" in stylesheet
 
 
 def test_profile_script_toggles_rgon_in_the_current_document() -> None:
@@ -161,6 +163,8 @@ def test_profile_script_toggles_rgon_in_the_current_document() -> None:
 
     assert "extensionRoots" not in script
     assert "function applyExtensionVisibility()" in script
+    assert "function annotateExtensionToc()" in script
+    assert "function enablePrimarySectionToggles()" in script
     assert '.toggleAttribute("hidden", !enabled)' in script
     assert "navigateToLanguage" in script
     assert "rgon-plus/en" not in script

@@ -109,6 +109,60 @@
     document.querySelectorAll(".rgon-extension, .rgon-only").forEach((block) => {
       block.toggleAttribute("hidden", !enabled);
       block.setAttribute("aria-hidden", String(!enabled));
+      block.classList.toggle("is-visible", enabled);
+    });
+    document.querySelectorAll(".rgon-toc-entry").forEach((entry) => {
+      const isOnly = entry.classList.contains("rgon-toc-only");
+      entry.toggleAttribute("hidden", isOnly && !enabled);
+      entry.classList.toggle("is-rgon-active", enabled);
+    });
+  }
+
+  function hasFollowingExtension(heading) {
+    for (let sibling = heading.nextElementSibling; sibling; sibling = sibling.nextElementSibling) {
+      if (sibling.matches("h2, h3")) return false;
+      if (sibling.classList.contains("rgon-extension")) return true;
+    }
+    return false;
+  }
+
+  function annotateExtensionToc() {
+    const extensionEntries = [];
+    document.querySelectorAll(".md-sidebar--secondary a[href^='#']").forEach((link) => {
+      const id = decodeURIComponent(link.hash.slice(1));
+      const target = document.getElementById(id);
+      if (!target) return;
+      const entry = link.closest("li.md-nav__item");
+      if (!entry) return;
+      const inOnlyBlock = Boolean(target.closest(".rgon-only"));
+      if (!inOnlyBlock && !hasFollowingExtension(target)) return;
+      entry.classList.add("rgon-toc-entry");
+      if (inOnlyBlock) {
+        entry.classList.add("rgon-toc-only");
+        extensionEntries.push(entry);
+      }
+    });
+    if (extensionEntries.length) extensionEntries[0].classList.add("is-first");
+  }
+
+  function enablePrimarySectionToggles() {
+    document.querySelectorAll(".md-sidebar--primary li.md-nav__item--nested").forEach((item) => {
+      const nestedNav = item.querySelector(":scope > nav.md-nav[data-md-level='2']");
+      const toggle = item.querySelector(":scope > input.md-nav__toggle[type='checkbox']");
+      const label = item.querySelector(":scope > label[for]");
+      if (!nestedNav || !toggle || !label) return;
+      item.classList.remove("md-nav__item--section");
+      label.tabIndex = 0;
+      label.setAttribute("role", "button");
+      const updateAria = () => label.setAttribute("aria-expanded", String(toggle.checked));
+      updateAria();
+      toggle.addEventListener("change", updateAria);
+      label.addEventListener("keydown", (event) => {
+        if (event.key !== "Enter" && event.key !== " ") return;
+        event.preventDefault();
+        toggle.checked = !toggle.checked;
+        toggle.dispatchEvent(new Event("change", { bubbles: true }));
+      });
     });
   }
 
@@ -136,7 +190,6 @@
         const item = nav.parentElement;
         if (!item) continue;
         item.classList.add("md-nav__item--active");
-        item.classList.add("md-nav__item--section");
         const toggle = item.querySelector(":scope > input.md-nav__toggle[type='checkbox']");
         if (toggle) {
           toggle.checked = true;
@@ -188,5 +241,7 @@
     navigateToLanguage(button.dataset.languageToggle);
   }));
   annotateUpstreamEntries();
+  annotateExtensionToc();
+  enablePrimarySectionToggles();
   render();
 }());

@@ -23,6 +23,11 @@ def _normalize_attributes(text: str) -> str:
     return MALFORMED_ATTR.sub("{: ", text)
 
 
+def _canonical_section_key(name: str) -> str:
+    """Ignore visual word separators when matching the same API callable."""
+    return re.sub(r"[·\s]+", "", name).casefold()
+
+
 def _heading_parts(heading: str) -> tuple[str, str, str]:
     """Return a stable merge key, an API-only heading, and localized suffix prose."""
     before_attr, marker, attributes = heading.partition("{:")
@@ -31,11 +36,11 @@ def _heading_parts(heading: str) -> tuple[str, str, str]:
     if match:
         api_name = match.group("name")
         suffix = heading_text[match.end() :].strip()
-        key = api_name
+        key = _canonical_section_key(api_name)
     else:
         api_name = heading_text
         suffix = ""
-        key = api_name
+        key = _canonical_section_key(api_name)
     attr_text = f" {{:{attributes}" if marker else ""
     return key, f"{api_name}{attr_text}", suffix
 
