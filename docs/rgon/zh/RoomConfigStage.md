@@ -18,15 +18,15 @@ tags:
 
 ### GetBackdrop () {: aria-label='Functions' }
 #### [BackdropType](https://wofsauge.github.io/IsaacDocs/rep/enums/BackdropType.html?h=backdrop) GetBackdrop ( ) {: .copyable aria-label='Functions' }
-Returns the `BackdropType` used in default rooms on the stage.
+返回该舞台默认房间使用的 `BackdropType`。
 
 ### GetBossSpot () {: aria-label='Functions' }
 #### string GetBossSpot ( ) {: .copyable aria-label='Functions' }
-Returns the sprite path for the boss spot used in the boss intro.
+返回 Boss 开场动画中使用的 Boss 位置精灵路径。
 
 ### GetDisplayName () {: aria-label='Functions' }
 #### string GetDisplayName ( ) {: .copyable aria-label='Functions' }
-Returns the name of the stage.
+返回舞台名称。
 
 ___
 ### GetXMLName () {: aria-label='Functions' }
@@ -39,27 +39,27 @@ ___
 ___
 ### SetBackdrop () {: aria-label='Functions' }
 #### void SetBackdrop ( [BackdropType](https://wofsauge.github.io/IsaacDocs/rep/enums/BackdropType.html?h=backdrop) Backdrop ) {: .copyable aria-label='Functions' }
-Sets the `BackdropType` used in default rooms on the stage.
+设置该舞台默认房间使用的 `BackdropType`。
 
 ### SetBossSpot () {: aria-label='Functions' }
 #### void SetBossSpot ( string PngFilename ) {: .copyable aria-label='Functions' }
-Sets the sprite path for the boss spot used in the boss intro.
+设置 Boss 开场动画中使用的 Boss 位置精灵路径。
 
 ### SetDisplayName () {: aria-label='Functions' }
 #### void SetDisplayName ( string Name ) {: .copyable aria-label='Functions' }
-Sets the name of the stage.
+设置舞台名称。
 
 ### SetMusic () {: aria-label='Functions' }
 #### void SetMusic ( [Music](https://wofsauge.github.io/IsaacDocs/rep/enums/Music.html?h=music) Music ) {: .copyable aria-label='Functions' }
-Sets the `Music` used in default rooms on the stage.
+设置该舞台默认房间使用的 `Music`。
 
 ### SetPlayerSpot () {: aria-label='Functions' }
 #### void SetPlayerSpot ( string PngFilename ) {: .copyable aria-label='Functions' }
-Sets the sprite path for the player spot used in the boss intro and nightmare transition.
+设置 Boss 开场动画和梦魇过渡中使用的玩家位置精灵路径。
 
 ### SetSuffix () {: aria-label='Functions' }
 #### void SetSuffix ( string Suffix ) {: .copyable aria-label='Functions' }
-Sets the suffix used by the stage for stage-unique sprites, such as the boss/player spot and unique variants for enemies.
+设置该舞台用于舞台专属精灵的后缀，例如 Boss/玩家位置精灵以及敌人的专属变体。
 
 ___
 ### SetXMLName () {: aria-label='Functions' }

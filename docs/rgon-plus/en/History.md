@@ -18,12 +18,12 @@ tags:
 
 ### GetCollectiblesHistory () {: aria-label='Functions' }
 #### [HistoryItems](HistoryItem.md)[] GetCollectiblesHistory ( ) {: .copyable aria-label='Functions' }
-Returns table of [HistoryItems](HistoryItem.md) for the player's collectibles AND smelted trinkets.
+Returns a table of [HistoryItems](HistoryItem.md) for the player's collectibles and smelted trinkets.
 
 ___
 ### RemoveHistoryItemByIndex () {: aria-label='Functions' }
 #### boolean RemoveHistoryItemByIndex ( int Index ) {: .copyable aria-label='Functions' }
-Removes an item from the item history tracker on the right-hand side of the screen. Note that this does not remove the item effect from the player.
+Removes an item from the item history tracker on the right-hand side of the screen. Note that this does not remove the item's effect from the player.
 
 Returns `true` if an item was removed, `false` if not.
 

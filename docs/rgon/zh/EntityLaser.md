@@ -10,7 +10,7 @@ tags:
 ___
 ### HomingType {: aria-label='Modified Variables' }
 #### int HomingType  {: .copyable aria-label='Modified Variables' }
-与默认值相同，但现在返回的是正确的整数值，而非用户数据.
+与默认值相同，但现在返回正确的整数值，而非用户数据。
 
 ___
 
@@ -54,17 +54,17 @@ ___
 ___
 ### IsMultidimensionalTouched () {: aria-label='Functions' }
 #### boolean IsMultidimensionalTouched ( ) {: .copyable aria-label='Functions' }
-返回该激光是否是通过“多维宝宝”效果创建的。
+返回该激光是否通过“多维宝宝”效果创建。
 
 ___
 ### IsPrismTouched () {: aria-label='Functions' }
 #### boolean IsPrismTouched ( ) {: .copyable aria-label='Functions' }
-返回该激光是否是通过“天使棱镜”效果创建的。
+返回该激光是否通过“天使棱镜”效果创建。
 
 ___
 ### RecalculateSamplesNextUpdate () {: aria-label='Functions' }
 #### void RecalculateSamplesNextUpdate ( ) {: .copyable aria-label='Functions' }
-请求在下一次更新时完全重新计算激光的形状。可用于强制激光立即改变其最大距离/半径，而不是逐渐过渡到新值。对单次命中或非采样激光无效。
+请求在下一次更新时完全重新计算激光的形状。可用于强制激光立即改变其最大距离/半径，而不是逐渐过渡到新值。对 `OneHit` 或非采样激光无效。
 
 ___
 ### ResetSpriteScale () {: aria-label='Functions' }
@@ -85,7 +85,7 @@ ___
 ___
 ### SetPrismTouched () {: aria-label='Functions' }
 #### void SetPrismTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-设置该激光是否是通过“天使棱镜”效果创建的。
+设置该激光是否通过“天使棱镜”效果创建。
 
 ___
 ### SetScale () {: aria-label='Functions' }
@@ -100,3 +100,4 @@ ___
 #### void SetTimeout ( int Value ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

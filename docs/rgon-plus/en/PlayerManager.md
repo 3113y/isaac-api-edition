@@ -3,6 +3,8 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "PlayerManager"
 
 ???+ info
@@ -88,7 +90,7 @@ Both will be nil if no player has the collectible.
 ___
 ### GetRandomTrinketOwner () {: aria-label='Functions' }
 #### [EntityPlayer](EntityPlayer.md) GetRandomTrinketOwner ( [TrinketType](https://wofsauge.github.io/IsaacDocs/rep/enums/TrinketType.html) Trinket, int Seed ) {: .copyable aria-label='Functions' }
-Also returns the [Trinket RNG Object](https://wofsauge.github.io/IsaacDocs/rep/EntityPlayer.html#gettrinketrng) associated with this collectible from the player.
+Also returns the [Trinket RNG Object](https://wofsauge.github.io/IsaacDocs/rep/EntityPlayer.html#gettrinketrng) associated with this trinket from the player.
 
 Both will be nil if no player has the trinket.
 

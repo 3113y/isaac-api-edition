@@ -17,9 +17,9 @@ ___
 ___
 ### GetWaterClipFlags () {: aria-label='Functions' }
 #### [WaterClipFlag](enums/WaterClipFlag.md) GetWaterClipFlags ( ) {: .copyable aria-label='Functions' }
-Gets a bitset that informs whether this GridEntity renders above or below water.
+获取一个位集，用于指示此网格实体应渲染在水面上方还是下方。
 
-Vanilla state can be restored with `ResetWaterClipFlags()`.
+可以使用 `ResetWaterClipFlags()` 恢复原版状态。
 
 ___
 ### HurtDamage () {: aria-label='Functions' }
@@ -32,16 +32,16 @@ ___
 ___
 ### ResetWaterClipFlags () {: aria-label='Functions' }
 #### void ResetWaterClipFlags ( ) {: .copyable aria-label='Functions' }
-Restores water rendering to the default vanilla state. See `SetWaterClipFlags()`.
+将水面渲染恢复为默认的原版状态。参见 `SetWaterClipFlags()`。
 
 ___
 ### SetWaterClipFlags () {: aria-label='Functions' }
 #### void SetWaterClipFlags ( [WaterClipFlag](enums/WaterClipFlag.md) Flags ) {: .copyable aria-label='Functions' }
-Allows modification of whether this GridEntity renders above or below water.
+允许修改此网格实体应渲染在水面上方还是下方。
 
-Note that this will also disable any natural vanilla changes to these flags, such as a poop switching to rendering below water after being broken.
+请注意，这也会禁用原版对这些标志的自动更改，例如便便被破坏后切换为在水面下方渲染。
 
-Vanilla state can be restored with `ResetWaterClipFlags()`.
+可以使用 `ResetWaterClipFlags()` 恢复原版状态。
 
 ___
 ### ToDecoration () {: aria-label='Functions' }
@@ -133,3 +133,4 @@ ___
     如果转换不成功，此函数返回`nil`。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -3,10 +3,11 @@ tags:
   - Global
   - Class
 ---
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。
 # Global Class "Minimap"
 
 ???+ info
-    You can get this class by using the `Minimap` global table.
+    可以通过 `Minimap` 全局表获取此类。
 
     **注意：调用这些函数时，必须使用 .（句点）而非 :（冒号）！**
     
@@ -19,7 +20,7 @@ tags:
 
 ### GetDisplayedSize () {: aria-label='Functions' }
 #### [Vector](Vector.md) GetDisplayedSize ( ) {: .copyable aria-label='Functions' }
-Returns the current display size of the minimap. When not expanded this is always `Vector(47,47)`.
+返回小地图当前的显示尺寸。小地图未展开时，尺寸始终为 `Vector(47,47)`。
 ### GetHoldTime () {: aria-label='Functions' }
 #### int GetHoldTime ( ) {: .copyable aria-label='Functions' }
 

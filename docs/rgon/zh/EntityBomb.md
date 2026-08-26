@@ -31,12 +31,12 @@ Returns an array of hit entities using their [Index](https://wofsauge.github.io/
 ___
 ### GetRocketAngle () {: aria-label='Functions' }
 #### float GetRocketAngle ( ) {: .copyable aria-label='Functions' }
-火箭炸弹的目标角度。它会影响火箭炸弹的移动和精灵图的朝向。
+火箭炸弹的目标角度，会影响其移动方向和精灵图的朝向。
 
 ___
 ### GetRocketSpeed () {: aria-label='Functions' }
 #### float GetRocketSpeed ( ) {: .copyable aria-label='Functions' }
-火箭炸弹的目标速度。自然情况下，其速度每帧增加1。
+火箭炸弹的目标速度。在自然情况下，其速度每帧增加 1。
 
 ___
 ### GetScale () {: aria-label='Functions' }
@@ -50,7 +50,7 @@ ___
 ___
 ### IsPrismTouched () {: aria-label='Functions' }
 #### boolean IsPrismTouched ( ) {: .copyable aria-label='Functions' }
-返回该炸弹是否是通过天使棱镜效果创建的。
+返回该炸弹是否通过天使棱镜效果创建。
 
 ___
 ### SetFallAcceleration () {: aria-label='Functions' }
@@ -67,25 +67,26 @@ ___
 ___
 ### SetPrismTouched () {: aria-label='Functions' }
 #### void SetPrismTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-设置该炸弹是否是通过天使棱镜效果创建的。
+设置该炸弹是否通过天使棱镜效果创建。
 
 ___
 ### SetRocketAngle () {: aria-label='Functions' }
 #### void SetRocketAngle ( float Angle ) {: .copyable aria-label='Functions' }
-设置火箭炸弹的目标角度。它会影响火箭炸弹的移动和精灵图的朝向。
+设置火箭炸弹的目标角度，会影响其移动方向和精灵图的朝向。
 
 ___
 ### SetRocketSpeed () {: aria-label='Functions' }
 #### void SetRocketSpeed ( float Speed ) {: .copyable aria-label='Functions' }
-设置火箭炸弹的目标速度。请注意，其速度自然情况下每帧会增加1。
+设置火箭炸弹的目标速度。请注意，在自然情况下，其速度每帧会增加 1。
 
 ___
 ### SetScale () {: aria-label='Functions' }
 #### void SetScale ( float Scale ) {: .copyable aria-label='Functions' }
-应与 [SetLoadCostumes](#setloadcostumes) 方法一起使用。
+应与 [SetLoadCostumes](#setloadcostumes) 方法配合使用。
 
 ___
 ### UpdateDirtColor () {: aria-label='Functions' }
 #### void UpdateDirtColor ( ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -67,3 +67,4 @@ Of course! REPENTOGON is *not* finished, far from it. The only reason we're rele
 It's complicated. REPENTOGON is the result of nearly a year of reverse engineering. We've hit most of the low hanging fruit at this point. There's still stuff we'd like to fully investigate, like complete control over level generation, but this will take time.
 
 Many of the issues we have on the repository are pipe dream wishes more than anything. We'd love to tackle everything there but some of it is going to take a *lot* of effort, potentially entire reimplementations of existing game functionality. Feel free to show your support for some of these, though- the more people that are interested, the more we'll prioritize a specific issue.
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

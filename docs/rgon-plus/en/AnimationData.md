@@ -2,9 +2,11 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "AnimationData"
 
-Cached data for one animation from a loaded ANM2 file. Shared by all Sprites using the same ANM2 and cannot be modified.
+Cached data for one animation from a loaded ANM2 file. It is shared by all Sprites that use the same ANM2 and cannot be modified.
 
 Can be obtained via [Sprite:GetAnimationData()](Sprite.md#getanimationdata), [Sprite:GetCurrentAnimationData()](Sprite.md#getanimationdata) or [Sprite:GetOverlayAnimationData()](Sprite.md#getanimationdata).
 
@@ -12,12 +14,12 @@ Can be obtained via [Sprite:GetAnimationData()](Sprite.md#getanimationdata), [Sp
 
 ### GetAllLayers () {: aria-label='Functions' }
 #### [AnimationLayer](AnimationLayer.md)[] GetAllLayers ( ) {: .copyable aria-label='Functions' }
-Returns a table of AnimationLayers, in order from bottom to top (NOT ordered by layer ID).
+Returns a table of AnimationLayers ordered from bottom to top (not by layer ID).
 
 ___
 ### GetLayer () {: aria-label='Functions' }
 #### [AnimationLayer](AnimationLayer.md) GetLayer ( int LayerId ) {: .copyable aria-label='Functions' }
-Gets an AnimationLayer by that layer's ID number.
+Gets an AnimationLayer by its layer ID.
 
 ___
 ### GetLength () {: aria-label='Functions' }

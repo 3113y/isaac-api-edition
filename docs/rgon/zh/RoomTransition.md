@@ -6,7 +6,7 @@ tags:
 # Global Class "RoomTransition"
 
 ???+ info
-    You can get this class by using the `RoomTransition` global table.
+    你可以通过 `RoomTransition` 全局表获取此类。
 
     **注意：调用这些函数时，必须使用 .（句点）而非 :（冒号）！**
     

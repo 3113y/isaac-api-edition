@@ -119,3 +119,4 @@ Not fully documented yet, sorry! (A test script is provided below if you'd like 
     mod:AddCallback(ModCallbacks.MC_POST_NPC_RENDER, mod.CheckFlags)
     mod:AddCallback(ModCallbacks.MC_POST_EFFECT_RENDER, mod.CheckFlags)
     ```
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -5,7 +5,7 @@ tags:
 # Class "LootListEntry"
 
 ???+ info
-    你可以通过以下函数获取此类:
+    你可以通过以下函数获取此类的实例：
 
     - [LootList:GetEntries()](LootList.md#getentries)
 
@@ -35,6 +35,7 @@ May return `nil`.
 #### int GetSeed ( ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型润色；API 事实与签名仍保留上游来源。
 ### GetSubType () {: aria-label='Functions' }
 #### int GetSubType ( ) {: .copyable aria-label='Functions' }
 

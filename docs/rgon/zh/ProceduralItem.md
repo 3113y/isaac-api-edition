@@ -37,7 +37,7 @@ ___
 ___
 ### GetItem () {: aria-label='Functions' }
 #### [ItemConfigItem](ItemConfig_Item.md) GetItem ( ) {: .copyable aria-label='Functions' }
-Get the item config of the current glitched item.
+获取当前故障物品的物品配置。
 
 ### GetLuck () {: aria-label='Functions' }
 #### float GetLuck ( ) {: .copyable aria-label='Functions' }
@@ -57,4 +57,4 @@ ___
 ___
 ### GetTargetItem () {: aria-label='Functions' }
 #### [ItemConfigItem](ItemConfig_Item.md) GetTargetItem ( ) {: .copyable aria-label='Functions' }
-Returns the item config that was randomly selected by the current glitched item, or `nil` if it doesn't exist.
+返回当前故障物品随机选择的物品配置；如果不存在则返回 `nil`。

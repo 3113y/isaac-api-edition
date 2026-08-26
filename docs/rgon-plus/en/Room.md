@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "Room"
 ## Modified Functions
 
@@ -11,12 +13,12 @@ tags:
 ___
 ### GetLRoomAreaDesc () {: aria-label='Modified Functions' }
 #### [LRoomAreaDesc](LRoomAreaDesc.md) GetLRoomAreaDesc ( ) {: .copyable aria-label='Modified Functions' }
-Now returns a usable class. Describes the corners of an L-room shape (as divided horizontally into two rectangles), in worldspace.
+Now returns a usable class. It describes the corners of an L-room shape (divided horizontally into two rectangles) in world space.
 
 ___
 ### GetLRoomTileDesc () {: aria-label='Modified Functions' }
 #### [LRoomTileDesc](LRoomTileDesc.md) GetLRoomTileDesc ( ) {: .copyable aria-label='Modified Functions' }
-Now returns a usable class. Describes the corners of an L-room shape (as divided horizontally into two rectangles), in grid coordinates.
+Now returns a usable class. It describes the corners of an L-room shape (divided horizontally into two rectangles) in grid coordinates.
 
 ___
 ### SetRedHeartDamage () {: aria-label='Modified Functions' }
@@ -39,7 +41,7 @@ ___
 
 ### CanPickupGridEntity () {: aria-label='Functions' }
 #### boolean CanPickupGridEntity ( int GridIndex ) {: .copyable aria-label='Functions' }
-Returns true if the gridentity at the given position can be picked up.
+Returns `true` if the grid entity at the given position can be picked up.
 
 ___
 ### CanSpawnObstacleAtPosition () {: aria-label='Functions' }
@@ -72,7 +74,7 @@ Returns a [Camera](Camera.md) object.
 ___
 ### GetChampionBossChance () {: aria-label='Functions' }
 #### float GetChampionBossChance ( ) {: .copyable aria-label='Functions' }
-Return the probability that boss spawns in this room will be champions.
+Returns the probability that bosses spawned in this room will be champions.
 
 ___
 ### GetEffects () {: aria-label='Functions' }
@@ -132,7 +134,7 @@ ___
 ___
 ### GetRainIntensity () {: aria-label='Functions' }
 #### float GetRainIntensity ( ) {: .copyable aria-label='Functions' }
-Used by the positional rain effect spawners in Downpour. No noticable effect beyond `1.0`.
+Used by the positional rain-effect spawners in Downpour. There is no noticeable effect above `1.0`.
 
 ___
 ### GetRoomClearDelay () {: aria-label='Functions' }
@@ -163,7 +165,7 @@ ___
 ___
 ### IsChampionBossSeed () {: aria-label='Functions' }
 #### boolean IsChampionBossSeed ( ) {: .copyable aria-label='Functions' }
-Return whether boss spawns in this room will be champions.
+Returns whether bosses spawned in this room will be champions.
 
 ___
 ### IsPersistentRoomEntity () {: aria-label='Functions' }
@@ -182,14 +184,14 @@ ___
 ___
 ### SaveState () {: aria-label='Functions' }
 #### void SaveState ( ) {: .copyable aria-label='Functions' }
-Saves the current state of the room
+Saves the current state of the room.
 
 ___
 ### SetBackdropType () {: aria-label='Functions' }
 #### void SetBackdropType ( [BackdropType](https://wofsauge.github.io/IsaacDocs/rep/enums/BackdropType.html), int Unknown ) {: .copyable aria-label='Functions' }
 This function will not work if the Unknown integer is passed as `0`.
 
-The backdrop variant chosen is seeded based on the room, and does not persist when leaving and re-entering. Calling this function again on re-entry will result in the same backdrop variant as before.
+The chosen backdrop variant is seeded by the room and does not persist when leaving and re-entering. Calling this function again on re-entry produces the same backdrop variant as before.
 
 ___
 ### SetGreedWaveTimer () {: aria-label='Functions' }
@@ -223,7 +225,7 @@ ___
 ___
 ### SetRainIntensity () {: aria-label='Functions' }
 #### void SetRainIntensity ( float Intensity ) {: .copyable aria-label='Functions' }
-Used by the positional rain effect spawners in Downpour. No noticable effect beyond `1.0`.
+Used by the positional rain-effect spawners in Downpour. There is no noticeable effect above `1.0`.
 
 ___
 ### SetRoomClearDelay () {: aria-label='Functions' }

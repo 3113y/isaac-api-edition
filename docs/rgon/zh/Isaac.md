@@ -204,7 +204,7 @@ ___
 
 ### GetButtonsSprite () {: aria-label='Modified Functions' }
 #### [Sprite](Sprite.md) GetButtonsSprite ( ) {: .copyable aria-label='Functions' }
-Controllers buttons sprite
+返回控制器按钮精灵。
 
 ___
 ### GetClipboard () {: aria-label='Functions' }
@@ -225,7 +225,7 @@ ___
 
 #### int GetCompletionMark ( [PlayerType](https://wofsauge.github.io/IsaacDocs/rep/enums/PlayerType.html) Character, [CompletionType](enums/CompletionType.md) Mark) {: .copyable aria-label='Functions' }
 
-获取特定角色的完成标记值，值范围从 `0` 到 `2`（0 = 未完成，1 = 普通，2 = 困难.
+获取特定角色的完成标记值，值范围从 `0` 到 `2`（0 = 未完成，1 = 普通，2 = 困难）。
 
 ___
 
@@ -249,7 +249,7 @@ ___
     - MegaSatan: [Difficulty](https://wofsauge.github.io/IsaacDocs/rep/enums/Difficulty.html) 值为 0 - 2，表示完成情况
     - UltraGreed: [Difficulty](https://wofsauge.github.io/IsaacDocs/rep/enums/Difficulty.html) 值为 0 - 2，表示完成情况
     - Hush: [Difficulty](https://wofsauge.github.io/IsaacDocs/rep/enums/Difficulty.html) 值为 0 - 2，表示完成情况
-    - UltraGreedier: 困难贪婪模式,值2 ，大多冗余，无需设置
+    - UltraGreedier：困难贪婪模式，值为 2；大多情况下与 UltraGreed 重复，无需设置
     - Delirium: [Difficulty](https://wofsauge.github.io/IsaacDocs/rep/enums/Difficulty.html) 值为 0 - 2，表示完成情况
     - Mother: [Difficulty](https://wofsauge.github.io/IsaacDocs/rep/enums/Difficulty.html) 值为 0 - 2，表示完成情况
     - Beast: [Difficulty](https://wofsauge.github.io/IsaacDocs/rep/enums/Difficulty.html) 值为 0 - 2，表示完成情况
@@ -594,3 +594,4 @@ ___
 将输入的世界位置转换为固定的主菜单位置，该位置根据所选的枚举而变化。重要的是要像 WorldToRender 一样，每一帧都重新转换此位置，以便在菜单更改或窗口大小调整时正确渲染。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

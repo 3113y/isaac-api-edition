@@ -35,3 +35,4 @@ tags:
 |100 |MINESHAFT_UP_TO_RIGHT_2 {: .copyable } |  |
 |85 |MINESHAFT_UP_TO_LEFT_1 {: .copyable } |  |
 |101 |MINESHAFT_UP_TO_LEFT_2 {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

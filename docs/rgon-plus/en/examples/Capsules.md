@@ -1,6 +1,8 @@
 # Capsules Example
 [Capsules](../Capsule.md) are used by the game for collision detection. All entities have a collision capsule whose shape is defined by their XML markup. Additionally, you can use a null layer frame's size and position in a sprite's animation to generate a null capsule.
 
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 Null layers are added in the sprite's .anm2 file by setting the type to "Null" when adding a layer. The size and relative position of the null layer is dependant on the position and scale of the frame.
 
 You can use [Entity:GetNullCapsule()](../Entity.md#getnullcapsule) to generate a capsule of the current frame in a specified null layer.

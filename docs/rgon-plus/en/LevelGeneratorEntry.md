@@ -4,7 +4,7 @@ tags:
 ---
 # Class "LevelGeneratorEntry"
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain this class with the following function:
 
     * [Isaac.LevelGeneratorEntry()](Isaac.md#levelgeneratorentry)
 
@@ -16,7 +16,7 @@ tags:
 ## Functions
 ### SetAllowedDoors () {: aria-label='Functions' }
 #### void SetAllowedDoors ( [LevelGeneratorEntry](LevelGeneratorEntry.md) Room, int Doors ) {: .copyable aria-label='Functions' }
-I *believe* Doors here is a bitmask (1 << DoorSlot)
+I *believe* `Doors` here is a bitmask (`1 << DoorSlot`).
 ___
 ### SetColIdx () {: aria-label='Functions' }
 #### void SetColIdx ( [LevelGeneratorEntry](LevelGeneratorEntry.md) Room, int ColIdx ) {: .copyable aria-label='Functions' }

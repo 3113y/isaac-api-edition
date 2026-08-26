@@ -8,7 +8,7 @@ tags:
 ___
 ### PreviousState {: aria-label='Modified Variables' }
 #### int PreviousState  {: .copyable aria-label='Modified Variables' }
-Same as default, but now returns a proper integer value instead of userdata.
+Same as the default behavior, but now returns a proper integer value instead of userdata.
 
 ???+ note "notes"
     This is only updated when initializing a door subclass or playing an animation!
@@ -16,7 +16,7 @@ Same as default, but now returns a proper integer value instead of userdata.
 ___
 ### PreviousVariant {: aria-label='Modified Variables' }
 #### int PreviousVariant  {: .copyable aria-label='Modified Variables' }
-Same as default, but now returns a proper integer value instead of userdata.
+Same as the default behavior, but now returns a proper integer value instead of userdata.
 
 
 ???+ note "notes"
@@ -28,7 +28,7 @@ ___
 
 ### GetExtraSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetExtraSprite ( ) {: .copyable aria-label='Functions' }
-Same as the vanilla variable `ExtraSprite`, but as a getter function.
+Provides the same value as the vanilla variable `ExtraSprite`, but through a getter function.
 
 ___
 ### PlayAnimation () {: aria-label='Functions' }

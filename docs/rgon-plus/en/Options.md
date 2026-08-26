@@ -2,12 +2,14 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "Options"
 
 ## Modified Variables
 ### SFXVolume {: aria-label='Modified Variables' }
 #### float SFXVolume {: .copyable aria-label='Modified Variables' }
-Can now be properly set. Will clamp new values to the first decimal so that changing volume with the options menu doesn't cause invalid values.
+Can now be set correctly. New values are clamped to one decimal place so that adjusting the volume in the options menu does not produce invalid values.
 ___
 ## Variables
 ### AimLockEnabled {: aria-label='Variables'}
@@ -20,7 +22,7 @@ ___
 ___
 ### BetterVoidGeneration {: aria-label='Variables' }
 #### boolean BetterVoidGeneration {: .copyable aria-label='Variables' }
-If set, The Void will draw from all unlocked floors, including alt path ones.
+If enabled, The Void draws from all unlocked floors, including floors on alternate paths.
 
 ___
 ### BossHPOnBottom {: aria-label='Variables'}
@@ -41,12 +43,12 @@ ___
 ___
 ### HushPanicStateFix {: aria-label='Variables' }
 #### boolean HushPanicStateFix {: .copyable aria-label='Variables' }
-Fixes the vanilla bug that causes Hush to have no attack cooldown below 50% health.
+Fixes a vanilla bug that causes Hush to have no attack cooldown below 50% health.
 
 ___
 ### KeyMasterDealChance {: aria-label='Variables' }
 #### boolean KeyMasterDealChance {: .copyable aria-label='Variables' }
-If set, Key Master bums will also raise the chance for a deal when killed.
+If enabled, killing Key Master bums also increases the chance of a deal.
 
 ___
 ### OnlineChatEnabled {: aria-label='Variables'}
@@ -95,9 +97,9 @@ ___
 ___
 ### StatHUDPlanetarium {: aria-label='Variables' }
 #### boolean StatHUDPlanetarium {: .copyable aria-label='Variables' }
-If set, natively shows Planetarium chance on the HUD. 
+If enabled, natively displays the Planetarium chance on the HUD.
 
-Note that this option has no effect if Planetariums are not unlocked, so just checking this value isn't good enough if the intent is to see if the Planetarium HUD is rendering.
+Note that this option has no effect if Planetariums are not unlocked. Therefore, checking this value alone is insufficient to determine whether the Planetarium HUD is being rendered.
 
 ___
 ### StreamerMode {: aria-label='Variables'}

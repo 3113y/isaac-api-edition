@@ -43,7 +43,7 @@ ___
 ___
 ### ClearHitList () {: aria-label='Functions' }
 #### void ClearHitList ( ) {: .copyable aria-label='Functions' }
-Clears the tear's hit list, allowing it to hit previously hit enemies again.
+清除泪弹的命中列表，使其能够再次命中之前命中过的敌人。
 
 ___
 ### ComputeStatusEffectDuration () {: aria-label='Functions' }
@@ -113,7 +113,7 @@ ___
 ___
 ### GetDamageCountdown () {: aria-label='Functions' }
 #### int GetDamageCountdown ( ) {: .copyable aria-label='Functions' }
-请注意，这与玩家的 无敌帧数（`EntityPlayer:GetDamageCooldown()`） 不同。`DAMAGE_COUNTDOWN` [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) 以及此关联的倒计时通常用于控制敌人从少数使用该标志的来源（如“彩虹独角兽”、“钉子”和“游戏掌机”的碰撞伤害效果）受到伤害的速度。
+请注意，这与玩家的无敌帧数（`EntityPlayer:GetDamageCooldown()`）不同。`DAMAGE_COUNTDOWN` [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) 及其关联的倒计时通常用于控制敌人受到少数使用该标志的来源（如“彩虹独角兽”、“钉子”和“游戏掌机”的碰撞伤害效果）伤害的频率。
 
 如果实体最近受到了带有 `DAMAGE_COUNTDOWN` [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) 的伤害，则返回在它再次受到带有 `DAMAGE_COUNTDOWN` [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) 的伤害之前还需要经过多少帧。
 
@@ -140,7 +140,7 @@ ___
 ___
 ### GetHitListIndex () {: aria-label='Functions' }
 #### int GetHitListIndex ( ) {: .copyable aria-label='Functions' }
-Returns an array of hit entities using their [Index](https://wofsauge.github.io/IsaacDocs/rep/Entity.html#index) field.
+返回一个使用命中实体 [Index](https://wofsauge.github.io/IsaacDocs/rep/Entity.html#index) 字段的数组。
 
 ___
 ### GetIceCountdown () {: aria-label='Functions' }
@@ -178,7 +178,7 @@ ___
 ___
 ### GetNullOffset () {: aria-label='Functions' }
 #### [Vector](Vector.md) GetNullOffset ( string NullLayerName ) {: .copyable aria-label='Functions' }
-返回空图层标记的位置。或者，如果图层不可见、当前动画没有可用帧或由于其他未知原因，则返回 `Vector.Zero`。
+返回空图层标记的位置。如果图层不可见、当前动画没有可用帧，或因其他未知原因无法获取位置，则返回 `Vector.Zero`。
 
 ### GetPauseTime () {: aria-label='Functions' }
 #### int GetPauseTime ( ) {: .copyable aria-label='Functions' }
@@ -194,7 +194,7 @@ ___
 ___
 ### GetPosVel () {: aria-label='Functions' }
 #### [PosVel](https://wofsauge.github.io/IsaacDocs/rep/PlayerTypes_PosVel.html) GetPosVel ( ) {: .copyable aria-label='Functions' }
-返回 2 个值，均为向量。第一个是实体的位置，第二个是实体的速度。
+返回 2 个值，均为向量：第一个是实体的位置，第二个是实体的速度。
 
 ### GetPredictedTargetPosition () {: aria-label='Functions' }
 #### [Vector](Vector.md) GetPredictedTargetPosition ( [Entity](Entity.md) Target, float Delay ) {: .copyable aria-label='Functions' }
@@ -297,9 +297,9 @@ ___
 ___
 ### SetDamageCountdown () {: aria-label='Functions' }
 #### void SetDamageCountdown ( int countdown ) {: .copyable aria-label='Functions' }
-请注意，这与玩家的无敌帧数（`EntityPlayer:GetDamageCooldown()`）不同。`DAMAGE_COUNTDOWN` [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) 以及此关联的倒计时通常用于控制敌人从少数使用该标志的来源（如“彩虹独角兽”、“钉子”和“游戏掌机”的碰撞伤害效果）受到伤害的速度。
+请注意，这与玩家的无敌帧数（`EntityPlayer:GetDamageCooldown()`）不同。`DAMAGE_COUNTDOWN` [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) 及其关联的倒计时通常用于控制敌人受到少数带有该标志的伤害来源（如“彩虹独角兽”、“钉子”和“游戏掌机”的碰撞伤害效果）攻击的频率。
 
-设置实体在受到带有 `DAMAGE_COUNTDOWN` [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) 的伤害之前必须经过的帧数。
+设置实体再次受到带有 `DAMAGE_COUNTDOWN` [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) 的伤害前必须经过的帧数。
 
 ___
 ### SetDead () {: aria-label='Functions' }
@@ -375,11 +375,11 @@ ___
 ___
 ### SetWaterClipFlags () {: aria-label='Functions' }
 #### void SetWaterClipFlags ( [WaterClipFlag](enums/WaterClipFlag.md) Flags ) {: .copyable aria-label='Functions' }
-Allows modification of how this entity interacts with water, primarily rendering related behaviour such as reflections.
+允许修改实体与水的交互方式，主要影响反射等渲染相关行为。
 
-Note that this will also override/disable any natural vanilla changes to these flags, such as the player losing their reflection with Charm of the Vampire.
+请注意，这也会覆盖或禁用游戏原版对这些标志的自然修改，例如玩家因装备吸血鬼之魅而失去倒影。
 
-Vanilla state can be restored with `ResetWaterClipFlags()`.
+可以使用 `ResetWaterClipFlags()` 恢复原版状态。
 
 ___
 ### SetWeaknessCountdown () {: aria-label='Functions' }
@@ -392,7 +392,7 @@ ___
 ___
 ### SpawnWaterImpactEffects () {: aria-label='Functions' }
 #### void SpawnWaterImpactEffects ( [Vector](Vector.md) Position, [Vector](Vector.md) Velocity = Vector.Zero, float Strength ) {: .copyable aria-label='Functions' }
-???+ warning "Warning"
+???+ warning "警告"
 
     仅当房间的 [水量](Room.md#getwateramount) 大于或等于 `0.2` 时，此函数才会生成效果。
 
@@ -424,3 +424,4 @@ ___
 #### boolean TryThrow ( [EntityRef](https://wofsauge.github.io/IsaacDocs/rep/EntityRef.html) Source, [Vector](Vector.md) ThrowDirection, float Force ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "Beam"
 
 An example mod using the Beam class can be found [here.](../examples/Beams.md)

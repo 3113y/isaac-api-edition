@@ -7,7 +7,7 @@ tags:
 ## Modified Functions
 ### ToTNT () {: aria-label='Modified Functions' }
 #### [GridEntityTNT](https://wofsauge.github.io/IsaacDocs/rep/GridEntityTNT.html) ToTNT ( ) {: .copyable aria-label='Modified Functions' }
-Altered function to improve GridEntity Update callback behavior.
+Modifies the function to improve GridEntity Update callback behavior.
 ___
 
 ## Functions

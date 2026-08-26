@@ -3,10 +3,12 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "Debug"
 
 ???+ info
-    You can get this class by using the `Debug` global table.
+    Access this class through the `Debug` global table.
 
     **Note that to call these functions, you must use a `.` (period) instead of a `:` (colon)!**
     
@@ -27,5 +29,5 @@ ___
 ___
 ### ListLoadedFiles () {: aria-label='Functions' }
 #### string[] ListLoadedFiles ( ) {: .copyable aria-label='Functions' }
-Returns a list of all files loaded into the LUA environment.
+Returns a list of all files loaded in the Lua environment.
 ___

@@ -8,27 +8,27 @@ tags:
 
 ### GetLastDevilRoomStage () {: aria-label='Modified Functions' }
 #### [LevelStage](https://wofsauge.github.io/IsaacDocs/rep/enums/LevelStage.html) GetLastDevilRoomStage ( ) {: .copyable aria-label='Modified Functions' }
-现在返回整数，而非无法使用的用户数据。
+现在返回整数，而非无法使用的 userdata。
 
 ___
 ### GetLastLevelWithDamage () {: aria-label='Modified Functions' }
 #### [LevelStage](https://wofsauge.github.io/IsaacDocs/rep/enums/LevelStage.html) GetLastLevelWithDamage ( ) {: .copyable aria-label='Modified Functions' }
-现在返回整数，而非无法使用的用户数据。
+现在返回整数，而非无法使用的 userdata。
 
 ___
 ### GetLastLevelWithoutHalfHp () {: aria-label='Modified Functions' }
 #### [LevelStage](https://wofsauge.github.io/IsaacDocs/rep/enums/LevelStage.html) GetLastLevelWithoutHalfHp ( ) {: .copyable aria-label='Modified Functions' }
-现在返回整数，而非无法使用的用户数据。
+现在返回整数，而非无法使用的 userdata。
 
 ___
 ### GetPlayer ()  {: aria-label='Modified Functions' }
 #### [EntityPlayer](EntityPlayer.md) GetPlayer ( int Index ) {: .copyable aria-label='Modified Functions' }
-如果不存在玩家，现在将返回 `nil` 以防止崩溃。无效的索引将返回索引 `0`。
+如果不存在玩家，现在会返回 `nil` 以避免崩溃。无效索引将返回索引 `0` 的玩家。
 
 ___
 ### Move·To·Random·Room () {: aria-label='Modified Functions' }
 #### void MoveToRandomRoom ( boolean IAmErrorRoom, int Seed, [EntityPlayer](EntityPlayer.md) Player ) {: .copyable aria-label='Modified Functions' }
-现在，当给定的种子等于 `0` 时，游戏将不再崩溃.
+现在，当给定的种子等于 `0` 时，游戏不会再崩溃。
 ___
 ### StartStageTransition ()  {: aria-label='Modified Functions' }
 #### void StartStageTransition ( boolean SameStage, int TransitionOverride, [EntityPlayer](EntityPlayer.md) Player = nil ) {: .copyable aria-label='Modified Functions' }
@@ -38,7 +38,7 @@ ___
 ___
 ### AchievementUnlocksDisallowed () {: aria-label='Functions' }
 #### boolean AchievementUnlocksDisallowed ( ) {: .copyable aria-label='Functions' }
-如果本次游戏流程中无法解锁成就（如挑战模式、有种子的游戏等），则返回 `true`。
+如果本次游戏流程无法解锁成就（例如挑战模式或使用种子的游戏），则返回 `true`。
 
 ___
 ### AddDebugFlags () {: aria-label='Functions' }
@@ -57,12 +57,12 @@ ___
 ___
 ### ClearErasedEnemies () {: aria-label='Functions' }
 #### void ClearErasedEnemies ( ) {: .copyable aria-label='Functions' }
-清除所有被标记为已清除的敌人，使它们能够再次生成。
+清除所有标记为已清除的敌人，使它们能够再次生成。
 
 ___
 ### DevolveEnemy () {: aria-label='Functions' }
 #### void DevolveEnemy ( [Entity](Entity.md) ) {: .copyable aria-label='Functions' }
-使敌人退化，就好像使用了道具 D10 一样。
+使敌人退化，就像对其使用了道具 D10 一样。
 
 ___
 ### GetChallengeParams () {: aria-label='Functions' }
@@ -71,7 +71,7 @@ ___
 ___
 ### GetCurrentColorModifier () {: aria-label='Functions' }
 #### [ColorModifier](ColorModifier.md) GetCurrentColorModifier ( ) {: .copyable aria-label='Functions' }
-获取《忏悔》中引入的颜色校正的副本。这存储的是当前正在使用的原始值（可能会受到诸如“星体投射”等道具的影响），而不是房间设置使用的值（有关此内容，请参阅 [FXParams.ColorModifier](FXParams.md#colormodifier)）。
+获取《忏悔》中引入的颜色校正副本。此对象存储当前使用的原始值（可能会受到“星体投射”等道具影响），而不是房间设置使用的值（详见 [FXParams.ColorModifier](FXParams.md#colormodifier)）。
 
 ___
 ### GetDebugFlags () {: aria-label='Functions' }
@@ -81,7 +81,7 @@ ___
 ___
 ### GetDizzyAmount () {: aria-label='Functions' }
 #### float GetDizzyAmount ( ) {: .copyable aria-label='Functions' }
-返回当前类似于“波浪帽”的眩晕程度。
+返回当前类似于“Wavy Cap”的眩晕程度。
 
 ___
 ### GetGenericPrompt () {: aria-label='Functions' }
@@ -94,7 +94,7 @@ ___
 ___
 ### GetLerpColorModifier () {: aria-label='Functions' }
 #### [ColorModifier](ColorModifier.md) GetLerpColorModifier ( ) {: .copyable aria-label='Functions' }
-返回插值颜色校正器。其格式为绝对变化率（即，所有值都是正数）。
+返回插值颜色校正器。其格式为绝对变化率（即所有值均为正数）。
 
 ### GetPauseMenuState () {: aria-label='Functions' }
 #### [PauseMenuStates](enums/PauseMenuStates.md) GetPauseMenuState ( ) {: .copyable aria-label='Functions' }
@@ -132,7 +132,7 @@ ___
 ___
 ### IsHardMode () {: aria-label='Functions' }
 #### boolean IsHardMode ( ) {: .copyable aria-label='Functions' }
-如果当前模式是困难模式或贪婪ier模式，则返回 `true`。
+如果当前模式是困难模式或更贪婪模式，则返回 `true`。
 
 ___
 ### IsPauseMenuOpen () {: aria-label='Functions' }
@@ -147,12 +147,12 @@ ___
 ___
 ### IsStartingFromState () {: aria-label='Functions' }
 #### boolean IsStartingFromState ( ) {: .copyable aria-label='Functions' }
-Returns a boolean whether the game starts from a continued state or not. Always returns false after MC_POST_GAME_STARTED execution.
+返回一个布尔值，表示游戏是否从继续状态开始。在执行 MC_POST_GAME_STARTED 后始终返回 false。
 
 ___
 ### RecordPlayerCompletion () {: aria-label='Functions' }
 #### void RecordPlayerCompletion ( [CompletionType](enums/CompletionType.md) Type ) {: .copyable aria-label='Functions' }
-为所有玩家设置与该类型相关的标记并解锁成就。游戏使用此函数来授予标记以及受污染的完成纸组。
+为所有玩家设置与该类型相关的标记并解锁成就。游戏使用此函数授予标记以及堕化角色的完成纸组。
 
 ___
 ### SetBloom () {: aria-label='Functions' }
@@ -165,7 +165,7 @@ ___
 ___
 ### SetDizzyAmount () {: aria-label='Functions' }
 #### void SetDizzyAmount ( float TargetIntensity , float CurrentIntensity ) {: .copyable aria-label='Functions' }
-设置类似于“波浪帽”的眩晕程度。
+设置类似于“Wavy Cap”的眩晕程度。
 
 效果的当前强度将逐渐向“目标强度”移动。
 
@@ -192,3 +192,4 @@ ___
 #### [Entity](Entity.md) SpawnBombCrater ( [Vector](Vector.md) Position, float Radius = 1.0 ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -1,6 +1,8 @@
 ---
 date: 2023-12-31
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Welcome to the new era of Isaac modding!
 
 After nearly a year of hard work, we are proud to finally release REPENTOGON into the world! As our gift to the modding community as we head into the Year of the Dragon, we have rekindled the smoldering embers of the Isaac API into a flame that has never burned brighter.

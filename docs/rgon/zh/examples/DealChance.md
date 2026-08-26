@@ -69,3 +69,4 @@ The following example mod adds an item that will randomize the deal chance on MC
 
     mod:AddCallback(ModCallbacks.MC_PRE_DEVIL_APPLY_SPECIAL_ITEMS, mod.RandomizeDevilChance)
     ```
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -30,3 +30,4 @@ tags:
 |37 |DWMWA_VISIBLE_FRAME_BORDER_THICKNESS {: .copyable } |  |
 |38 |DWMWA_SYSTEMBACKDROP_TYPE {: .copyable } |  |
 |39 |DWMWA_LAST {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

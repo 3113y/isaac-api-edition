@@ -5,7 +5,7 @@ tags:
 # Class "Color"
 
 ???+ info
-    可以通过其构造函数访问此类:
+    可以通过构造函数访问此类：
 
     ???+ example "Example Code"
         ```lua
@@ -16,23 +16,23 @@ tags:
 
 ### Color () {: aria-label='Modified Constructors' }
 #### [Color](Color.md) Color ( float R = 1, float G = 1, float B = 1, float A = 1, float RO = 0, float GO = 0, float BO = 0, float RC = 0, float GC = 0, float BC = 0, float AC = 0 ) {: .copyable aria-label='Modified Constructors' }
-所有参数现在都是可选的。现在可以通过构造函数设置 `Colorize`。
+所有参数现在均为可选参数，也可以通过构造函数设置 `Colorize`。
 
 ___
 ### GetColorize () {: aria-label='Functions' }
 #### table GetColorize ( ) {: .copyable aria-label='Functions' }
-返回一个表格，对应颜色当前的 Colorize 值：`{R, G, B, A}`
+返回一个表格，其中包含颜色当前的 Colorize 值：`{R, G, B, A}`
 
 ___
 ### GetOffset () {: aria-label='Functions' }
 #### table GetOffset ( ) {: .copyable aria-label='Functions' }
-返回一个表格，对应颜色当前的 Offset 值：`{R, G, B}`
-虽然 [Color](https://wofsauge.github.io/IsaacDocs/rep/Color.html) 类已经包含了用于此目的的 [.RO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#ro)、[.GO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#go) 和 [.BO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#bo) 变量，但在需要访问所有三个值的情况下，GetOffset() 的速度被测量为快约 30%，因此在这种情况下建议使用它。当访问两个变量时，性能几乎相同；当访问一个变量时，性能更差。在只需要一个或两个偏移值的情况下，请继续使用变量。
+返回一个表格，其中包含颜色当前的 Offset 值：`{R, G, B}`
+虽然 [Color](https://wofsauge.github.io/IsaacDocs/rep/Color.html) 类已提供用于此目的的 [.RO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#ro)、[.GO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#go) 和 [.BO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#bo) 变量，但在需要访问全部三个值时，实测 GetOffset() 的速度快约 30%，因此建议在这种情况下使用它。访问两个变量时，性能几乎相同；访问一个变量时，性能反而更差。只需一个或两个偏移值时，请继续使用这些变量。
 
 ___
 ### GetTint () {: aria-label='Functions' }
 #### table GetTint ( ) {: .copyable aria-label='Functions' }
-返回一个表格，对应颜色当前的 Tint 值：`{R, G, B, A}`
+返回一个表格，其中包含颜色当前的 Tint 值：`{R, G, B, A}`
 
 ___
 ### Print () {: aria-label='Functions' }
@@ -42,18 +42,17 @@ ___
 ___
 ### __tostring () {: aria-label='Functions' }
 #### string __tostring ( ) {: .copyable aria-label='Operators' }
-这允许通过 `print(myColorObj)` 直接打印对象。
-创建颜色对象的字符串表示形式。
+创建颜色对象的字符串表示形式，因此可以直接使用 `print(myColorObj)` 打印对象。
 
 ___
 ## Constants
 
 ### 译者注
-下方函数均为修改实体/激光/泪弹为对应某道具的颜色
+下方常量用于将实体、激光或泪弹修改为相应道具的颜色。
 
-例如`Color.LaserAlmond`为将`激光`设为拥有道具`杏仁奶`时的颜色。
+例如，`Color.LaserAlmond` 是拥有道具“杏仁奶”时激光所使用的颜色。
 
-因此，如有需要，请前往[以撒Wiki](https://isaac.huijiwiki.com/wiki/)查找想要颜色的道具英文名称后来本界面搜索
+如需查找其他颜色，请先前往[以撒 Wiki](https://isaac.huijiwiki.com/wiki/) 查询道具的英文名称，再在本页面搜索。
 
 ___
 ### Color.EmberFade {: aria-label='Constants' }
@@ -565,3 +564,4 @@ Used for tar tears fired by familiars like Little Gish.
     Offset of (-0.588235, -0.588235, -0.588235)
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留上游来源。

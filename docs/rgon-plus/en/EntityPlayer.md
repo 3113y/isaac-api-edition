@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityPlayer"
 
 This class contains both new functions and modified reimplementations of existing ones.
@@ -17,17 +19,17 @@ Now accepts an optional `bool` to determine if [EntityPlayer](EntityPlayer.md):E
 ___
 ### AddCollectibleEffect () {: aria-label='Modified Functions' }
 #### void AddCollectibleEffect ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) CollectibleType, bool ApplyCostume = false, int Cooldown = VanillaCooldown, bool Additive = true ) {: .copyable aria-label='Modified Functions' }
-Shortcut of TemporaryEffects:AddCollectibleEffect with extra arguments to handle cooldown. The additive parameter determines if the cooldown should be added to the preexistent cooldown value or if it should be set for that value. You can use negative cooldown values with additive to reduce preexistent cooldown.
+Shortcut of TemporaryEffects:AddCollectibleEffect with extra arguments to handle cooldown. The additive parameter determines whether the cooldown should be added to the pre-existing cooldown value or set as that value. You can use negative cooldown values with additive to reduce the pre-existing cooldown.
 
 ___
 ### AddNullItemEffect () {: aria-label='Modified Functions' }
 #### void AddNullItemEffect ( [NullItemID](https://wofsauge.github.io/IsaacDocs/rep/enums/NullItemID.html) NullItemID, bool ApplyCostume = false, int Cooldown = VanillaCooldown, bool Additive = true ) {: .copyable aria-label='Modified Functions' }
-Shortcut of TemporaryEffects:AddNullItemEffect with extra arguments to handle cooldown. The additive parameter determines if the cooldown should be added to the preexistent cooldown value or if it should be set for that value. You can use negative cooldown values with additive to reduce preexistent cooldown.
+Shortcut of TemporaryEffects:AddNullItemEffect with extra arguments to handle cooldown. The additive parameter determines whether the cooldown should be added to the pre-existing cooldown value or set as that value. You can use negative cooldown values with additive to reduce the pre-existing cooldown.
 
 ___
 ### AddTrinketEffect () {: aria-label='Modified Functions' }
 #### void AddTrinketEffect ( [TrinketType](https://wofsauge.github.io/IsaacDocs/rep/enums/TrinketType.html) TrinketType, bool ApplyCostume = false, int Cooldown = VanillaCooldown, bool Additive = true ) {: .copyable aria-label='Modified Functions' }
-Shortcut of TemporaryEffects:AddTrinketEffect with extra arguments to handle cooldown. The additive parameter determines if the cooldown should be added to the preexistent cooldown value or if it should be set for that value. You can use negative cooldown values with additive to reduce preexistent cooldown.
+Shortcut of TemporaryEffects:AddTrinketEffect with extra arguments to handle cooldown. The additive parameter determines whether the cooldown should be added to the pre-existing cooldown value or set as that value. You can use negative cooldown values with additive to reduce the pre-existing cooldown.
 
 ___
 ### ClearDeadEyeCharge () {: aria-label='Modified Functions' }
@@ -37,7 +39,7 @@ Now accepts a `Force` argument to forcefully reset the charge instead of only ro
 ___
 ### GetCollectibleNum () {: aria-label='Modified Functions' }
 #### int GetCollectibleNum ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) Collectible, boolean OnlyCountTrueItems = false, bool IgnoreSpoof = false ) {: .copyable aria-label='Modified Functions' }
-Now accepts a `IgnoreSpoof` argument that ignores innate items.
+Now accepts an `IgnoreSpoof` argument that ignores innate items.
 
 ___
 ### GetMultiShotParams () {: aria-label='Modified Functions' }
@@ -47,7 +49,7 @@ Now returns a proper `MultiShotParams` object.
 ___
 ### GetMultiShotPositionVelocity () {: aria-label='Modified Functions' }
 #### [PosVel](https://wofsauge.github.io/IsaacDocs/rep/PlayerTypes_PosVel.html) GetMultiShotPositionVelocity ( int LoopIndex, [WeaponType](https://wofsauge.github.io/IsaacDocs/rep/enums/WeaponType.html) WeaponType, [Vector](Vector.md) ShotDirection, float ShotSpeed, [MultiShotParams](MultiShotParams.md) Params ) {: .copyable aria-label='Modified Functions' }
-This magically vanished from the API some time after 1.7.8.
+This disappeared from the API sometime after 1.7.8.
 
 Compared to the vanilla function, this implementation has been further augmented to throw an error if LoopIndex is higher than [MultiShotParams:GetNumTears()](MultiShotParams.md#getnumtears).
 
@@ -215,7 +217,7 @@ Returns `true` if the active slot is empty, or contains only Book of Virtues or 
 ___
 ### CanUsePill () {: aria-label='Functions' }
 #### boolean CanUsePill ( [PillEffect](https://wofsauge.github.io/IsaacDocs/rep/enums/PillEffect.html) ID ) {: .copyable aria-label='Functions' }
-By some conditions, usually health-related, determines whether a player can use a given pill effect.
+Determines whether a player can use a given pill effect based on certain conditions, usually health-related.
 
 ___
 ### CheckFamiliarEx () {: aria-label='Functions' }
@@ -313,7 +315,7 @@ Returns the current charge for when the player stops shooting and charges the Ki
 ___
 ### GetBlinkLockTime () {: aria-label='Functions' }
 #### int GetBlinkLockTime ( ) {: .copyable aria-label='Functions' }
-How long player's head will play fired frame sprite?
+How long the player's head will play the fired-frame sprite.
 
 ___
 ### GetBloodGushSprite () {: aria-label='Functions' }
@@ -450,7 +452,7 @@ ___
 #### int GetDamageModifier ( ) {: .copyable aria-label='Functions' }
 Used for Experimental Treatment and for stat boosts from Void.
 
-Modifier is applied to the player as flat damage.
+The modifier is applied to the player's damage stat as flat damage.
 
 Experimental Treatment adds `-1`, `0` or `1` depending on the damage rolled. Void may randomly add `1`.
 
@@ -894,7 +896,7 @@ ___
 ___
 ### GetTearDisplacement () {: aria-label='Functions' }
 #### int GetTearDisplacement ( ) {: .copyable aria-label='Functions' }
-Returns the player's TearDisplacement value, used to check what eye the player is shooting from.
+Returns the player's TearDisplacement value, used to determine which eye the player is shooting from.
 
 ???+ info "Return info"
     - `1` Right eye
@@ -1469,7 +1471,7 @@ ___
 ___
 ### SetPurityState () {: aria-label='Functions' }
 #### void SetPurityState ( [PurityState](enums/PurityState.md) State ) {: .copyable aria-label='Functions' }
-Set the state in which the [Purity](https://bindingofisaacrebirth.fandom.com/wiki/Purity) item effect currently is.
+Sets the state of the [Purity](https://bindingofisaacrebirth.fandom.com/wiki/Purity) item effect.
 
 ___
 ### SetRedStewBonusDuration () {: aria-label='Functions' }
@@ -1603,7 +1605,7 @@ Randomizes the current costumes.
 ___
 ### SpawnAquariusCreep () {: aria-label='Functions' }
 #### [EntityEffect](https://wofsauge.github.io/IsaacDocs/rep/EntityEffect.html) SpawnAquariusCreep ( [TearParams](https://wofsauge.github.io/IsaacDocs/rep/TearParams.html) TearParams = self.TearParams) {: .copyable aria-label='Functions' }
-Spawns a creep effect that acts like the ones created by Aquarius, including inhereting the player's `TearParams`. Supports passing a custom `TearParams` instead.
+Spawns a creep effect that acts like the ones created by Aquarius, including inheriting the player's `TearParams`. Supports passing a custom `TearParams` instead.
 
 ???+ info "Info"
     For reference, this is how the game calculates the `TearParams` for this normally:
@@ -1654,7 +1656,7 @@ Tries to add the specified pickup to the player's Bag of Crafting. Returns true 
 ___
 ### TryDecreaseGlowingHourglassUses () {: aria-label='Functions' }
 #### void TryDecreaseGlowingHourglassUses ( int Uses, boolean ForceHourglass = false ) {: .copyable aria-label='Functions' }
-Attempts to decrease the uses left for the Glowing Hourglass collectible, if the player has it. `ForceHourglass` instantly removes all the charges and turns Glowing Hourglass into it's regular Hourglass form.
+Attempts to decrease the uses left for the Glowing Hourglass collectible, if the player has it. `ForceHourglass` instantly removes all the charges and turns Glowing Hourglass into its regular Hourglass form.
 
 ???+ bug "Bug"
 	`Uses` are only decreased by 1 regardless of how large of a number you tell it to remove.

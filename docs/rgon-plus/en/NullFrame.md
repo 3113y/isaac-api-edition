@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> The prose in this document was polished by a constrained language model; API facts and signatures remain faithful to their upstream source.
+
 # Class "NullFrame"
 
 ## Functions

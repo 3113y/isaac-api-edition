@@ -1,6 +1,8 @@
 ---
 date: 2023-12-31
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # FAQ
 
 REPENTOGON works very differently from a traditional mod. We suspect there will inevitably be some confusion about its inner workings and how it will interact with future game updates.

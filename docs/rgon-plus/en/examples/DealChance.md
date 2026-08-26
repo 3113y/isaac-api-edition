@@ -1,5 +1,7 @@
 # Altering Deal Chance Example
-There are four callbacks that allow us to manipulate devil and angel chances.
+Four callbacks let you manipulate Devil and Angel deal chances.
+
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
 
 [MC_PRE_DEVIL_APPLY_ITEMS](../enums/ModCallbacks.md#mc_pre_devil_apply_items) is run when most items that effect deal chance modify the calculation. It's called before the stage penalty is applied. If a deal has spawned anywhere on the previous two floors, the game decays the resulting deal chance by a stage penalty of either 25% or 50%, depending on how many deals have been taken.
 

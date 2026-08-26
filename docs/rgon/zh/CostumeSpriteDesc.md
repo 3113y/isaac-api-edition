@@ -6,7 +6,7 @@ tags:
 
 ???+ info
 
-    你可以通过以下函数获取此类:
+    你可以使用以下函数获取此类：
 
     * [EntityPlayer:GetCostumeSpriteDescs()](EntityPlayer.md#getcostumespritedescs)
 
@@ -44,7 +44,7 @@ ___
 ___
 ### GetSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetSprite ( ) {: .copyable aria-label='Functions' }
-返回与该服装相关联的精灵。
+返回与该服装关联的精灵。
 
 ___
 ### HasOverlay () {: aria-label='Functions' }
@@ -67,3 +67,4 @@ ___
 #### boolean IsItemStateOnly ( ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

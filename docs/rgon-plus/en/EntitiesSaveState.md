@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntitiesSaveState"
 
 ## Functions
@@ -36,16 +38,16 @@ ___
 ___
 ### GetI2 () {: aria-label='Functions' }
 #### int GetI2 ( ) {: .copyable aria-label='Functions' }
-Used to store the charge of an active item pickup
+Used to store the charge of an active-item pickup.
 ___
 ### GetI3 () {: aria-label='Functions' }
 #### int GetI3 ( ) {: .copyable aria-label='Functions' }
-Used to store the shop price of pickups.
+Used to store the shop price of a pickup.
 
 ___
 ### GetI4 () {: aria-label='Functions' }
 #### int GetI4 ( ) {: .copyable aria-label='Functions' }
-Used to store the ShopItemId of pickups.
+Used to store the shop item ID of a pickup.
 ___
 ### GetI5 () {: aria-label='Functions' }
 #### int GetI5 ( ) {: .copyable aria-label='Functions' }
@@ -117,15 +119,15 @@ ___
 ___
 ### SetI2 () {: aria-label='Functions' }
 #### void SetI2 ( int Num ) {: .copyable aria-label='Functions' }
-Used to store the charge of an active item pickup
+Used to store the charge of an active-item pickup.
 ___
 ### SetI3 () {: aria-label='Functions' }
 #### void SetI3 ( int Num ) {: .copyable aria-label='Functions' }
-Used to store the shop price of pickups.
+Used to store the shop price of a pickup.
 ___
 ### SetI4 () {: aria-label='Functions' }
 #### void SetI4 ( int Num ) {: .copyable aria-label='Functions' }
-Used to store the ShopItemId of pickups.
+Used to store the shop item ID of a pickup.
 ___
 ### SetI5 () {: aria-label='Functions' }
 #### void SetI5 ( int Num ) {: .copyable aria-label='Functions' }

@@ -19,3 +19,4 @@ tags:
 |12 |EVENT_2 {: .copyable } |  |
 |13 |EVENT_GROUP_3 {: .copyable } |  |
 |13 |EVENT_3 {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

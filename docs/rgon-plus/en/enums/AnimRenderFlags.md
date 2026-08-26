@@ -2,6 +2,8 @@
 tags:
   - Enum
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 
 ???+ Warning
     The flags contained in [Sprite](../Sprite.md) and [LayerState](../LayerState.md) are added together during rendering, thus if one is set in `Sprite` but not `LayerState` it will still take effect for that layer.

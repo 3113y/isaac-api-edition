@@ -16,3 +16,4 @@ tags:
 |8 |POP {: .copyable } | Pop! synergy for lasers |
 |9 |MULTIDIMENSIONAL {: .copyable } | Multidimensional Baby |
 |10 |ANGELIC_PRISM {: .copyable } | Angelic Prism |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityConfigBaby"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain this class with the following function:
 
     * [EntityConfig.GetBaby()](EntityConfig.md#getbaby)
 

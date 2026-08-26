@@ -15,3 +15,4 @@ tags:
 |1 << 5 |DISABLE_RENDER_REFLECTION {: .copyable } | Entity only (GridEntities can't have reflections). |
 |1 << 6 |IGNORE_WATER_RENDERING {: .copyable } | Entity only. Overrides other flags so the entity renders above water only, with no reflection. |
 |1 << 7 |FORCE_WATER_RIPPLE_WHEN_MOVING {: .copyable } | Allows Entities with no collision to still spawn water ripples when moving. |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -1,3 +1,5 @@
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 <div class="mermaidDiagram">
 ``` mermaid
     classDiagram

@@ -9,32 +9,32 @@ tags:
 
 ### GetLastDevilRoomStage () {: aria-label='Modified Functions' }
 #### [LevelStage](https://wofsauge.github.io/IsaacDocs/rep/enums/LevelStage.html) GetLastDevilRoomStage ( ) {: .copyable aria-label='Modified Functions' }
-Now returns integer instead of unusable userdata.
+Now returns an integer instead of unusable userdata.
 
 ___
 ### GetLastLevelWithDamage () {: aria-label='Modified Functions' }
 #### [LevelStage](https://wofsauge.github.io/IsaacDocs/rep/enums/LevelStage.html) GetLastLevelWithDamage ( ) {: .copyable aria-label='Modified Functions' }
-Now returns integer instead of unusable userdata.
+Now returns an integer instead of unusable userdata.
 
 ___
 ### GetLastLevelWithoutHalfHp () {: aria-label='Modified Functions' }
 #### [LevelStage](https://wofsauge.github.io/IsaacDocs/rep/enums/LevelStage.html) GetLastLevelWithoutHalfHp ( ) {: .copyable aria-label='Modified Functions' }
-Now returns integer instead of unusable userdata.
+Now returns an integer instead of unusable userdata.
 
 ___
 ### GetPlayer ()  {: aria-label='Modified Functions' }
 #### [EntityPlayer](EntityPlayer.md) GetPlayer ( int Index ) {: .copyable aria-label='Modified Functions' }
-If no players exist, this now returns `nil` to prevent a crash. Invalid indexes will return index `0`.
+If no players exist, this now returns `nil` to prevent a crash. Invalid indexes return the player at index `0`.
 
 ___
 ### Move·To·Random·Room () {: aria-label='Modified Functions' }
 #### void MoveToRandomRoom ( boolean IAmErrorRoom, int Seed, [EntityPlayer](EntityPlayer.md) Player ) {: .copyable aria-label='Modified Functions' }
-Now no longer crashes the game when given a seed equal `0`.
+The game no longer crashes when given a seed equal to `0`.
 ___
 ### StartStageTransition ()  {: aria-label='Modified Functions' }
 #### void StartStageTransition ( boolean SameStage, int TransitionOverride, [EntityPlayer](EntityPlayer.md) Player = nil ) {: .copyable aria-label='Modified Functions' }
-Fixed the crash that sometimes occurred due to an incorrect call on the C++ side.
 `Player` is now optional (will default to `GetPlayer(0)`).
+Fixed a crash that sometimes occurred because of an incorrect call on the C++ side.
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 ### AchievementUnlocksDisallowed () {: aria-label='Functions' }
 #### boolean AchievementUnlocksDisallowed ( ) {: .copyable aria-label='Functions' }
-Returns `true` if achievements can't be unlocked this run (challenges, seeded, etc).
+Returns `true` if achievements cannot be unlocked during this run (for example, in challenges or seeded runs).
 
 ___
 ### AddDebugFlags () {: aria-label='Functions' }
@@ -52,7 +52,7 @@ Adds a debug flag to the game. Multiple can be added simultaneously with bitwise
 ___
 ### AddShopVisits () {: aria-label='Functions' }
 #### void AddShopVisits ( int Count ) {: .copyable aria-label='Functions' }
-Adds the amount of shops the player has entered this run.
+Increases the number of shops the player has entered this run.
 
 ___
 ### ChainLightning () {: aria-label='Functions' }
@@ -61,12 +61,12 @@ ___
 ___
 ### ClearErasedEnemies () {: aria-label='Functions' }
 #### void ClearErasedEnemies ( ) {: .copyable aria-label='Functions' }
-Clears out all enemies listed as an erased enemy, allowing them to spawn again.
+Clears all enemies listed as erased, allowing them to spawn again.
 
 ___
 ### DevolveEnemy () {: aria-label='Functions' }
 #### void DevolveEnemy ( [Entity](Entity.md) ) {: .copyable aria-label='Functions' }
-Devolves an enemy, as if the item D10 was used on it.
+Devolves an enemy as if the D10 item had been used on it.
 
 ___
 ### GetChallengeParams () {: aria-label='Functions' }
@@ -85,7 +85,7 @@ Returns a [DebugFlag](enums/DebugFlag.md) bitmask.
 ___
 ### GetDizzyAmount () {: aria-label='Functions' }
 #### float GetDizzyAmount ( ) {: .copyable aria-label='Functions' }
-Returns the current dizzy amount akin to Wavy Cap.
+Returns the current dizzy amount, akin to Wavy Cap.
 
 ___
 ### GetGenericPrompt () {: aria-label='Functions' }
@@ -98,7 +98,7 @@ Returns the currently active `GenericPrompt` object.
 ___
 ### GetLerpColorModifier () {: aria-label='Functions' }
 #### [ColorModifier](ColorModifier.md) GetLerpColorModifier ( ) {: .copyable aria-label='Functions' }
-Returns the lerped color modifier. This is formatted as the absolute rate of change (ie, all values are positive).
+Returns the lerped color modifier, formatted as the absolute rate of change (i.e., all values are positive).
 
 ___
 ### GetPauseMenuState () {: aria-label='Functions' }
@@ -107,12 +107,12 @@ ___
 ___
 ### GetPlanetariumsVisited () {: aria-label='Functions' }
 #### int GetPlanetariumsVisited ( ) {: .copyable aria-label='Functions' }
-Returns the amount of planetariums the player has entered this run.
+Returns the number of planetariums the player has entered this run.
 
 ___
 ### GetShopVisits () {: aria-label='Functions' }
 #### int GetShopVisits ( ) {: .copyable aria-label='Functions' }
-Returns the amount of shops the player has entered this run.
+Returns the number of shops the player has entered this run.
 
 ___
 ### GetTargetColorModifier () {: aria-label='Functions' }
@@ -138,7 +138,7 @@ Returns `true` if the next or current wave is the optional "nightmare" wave. Ret
 ___
 ### IsHardMode () {: aria-label='Functions' }
 #### boolean IsHardMode ( ) {: .copyable aria-label='Functions' }
-Returns `true` if current mode is Hard Mode or Greedier.
+Returns `true` if the current mode is Hard Mode or Greedier.
 
 ___
 ### IsPauseMenuOpen () {: aria-label='Functions' }
@@ -153,12 +153,12 @@ Returns `true` if the current run is a rerun.
 ___
 ### IsStartingFromState () {: aria-label='Functions' }
 #### boolean IsStartingFromState ( ) {: .copyable aria-label='Functions' }
-Returns a boolean whether the game starts from a continued state or not. Always returns false after MC_POST_GAME_STARTED execution.
+Returns whether the game starts from a continued state. Always returns `false` after MC_POST_GAME_STARTED executes.
 
 ___
 ### RecordPlayerCompletion () {: aria-label='Functions' }
 #### void RecordPlayerCompletion ( [CompletionType](enums/CompletionType.md) Type ) {: .copyable aria-label='Functions' }
-Sets marks and unlocks achievements associated with this type for all players. Used by the game to award marks as well as tainted completion paper groups.
+Sets the marks associated with this type and unlocks achievements for all players. The game uses this to award marks and tainted completion paper groups.
 
 ___
 ### SetBloom () {: aria-label='Functions' }
@@ -171,7 +171,7 @@ ___
 ___
 ### SetDizzyAmount () {: aria-label='Functions' }
 #### void SetDizzyAmount ( float TargetIntensity , float CurrentIntensity ) {: .copyable aria-label='Functions' }
-Sets the dizzy amount akin to Wavy Cap.
+Sets the dizzy amount, akin to Wavy Cap.
 
 The current intensity of the effect will gradually move towards the "TargetIntensity".
 

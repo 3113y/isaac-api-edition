@@ -14,3 +14,4 @@ tags:
 |1 << 5 |AutoResizeY {: .copyable } | Enable auto-resizing height. Read "IMPORTANT: Size measurement" details above. |
 |1 << 6 |AlwaysAutoResize {: .copyable } | Combined with AutoResizeX/AutoResizeY. Always measure size even when child is hidden, always return true, always disable clipping optimization! NOT RECOMMENDED. |
 |1 << 7 |FrameStyle {: .copyable } | Style the child window like a framed item: use FrameBg, FrameRounding, FrameBorderSize, FramePadding instead of ChildBg, ChildRounding, ChildBorderSize, WindowPadding. |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

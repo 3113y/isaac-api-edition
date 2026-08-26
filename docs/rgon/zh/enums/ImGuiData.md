@@ -12,3 +12,4 @@ tags:
 |4 |Max {: .copyable } | max value of a slider input |
 |5 |HintText {: .copyable } | hint text of a text input, or overlay texts used in plots or progressbars |
 |6 |ColorValues {: .copyable } | Color input. 3 values = RGB, 4 values = RGBA |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

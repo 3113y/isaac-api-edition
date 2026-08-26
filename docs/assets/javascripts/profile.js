@@ -7,8 +7,7 @@
   const status = document.querySelector(".profile-status");
   const profileBar = document.querySelector("#environment-profile");
   const extensionRoots = {
-    "rgon": { language: "zh", root: "/rgon/zh/" },
-    "rgon+": { language: "en", root: "/rgon-plus/en/" },
+    "rgon": "/rgon/",
   };
   if (!baseButtons.length || !originalButton || !extensionButton) return;
 
@@ -20,9 +19,7 @@
 
   function normalizeProfile() {
     if (profile.game !== "rep" && profile.game !== "rep+") profile.game = "rep";
-    if (profile.extension && profile.extension !== "rgon" && profile.extension !== "rgon+") profile.extension = "";
-    if (profile.extension === "rgon" && profile.game === "rep+") profile.extension = "rgon+";
-    if (profile.extension === "rgon+" && profile.game === "rep") profile.extension = "rgon";
+    if (profile.extension && profile.extension !== "rgon") profile.extension = "";
   }
 
   function currentLanguage() {
@@ -30,11 +27,11 @@
   }
 
   function profilePath(language, extension) {
-    return extensionRoots[extension] ? extensionRoots[extension].root : `/${language}/`;
+    return extensionRoots[extension] ? `${extensionRoots[extension]}${language}/` : `/${language}/`;
   }
 
   function currentProfileRoot() {
-    return Object.values(extensionRoots).map((extension) => extension.root).find(
+    return Object.values(extensionRoots).map((extension) => extension).find(
       (root) => window.location.pathname.startsWith(root)
     ) || ["/en/", "/zh/"].find((root) => window.location.pathname.startsWith(root));
   }
@@ -120,17 +117,15 @@
       notice.setAttribute("role", "status");
       profileBar.append(notice);
     }
-    notice.textContent = extensionRoot.language === "zh"
-      ? "RGON 扩展文档仅提供中文源快照。"
-      : "RGON+ extension documentation is available from its English source snapshot.";
+    notice.textContent = "RGON documentation combines RGON and RGON+ API entries.";
   }
 
   function render() {
     normalizeProfile();
-    const rgonLabel = profile.game === "rep+" ? "RGON+" : "RGON";
-    const activeExtension = profile.extension === "rgon" || profile.extension === "rgon+";
+    const rgonLabel = "RGON";
+    const activeExtension = profile.extension === "rgon";
     extensionButton.textContent = rgonLabel;
-    extensionButton.dataset.extensionToggle = profile.game === "rep+" ? "rgon+" : "rgon";
+    extensionButton.dataset.extensionToggle = "rgon";
     baseButtons.forEach((button) => {
       const active = button.dataset.game === profile.game;
       button.classList.toggle("is-selected", active);

@@ -5,17 +5,19 @@ tags:
 search:
   boost: 0.25
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "ProjectileParams"
 ## Variables
 ### Damage {: aria-label='Variables' }
 #### float Damage {: .copyable aria-label='Variables'}
 
-Number of half hearts of damage dealt by the projectile. Cannot be set to a negative value.
+Damage dealt by the projectile, measured in half-hearts. This value cannot be negative.
 
 ???+ info
-    This value ignores the full heart damage modifier applied to projectiles with a [Scale](https://wofsauge.github.io/IsaacDocs/rep/ProjectileParams.html#scale) above `1.15`, but non-boss champions will still double it (with a caveat, read warning below!).
+    This value ignores the full-heart damage modifier applied to projectiles with a [Scale](https://wofsauge.github.io/IsaacDocs/rep/ProjectileParams.html#scale) above `1.15`; however, non-boss champions still double it. See the warning below for a caveat.
     
 
 ???+ warning "Warning"
-    Enemies with a [ChampionColorIdx](https://wofsauge.github.io/IsaacDocs/rep/enums/ChampionColor.html) above `-1` will cap the damage at `2.0`!
+    Enemies with a [ChampionColorIdx](https://wofsauge.github.io/IsaacDocs/rep/enums/ChampionColor.html) greater than `-1` cap the damage at `2.0`.
 ___

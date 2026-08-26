@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "ProceduralEffect"
 
 ???+ info
@@ -87,12 +89,12 @@ ___
 ### GetScore () {: aria-label='Functions' }
 #### float GetScore ( ) {: .copyable aria-label='Functions' }
 
-The score is used to generate the `ProceduralItem`. Each `ProceduralItem` has a score limit when generating its effects. If the limit is reached, no more effect will be added.
+The score is used to generate the `ProceduralItem`. Each `ProceduralItem` has a score limit when generating its effects. If the limit is reached, no more effects will be added.
 ___
 ### GetTriggerChance () {: aria-label='Functions' }
 #### float GetTriggerChance ( ) {: .copyable aria-label='Functions' }
 
-This is the chance that the game actually uses. In most cases, this value ranges from `0` to `1`. This is the value that the result of `GetTriggerChanceScale` has been applied.
+This is the chance that the game actually uses the effect. In most cases, this value ranges from `0` to `1`, after the result of `GetTriggerChanceScale` has been applied.
 
 ___
 ### GetTriggerChanceScale () {: aria-label='Functions' }

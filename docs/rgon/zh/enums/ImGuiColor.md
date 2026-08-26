@@ -58,3 +58,4 @@ tags:
 |50 |NavWindowingHighlight {: .copyable } | Highlight window when using CTRL+TAB |
 |51 |NavWindowingDimBg {: .copyable } | Darken/colorize entire screen behind the CTRL+TAB window list, when active |
 |52 |ModalWindowDimBg {: .copyable } | Darken/colorize entire screen behind a modal window, when one is active |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

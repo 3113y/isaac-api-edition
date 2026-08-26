@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "PlayerHUD"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain this class using the following function:
 
     * [HUD.GetPlayerHUD()](HUD.md#getplayerhud)
 
@@ -22,7 +24,7 @@ tags:
 ___
 ### GetHearts () {: aria-label='Functions' }
 #### [PlayerHUDHeart](PlayerHUDHeart.md)[] GetHearts ( ) {: .copyable aria-label='Functions' }
-Returns table of [PlayerHUDHeart](PlayerHUDHeart.md) objects.
+Returns a table containing [PlayerHUDHeart](PlayerHUDHeart.md) objects.
 
 ___
 ### GetHUD () {: aria-label='Functions' }

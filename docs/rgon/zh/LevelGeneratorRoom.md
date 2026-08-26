@@ -7,7 +7,7 @@ tags:
 ???+ info
     This class is used during level generation. Its purpose is to represent a slot in the graph of rooms that is generated during the generation phase.
     
-    This class is immutable and cannot be instanciated manually: you cannot change the value of the fields of an instance and you cannot instance it by yourself.
+    This class is immutable and cannot be instantiated manually: you cannot change the values of an instance's fields or create an instance yourself.
     
     Access to instances is always performed through methods of the [LevelGenerator](LevelGenerator.md) itself, or instances are given as parameters of the callbacks:  
     
@@ -17,7 +17,7 @@ tags:
 
 ### Column () {: aria-label='Functions' }
 #### int Column ( ) {: .copyable aria-label='Functions' }
-Return the column of the room slot on the level grid (index is `0` based).
+Return the column of the room slot on the level grid (the index is zero-based).
 
 ### DoorMask () {: aria-label='Functions' }
 #### int DoorMask ( ) {: .copyable aria-label='Functions' }
@@ -45,8 +45,9 @@ Returns a table of the generation indices of the neighboring rooms.
 
 ### Row () {: aria-label='Functions' }
 #### int Row ( ) {: .copyable aria-label='Functions' }
-Return the row of the room slot on the level grid (index is `0` based).
+Return the row of the room slot on the level grid (the index is zero-based).
 
 ### Shape () {: aria-label='Functions' }
 #### int Shape ( ) {: .copyable aria-label='Functions' }
 Return the shape of the room, as per the RoomShape enumeration.
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

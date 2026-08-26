@@ -9,3 +9,4 @@ tags:
 |1 |JACOB_AND_ESAU {: .copyable } |  |
 |2 |COMPACT {: .copyable } | Used for co-op players, and for P1 if there are >2 players |
 |3 |COMPACT_JACOB_AND_ESAU {: .copyable } | Used for Jacob & Esau if they are a co-op player or if there are >3 players |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

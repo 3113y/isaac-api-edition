@@ -28,18 +28,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - name: Fetch upstream documentation snapshots
+      - name: Generate unified RGON documentation from committed sources
         run: |
-          git clone --depth 1 https://github.com/wofsauge/IsaacDocs.git .upstream/english
-          git clone --depth 1 https://github.com/cuerzor/IsaacDocs.git .upstream/chinese
-      - name: Generate paired bilingual API documentation
-        run: |
-          python scripts/sync_upstream_docs.py \
-            --english-source .upstream/english/docs \
-            --chinese-source .upstream/chinese/docs \
-            --output docs \
-            --english-revision "$(git -C .upstream/english rev-parse HEAD)" \
-            --chinese-revision "$(git -C .upstream/chinese rev-parse HEAD)"
+          python scripts/build_rgon_docs.py \
+            --rgon-source docs/rgon/zh \
+            --rgon-plus-source docs/rgon-plus/en \
+            --output docs/rgon
       - run: mkdocs build --strict
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

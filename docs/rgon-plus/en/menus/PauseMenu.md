@@ -3,6 +3,8 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "PauseMenu"
 
 ???+ info

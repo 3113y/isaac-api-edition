@@ -24,3 +24,4 @@ tags:
 |16 |ACHIEVEMENT {: .copyable } |  |
 |17 |MODFOLDER {: .copyable } |  |
 |18 |CUSTOM {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

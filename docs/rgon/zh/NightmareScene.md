@@ -3,12 +3,13 @@ tags:
   - Global
   - Class
 ---
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。
 # Global Class "NightmareScene"
 
 ???+ info
-    You can get this class by using the `NightmareScene` global table.
+    你可以通过使用全局表 `NightmareScene` 来获取此类。
 
-    **注意：调用这些函数时，必须使用 .（句点）而非 :（冒号）！**
+    **注意：调用这些函数时，必须使用 .（句点），而非 :（冒号）！**
     
     ???+ example "Example Code"
         ```lua
@@ -16,7 +17,7 @@ tags:
         ```
 
 ???+ warning "Warning"
-    This class' functions should not be called until the game fully initializes! Make sure not to try using them outside of callbacks.
+    在游戏完全初始化之前，不应调用此类的函数！请勿在回调之外尝试使用这些函数。
     
 ## Functions
 

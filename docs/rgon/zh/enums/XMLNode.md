@@ -40,3 +40,4 @@ tags:
 |32 |FXLAYER {: .copyable } |  |
 |33 |FXPARAM {: .copyable } |  |
 |34 |FXRAY {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

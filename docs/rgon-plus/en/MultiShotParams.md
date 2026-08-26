@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "MultiShotParams"
 
 ???+ info
@@ -21,21 +23,21 @@ tags:
 
 ### GetMultiEyeAngle () {: aria-label='Functions' }
 #### float GetMultiEyeAngle ( ) {: .copyable aria-label='Functions' }
-When more than one eye is active, defines the angle the eyes are offset to eachother. Similar to cross eye effect. 
+When more than one eye is active, defines the angle by which the eyes are offset from each other. Similar to a cross-eyed effect.
 
 Example: for The Wiz, this is `45`.
 ___
 ### GetNumEyesActive () {: aria-label='Functions' }
 #### int GetNumEyesActive ( ) {: .copyable aria-label='Functions' }
-Returns the number of eyes simultaniously shooting. Examples: For The Wiz, its `2`, for mutant Spider its `1`.
+Returns the number of eyes shooting simultaneously. Examples: for The Wiz, it is `2`; for Mutant Spider, it is `1`.
 ___
 ### GetNumLanesPerEye () {: aria-label='Functions' }
 #### int GetNumLanesPerEye ( ) {: .copyable aria-label='Functions' }
-Returns the amount of lanes used to spread the shot tears onto.
-Lane positions are calculated by dividing the area, defined by the shooting direction +- the spreadAngle, by the number of lanes. This will create a pattern similar to a symetrical hand fan.
-Normally the number of lanes should be the same number as the amount of tears divided by the number of eyes. 
+Returns the number of lanes used to spread the shot tears across.
+Lane positions are calculated by dividing the area, defined by the shooting direction +- the spreadAngle, by the number of lanes. This creates a pattern similar to a symmetrical hand fan.
+Normally, the number of lanes should equal the number of tears divided by the number of eyes.
 
-A smaller number of lanes than the amount of tears will cause tears to overlap each other. A higher lane count than tears will make the fan pattern asymetrical.
+A smaller number of lanes than the number of tears will cause tears to overlap each other. A higher lane count than the number of tears will make the fan pattern asymmetrical.
 ___
 ### GetNumRandomDirTears () {: aria-label='Functions' }
 #### int GetNumRandomDirTears ( ) {: .copyable aria-label='Functions' }
@@ -51,7 +53,7 @@ Get the spread angle for the given [WeaponType](https://wofsauge.github.io/Isaac
 ___
 ### IsCrossEyed () {: aria-label='Functions' }
 #### boolean IsCrossEyed ( ) {: .copyable aria-label='Functions' }
-Returns if a cross eye effect is active, aka. player shoots in two directions with 45° offset to eachother.
+Returns whether a cross-eyed effect is active; that is, whether the player shoots in two directions with a 45° offset from each other.
 ___
 ### IsShootingBackwards () {: aria-label='Functions' }
 #### boolean IsShootingBackwards ( ) {: .copyable aria-label='Functions' }
@@ -63,7 +65,7 @@ Returns if two additional shots sideways will be triggered. Similar effect to Lo
 ___
 ### SetIsCrossEyed () {: aria-label='Functions' }
 #### void SetIsCrossEyed ( boolean Value ) {: .copyable aria-label='Functions' }
-Set if a cross eye effect is active, aka. player shoots in two directions with 45° offset to eachother.
+Sets whether a cross-eyed effect is active; that is, whether the player shoots in two directions with a 45° offset from each other.
 ___
 ### SetIsShootingBackwards () {: aria-label='Functions' }
 #### void SetIsShootingBackwards ( boolean Value ) {: .copyable aria-label='Functions' }
@@ -75,13 +77,13 @@ Set if two additional shots sideways will be triggered. Similar effect to Loki's
 ___
 ### SetMultiEyeAngle () {: aria-label='Functions' }
 #### void SetMultiEyeAngle ( float Angle ) {: .copyable aria-label='Functions' }
-When more than one eye is active, defines the angle the eyes are offset to eachother. Similar to cross eye effect. 
+When more than one eye is active, defines the angle by which the eyes are offset from each other. Similar to a cross-eyed effect.
 
 Example: for The Wiz, this is `45`.
 ___
 ### SetNumEyesActive () {: aria-label='Functions' }
 #### void SetNumEyesActive ( int Value ) {: .copyable aria-label='Functions' }
-Set the number of eyes simultaniously shooting. Examples: For The Wiz, its `2`, for mutant Spider its `1`.
+Sets the number of eyes shooting simultaneously. Examples: for The Wiz, it is `2`; for Mutant Spider, it is `1`.
 ___
 ### SetNumLanesPerEye () {: aria-label='Functions' }
 #### void SetNumLanesPerEye ( int Value ) {: .copyable aria-label='Functions' }

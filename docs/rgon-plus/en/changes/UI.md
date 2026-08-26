@@ -1,4 +1,6 @@
 # Changes made to the UI
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 
 ## Title Screen
 

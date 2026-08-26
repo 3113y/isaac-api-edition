@@ -18,14 +18,14 @@ tags:
 ### GetSlot () {: aria-label='Functions' }
 #### int GetSlot ( ) {: .copyable aria-label='Functions' }
 local pocketItem = player:GetPocketItem(PillCardSlot.PRIMARY)
-For pills, returns [PillColor](https://wofsauge.github.io/IsaacDocs/rep/enums/PillColor.html).
+对于药丸，返回 [PillColor](https://wofsauge.github.io/IsaacDocs/rep/enums/PillColor.html)。
 if pocketItem:GetType() == PocketItemType.ACTIVE_ITEM then
-For pocket active items, returns the corresponding [ActiveSlot](https://wofsauge.github.io/IsaacDocs/rep/enums/ActiveSlot.html)**+1** (so `ActiveSlot.SLOT_POCKET + 1` or `ActiveSlot.SLOT_POCKET2 + 1`).
-Returns an identifying value for this pocket item. Varies depending on the PocketItemType.
+对于口袋主动道具，返回对应的 [ActiveSlot](https://wofsauge.github.io/IsaacDocs/rep/enums/ActiveSlot.html)**+1**（即 `ActiveSlot.SLOT_POCKET + 1` 或 `ActiveSlot.SLOT_POCKET2 + 1`）。
+返回此口袋道具的标识值，具体取决于 PocketItemType。
 local activeItemID = player:GetActiveItem(activeSlot)
 end
-Returns `0` if the pocket slot is empty.
-For cards, returns [Card](https://wofsauge.github.io/IsaacDocs/rep/enums/Card.html).
+如果口袋栏位为空，则返回 `0`。
+对于卡牌，返回 [Card](https://wofsauge.github.io/IsaacDocs/rep/enums/Card.html)。
 ```lua
 ???+ example "Example code to obtain the [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) of the pocket active item in a given pocket slot:"
 local activeSlot = pocketItem:GetSlot() - 1
@@ -33,5 +33,5 @@ local activeSlot = pocketItem:GetSlot() - 1
 
 ### GetType () {: aria-label='Functions' }
 #### [PocketItemType](enums/PocketItemType.md) GetType ( ) {: .copyable aria-label='Functions' }
-This value is unreliable if the slot is currently empty, as the game sometimes does not clear it.
-Returns the [PocketItemType](enums/PocketItemType.md).
+如果栏位当前为空，此值可能不可靠，因为游戏有时不会将其清零。
+返回 [PocketItemType](enums/PocketItemType.md)。

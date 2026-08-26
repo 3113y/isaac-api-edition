@@ -8,12 +8,12 @@ tags:
 
 ### GetTeleportationTimer () {: aria-label='Functions' }
 #### int GetTeleportationTimer ( ) {: .copyable aria-label='Functions' }
-返回精神错乱（Delirium）变身前的帧数.
+返回精神错乱（Delirium）传送前的帧数。
 
 ___
 ### IsRedMode () {: aria-label='Functions' }
 #### boolean IsRedMode ( ) {: .copyable aria-label='Functions' }
-返回一个布尔值，指示精神错乱是否“变红”.
+返回一个布尔值，指示精神错乱是否处于“变红”模式。
 
 ???+ info "About red mode"
 
@@ -22,7 +22,7 @@ ___
 ___
 ### SetRedMode () {: aria-label='Functions' }
 #### void SetRedMode ( boolean On ) {: .copyable aria-label='Functions' }
-根据参数 `on` 启用或禁用红色模式.
+根据参数 `on` 启用或禁用红色模式。
 
 ???+ info "About red mode"
 
@@ -31,12 +31,12 @@ ___
 ___
 ### SetTeleportationTimer () {: aria-label='Functions' }
 #### void SetTeleportationTimer ( int Timer ) {: .copyable aria-label='Functions' }
-设置精神错乱传送前的帧数。不允许使用负值.
+设置精神错乱传送前的帧数。不允许使用负值。
 
 ___
 ### Transform () {: aria-label='Functions' }
 #### void Transform ( int Type, int Variant = 0 ) {: .copyable aria-label='Functions' }
-将精神错乱转变为具有指定`type`和`variant`的实体.
+将精神错乱转变为具有指定 `type` 和 `variant` 的实体。
 
 ???+ warn "Warning"
 
@@ -52,7 +52,7 @@ ___
 ___
 ### Angle {: aria-label='Variables' }
 #### int8 Angle {: .copyable aria-label='Variables' }
-精神错乱发射的弹幕的角度. 
+精神错乱发射的弹幕的角度。
 
 ???+ warn "Geometric system"
 
@@ -102,15 +102,15 @@ ___
 ___
 ### RemainingAttacks {: aria-label='Variables' }
 #### int RemainingAttacks {: .copyable aria-label='Variables' }
-精神错乱转变为另一个首领之前剩余的攻击次数.
+精神错乱转变为另一个首领之前剩余的攻击次数。
 
 ???+ info "About remaining attacks" 
 
-    此变量是 Nicalis 为防止精神错乱在转变为另一个首领之前作为单个首领执行过多攻击而采取的措施。
+    此变量是 Nicalis 为防止精神错乱在转变为另一个首领之前以同一个首领的身份执行过多攻击而采取的措施。
     在某些条件下，游戏会将此值减 1。如果该值达到 0，则无论转变计时器的值如何，精神错乱都会转变。
     必须同时满足的条件是：当前帧的 [StateFrame](https://wofsauge.github.io/IsaacDocs/rep/EntityNPC.html#stateframe) 变量必须为 1，并且 [State](https://wofsauge.github.io/IsaacDocs/rep/EntityNPC.md#state) 变量必须设置为任何攻击状态。
     这就是为什么精神错乱有时会作为一个首领发起攻击并立即转变的原因。 
-    你可以参考 [首领 AI 配置的完整明细](https://wofsauge.github.io/IsaacDocs/rep/customData/bosses.xlsx) 来查看每个攻击的 AI 配置。
+    你可以参考[首领 AI 配置的完整明细](https://wofsauge.github.io/IsaacDocs/rep/customData/bosses.xlsx)，查看每个攻击的 AI 配置。
 
 ___
 ### StateD {: aria-label='Variables' }
@@ -128,3 +128,4 @@ ___
     有关该机制的更详细解释，请参考 [RemainingAttacks](EntityDelirium.md#remainingattacks) 的文档
     
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

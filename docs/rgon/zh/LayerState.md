@@ -68,20 +68,19 @@ ___
 ___
 ### GetWrapSMode () {: aria-label='Functions' }
 #### int GetWrapSMode ( ) {: .copyable aria-label='Functions' }
-???+ info "Info"
-    Enums for these are pending.
+???+ info "信息"
+    此枚举的定义尚待补充。
 
 ### GetWrapTMode () {: aria-label='Functions' }
 #### int GetWrapTMode ( ) {: .copyable aria-label='Functions' }
-???+ info "Info"
-Enums for these are pending.
-Returns the wrap mode for the `y` coordinate. See [this website](https://open.gl/textures) for a general overview.
+返回 `y` 坐标的纹理环绕模式。有关概述，请参阅[此网站](https://open.gl/textures)。
 
-    Enums for these are pending.
+???+ info "信息"
+    此枚举的定义尚待补充。
 
 ### SetWrapTMode () {: aria-label='Functions' }
 #### void SetWrapTMode ( int Mode ) {: .copyable aria-label='Functions' }
-???+ info "Info"
-    Enums for these are pending.
+???+ info "信息"
+    此枚举的定义尚待补充。
 
 ___

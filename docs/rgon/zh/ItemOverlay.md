@@ -6,7 +6,7 @@ tags:
 # Global Class "ItemOverlay"
 
 ???+ info
-    You can get this class by using the `ItemOverlay` global table.
+    可以通过 `ItemOverlay` 全局表获取此类。
     
     **注意：调用这些函数时，必须使用 .（句点）而非 :（冒号）！**
     
@@ -28,8 +28,8 @@ ___
 ### GetOverlayID () {: aria-label='Functions' }
 #### [Giantbook](enums/Giantbook.md) GetOverlayID ( ) {: .copyable aria-label='Functions' }
 ???+ info "Info"
-If none have played yet, returns 0.
-Returns the last Giantbook animation that played. This is the current Giantbook if one is currently playing.
+    如果尚未播放过任何动画，则返回 0。
+    返回最近播放的 Giantbook 动画；如果当前正在播放动画，则返回当前的 Giantbook。
 ### GetPlayer () {: aria-label='Functions' }
 #### [EntityPlayer](EntityPlayer.md) GetPlayer ( ) {: .copyable aria-label='Functions' }
 

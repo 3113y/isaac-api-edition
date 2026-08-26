@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntitiesSaveStateVector"
 
 ## Functions
@@ -16,7 +18,7 @@ ___
 ___
 ### GetByType () {: aria-label='Functions' }
 #### [EntitiesSaveState](EntitiesSaveState.md) GetByType ( [EntityType](https://wofsauge.github.io/IsaacDocs/rep/enums/EntityType.html) Type, int Variant = 0, int SubType = 0 ) {: .copyable aria-label='Functions' }
-You can use `-1` as a wildcard to match any Variant and/or SubType.
+Set `Variant` and/or `SubType` to `-1` to match any value as a wildcard.
 
 ___
 ### __len () {: aria-label='Operators' }

@@ -12,3 +12,4 @@ The API has been ported to use Lua 5.4 instead of 5.3.
 ## Game Window
 
 The Game window now displays the current build version and commit hash of REPENTOGON in its name.
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -17,7 +17,7 @@ This will also trigger the `MC_POST_FIRE_SPLIT_TEAR` callback. For custom effect
 ___
 ### GetHitboxParentKnife () {: aria-label='Functions' }
 #### [EntityKnife](EntityKnife.md) GetHitboxParentKnife ( ) {: .copyable aria-label='Functions' }
-For a "hitbox" [EntityKnife](EntityKnife.md) ([KnifeSubType.CLUB_HITBOX](enums/KnifeSubType.md)) created by melee weapon "swings" (Bone Club, Spirit Sword, etc) this function returns the "main" [EntityKnife](EntityKnife.md) of that melee weapon. Returns `nil` otherwise, and will return nil for hitbox entities spawned via other means.
+对于由近战武器“挥砍”（骨棒、灵魂之剑等）创建的“hitbox” [EntityKnife](EntityKnife.md)（[KnifeSubType.CLUB_HITBOX](enums/KnifeSubType.md)），此函数会返回该近战武器的“主” [EntityKnife](EntityKnife.md)。其他情况下返回 `nil`；通过其他方式生成的 hitbox 实体也会返回 `nil`。
 
 ___
 ### GetHitList () {: aria-label='Functions' }
@@ -35,19 +35,19 @@ ___
 ___
 ### IsMultidimensionalTouched () {: aria-label='Functions' }
 #### boolean IsMultidimensionalTouched ( ) {: .copyable aria-label='Functions' }
-返回该匕首是否通过“多维宝贝”效果创建。
+返回该匕首是否由“多维宝贝”效果创建。
 
 ___
 ### IsPrismTouched () {: aria-label='Functions' }
 #### boolean IsPrismTouched ( ) {: .copyable aria-label='Functions' }
-返回该匕首是否通过“天使棱镜”效果创建。
+返回该匕首是否由“天使棱镜”效果创建。
 
 ___
 ### SetHitboxParentKnife () {: aria-label='Functions' }
 #### void SetHitboxParentKnife ( [EntityKnife](EntityKnife.md) Knife ) {: .copyable aria-label='Functions' }
-Allows setting a custom value for `GetHitboxParentKnife`, which is intended to only be used for a "hitbox" [EntityKnife](EntityKnife.md) ([KnifeSubType.CLUB_HITBOX](enums/KnifeSubType.md)) to refer to the "main" [EntityKnife](EntityKnife.md) of a melee weapon (Bone Club, Spirit Sword, etc).
+允许为 `GetHitboxParentKnife` 设置自定义值。此功能仅适用于让近战武器（骨棒、灵魂之剑等）的“hitbox” [EntityKnife](EntityKnife.md)（[KnifeSubType.CLUB_HITBOX](enums/KnifeSubType.md)）指向其“主” [EntityKnife](EntityKnife.md)。
 
-Note that setting this has no influence on any vanilla logic - this reference is only for the convenience of modders. Please use appropriately.
+请注意，设置此值不会影响任何原版逻辑；该引用仅为方便模组作者而存在，请合理使用。
 
 ___
 ### SetIsSpinAttack () {: aria-label='Functions' }
@@ -60,11 +60,12 @@ ___
 ___
 ### SetMultidimensionalTouched () {: aria-label='Functions' }
 #### void SetMultidimensionalTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-设置该匕首是否通过“多维宝宝”效果创建。
+设置该匕首是否由“多维宝贝”效果创建。
 
 ___
 ### SetPrismTouched () {: aria-label='Functions' }
 #### void SetPrismTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-设置该匕首是否通过“天使棱镜”效果创建。
+设置该匕首是否由“天使棱镜”效果创建。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

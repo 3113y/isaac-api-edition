@@ -5,7 +5,7 @@ tags:
 # Class "ChallengeParam"
 
 ???+ info
-    你可以通过以下函数获取此类:
+    你可以通过以下函数获取此类实例：
 
     * [Game():GetChallengeParams()](Game.md#getchallengeparams)
     * [DailyChallenge.GetChallengeParams()](DailyChallenge.md#getchallengeparams)
@@ -130,3 +130,4 @@ ___
 #### boolean IsSecretPath ( ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

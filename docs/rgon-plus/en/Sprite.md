@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "Sprite"
 
 ## Modified Constructors
@@ -9,18 +11,18 @@ tags:
 ### Sprite () {: aria-label='Modified Constructors' }
 #### [Sprite](Sprite.md),boolean Sprite ( string ANM2Path, boolean LoadGraphics = true ) {: .copyable aria-label='Modified Constructors' }
 
-Added two optional arguments, the function now returns two values: [Sprite](Sprite.md) object and the boolean signifying whether the sprite was loaded successfully or not.
+Added two optional arguments. The function now returns two values: a [Sprite](Sprite.md) object and a boolean indicating whether the sprite loaded successfully.
 ___
 ## Modified Functions
 
 ### ReplaceSpritesheet () {: aria-label='Modified Functions' }
 #### void ReplaceSpritesheet ( int LayerId, string PngFilename, boolean LoadGraphics = false ) {: .copyable aria-label='Modified Functions' }
-Now accepts an optional `bool` to determine if Sprite:LoadGraphics should be called after replacing the spritesheet. In most cases, you'll want to do this.
+Now accepts an optional `bool` that determines whether `Sprite:LoadGraphics` is called after the spritesheet is replaced. In most cases, you will want to enable this.
 
 ___
 ### SetOverlayFrame () {: aria-label='Modified Functions' }
 #### void SetOverlayFrame ( int FrameNum ) {: .copyable aria-label='Modified Functions' }
-New overload for `SetOverlayFrame()` that sets the frame for the current animation without stopping it, akin to the one for `SetFrame()`.
+New overload for `SetOverlayFrame()` that sets the current animation's frame without stopping it, similar to the `SetFrame()` overload.
 
 ___
 ### Stop () {: aria-label='Modified Functions' }
@@ -76,7 +78,7 @@ ___
 ### GetLayer () {: aria-label='Functions' }
 #### [LayerState](LayerState.md) GetLayer ( int LayerId ) {: .copyable aria-label='Functions' }
 #### [LayerState](LayerState.md) GetLayer ( string LayerName ) {: .copyable aria-label='Functions' }
-Returns the layer data from the provided layer id.
+Returns the layer data for the provided layer ID.
 
 ___
 ### GetLayerFrameData () {: aria-label='Functions' }
@@ -86,12 +88,12 @@ Returns the [AnimationFrame](AnimationFrame.md) currently being displayed on the
 ___
 ### GetNullFrame () {: aria-label='Functions' }
 #### [NullFrame](NullFrame.md) GetNullFrame ( string LayerName ) {: .copyable aria-label='Functions' }
-Returns the [NullFrame](NullFrame.md) from the provided layer name.
+Returns the [NullFrame](NullFrame.md) for the provided layer name.
 
 ___
 ### GetOverlayAnimationData () {: aria-label='Functions' }
 #### [AnimationData](AnimationData.md) GetOverlayAnimationData ( ) {: .copyable aria-label='Functions' }
-Returns the [AnimationData](AnimationData.md) of the currently playing overlay.
+Returns the [AnimationData](AnimationData.md) for the currently playing overlay animation.
 
 ___
 ### GetOverlayLayerFrameData () {: aria-label='Functions' }
@@ -101,7 +103,7 @@ Returns the [AnimationFrame](AnimationFrame.md) currently being displayed on the
 ___
 ### GetOverlayNullFrame () {: aria-label='Functions' }
 #### [NullFrame](NullFrame.md) GetOverlayNullFrame ( string LayerName ) {: .copyable aria-label='Functions' }
-Returns the [NullFrame](NullFrame.md) from the provided layer name of the overlay animation.
+Returns the [NullFrame](NullFrame.md) for the provided layer name in the overlay animation.
 
 ___
 ### GetRenderFlags () {: aria-label='Functions' }
@@ -120,7 +122,7 @@ Returns true if the specified custom shader is currently loaded (see `SetCustomS
 ___
 ### IsOverlayEventTriggered () {: aria-label='Functions' }
 #### boolean IsOverlayEventTriggered ( string EventName ) {: .copyable aria-label='Functions' }
-Returns `true` if the currently playing overlay animation just reached the event with the provided name.
+Returns `true` if the currently playing overlay animation has just reached the event with the provided name.
 
 ___
 ### SetCustomChampionShader () {: aria-label='Functions' }

@@ -14,3 +14,4 @@ tags:
 |6 |ENTITY_SPAWN {: .copyable } |  |
 |7 |PICKUP_COLLECTED {: .copyable } |  |
 |8 |CHAIN {: .copyable } | trigger if previous `ProceduralEffect` is triggered (or dropped by chance). |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

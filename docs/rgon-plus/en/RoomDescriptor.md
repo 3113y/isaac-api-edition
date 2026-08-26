@@ -2,17 +2,19 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "RoomDescriptor"
 
 ## Modified Variables
 
 ### AllowedDoors {: aria-label='Modified Variables' }
 #### DoorSet AllowedDoors {: .copyable aria-label='Modified Variables' }
-Now properly returns a value.
+Now returns a value correctly.
 
-Returns a bitmask corresponding to which door slots are currently enabled.
+Returns a bitmask indicating which door slots are currently enabled.
 
-Doors are typically only included in this bitmask when there is a door currently present, even if the room would allow a door in that slot.
+Doors are typically included in this bitmask only when a door is currently present, even if the room allows a door in that slot.
 
 ???+ example "Example"
     This tests if the DoorSlot `LEFT0` is enabled.
@@ -36,7 +38,7 @@ ___
 ___
 ### GetDimension () {: aria-label='Functions' }
 #### [Dimension](https://wofsauge.github.io/IsaacDocs/rep/enums/Dimension.html) GetDimension ( ) {: .copyable aria-label='Functions' }
-Returns the [Dimension](enums/Dimension.md) that this room exists in.
+Returns the [Dimension](enums/Dimension.md) in which this room exists.
 
 ___
 ### GetEntitiesSaveState () {: aria-label='Functions' }
@@ -80,7 +82,7 @@ ___
 ___
 ### GetTaintedKeeperCoinSpawns () {: aria-label='Functions' }
 #### int GetTaintedKeeperCoinSpawns ( ) {: .copyable aria-label='Functions' }
-Prevent coin spawn from killed enemies on room reenter when counter reaches 10.
+Prevents coins from spawning from killed enemies when the counter reaches 10 and the room is re-entered.
 
 ___
 ### GetValidNeighborPlacementLocations () {: aria-label='Functions' }
@@ -125,7 +127,7 @@ ___
 [ ](#){: .static .tooltip .badge }
 #### static int CreateGroup ( string groupName ) {: .copyable aria-label='Functions' }
 
-Creates a new unique group id for `SetGroup`
+Creates a new unique group ID for `SetGroup`.
 
 ???+ warning "Errors"
     The function will error if a group with the specified name already exists.

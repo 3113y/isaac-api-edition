@@ -25,3 +25,4 @@ tags:
 |17 |ETERNAL_CHEST_COIN_SLOT {: .copyable } |  |
 |18 |OLD_CHEST_COIN_SLOT {: .copyable } |  |
 |19 |MEGA_CHEST_COIN_SLOT {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

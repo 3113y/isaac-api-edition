@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityNPC"
 
 ## Class Diagram
@@ -23,7 +25,7 @@ ___
 
 ### ApplyTearflagEffects () {: aria-label='Functions' }
 #### void ApplyTearflagEffects ( [Vector](Vector.md) Position, [TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html) TearFlags, [Entity](Entity.md) Source = nil, float Damage = 3.5 ) {: .copyable aria-label='Functions' }
-Attempt to the on-hit effects of the provided [TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html) to this enemy, credited to the provided source [Entity](Entity.md), if any.
+Attempts to apply the on-hit effects of the provided [TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html) to this enemy, credited to the provided source [Entity](Entity.md), if any.
 
 Will also trigger [MC_POST_APPLY_TEARFLAG_EFFECTS](enums/ModCallbacks.md#mc_post_apply_tearflag_effects) if successful.
 
@@ -49,7 +51,7 @@ Same as [FireProjectiles](https://wofsauge.github.io/IsaacDocs/rep/EntityNPC.htm
 ___
 ### GetBossColorIdx () {: aria-label='Functions' }
 #### int GetBossColorIdx ( ) {: .copyable aria-label='Functions' }
-Returns the returns the bosscoloridx(which is usually just the subtype) or -1 if its not a bosscolor (or bosscolor doesnt apply).
+Returns `bosscoloridx` (usually just the subtype), or `-1` if this is not a boss color or boss colors do not apply.
 
 ___
 ### GetControllerId () {: aria-label='Functions' }
@@ -104,7 +106,7 @@ Similar to [Sprite.ReplaceSpritesheet()](https://wofsauge.github.io/IsaacDocs/re
 ___
 ### SetControllerId () {: aria-label='Functions' }
 #### int SetControllerId ( int ControllerId ) {: .copyable aria-label='Functions' }
-Sets the ControllerId for the NPC, which indicates which player will control it. Set it to `-1` for no player controls (back to normal behaviour).
+Sets the ControllerId for the NPC, which indicates which player will control it. Set it to `-1` to remove player control and restore normal behavior.
 
 ___
 ### SetFlyingOverride () {: aria-label='Functions' }

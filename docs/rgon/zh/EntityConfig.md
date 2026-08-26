@@ -26,12 +26,12 @@ ___
 ### GetEntity () {: aria-label='Functions' }
 #### [EntityConfigEntity](EntityConfigEntity.md) GetEntity ( [EntityType](https://wofsauge.github.io/IsaacDocs/rep/enums/EntityType.html) Type, int Variant = -1, int SubType = -1 ) {: .copyable aria-label='Functions' }
 如果不存在具有指定类型的实体，则返回 nil。
-提供变体（Variant）和/或子类型（SubType）是可选的。如果请求了不存在的变体/子类型，则返回该实体的基础版本。
+提供变体（Variant）和/或子类型（SubType）是可选的。如果请求的变体/子类型不存在，则返回该实体的基础版本。
 
 ___
 ### GetMaxBabyID () {: aria-label='Functions' }
 #### int GetMaxBabyID ( ) {: .copyable aria-label='Functions' }
-返回当前分配给有效合作宝宝的最高 ID（对应子类型）。
+返回当前分配给有效合作宝宝的最高 ID（对应 SubType）。
 
 ___
 ### GetMaxPlayerType () {: aria-label='Functions' }
@@ -44,3 +44,4 @@ ___
 如果不存在具有指定玩家类型的角色，则返回 nil。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

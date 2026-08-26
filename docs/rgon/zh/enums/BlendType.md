@@ -10,3 +10,4 @@ tags:
 |2 |ADDITIVE {: .copyable } | `{ 1, 1, 1, 1 }` |
 |3 |MULTIPLICATIVE {: .copyable } | `{ 0, 2, 0, 2}` |
 |4 |OVERLAY {: .copyable } | `{4, 7, 4, 7}` |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -3,6 +3,8 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "Console"
 
 ???+ info
@@ -20,29 +22,29 @@ tags:
 
 ### GetCommandHistory () {: aria-label='Functions' }
 #### string[] GetCommandHistory ( ) {: .copyable aria-label='Functions' }
-Returns a table containing current command history.
+Returns a table containing the current command history.
 
 ___
 ### GetHistory () {: aria-label='Functions' }
 #### string[] GetHistory ( ) {: .copyable aria-label='Functions' }
 Returns a table containing every previous entry printed to the console this run.
 
-This is ordered last-to-first- the first entry will be the currently blank line awaiting user input, followed by the previous print, and so on. The last line will always be `Repentance Console`.
+This is ordered from last to first—the first entry is the blank line currently awaiting user input, followed by the previous print, and so on. The last line is always `Repentance Console`.
 
 ___
 ### PopHistory () {: aria-label='Functions' }
 #### void PopHistory ( int Amount = 1 ) {: .copyable aria-label='Functions' }
-Removes previous lines from history. Optionally, use amount to define how many entries should be removed. The line currently awaiting user input in the console counts as a part of the history, but this is already accounted for on the C++ side.
+Removes previous lines from history. Optionally, use `Amount` to specify how many entries to remove. The line currently awaiting user input in the console counts as part of the history, but the C++ side already accounts for it.
 
 ___
 ### PrintError () {: aria-label='Functions' }
 #### void PrintError ( string Error ) {: .copyable aria-label='Functions' }
-Prints an error to the console, errors display in red text.
+Prints an error to the console; errors are displayed in red text.
 
 ___
 ### PrintWarning () {: aria-label='Functions' }
 #### void PrintWarning ( string Warning ) {: .copyable aria-label='Functions' }
-Prints a warning to the console, warnings display in yellow text.
+Prints a warning to the console; warnings are displayed in yellow text.
 
 ___
 ### RegisterCommand () {: aria-label='Functions' }

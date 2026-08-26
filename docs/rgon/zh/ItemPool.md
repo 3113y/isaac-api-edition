@@ -9,8 +9,8 @@ tags:
 ### GetCollectible () {: aria-label='Modified Functions' }
 #### [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) GetCollectible ( [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) PoolType, boolean Decrease = false, int Seed = Random(), [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) DefaultItem = CollectibleType.COLLECTIBLE_NULL, [GetCollectibleFlag](enums/GetCollectibleFlag.md) Flags = 0 ) {: .copyable aria-label='Modified Functions' }
 ???+ warning "Setting both Ban Flags"
-Now gives access to the Flags parameter.
-Setting both the `BAN_ACTIVE` and the `BAN_PASSIVE` flag will cause the function to always return either the `DefaultItem` or `CollectibleType.COLLECTIBLE_BREAKFAST`
+现在可以使用 `Flags` 参数。
+同时设置 `BAN_ACTIVE` 和 `BAN_PASSIVE` 标志时，函数始终返回 `DefaultItem` 或 `CollectibleType.COLLECTIBLE_BREAKFAST`。
 
 ### AddBibleUpgrade () {: aria-label='Functions' }
 #### void AddBibleUpgrade ( int Add, [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) PoolType ) {: .copyable aria-label='Functions' }
@@ -19,9 +19,9 @@ ___
 ### AddCollectible () {: aria-label='Functions' }
 #### void AddCollectible ( [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) PoolType, table | table[] PoolItems ) {: .copyable aria-label='Functions' }
 
-Adds the provided Lua PoolItem objects to the specified Pool permanently, as if they were defined in a `itempools.xml` file.
+将提供的 Lua PoolItem 对象永久添加到指定池中，效果与在 `itempools.xml` 文件中定义它们相同。
 
-The `PoolItems` parameter can be either a single Lua PoolItem object or an array of them.
+`PoolItems` 参数可以是单个 Lua PoolItem 对象，也可以是由多个对象组成的数组。
 
 ???- info "Lua PoolItem format"
     |Field|Type|Comment|
@@ -38,7 +38,7 @@ ___
 ### AddTemporaryCollectible () {: aria-label='Functions' }
 #### void AddTemporaryCollectible ( [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) PoolType, table | table[] PoolItems ) {: .copyable aria-label='Functions' }
 
-Adds the provided Lua PoolItem objects to the specified Pool, but only for the current run.
+将提供的 Lua PoolItem 对象添加到指定池中，但仅在当前游戏运行期间有效。
 
 The `PoolItems` parameter can be either a single Lua PoolItem object or an array of them.
 
@@ -54,7 +54,7 @@ The `PoolItems` parameter can be either a single Lua PoolItem object or an array
     All field names are case insensitive
 
 ???- info "Temporary Collectible behavior"
-    Temporary Collectibles are automatically Added and Removed on Run Continue/Exit; as well as when returning to a previous state that had/didn't have the Collectible when using Glowing Hourglass.
+    临时收藏品会在继续或退出游戏运行时自动添加和移除；使用闪耀沙漏返回先前状态时，也会根据该状态是否包含该收藏品自动处理。
 
 ___
 ### CanSpawnCollectible () {: aria-label='Functions' }
@@ -65,11 +65,11 @@ It will still return false if the item was removed from the item pool or if it c
 
 ### GetBibleUpgrades () {: aria-label='Functions' }
 #### int GetBibleUpgrades ( [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) PoolType ) {: .copyable aria-label='Functions' }
-Returns number of Bible collectibles added to a pool.
+返回添加到池中的圣经类收藏品数量。
 
 ### GetCardEx () {: aria-label='Functions' }
 #### [Card](https://wofsauge.github.io/IsaacDocs/rep/enums/Card.html) GetCardEx ( int Seed, int SpecialChance, int RuneChance, int SuitChance, boolean AllowNonCards ) {: .copyable aria-label='Functions' }
-More sophisticated version of [ItemPool:GetCard()](https://wofsauge.github.io/IsaacDocs/rep/ItemPool.html#getcard) that allows to define individual chances.
+[ItemPool:GetCard()](https://wofsauge.github.io/IsaacDocs/rep/ItemPool.html#getcard) 的增强版本，可分别定义各项概率。
 
 ### GetCollectibleFromList () {: aria-label='Functions' }
 #### [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) GetCollectibleFromList ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html)[] ItemList, int Seed = Random(), [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) DefaultItem = CollectibleType.COLLECTIBLE_BREAKFAST, boolean AddToBlacklist = true, boolean ExcludeActiveItems = false ) {: .copyable aria-label='Functions' }
@@ -89,27 +89,27 @@ Returns a table of collectibles registered in the specified pool. The table cont
 
 ### GetNumAvailableTrinkets () {: aria-label='Functions' }
 #### int GetNumAvailableTrinkets ( ) {: .copyable aria-label='Functions' }
-Returns the amount of trinkets available in the item pool.
+返回物品池中可用饰品的数量。
 
 ### GetNumItemPools () {: aria-label='Functions' }
 #### int GetNumItemPools ( ) {: .copyable aria-label='Functions' }
-Retrieves the total number of item pools in the game, including custom item pools.
+返回游戏中的物品池总数，包括自定义物品池。
 
 ### GetPillColor () {: aria-label='Functions' }
 #### [PillColor](https://wofsauge.github.io/IsaacDocs/rep/enums/PillColor.html) GetPillColor ( [PillEffect](https://wofsauge.github.io/IsaacDocs/rep/enums/PillEffect.html) ID ) {: .copyable aria-label='Functions' }
-Currently not applied by pill modifications, such as PHD/False PHD.
-Returns a PillColor matching the specificed PillEffect, returns -1 if the Effect is not in the rotation.
+目前不会受 PHD、False PHD 等药丸修改效果影响。
+返回与指定 `PillEffect` 匹配的 PillColor；如果该效果不在轮换列表中，则返回 -1。
 
 ### GetRandomPool () {: aria-label='Functions' }
 #### [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) GetRandomPool ( [RNG](RNG.md) RNG, boolean AdvancedSearch = false, [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html)[] Filter = {}, boolean IsWhitelist = false) {: .copyable aria-label='Functions' }
-Picks a random pool in an identical manner to Chaos, where pools with more items have a higher probability of being chosen compared to those with fewer items.
+以与 Chaos 相同的方式随机选择一个池：包含更多物品的池比包含较少物品的池拥有更高的选中概率。
 
-Normally this function is tied to the same rules as Chaos, meaning that you can only get the pools for the current mode, but by setting `Advanced Search` to true you can bypass these restrictions.
+默认情况下，此函数遵循与 Chaos 相同的规则，只能返回当前模式的池；将 `Advanced Search` 设为 true 可绕过这些限制。
 
 ???+ info "Advanced Search"
     Setting `Advanced Search` to true allows you to make use of the `Filter` parameter.
 
-    Normally the `Filter` acts as a blacklist of unwanted itemPools, however setting `IsWhitelist` to true turns it into a list from which to choose from.
+    默认情况下，`Filter` 是要排除的物品池黑名单；将 `IsWhitelist` 设为 true 后，它会变为可供选择的物品池列表。
 
 ???+ example "Pick Pool From List"
     This code picks a random pool from any of the "Beggar" pools
@@ -148,7 +148,7 @@ Normally this function is tied to the same rules as Chaos, meaning that you can 
 ### GetRemovedCollectibles () {: aria-label='Functions' }
 #### table GetRemovedCollectibles ( ) {: .copyable aria-label='Functions' }
 local removedCollectibles = itemPool:GetRemovedCollectibles()
-Returns a table of [collectibles](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) removed from all pools.
+返回从所有池中移除的[收藏品](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html)表。
 if removedCollectibles[CollectibleType.COLLECTIBLE_SAD_ONION] then
 end
 ```lua
@@ -160,7 +160,7 @@ This code checks if the sad onion has been removed.
 ### GetRoomBlacklistedCollectibles () {: aria-label='Functions' }
 #### table GetRoomBlacklistedCollectibles ( ) {: .copyable aria-label='Functions' }
 print("Sad onion blacklisted!")
-Returns a table of [collectibles](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) blacklisted in the current room.
+返回当前房间中被列入黑名单的[收藏品](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html)表。
 local blacklistedCollectibles = itemPool:GetRoomBlacklistedCollectibles()
 end
 ```lua
@@ -171,11 +171,11 @@ if blacklistedCollectibles[CollectibleType.COLLECTIBLE_SAD_ONION] then
 
 ### HasCollectible () {: aria-label='Functions' }
 #### boolean HasCollectible ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) Collectible ) {: .copyable aria-label='Functions' }
-Returns `true` if collectible is available in item pools, `false` otherwise.
+如果收藏品在物品池中可用，则返回 `true`；否则返回 `false`。
 
 ### HasTrinket () {: aria-label='Functions' }
 #### boolean HasTrinket ( [TrinketType](https://wofsauge.github.io/IsaacDocs/rep/enums/TrinketType.html) Trinket ) {: .copyable aria-label='Functions' }
-Returns `true` if trinket is currently available in trinket pool, `false` otherwise.
+如果饰品当前在饰品池中可用，则返回 `true`；否则返回 `false`。
 
 ### PickCollectible () {: aria-label='Functions' }
 #### table PickCollectible ( [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) PoolType, boolean Decrease = false, [RNG](RNG.md) RNG = RNG(), [GetCollectibleFlag](enums/GetCollectibleFlag.md) Flags = 0 ) {: .copyable aria-label='Functions' }
@@ -223,7 +223,7 @@ The `PoolItems` parameter can be either a single Lua PoolItem object or an array
 
 ### ResetCollectible () {: aria-label='Functions' }
 #### void ResetCollectible ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) Collectible ) {: .copyable aria-label='Functions' }
-Makes the available once again, allowing it to naturally spawned even if previously remove. Also restores all instances of the collectible to it's **initialWeight** in every item pool.
+使收藏品重新可用，即使它先前被移除，也能自然生成；同时将该收藏品在每个物品池中的所有实例恢复为其 **initialWeight**。
 
 ### SetLastPool () {: aria-label='Functions' }
 #### void SetLastPool ( [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) ) {: .copyable aria-label='Functions' }
@@ -231,4 +231,5 @@ Makes the available once again, allowing it to naturally spawned even if previou
 ___
 ### UnidentifyPill () {: aria-label='Functions' }
 #### void UnidentifyPill ( [PillColor](https://wofsauge.github.io/IsaacDocs/rep/enums/PillColor.html) Pill ) {: .copyable aria-label='Functions' }
-Will reset a pill back to unidentified (???) state.
+将药丸重置为未识别（???）状态。
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

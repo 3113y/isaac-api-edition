@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。
+
 # Class "PersistentGameData"
 
 ???+ info
-    你可以通过以下函数获取此类:
+    你可以通过以下函数获取此类：
 
     * [Isaac.GetPersistentGameData()](Isaac.md#getpersistentgamedata)
 
@@ -14,7 +16,7 @@ tags:
         local persistentGameData = Isaac.GetPersistentGameData()
         ```
 ???+ warning "Warning"
-    This class' functions should not be called until the game fully initializes! Make sure not to try using them outside of callbacks
+    在游戏完成初始化前，不要调用此类中的函数！请勿尝试在回调之外使用这些函数。
     
 ## Functions
 

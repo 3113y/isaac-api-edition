@@ -3,6 +3,8 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "ProceduralItemManager"
 
 ???+ info
@@ -18,13 +20,13 @@ tags:
 ## Functions
 ### CreateProceduralItem () {: aria-label='Functions' }
 #### int CreateProceduralItem ( int Seed, int Unknown ) {: .copyable aria-label='Functions' }
-Creates a glitch item based on a given seed. 
+Creates a glitch item based on the specified seed.
 Returns the negative ID of the created item.
 
 ___
 ### GetProceduralItem () {: aria-label='Functions' }
 #### [ProceduralItem](ProceduralItem.md) GetProceduralItem ( int Index ) {: .copyable aria-label='Functions' }
-Get the glitch item at the given index.
+Retrieves the glitch item at the specified index.
 
 ___
 ### GetProceduralItemCount () {: aria-label='Functions' }

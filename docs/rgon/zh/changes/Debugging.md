@@ -51,3 +51,4 @@ The debug console has been completely rebuilt from the ground up in Dear ImGui.
 - The new console works on the main menu. Commands marked as "unsafe" on the main menu when registered are not shown in autocomplete there, and will intentionally error if attempted.
 - The new console saves command history every time a command is entered. The vanilla one only saved on console or game exit. This prevents history from being lost on a game crash.
 - A `help` command has been added. This lists all registered commands. Commands marked as "unsafe" on the main menu when registered are not shown there.
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

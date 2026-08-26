@@ -1,10 +1,12 @@
 # Enum "ModCallbacks"
 
-This is a list of all new callbacks added by REPENTOGON.
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
+This page lists the new callbacks added by REPENTOGON.
 
 ## Modified Old Callbacks
 ### MC_USE_PILL
-MC_USE_PILL now passes PillColor as an argument.
+`MC_USE_PILL` now passes `PillColor` as an argument.
 Accepts no return parameters.
 
 |ID|Name|Function Args|Optional Args|Return Type|

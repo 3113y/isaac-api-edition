@@ -4,4 +4,4 @@ tags:
 ---
 # Class "GridEntityFire"
 
-Currently used as a distinct object from [GridEntity](GridEntity.md). No content at this point, sorry!
+It is currently used as an object distinct from [GridEntity](GridEntity.md). However, no further content is available yet.

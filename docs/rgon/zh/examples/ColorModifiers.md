@@ -39,3 +39,4 @@ You can use [Game:SetColorModifier()](../Game.md#setcolormodifier) to apply a mo
 
     mod:AddCallback(ModCallbacks.MC_ENTITY_TAKE_DMG, mod.OnPlayerHurt, EntityType.ENTITY_PLAYER)
     ```
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

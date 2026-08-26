@@ -36,15 +36,15 @@ ___
 ___
 ### GetI2 () {: aria-label='Functions' }
 #### int GetI2 ( ) {: .copyable aria-label='Functions' }
-用于存储主动道具拾取物的充能数。
+用于存储主动道具拾取物的充能数量。
 
 ### GetI3 () {: aria-label='Functions' }
 #### int GetI3 ( ) {: .copyable aria-label='Functions' }
-用于存储拾取物的商店价格。
+用于存储拾取物的商店售价。
 
 ### GetI4 () {: aria-label='Functions' }
 #### int GetI4 ( ) {: .copyable aria-label='Functions' }
-用于存储拾取物的商店物品ID。
+用于存储拾取物的商店物品 ID。
 
 ### GetI5 () {: aria-label='Functions' }
 #### int GetI5 ( ) {: .copyable aria-label='Functions' }
@@ -116,17 +116,17 @@ ___
 ___
 ### SetI2 () {: aria-label='Functions' }
 #### void SetI2 ( int Num ) {: .copyable aria-label='Functions' }
-用于存储主动道具拾取物的充能数。
+用于存储主动道具拾取物的充能数量。
 
 ___
 ### SetI3 () {: aria-label='Functions' }
 #### void SetI3 ( int Num ) {: .copyable aria-label='Functions' }
-用于存储拾取物的商店价格。
+用于存储拾取物的商店售价。
 
 ___
 ### SetI4 () {: aria-label='Functions' }
 #### void SetI4 ( int Num ) {: .copyable aria-label='Functions' }
-用于存储拾取物的商店物品ID。
+用于存储拾取物的商店物品 ID。
 
 ___
 ### SetI5 () {: aria-label='Functions' }
@@ -165,3 +165,4 @@ ___
 #### void SetVariant ( int Variant ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

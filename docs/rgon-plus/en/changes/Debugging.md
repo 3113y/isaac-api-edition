@@ -1,4 +1,6 @@
 # Changes done to debugging and the Console
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 
 ## Callback Typechecking
 

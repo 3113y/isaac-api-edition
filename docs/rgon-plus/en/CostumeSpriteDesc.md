@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "CostumeSpriteDesc"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain this class using the following function:
 
     * [EntityPlayer:GetCostumeSpriteDescs()](EntityPlayer.md#getcostumespritedescs)
 
@@ -42,7 +44,7 @@ ___
 ___
 ### GetSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetSprite ( ) {: .copyable aria-label='Functions' }
-Returns sprite of associated to the costume.
+Returns the sprite associated with the costume.
 ___
 ### HasOverlay () {: aria-label='Functions' }
 #### boolean HasOverlay ( ) {: .copyable aria-label='Functions' }

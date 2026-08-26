@@ -4,11 +4,11 @@ tags:
 ---
 # Class "ColorModifier"
 
-[here.](./examples/ColorModifiers.md)可以找到一个使用ColorModifier类的示例模组
+使用 ColorModifier 类的示例模组可以在[此处](./examples/ColorModifiers.md)找到。
 
 ???+ info
 
-    你可以通过其构造函数获取此类:
+    你可以通过构造函数创建此类的实例：
 
     ???+ example "Example Code"
     
@@ -82,3 +82,4 @@ ___
 定义了使用 `-` 运算符对两个 [ColorModifier](ColorModifier.md) 对象进行减法运算。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

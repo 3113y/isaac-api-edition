@@ -182,3 +182,4 @@ The follow example mod adds a new chest variant that only gives blue items, and 
 
     mod:AddCallback(ModCallbacks.MC_POST_PICKUP_INIT, mod.HandlePayToPlay, PickupVariant.PICKUP_CHEST)
     ```
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

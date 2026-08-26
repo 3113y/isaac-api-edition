@@ -4,6 +4,8 @@ tags:
 search:
   boost: 0.25
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "RoomConfigSet"
 
 ???+ info
@@ -19,14 +21,14 @@ search:
 [ ](#){: .abrep .tooltip .badge }
 #### int __len ( ) {: .copyable aria-label='Operators' }
 
-The length (#) operation. Returns the amount of entities in the list.
+The length (#) operation. Returns the number of entities in the list.
 
 ___
 ## Functions
 ### AddRooms () {: aria-label='Functions' }
 #### [RoomConfigRoom](RoomConfigRoom.md)[] AddRooms ( table[] Rooms ) {: .copyable aria-label='Functions' }
 
-Adds the provided Lua Rooms to the RoomConfigSet. For details on how to generate Lua Rooms, refer to the [Custom StageAPI Github page](https://github.com/Meowlala/BOIStageAPI15/tree/master).
+Adds the provided Lua rooms to the RoomConfigSet. For details on generating Lua rooms, refer to the [Custom StageAPI GitHub page](https://github.com/Meowlala/BOIStageAPI15/tree/master).
 
 The function returns a table containing the placed RoomConfigRoom objects, in the same order as the input `Rooms` table. If a room at a given index could not be converted into a valid RoomConfigRoom, the corresponding entry in the returned table will be nil instead.
 
@@ -35,7 +37,7 @@ ___
 [ ](#){: .abrep .tooltip .badge }
 #### [RoomConfigRoom](RoomConfigRoom.md) Get ( int idx ) {: .copyable aria-label='Functions' }
 
-Returns a [RoomConfigRoom](https://wofsauge.github.io/IsaacDocs/rep/RoomConfig_Room.html) at the index of the list provided.
+Returns a [RoomConfigRoom](https://wofsauge.github.io/IsaacDocs/rep/RoomConfig_Room.html) at the specified index in the list.
 
 ___
 ### LoadStb () {: aria-label='Functions' }
@@ -51,6 +53,6 @@ ___
 [ ](#){: .const .tooltip .badge } [ ](#){: .abrep .tooltip .badge }
 #### const int Size  {: .copyable aria-label='Variables' }
 
-The amount of entities in the list.
+The number of entities in the list.
 
 ___

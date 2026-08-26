@@ -20,3 +20,4 @@ tags:
 |1 << 10 |SERAPHIM {: .copyable } |  |
 |1 << 11 |LIL_ABADDON {: .copyable } |  |
 |1 << 12 |TWISTED_PAIR {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

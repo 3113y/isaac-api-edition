@@ -2,12 +2,13 @@
 tags:
   - Class
 ---
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。
 # Class "Options"
 
 ## Modified Variables
 ### SFXVolume {: aria-label='Modified Variables' }
 #### float SFXVolume {: .copyable aria-label='Modified Variables' }
-Can now be properly set. Will clamp new values to the first decimal so that changing volume with the options menu doesn't cause invalid values.
+现在可以正确设置。新值会截断为一位小数，避免通过选项菜单调整音量时产生无效值。
 ___
 ## Variables
 ### AimLockEnabled {: aria-label='Variables'}
@@ -20,7 +21,7 @@ ___
 ___
 ### BetterVoidGeneration {: aria-label='Variables' }
 #### boolean BetterVoidGeneration {: .copyable aria-label='Variables' }
-If set, The Void will draw from all unlocked floors, including alt path ones.
+启用后，The Void 会从所有已解锁楼层（包括替代路径楼层）中抽取。
 
 ___
 ### BossHPOnBottom {: aria-label='Variables'}
@@ -41,12 +42,12 @@ ___
 ___
 ### HushPanicStateFix {: aria-label='Variables' }
 #### boolean HushPanicStateFix {: .copyable aria-label='Variables' }
-Fixes the vanilla bug that causes Hush to have no attack cooldown below 50% health.
+修复原版中的一个错误：Hush 的生命值低于 50% 时不会有攻击冷却。
 
 ___
 ### KeyMasterDealChance {: aria-label='Variables' }
 #### boolean KeyMasterDealChance {: .copyable aria-label='Variables' }
-If set, Key Master bums will also raise the chance for a deal when killed.
+启用后，击杀 Key Master 小怪也会提高交易出现的概率。
 
 ___
 ### OnlineChatEnabled {: aria-label='Variables'}
@@ -95,9 +96,9 @@ ___
 ___
 ### StatHUDPlanetarium {: aria-label='Variables' }
 #### boolean StatHUDPlanetarium {: .copyable aria-label='Variables' }
-If set, natively shows Planetarium chance on the HUD. 
+启用后，HUD 会原生显示星象房出现概率。
 
-Note that this option has no effect if Planetariums are not unlocked, so just checking this value isn't good enough if the intent is to see if the Planetarium HUD is rendering.
+请注意，如果尚未解锁星象房，此选项不会生效。因此，如果目的是确认星象房 HUD 是否正在显示，仅检查此值并不足够。
 
 ___
 ### StreamerMode {: aria-label='Variables'}

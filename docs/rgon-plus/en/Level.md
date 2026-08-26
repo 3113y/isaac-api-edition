@@ -38,7 +38,7 @@ See [TryPlaceRoom](Level.md#tryplaceroom) for more information on room placement
 ___
 ### GetDimension () {: aria-label='Functions' }
 #### [Dimension](enums/Dimension.md) GetDimension ( ) {: .copyable aria-label='Functions' }
-Get's the current [Dimension](enums/Dimension.md) the player is in.
+Gets the current [Dimension](enums/Dimension.md) the player is in.
 
 ___
 ### GetForceSpecialQuest () {: aria-label='Functions' }
@@ -136,9 +136,9 @@ Attempts to place the provided room at the specified location.
 
 If successful, returns the newly initialized [RoomDescriptor](https://wofsauge.github.io/IsaacDocs/rep/RoomDescriptor.html). Otherwise, returns nil.
 
-This function will ONLY place the room if it fits (does not overlap any other existing rooms, and can mutually connect to all neighboring room with doors).
+This function will ONLY place the room if it fits (does not overlap any other existing rooms and can mutually connect to all neighboring rooms with doors).
 
-If a seed of 0 or nil is provided, a deterministic seed with be auto-generated based on the location, room shape, and level seed.
+If a seed of 0 or nil is provided, a deterministic seed will be auto-generated based on the location, room shape, and level seed.
 
 The boolean parameters enable or disable additional restrictions/safeties for room placement:
 
@@ -167,7 +167,7 @@ The boolean parameters enable or disable additional restrictions/safeties for ro
 		
 		for _, gridIndex in pairs(options) do
 			-- You may have additional conditions or priorities when it comes to where you would prefer to place your room.
-			-- For the purposes of this example we arbitarily forbid the new room from being connected to the starting room,
+			-- For the purposes of this example, we arbitrarily forbid the new room from being connected to the starting room,
 			-- and otherwise just place the room at the first place we check.
 			
 			-- Get the RoomDescriptors of all rooms that would be neighboring the room if placed here.

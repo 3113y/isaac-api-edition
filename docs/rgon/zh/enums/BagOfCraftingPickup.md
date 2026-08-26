@@ -35,3 +35,4 @@ tags:
 |27 |BOC_GOLD_PILL {: .copyable } |  |
 |28 |BOC_GOLD_BATTERY {: .copyable } |  |
 |29 |BOC_POOP {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

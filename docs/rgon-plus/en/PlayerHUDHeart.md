@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "PlayerHUDHeart"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain this class using the following function:
 
     * [PlayerHUD.GetHeartByIndex()](PlayerHUD.md#getheartbyindex)
 

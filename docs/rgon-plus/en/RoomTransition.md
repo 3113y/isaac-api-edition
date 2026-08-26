@@ -3,10 +3,12 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "RoomTransition"
 
 ???+ info
-    You can get this class by using the `RoomTransition` global table.
+    You can access this class through the `RoomTransition` global table.
 
     **Note that to call these functions, you must use a `.` (period) instead of a `:` (colon)!**
     

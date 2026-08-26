@@ -1,5 +1,7 @@
 # Installation & FAQ
 
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 ???+ info
     If you prefer a video guide, check out [Catinsurance's installation instructions video](https://youtu.be/hF4ngfDn364)!
 
@@ -16,7 +18,7 @@ In order to install and run REPENTOGON, you'll need:
 
 ## Obtaining the Launcher
 
-There are two ways you may obtain the REPENTOGON Launcher- either by downloading it yourself, or automatically by upgrading from a legacy installation of REPENTOGON.
+You can obtain the REPENTOGON Launcher in either of two ways: download it manually or upgrade automatically from a legacy REPENTOGON installation.
 
 ### Manually
 * Download the [REPENTOGON Launcher](https://github.com/TeamREPENTOGON/Launcher/releases/latest)

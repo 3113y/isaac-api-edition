@@ -5,7 +5,7 @@ tags:
 # Class "HistoryItem"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain an instance of this class by calling the following function:
 
     * [History:GetCollectiblesHistory()](History.md#getcollectibleshistory)
 

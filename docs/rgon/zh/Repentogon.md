@@ -2,50 +2,24 @@
 tags:
   - Global
 ---
-# Global Variable "REPENTOGON"
+# 全局变量“REPENTOGON”
 
-This global variable exposes functions and variables about Repentogon, such as
-the current version, the changelog etc. It is a **table**.
+此全局变量提供与 Repentogon 相关的函数和变量，例如当前版本和更新日志等。它是一个**表**。
 
-This variable can be accessed anywhere.
+可在任意位置访问此变量。
 
-## Functions
+## 函数
 
-All functions in the table are static: they are accessed using the dot (`.`) 
-operator, rather than the colon (`:`) operator.
+表中的所有函数都是静态函数：使用点号（`.`）运算符访问，而不是冒号（`:`）运算符。
 
 ### MeetsVersion () {: aria-label='Functions' }
 #### boolean MeetsVersion ( string version ) {: .copyable aria-label='Functions' }
-exactly matches the current Repentogon version.
-REPENTOGON.MeetsVersion("1.0.9") -- True
-Checks whether the specified `version` is greater or equal to the currently
-* All tokens are consumed. The function returns `true` as the requested `version`
-8 is compared against 9: it's lower so return false. --]]
-`REPENTOGON.Version`. The function returns `true`.
-```lua
-1 is compared against 0: it's greater so return true. --]]
-return `true`.
-Note that the letter is silently discarded. --]]
-`REPENTOGON.Version`. The function returns `false`.
-Up until Repentogon version 1.0.10b, this function is bugged and will always
-9: all are equals, all tokens are consumed: return true.
+
+检查指定的 `version` 是否小于或等于当前安装的 Repentogon 版本。换言之，如果满足指定版本，则返回 `true`。
+
+函数会在数字边界处分割 `version`，并将生成的令牌与当前 `REPENTOGON.Version` 中的对应令牌逐一比较，满足以下任一条件时立即返回：指定版本令牌更低时返回 `true`，更高时返回 `false`；所有令牌都相等时返回 `true`。版本中的字母会被静默丢弃；如果 `REPENTOGON.Version` 为 `"dev build"`，函数始终返回 `true`。
+
 ???+ bug
-0 is compared against 0: they are equal so continue.
---[[ 1 is compared against 1: they are equal so continue.
-If `REPENTOGON.Version` equals "dev build", the function always returns `true`.
-* The token in `version` is strictly lower than the corresponding token in
-REPENTOGON.MeetsVersion("1c1") -- True
-* The token in `version` is strictly greater than the corresponding token in
-The function splits the `version` parameter alongside numbers boudaries. Each
-???+ example
--- Assume REPENTOGON.Version = "1.0.9a"
-the Repentogon version string. The function returns as soon as:
-REPENTOGON.MeetsVersion("1.0.8b") -- False
-installed Repentogon version.
-12 is compared against 0: it's greater so return true. --]]
---[[ 1 is compared against 1, 0 is compared against 0, 9 is compared against
-REPENTOGON.MeetsVersion("1.12") -- True
-REPENTOGON.MeetsVersion("2") -- True
---[[ 2 is compared against 1: it's higher, so return true. --]]
-token produced by the split is compared against the corresponding token in
-```
+    在 Repentogon 1.0.10b 之前，此函数存在缺陷，会始终返回 `true`。
+
+___

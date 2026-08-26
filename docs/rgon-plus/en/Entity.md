@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "Entity"
 
 ## Functions
@@ -72,10 +74,10 @@ ___
 ### ForceCollide () {: aria-label='Functions' }
 #### boolean ForceCollide ( [Entity](Entity.md) Entity, boolean Force ) {: .copyable aria-label='Functions' }
 
-Returns true if the rest of the collision logic should be **Skipped**; either because the entities did not collide in the first place (if `Force` is false),
+Returns true if the rest of the collision logic should be **skipped**; either because the entities did not collide in the first place (if `Force` is false),
 or because one of the entities' internal collision logic decided so (which can be influenced by one of the `PRE_COLLISION` callbacks).
 
-if `Force` is set to false, then the game will check if the entities' [EntityCollisionClass](https://wofsauge.github.io/IsaacDocs/rep/Entity.html#entitycollisionclass) are
+If `Force` is set to false, then the game will check if the entities' [EntityCollisionClass](https://wofsauge.github.io/IsaacDocs/rep/Entity.html#entitycollisionclass) values are
 compatible and if both entities are not [Dead](https://wofsauge.github.io/IsaacDocs/rep/Entity.html#isdead) before triggering the collision.
 
 ???- warning "Collision Logic Changes"
@@ -128,7 +130,7 @@ ___
 #### int GetDamageCountdown ( ) {: .copyable aria-label='Functions' }
 If the entity recently took damage with the DAMAGE_COUNTDOWN [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html), this returns how many more frames must pass before they can take damage with the DAMAGE_COUNTDOWN [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) again.
 
-Note that this is NOT the same as the player's invincibility frames (`EntityPlayer:GetDamageCooldown()`). The DAMAGE_COUNTDOWN [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) and this associated countdown are typically used to control how rapidly an enemy will take damage from the few sources that uses that flag, such as the the collision damage effects from the "My Little Unicorn", "The Nail", and "The Gamekid".
+Note that this is NOT the same as the player's invincibility frames (`EntityPlayer:GetDamageCooldown()`). The DAMAGE_COUNTDOWN [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) and its associated countdown are typically used to control how rapidly an enemy will take damage from the few sources that use that flag, such as the collision damage effects from "My Little Unicorn", "The Nail", and "The Gamekid".
 
 ___
 ### GetDebugShape () {: aria-label='Functions' }
@@ -191,7 +193,7 @@ ___
 ___
 ### GetNullOffset () {: aria-label='Functions' }
 #### [Vector](Vector.md) GetNullOffset ( string NullLayerName ) {: .copyable aria-label='Functions' }
-Returns position of null layer mark. Alternatively returns Vector.Zero if the layer is not visible, has no frame available for the current animation, or for other unknown reasons.
+Returns the position of the null layer mark. Alternatively, returns `Vector.Zero` if the layer is not visible, has no frame available for the current animation, or for other unknown reasons.
 
 ___
 ### GetPauseTime () {: aria-label='Functions' }
@@ -208,7 +210,7 @@ ___
 ___
 ### GetPosVel () {: aria-label='Functions' }
 #### [PosVel](https://wofsauge.github.io/IsaacDocs/rep/PlayerTypes_PosVel.html) GetPosVel ( ) {: .copyable aria-label='Functions' }
-Returns 2 values, both Vectors. 1st the Position of the entity, 2nd the Velocity of the entity.
+Returns two values, both Vectors: the entity's Position first, followed by its Velocity.
 
 ___
 ### GetPredictedTargetPosition () {: aria-label='Functions' }
@@ -259,12 +261,12 @@ Used to determine if this entity should ignore any status effect coming from `So
 ___
 ### MakeBloodPoof () {: aria-label='Functions' }
 #### [EntityEffect](EntityEffect.md) MakeBloodPoof ( [Vector](Vector.md) Position = self.Position, [Color](Color.md) Color = default, float Scale = 1.0 ) {: .copyable aria-label='Functions' }
-This function spawns two blood poof effects of subtypes 3 and 4; the second of which will be the the Child of the one returned.
+This function spawns two blood poof effects of subtypes 3 and 4; the second will be the Child of the returned effect.
 
 ___
 ### MakeGroundPoof () {: aria-label='Functions' }
 #### [EntityEffect](EntityEffect.md) MakeGroundPoof ( [Vector](Vector.md) Position = self.Position, [Color](Color.md) Color = default, float Scale = 1.0 ) {: .copyable aria-label='Functions' }
-This function spawns two dust poof effects of subtypes 1 and 2; the second of which will be the the Child of the one returned.
+This function spawns two dust poof effects of subtypes 1 and 2; the second will be the Child of the returned effect.
 
 ___
 ### ResetWaterClipFlags () {: aria-label='Functions' }
@@ -311,9 +313,9 @@ ___
 ___
 ### SetDamageCountdown () {: aria-label='Functions' }
 #### void SetDamageCountdown ( int countdown ) {: .copyable aria-label='Functions' }
-Sets how many frames must pass before the entity can take damage that has the DAMAGE_COUNTDOWN [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html).
+Sets how many frames must pass before the entity can take damage with the DAMAGE_COUNTDOWN [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html).
 
-Note that this is NOT the same as the player's invincibility frames (`EntityPlayer:GetDamageCooldown()`). The DAMAGE_COUNTDOWN [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) and this associated countdown are typically used to control how rapidly an enemy will take damage from the few sources that uses that flag, such as the the collision damage effects from the "My Little Unicorn", "The Nail", and "The Gamekid".
+Note that this is NOT the same as the player's invincibility frames (`EntityPlayer:GetDamageCooldown()`). The DAMAGE_COUNTDOWN [DamageFlag](https://wofsauge.github.io/IsaacDocs/rep/enums/DamageFlag.html) and its associated countdown are typically used to control how rapidly an enemy takes damage from the few sources that use this flag, such as the collision damage effects from "My Little Unicorn", "The Nail", and "The Gamekid".
 
 ___
 ### SetDead () {: aria-label='Functions' }
@@ -382,13 +384,13 @@ ___
 ___
 ### SetSpeedMultiplier () {: aria-label='Functions' }
 #### void SetSpeedMultiplier ( float Amount ) {: .copyable aria-label='Functions' }
-???+ warning "Depreciation notice"
+???+ warning "Deprecation notice"
     This variable is actually the Entity's time scale. A properly named replacement function will be added in a future version.
 
 ___
 ### SetWaterClipFlags () {: aria-label='Functions' }
 #### void SetWaterClipFlags ( [WaterClipFlag](enums/WaterClipFlag.md) Flags ) {: .copyable aria-label='Functions' }
-Allows modification of how this entity interacts with water, primarily rendering related behaviour such as reflections.
+Allows modification of how this entity interacts with water, primarily rendering-related behaviour such as reflections.
 
 Note that this will also override/disable any natural vanilla changes to these flags, such as the player losing their reflection with Charm of the Vampire.
 
@@ -407,7 +409,7 @@ ___
 #### void SpawnWaterImpactEffects ( [Vector](Vector.md) Position, [Vector](Vector.md) Velocity = Vector.Zero, float Strength ) {: .copyable aria-label='Functions' }
 
 ???+ warning "Warning"
-    This function will only spawn effects if the Room's [water amount](Room.md#getwateramount) is above or equal to `0.2`.
+    This function only spawns effects if the Room's [water amount](Room.md#getwateramount) is greater than or equal to `0.2`.
 
 ___
 ### TeleportToRandomPosition () {: aria-label='Functions' }
@@ -446,7 +448,7 @@ When the Chest lands it will always open, no matter the unlock condition.
 
 [EntityNPC](https://repentogon.com/EntityNPC.html) NPCs:
 Only works on poop entities, throws it into the air, ignores grid collision.
-At certain Velocity, the poop will play the `SoundEffect.SOUND_POOPITEM_THROW` sound effect when thrown.
+At a certain velocity, the poop will play the `SoundEffect.SOUND_POOPITEM_THROW` sound effect when thrown.
 
 [EntityFamiliar](https://repentogon.com/EntityFamiliar.html) Familiars:
 Only works on Dip familiars and Cube Baby, throws it into the air, ignores grid collision.

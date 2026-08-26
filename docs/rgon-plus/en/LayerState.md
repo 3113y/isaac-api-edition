@@ -108,7 +108,7 @@ ___
 ___
 ### SetCustomChampionShader () {: aria-label='Functions' }
 #### void SetCustomChampionShader ( string ShaderPath ) {: .copyable aria-label='Functions' }
-Specify a custom champion shader file for this layer to use instead of the usual `coloroffset_champion` shader. Provided path is expected to start at `.../resources/` and to find both a .vs and .fs file at that location. For example: `layer:SetCustomChampionShader("shaders/my_shader")` will load `.../resources/shaders/my_shader.vs` and `.../resources/shaders/my_shader.fs`.
+Specify a custom champion shader file for this layer to use instead of the usual `coloroffset_champion` shader. The provided path is expected to start at `.../resources/` and resolve to both a .vs and .fs file at that location. For example, `layer:SetCustomChampionShader("shaders/my_shader")` loads `.../resources/shaders/my_shader.vs` and `.../resources/shaders/my_shader.fs`.
 
 The custom champion shader will only be used by the game if the entity is actually a champion.
 
@@ -117,7 +117,7 @@ Note that the custom shader must take the exact same inputs as the default `colo
 ___
 ### SetCustomShader () {: aria-label='Functions' }
 #### void SetCustomShader ( string ShaderPath ) {: .copyable aria-label='Functions' }
-Specify a custom shader file for this layer to use instead of the default `coloroffset` shader. Provided path is expected to start at `.../resources/` and to find both a .vs and .fs file at that location. For example: `layer:SetCustomShader("shaders/my_shader")` will load `.../resources/shaders/my_shader.vs` and `.../resources/shaders/my_shader.fs`.
+Specify a custom shader file for this layer to use instead of the default `coloroffset` shader. The provided path is expected to start at `.../resources/` and resolve to both a .vs and .fs file at that location. For example, `layer:SetCustomShader("shaders/my_shader")` loads `.../resources/shaders/my_shader.vs` and `.../resources/shaders/my_shader.fs`.
 
 This custom shader will not be used by the game if the entity is a champion, or if it has the gold/dogma shader applied.
 

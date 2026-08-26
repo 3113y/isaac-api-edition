@@ -19,7 +19,7 @@ tags:
 
 ???+ warning "Warning"
 
-    在游戏完全初始化之前，不应调用此类的函数！请确保不要在回调函数之外尝试使用它们.
+    在游戏完全初始化之前，不应调用此类的函数！请确保不要在回调函数之外调用它们.
     
 ## Functions
 
@@ -27,3 +27,4 @@ tags:
 #### [ChallengeParam](ChallengeParam.md) GetChallengeParams ( ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

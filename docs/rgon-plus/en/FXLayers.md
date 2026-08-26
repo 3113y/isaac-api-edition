@@ -5,7 +5,7 @@ tags:
 # Class "FXParams"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain an instance of this class with the following function:
 
     * [Room:GetFXLayers()](Room.md#getfxlayers)
 

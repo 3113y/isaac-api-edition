@@ -29,8 +29,8 @@ ___
 #### [Giantbook](enums/Giantbook.md) GetOverlayID ( ) {: .copyable aria-label='Functions' }
 
 ???+ info "Info"
-    Returns the last Giantbook animation that played. This is the current Giantbook if one is currently playing.
     If none have played yet, returns 0.
+    Returns the last Giantbook animation that played. If an animation is currently playing, this is the current Giantbook.
 
 ___
 ### GetPlayer () {: aria-label='Functions' }

@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "MusicManager"
 
 ## Modified Functions
@@ -25,7 +27,7 @@ ___
 
 ### GetCurrentJingleID () {: aria-label='Functions' }
 #### [Music](https://wofsauge.github.io/IsaacDocs/rep/enums/Music.html) GetCurrentJingleID ( ) {: .copyable aria-label='Functions' }
-Returns the id of the currently playing jingle, or 0 if no jingle is playing/current jingle is fading out.
+Returns the ID of the currently playing jingle, or 0 if no jingle is playing or the current jingle is fading out.
 
 ___
 ### GetCurrentPitch () {: aria-label='Functions' }
@@ -42,5 +44,5 @@ ___
 ___
 ### StopJingle () {: aria-label='Functions' }
 #### void StopJingle ( ) {: .copyable aria-label='Functions' }
-Force currently playing jingle to immediately fade out.
+Forces the currently playing jingle to fade out immediately.
 ___

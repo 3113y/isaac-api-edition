@@ -4,4 +4,4 @@ tags:
 ---
 # Class "GridEntityGravity"
 
-Currently used as a distinct object from [GridEntity](GridEntity.md). No content at this point, sorry!
+It is currently treated as a standalone object distinct from [GridEntity](GridEntity.md). No further information is available at this time.

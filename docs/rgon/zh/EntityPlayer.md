@@ -17,17 +17,17 @@ tags:
 ___
 ### AddCollectibleEffect () {: aria-label='Modified Functions' }
 #### void AddCollectibleEffect ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) CollectibleType, bool ApplyCostume = false, int Cooldown = VanillaCooldown, bool Additive = true ) {: .copyable aria-label='Modified Functions' }
-Shortcut of TemporaryEffects:AddCollectibleEffect with extra arguments to handle cooldown. The additive parameter determines if the cooldown should be added to the preexistent cooldown value or if it should be set for that value. You can use negative cooldown values with additive to reduce preexistent cooldown.
+Shortcut of TemporaryEffects:AddCollectibleEffect with extra arguments to handle cooldown. The additive parameter determines whether the cooldown should be added to the pre-existing cooldown value or set as that value. You can use negative cooldown values with additive to reduce the pre-existing cooldown.
 
 ___
 ### AddNullItemEffect () {: aria-label='Modified Functions' }
 #### void AddNullItemEffect ( [NullItemID](https://wofsauge.github.io/IsaacDocs/rep/enums/NullItemID.html) NullItemID, bool ApplyCostume = false, int Cooldown = VanillaCooldown, bool Additive = true ) {: .copyable aria-label='Modified Functions' }
-Shortcut of TemporaryEffects:AddNullItemEffect with extra arguments to handle cooldown. The additive parameter determines if the cooldown should be added to the preexistent cooldown value or if it should be set for that value. You can use negative cooldown values with additive to reduce preexistent cooldown.
+Shortcut of TemporaryEffects:AddNullItemEffect with extra arguments to handle cooldown. The additive parameter determines whether the cooldown should be added to the pre-existing cooldown value or set as that value. You can use negative cooldown values with additive to reduce the pre-existing cooldown.
 
 ___
 ### AddTrinketEffect () {: aria-label='Modified Functions' }
 #### void AddTrinketEffect ( [TrinketType](https://wofsauge.github.io/IsaacDocs/rep/enums/TrinketType.html) TrinketType, bool ApplyCostume = false, int Cooldown = VanillaCooldown, bool Additive = true ) {: .copyable aria-label='Modified Functions' }
-Shortcut of TemporaryEffects:AddTrinketEffect with extra arguments to handle cooldown. The additive parameter determines if the cooldown should be added to the preexistent cooldown value or if it should be set for that value. You can use negative cooldown values with additive to reduce preexistent cooldown.
+Shortcut of TemporaryEffects:AddTrinketEffect with extra arguments to handle cooldown. The additive parameter determines whether the cooldown should be added to the pre-existing cooldown value or set as that value. You can use negative cooldown values with additive to reduce the pre-existing cooldown.
 
 
 ___
@@ -71,7 +71,7 @@ ___
 
 ### BabySkin {: aria-label='Modified Variables' }
 #### [BabySubType](https://wofsauge.github.io/IsaacDocs/rep/enums/BabySubType.html) BabySkin  {: .copyable aria-label='Modified Variables' }
-与默认行为相同，但现在会返回正确的整数值而非用户数据.
+与默认行为相同，但现在会返回正确的整数值而非用户数据。
 
 ___
 ### FriendBallEnemy {: aria-label='Modified Variables' }
@@ -260,7 +260,7 @@ ___
 ___
 ### GetBlinkLockTime () {: aria-label='Functions' }
 #### int GetBlinkLockTime ( ) {: .copyable aria-label='Functions' }
-How long player's head will play fired frame sprite?
+How long the player's head will play the fired-frame sprite.
 
 ___
 
@@ -386,7 +386,7 @@ ___
 #### int GetDamageModifier ( ) {: .copyable aria-label='Functions' }
 用于 “实验性治疗” 和 “虚空” 带来的属性提升。
 
-该修饰符以固定伤害的形式应用于玩家。
+该修饰符以固定值的形式加到玩家的伤害属性上。
 
 “实验性治疗” 根据随机生成的伤害值增加 `-1`、`0` 或 `1`。“虚空” 可能会随机增加 `1`。
 
@@ -449,7 +449,7 @@ ___
 #### int GetFireDelayModifier ( ) {: .copyable aria-label='Functions' }
 用于 “实验性治疗” 和 “虚空” 带来的属性提升。
 
-为玩家提供 `0.5 * 修饰符` 的固定每秒眼泪数。
+为玩家提供 `0.5 * 修饰符` 的固定每秒眼泪数加成。
 
 “实验性治疗” 根据随机生成的射击延迟值增加 `-1`、`0` 或 `1`。“虚空” 可能会随机增加 `1`。
 
@@ -669,9 +669,11 @@ ___
 
 ### GetShotSpeedModifier () {: aria-label='Functions' }
 #### int GetShotSpeedModifier ( ) {: .copyable aria-label='Functions' }
-“实验性治疗” 根据随机生成的射击速度值增加 `-1`、`0` 或 `1`。“虚空” 可能会随机增加 `1`。
-为玩家的射击速度增加 `0.2 * 修饰符`。
 用于 “实验性治疗” 和 “虚空” 带来的属性提升。
+
+为玩家的射击速度增加 `0.2 * 修饰符`。
+
+“实验性治疗” 根据随机生成的射击速度值增加 `-1`、`0` 或 `1`。“虚空” 可能会随机增加 `1`。
 
 ### GetSmeltedTrinkets () {: aria-label='Functions' }
 #### table GetSmeltedTrinkets ( [TrinketType](https://wofsauge.github.io/IsaacDocs/rep/enums/TrinketType.html)[] TrinketList = nil ) {: .copyable aria-label='Functions' }
@@ -753,7 +755,7 @@ ___
 
 ### GetTearDisplacement () {: aria-label='Functions' }
 #### int GetTearDisplacement ( ) {: .copyable aria-label='Functions' }
-返回玩家的眼泪偏移值，用于检查玩家从哪只眼睛射击。
+返回玩家的眼泪偏移值，用于判断玩家从哪只眼睛射击。
 
 ???+ info "Return info"
 
@@ -1410,3 +1412,4 @@ Tries to add the specified pickup to the player's Bag of Crafting. Returns true 
 ### VoidHasCollectible () {: aria-label='Functions' }
 #### boolean VoidHasCollectible ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) Collectible ) {: .copyable aria-label='Functions' }
 如果指定的道具已被 “虚空” 道具吞噬，则返回 true。
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

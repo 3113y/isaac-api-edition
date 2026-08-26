@@ -13,3 +13,4 @@ tags:
 | 5 | BONE {: copyable } |  |
 | 6 | ROTTEN {: copyable } |  |
 | 7 | LIL_CLOT {: copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

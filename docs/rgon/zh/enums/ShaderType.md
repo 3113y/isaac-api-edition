@@ -25,3 +25,4 @@ tags:
 | 17 | SHADER_DIZZY {: copyable } |  |
 | 18 | SHADER_HEAT_WAVE {: copyable } |  |
 | 19 | SHADER_MIRROR {: copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

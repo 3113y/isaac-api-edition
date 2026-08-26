@@ -2,10 +2,11 @@
 tags:
   - Class
 ---
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。
 # Class "PlayerHUD"
 
 ???+ info
-    你可以通过以下函数获取此类:
+    你可以使用以下函数获取此类对象：
 
     * [HUD.GetPlayerHUD()](HUD.md#getplayerhud)
 
@@ -22,7 +23,7 @@ tags:
 ___
 ### GetHearts () {: aria-label='Functions' }
 #### [PlayerHUDHeart](PlayerHUDHeart.md)[] GetHearts ( ) {: .copyable aria-label='Functions' }
-Returns table of [PlayerHUDHeart](PlayerHUDHeart.md) objects.
+返回由 [PlayerHUDHeart](PlayerHUDHeart.md) 对象组成的表。
 ### GetHUD () {: aria-label='Functions' }
 #### [HUD](HUD.md) GetHUD ( ) {: .copyable aria-label='Functions' }
 

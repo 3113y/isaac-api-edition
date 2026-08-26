@@ -28,3 +28,4 @@ tags:
 |(1 << 16) | (1 << 17) |NoNav {: .copyable } | ImGuiWindowFlags.NoNavInputs &#124; ImGuiWindowFlags.NoNavFocus |
 |(1 << 0) | (1 << 1) | (1 << 3) | (1 << 5) |NoDecoration {: .copyable } | ImGuiWindowFlags.NoTitleBar &#124; ImGuiWindowFlags.NoResize &#124; ImGuiWindowFlags.NoScrollbar &#124; ImGuiWindowFlags.NoCollapse |
 |(1 << 9) | (1 << 16) | (1 << 17) |NoInputs {: .copyable } | ImGuiWindowFlags.NoMouseInputs &#124; ImGuiWindowFlags.NoNavInputs &#124; ImGuiWindowFlags.NoNavFocus |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

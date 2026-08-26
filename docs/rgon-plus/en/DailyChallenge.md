@@ -3,6 +3,8 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "DailyChallenge"
 
 ???+ info
@@ -16,7 +18,7 @@ tags:
         ```
 
 ???+ warning "Warning"
-    This class' functions should not be called until the game fully initializes! Make sure not to try using them outside of callbacks.
+    Functions in this class should not be called until the game has fully initialized! Make sure not to use them outside callbacks.
     
 ## Functions
 

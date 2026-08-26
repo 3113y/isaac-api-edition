@@ -69,14 +69,14 @@ ___
 ___
 ### AddElement () {: aria-label='Functions' }
 #### void AddElement ( string ParentId, string ElementId = "", [ImGuiElement](enums/ImGuiElement.md) type, string Label = "" ) {: .copyable aria-label='Functions' }
-向给定的父元素添加一个通用元素。对于添加像 "SameLine"、"Bullet" 或 "Text" 这样的控制元素很有用.
+向给定的父元素添加一个通用元素。对于添加像 "SameLine"、"Bullet" 或 "Text" 这样的控制元素很有用。
 
 ___
 ### AddInputColor () {: aria-label='Functions' }
 #### void AddInputColor ( string ParentId, string ElementId, string Label = "", function ChangeCallback = nil, float r = 0, float g = 0, float b = 0) {: .copyable aria-label='Functions' }
-添加一个颜色输入元素。如果设置了参数 `a`，则它作为 RGBA 输入。否则，它只是一个 RGB 输入。浮点值在 `0` 到 `1` 之间.
+添加一个颜色输入元素。如果设置了参数 `a`，则它作为 RGBA 输入；否则，它只是一个 RGB 输入。浮点值在 `0` 到 `1` 之间。
 
-回调函数会分别传入 r、g、b 和 a 值作为参数.
+回调函数会分别接收 r、g、b 和 a 值作为参数。
 
 ???+ example "Example Code"
 
@@ -229,12 +229,12 @@ ___
 ___
 ### LinkWindowToElement () {: aria-label='Functions' }
 #### void LinkWindowToElement ( string WindowId, string ElementId ) {: .copyable aria-label='Functions' }
-将窗口或弹出元素连接到另一个元素，使该元素充当该窗口的“开关
+将窗口或弹出元素连接到另一个元素，使该元素充当该窗口的“开关”。
 
 ???- example "示例代码"
 
     ```lua
-    此代码创建一个新的菜单条目，其中包含一个菜单项，点击该菜单项会切换一个窗口
+    此代码创建一个新的菜单条目，其中包含一个菜单项；点击该菜单项会切换一个窗口。
     ImGui.CreateMenu("myMenu", "Test Menu")
     ImGui.AddElement("myMenu", "myButton", ImGuiElement.MenuItem, "Some Text")
     ImGui.CreateWindow("myWindow", "Some Window title")
@@ -287,12 +287,12 @@ ___
 ___
 ### SetSize () {: aria-label='Functions' }
 #### void SetSize ( string elementID, float width, float Height ) {: .copyable aria-label='Functions' }
-Sets the width and height of an element in pixels. Most regular form-elements only allow for width changes. Windows, Buttons and Plots do allow for width and height changes.
+设置元素的宽度和高度（单位为像素）。大多数常规表单元素只允许调整宽度；窗口、按钮和图表则允许同时调整宽度和高度。
 
-If the width is equal 0, the element will try to fill all available space in the window (Default behavior). 
+如果宽度等于 0，元素会尝试填满窗口中的所有可用空间（默认行为）。
 
-If the value is negative, the element will fill the full width of the window, minus the number of pixels defined.
-Example: The window is 500px wide. A width of -75 will make the element 425px wide.
+如果该值为负数，元素宽度将等于窗口的完整宽度减去指定的像素数。
+例如：窗口宽度为 500px 时，宽度设为 -75 会使元素宽 425px。
 ___
 ### SetTextColor () {: aria-label='Functions' }
 #### void SetTextColor ( string ElementId, float r, float g, float b, float a = 1.0 ) {: .copyable aria-label='Functions' }
@@ -356,3 +356,4 @@ ___
     当游戏的缩放因子超过最大渲染缩放时，此函数无法正常工作。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

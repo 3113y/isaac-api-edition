@@ -7,9 +7,9 @@ tags:
 
 ???+ info
 
-    你可以通过 `Ambush` 全局表获取这个类.
+    你可以通过 `Ambush` 全局表访问此类。
 
-    **注意：调用这些函数时，必须使用 .（句点）而非 :（冒号）！**
+    **注意：调用这些函数时，必须使用 `.`（句点）而非 `:`（冒号）！**
     
     ???+ example "Example Code"
 
@@ -21,27 +21,28 @@ tags:
 
 ### GetCurrentWave () {: aria-label='Functions' }
 #### int GetCurrentWave ( ) {: .copyable aria-label='Functions' }
-返回当前挑战房或Boss冲刺房的当前波数。
+返回当前挑战房或 Boss 冲刺房的波数。
 
 ___
 ### GetMaxBossChallengeWaves () {: aria-label='Functions' }
 #### int GetMaxBossChallengeWaves ( ) {: .copyable aria-label='Functions' }
-返回Boss挑战房的最大波数。
+返回 Boss 挑战房的最大波数。
 
-默认情况下，Boss挑战房的最大波数为 `2`。需要注意的是，模组可以修改Boss挑战房的最大波数。
+默认情况下，Boss 挑战房的最大波数为 `2`。模组可以修改此最大值。
 
 ___
 ### GetMaxBossrushWaves () {: aria-label='Functions' }
 #### int GetMaxBossrushWaves ( ) {: .copyable aria-label='Functions' }
-返回Boss冲刺的最大波数。
+返回 Boss 冲刺的最大波数。
 
-默认情况下，Boss冲刺的最大波数为 `15`。需要注意的是，模组可以修改Boss冲刺的最大波数。
+默认情况下，Boss 冲刺的最大波数为 `15`。模组可以修改此最大值。
 
 ___
 ### GetMaxChallengeWaves () {: aria-label='Functions' }
 #### int GetMaxChallengeWaves ( ) {: .copyable aria-label='Functions' }
-默认情况下，挑战房的最大波数为 `3`。需要注意的是，模组可以修改挑战房的最大波数。
 返回挑战房的最大波数。
+
+默认情况下，挑战房的最大波数为 `3`。模组可以修改此最大值。
 
 ___
 ### GetNextWave () {: aria-label='Functions' }
@@ -51,7 +52,7 @@ ___
 ___
 ### GetNextWaves () {: aria-label='Functions' }
 #### [RoomConfigRoom](RoomConfigRoom.md)[] GetNextWaves ( ) {: .copyable aria-label='Functions' }
-返回一个包含下几波挑战房的 [RoomConfigRoom](RoomConfigRoom.md) 的表。
+返回一个包含接下来几波挑战房 [RoomConfigRoom](RoomConfigRoom.md) 的表。
 
 ___
 ### SetMaxBossChallengeWaves () {: aria-label='Functions' }
@@ -104,3 +105,4 @@ ___
     在Boss冲刺房或挑战房外调用此函数除了会永久关闭门之外不会有任何效果，从而导致软锁定。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -19,7 +19,7 @@ tags:
 #### [ColorModifier](ColorModifier.md) ColorModifier {: .copyable aria-label='Variables'}
 Gets a modifiable copy of the color correction introduced in Repentance. This stores the values used in `fxlayers.xml` and not the raw values (see [GetCurrentColorModifier](Game.md#getcurrentcolormodifier) for this).
 
-Changes made here are _not_ automatically applied, use [UpdateColorModifier](Room.md#updatecolormodifier) to do this.
+Changes made here are _not_ applied automatically; use [UpdateColorModifier](Room.md#updatecolormodifier) to apply them.
 ___
 ### LightColor {: aria-label='Variables' }
 #### [KColor](https://wofsauge.github.io/IsaacDocs/rep/KColor.html) LightColor {: .copyable aria-label='Variables'}

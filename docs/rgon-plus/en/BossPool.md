@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 
 ## Functions
 
@@ -11,7 +13,7 @@ tags:
 ___
 ### GetEntries () {: aria-label='Functions' }
 #### int[] GetEntries ( ) {: .copyable aria-label='Functions' }
-The table contains the following fields
+The table contains the following fields:
 
 |Field|Type|Comment|
 |:--|:--|:--|

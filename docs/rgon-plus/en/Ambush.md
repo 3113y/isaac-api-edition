@@ -3,12 +3,14 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "Ambush"
 
 ???+ info
-    You can get this class by using the `Ambush` global table.
+    You can access this class through the `Ambush` global table.
 
-    **Note that to call these functions, you must use a `.` (period) instead of a `:` (colon)!**
+    **When calling these functions, you must use a `.` (period) instead of a `:` (colon)!**
     
     ???+ example "Example Code"
         ```lua
@@ -19,28 +21,28 @@ tags:
 
 ### GetCurrentWave () {: aria-label='Functions' }
 #### int GetCurrentWave ( ) {: .copyable aria-label='Functions' }
-Returns the current wave number of the current challenge room or boss rush room.
+Returns the current wave number in the current challenge room or boss rush room.
 
 ___
 ### GetMaxBossChallengeWaves () {: aria-label='Functions' }
 #### int GetMaxBossChallengeWaves ( ) {: .copyable aria-label='Functions' }
-Returns the maximum amount of boss challenge room waves. 
+Returns the maximum number of boss challenge room waves.
 
-By default, the maximum amount of challenge room waves are `2`. It's important to note that mods can modify the maximum amount of challenge room waves.
+By default, the maximum number of challenge room waves is `2`. Mods can modify this maximum.
 
 ___
 ### GetMaxBossrushWaves () {: aria-label='Functions' }
 #### int GetMaxBossrushWaves ( ) {: .copyable aria-label='Functions' }
-Returns the maximum amount of boss rush waves. 
+Returns the maximum number of boss rush waves.
 
-By default, the maximum amount of boss rush waves are `15`. It's important to note that mods can modify the maximum amount of boss rush waves.
+By default, the maximum number of boss rush waves is `15`. Mods can modify this maximum.
 
 ___
 ### GetMaxChallengeWaves () {: aria-label='Functions' }
 #### int GetMaxChallengeWaves ( ) {: .copyable aria-label='Functions' }
-Returns the maximum amount of challenge room waves. 
+Returns the maximum number of challenge room waves.
 
-By default, the maximum amount of challenge room waves are `3`. It's important to note that mods can modify the maximum amount of challenge room waves.
+By default, the maximum number of challenge room waves is `3`. Mods can modify this maximum.
 
 ___
 ### GetNextWave () {: aria-label='Functions' }
@@ -55,7 +57,7 @@ Returns a table containing the [RoomConfigRoom](RoomConfigRoom.md) of the next c
 ___
 ### SetMaxBossChallengeWaves () {: aria-label='Functions' }
 #### void SetMaxBossChallengeWaves ( int Waves ) {: .copyable aria-label='Functions' }
-Sets the maximum amount of boss challenge room waves.
+Sets the maximum number of waves in boss challenge rooms.
 
 ???+ bug "Bug"
 	Currently this value is not reset on game restart. This will be fixed as soon as we figure out how to cleanly run code on init on the C++ side!
@@ -63,12 +65,12 @@ Sets the maximum amount of boss challenge room waves.
 ___
 ### SetMaxBossrushWaves () {: aria-label='Functions' }
 #### void SetMaxBossrushWaves ( int Waves ) {: .copyable aria-label='Functions' }
-Sets the maximum amount of boss rush waves. As of now, there is a maximum cap of `25` waves.
+Sets the maximum number of boss rush waves. The current maximum cap is `25` waves.
 
 ___
 ### SetMaxChallengeWaves () {: aria-label='Functions' }
 #### void SetMaxChallengeWaves ( int Waves ) {: .copyable aria-label='Functions' }
-Sets the maximum amount of challenge room waves.
+Sets the maximum number of challenge room waves.
 
 ???+ bug "Bug"
 	Currently this value is not reset on game restart. This will be fixed as soon as we figure out how to cleanly run code on init on the C++ side!

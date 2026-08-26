@@ -6,7 +6,7 @@ tags:
 # Global Class "DebugRenderer"
 
 ???+ info
-    You can get this class by using the `DebugRenderer` global table.
+    You can access this class through the global `DebugRenderer` table.
 
     **Note that to call these functions, you must use a `.` (period) instead of a `:` (colon)!**
     

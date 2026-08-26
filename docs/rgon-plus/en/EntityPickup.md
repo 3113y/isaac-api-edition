@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityPickup"
 
 ## Class Diagram
@@ -22,7 +24,7 @@ ___
 ___
 ### GetCollectibleCycle () {: aria-label='Functions' }
 #### [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html)[] GetCollectibleCycle ( ) {: .copyable aria-label='Functions' }
-Returns a table of all [CollectibleTypes](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) being used inside its collectible cycle (i.e. Glitched Crown).
+Returns a table containing all [CollectibleTypes](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) used in its collectible cycle (for example, Glitched Crown).
 
 ___
 ### GetDropDelay () {: aria-label='Functions' }
@@ -31,28 +33,28 @@ ___
 ___
 ### GetFlipCollectible () {: aria-label='Functions' }
 #### [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) GetFlipCollectible ( ) {: .copyable aria-label='Functions' }
-Returns [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) if Flip save state exists, `nil` otherwise.
+Returns [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) if a Flip save state exists; otherwise, returns `nil`.
 
 ___
 ### GetLootList () {: aria-label='Functions' }
 #### [LootList](LootList.md) GetLootList ( boolean shouldAdvance = false ) {: .copyable aria-label='Functions' }
 Returns a **read-only** version of the pickup's [LootList](LootList.md). Loot inside pickups can be seen through use of the Guppy's Eye collectible.
 
-`shouldAdvance` determines if the loot RNG should advance or not.
+`shouldAdvance` determines whether the loot RNG advances.
 ___
 ### GetMegaChestLeftCollectible () {: aria-label='Functions' }
 #### [EntityPickup](EntityPickup.md) GetMegaChestLeftCollectible ( ) {: .copyable aria-label='Functions' }
-If called on an EntityPickup for the right-side of an open Mega Chest, returns the left-side collectible. Otherwise returns `nil`.
+If called on an EntityPickup on the right side of an open Mega Chest, returns the collectible on the left. Otherwise, returns `nil`.
 
 ___
 ### GetMegaChestOtherCollectible () {: aria-label='Functions' }
 #### [EntityPickup](EntityPickup.md), boolean GetMegaChestRightCollectible ( ) {: .copyable aria-label='Functions' }
-If called on an EntityPickup belonging to an open Mega Chest, returns the other collectible and a boolean indicating if this collectible is on the right-side. Otherwise, returns `nil`.
+If called on an EntityPickup belonging to an open Mega Chest, returns the other collectible and a boolean indicating whether the current collectible is on the right. Otherwise, returns `nil`.
 
 ___
 ### GetMegaChestRightCollectible () {: aria-label='Functions' }
 #### [EntityPickup](EntityPickup.md) GetMegaChestRightCollectible ( ) {: .copyable aria-label='Functions' }
-If called on an EntityPickup for the left-side of an open Mega Chest, returns the right-side collectible. Otherwise returns `nil`.
+If called on an EntityPickup on the left side of an open Mega Chest, returns the collectible on the right. Otherwise, returns `nil`.
 
 ___
 ### GetPickupGhost () {: aria-label='Functions' }
@@ -128,7 +130,7 @@ ___
 ### SetupCollectibleGraphics () {: aria-label='Functions' }
 [ ](#){: .static .tooltip .badge }
 #### static void SetupCollectibleGraphics ( [Sprite](Sprite.md) Sprite, integer Layer, [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) Collectible, boolean Blind = false, integer Seed = Random(), boolean LoadGraphics = false  ) {: .copyable aria-label='Functions' }
-Static method. Used to replace layer's spritesheet of the sprite object with collectible sprite. Seed is used for April Fools challenge to choose random collectible.
+Static method. Replaces the specified layer's spritesheet on the sprite object with the collectible sprite. Seed is used to choose a random collectible in the April Fools challenge.
 
 ___
 ### SetVarData () {: aria-label='Functions' }
@@ -159,6 +161,6 @@ Returns `true` if a collectible was successfully removed from the pedestal. Retu
 ___
 ### UpdatePickupGhosts () {: aria-label='Functions' }
 #### void UpdatePickupGhosts ( ) {: .copyable aria-label='Functions' }
-Updates the `EffectVariant.PICKUP_GHOST` EntityEffect in accordance to the pickup's current [LootList](LootList.md)
+Updates the `EffectVariant.PICKUP_GHOST` EntityEffect according to the pickup's current [LootList](LootList.md).
 
 ___

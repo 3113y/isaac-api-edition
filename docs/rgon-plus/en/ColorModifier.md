@@ -2,12 +2,14 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "ColorModifier"
 
-An example mod using the ColorModifier class can be found [here.](./examples/ColorModifiers.md)
+An example mod using the ColorModifier class can be found [here](./examples/ColorModifiers.md).
 
 ???+ info
-    You can get this class by using its constructor:
+    You can create an instance of this class by using its constructor:
     ???+ example "Example Code"
         ```lua
         local tintRed = ColorModifier(1,0,0,0.33,0,1)
@@ -57,7 +59,7 @@ ___
 ### __eq () {: aria-label='Operators' }
 #### [ColorModifier](ColorModifier.md) __eq ( [ColorModifier](ColorModifier.md) right ) {: .copyable aria-label='Operators' }
 
-Defines equal of two [ColorModifier](ColorModifier.md) objects using the `==` operator.
+Defines equality between two [ColorModifier](ColorModifier.md) objects using the `==` operator.
 ___
 ### __mul () {: aria-label='Operators' }
 #### [ColorModifier](ColorModifier.md) __mul ( [ColorModifier](ColorModifier.md) right ) {: .copyable aria-label='Operators' }

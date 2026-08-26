@@ -204,3 +204,4 @@ Thankfully, REPENTOGON allows you to freely import your missing achievements/unl
 Bugs, issues or suggestions can be posted in the corresponding Github Issues pages for [REPENTOGON](https://github.com/TeamREPENTOGON/REPENTOGON/issues) or the [Launcher](https://github.com/TeamREPENTOGON/Launcher/issues). When reporting bugs or issues, please include relevant log files. These can be easily located via the “Check Game Logs” button in the main Launcher window.
 
 Additionally, you can visit the **#repentogon** channel in [The Modding of Isaac Discord server!](https://discord.gg/HCRNEytxNB)
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

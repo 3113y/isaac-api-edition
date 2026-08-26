@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityTear"
 
 ## Class Diagram
@@ -54,12 +56,12 @@ Returns the tear halo sprite used by Godhead tears.
 ___
 ### IsMultidimensionalTouched () {: aria-label='Functions' }
 #### boolean IsMultidimensionalTouched ( ) {: .copyable aria-label='Functions' }
-Returns if the tear was created through the Multi Dimensional Baby effect.
+Returns whether the tear was created through the Multi Dimensional Baby effect.
 
 ___
 ### IsPrismTouched () {: aria-label='Functions' }
 #### boolean IsPrismTouched ( ) {: .copyable aria-label='Functions' }
-Returns if the tear was created through the Angelic Prism effect.
+Returns whether the tear was created through the Angelic Prism effect.
 
 ___
 ### MakeMultidimensionalCopy () {: aria-label='Functions' }
@@ -69,12 +71,12 @@ Copies the tear and applies a black and white effect to it. This effect is the s
 ___
 ### SetMultidimensionalTouched () {: aria-label='Functions' }
 #### void SetMultidimensionalTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-Sets if the tear was created through the Angelic Prism effect.
+Sets whether the tear was created through the Multi Dimensional Baby effect.
 
 ___
 ### SetPrismTouched () {: aria-label='Functions' }
 #### void SetPrismTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-Sets if the tear was created through the Angelic Prism effect.
+Sets whether the tear was created through the Angelic Prism effect.
 
 ___
 ### SetInitSound () {: aria-label='Functions' }

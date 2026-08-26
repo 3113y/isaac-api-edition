@@ -6,7 +6,7 @@ tags:
 
 ???+ info
 
-    你可以通过以下函数获取此类:
+    可以通过以下函数获取此类：
 
     * [EntityConfig.GetPlayer()](EntityConfig.md#getplayer)
 
@@ -24,7 +24,7 @@ tags:
 ___
 ### GetAchievementID () {: aria-label='Functions' }
 #### [Achievement](enums/Achievement.md) GetAchievementID ( ) {: .copyable aria-label='Functions' }
-如果角色未被原版成就锁定，则返回 -1（若为“隐藏”的原版角色，则返回 -2）。
+如果角色未受原版成就锁定，则返回 -1；如果是“隐藏”的原版角色，则返回 -2。
 
 ___
 ### GetBirthrightDescription () {: aria-label='Functions' }
@@ -45,9 +45,9 @@ ___
 ___
 ### GetCard () {: aria-label='Functions' }
 #### [Card](https://wofsauge.github.io/IsaacDocs/rep/enums/Card.html) GetCard ( ) {: .copyable aria-label='Functions' }
-不包括通过解锁获得的起始卡牌。
+不包括通过解锁获得的起始卡牌；
 
-不包括模组添加的卡牌。
+也不包括模组添加的卡牌。
 
 如果角色没有任何原版起始卡牌，则返回 0。
 
@@ -58,12 +58,12 @@ ___
 ___
 ### GetCollectibles () {: aria-label='Functions' }
 #### [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html)[] GetCollectibles ( ) {: .copyable aria-label='Functions' }
-返回一个包含角色起始物品的 [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) 类型的表。
+返回一个包含角色起始物品的表，其中元素类型为 [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html)。
 
 ___
 ### GetCostumeID () {: aria-label='Functions' }
 #### int GetCostumeID ( ) {: .copyable aria-label='Functions' }
-如果角色没有任何通过 XML 定义的起始服装（如玛吉的头发），则返回 -1。
+如果角色没有通过 XML 定义的起始服装（如玛吉的头发），则返回 -1。
 
 ___
 ### GetCostumeSuffix () {: aria-label='Functions' }
@@ -82,47 +82,47 @@ ___
 ___
 ### GetModdedControlsSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetModdedControlsSprite ( ) {: .copyable aria-label='Functions' }
-对于原版角色或没有相应动画的角色，返回 nil。
-
-请注意，此精灵图由同一模组中的其他角色共享 - 存在一个与该角色同名的动画。
-
 返回用于模组角色起始房间控制界面的精灵图。
+
+请注意，此精灵图由同一模组中的其他角色共享——其中存在一个与该角色同名的动画。
+
+对于原版角色或没有相应动画的角色，返回 nil。
 
 ___
 ### GetModdedCoopMenuSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetModdedCoopMenuSprite ( ) {: .copyable aria-label='Functions' }
-对于原版角色或没有相应动画的角色，返回 nil。
-
-请注意，此精灵图由同一模组中的其他角色共享 - 存在一个与该角色同名的动画。
-
 返回用于模组角色在合作角色选择轮中的图标的精灵图。
+
+请注意，此精灵图由同一模组中的其他角色共享——其中存在一个与该角色同名的动画。
+
+对于原版角色或没有相应动画的角色，返回 nil。
 
 ___
 ### GetModdedGameOverSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetModdedGameOverSprite ( ) {: .copyable aria-label='Functions' }
+返回用于模组角色游戏结束屏幕（即其名字）的精灵图。
+
+请注意，此精灵图由同一模组中的其他角色共享——其中存在一个与该角色同名的动画。
+
 对于原版角色或没有相应动画的角色，返回 nil。
-
-请注意，此精灵图由同一模组中的其他角色共享 - 存在一个与该角色同名的动画。
-
-返回用于模组角色游戏结束屏幕（即他们的名字）的精灵图。
 
 ___
 ### GetModdedMenuBackgroundSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetModdedMenuBackgroundSprite ( ) {: .copyable aria-label='Functions' }
-对于原版角色或没有相应动画的角色，返回 nil。
-
-请注意，此精灵图由同一模组中的其他角色共享 - 存在一个与该角色同名的动画。
-
 返回用于模组角色角色选择屏幕的精灵图。
+
+请注意，此精灵图由同一模组中的其他角色共享——其中存在一个与该角色同名的动画。
+
+对于原版角色或没有相应动画的角色，返回 nil。
 
 ___
 ### GetModdedMenuPortraitSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetModdedMenuPortraitSprite ( ) {: .copyable aria-label='Functions' }
-对于原版角色或没有相应动画的角色，返回 nil。
-
-请注意，此精灵图由同一模组中的其他角色共享 - 存在一个与该角色同名的动画。
-
 返回用于模组角色角色选择肖像的精灵图。
+
+请注意，此精灵图由同一模组中的其他角色共享——其中存在一个与该角色同名的动画。
+
+对于原版角色或没有相应动画的角色，返回 nil。
 
 ___
 ### GetName () {: aria-label='Functions' }
@@ -163,7 +163,7 @@ ___
 ___
 ### GetSkinPath () {: aria-label='Functions' }
 #### string GetSkinPath ( ) {: .copyable aria-label='Functions' }
-指向用于角色主要精灵图的 PNG 文件的路径。
+指向角色主要精灵图所用 PNG 文件的路径。
 
 ___
 ### GetSoulHearts () {: aria-label='Functions' }
@@ -186,7 +186,7 @@ ___
 ___
 ### IsHidden () {: aria-label='Functions' }
 #### boolean IsHidden ( ) {: .copyable aria-label='Functions' }
-如果角色在角色选择屏幕上不可见/不可选，则返回 true。
+如果角色在角色选择屏幕上不可见或不可选，则返回 true。
 
 不包括那些只有在解锁前才隐藏的角色。
 
@@ -195,3 +195,4 @@ ___
 #### boolean IsTainted ( ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

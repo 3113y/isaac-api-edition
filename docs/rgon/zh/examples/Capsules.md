@@ -93,3 +93,4 @@ You can use [Entity:GetNullCapsule()](../Entity.md#getnullcapsule) to generate a
     -- Connect the callback, only for our effect.
     exampleMod:AddCallback(ModCallbacks.MC_POST_EFFECT_UPDATE, exampleMod.PipeEffectUpdate, PIPE_EFFECT_ID)
     ```
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

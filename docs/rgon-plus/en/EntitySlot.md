@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntitySlot"
 
 It's Real.
@@ -89,7 +91,7 @@ Returns a number used by Bomb Bum and Reroll Machine.
 ___
 ### RandomCoinJamAnim () {: aria-label='Functions' }
 #### string RandomCoinJamAnim ( ) {: .copyable aria-label='Functions' }
-Returns a random string from the following options: `CoinJam`, `CoinJam2`, `CoinJam3,` `CoinJam4`. Presumably only used on the donation machines.
+Returns a random string from the following options: `CoinJam`, `CoinJam2`, `CoinJam3`, or `CoinJam4`. It is presumably used only on donation machines.
 
 ___
 ### SetDonationValue () {: aria-label='Functions' }
@@ -129,7 +131,7 @@ Sets the slot's touch counter. The touch counter goes up by one every frame a pl
 ___
 ### SetTriggerTimerNum () {: aria-label='Functions' }
 #### void SetTriggerTimerNum ( int num ) {: .copyable aria-label='Functions' }
-Returns a number used by Bomb Bum and Reroll Machine.
+Sets a number used by Bomb Bum and Reroll Machine.
 
 ???+ note "More Info"
     When bombing Bomb Bum, this is set to `30`

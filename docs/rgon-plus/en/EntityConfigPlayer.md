@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityConfigPlayer"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain this class with the following functions:
 
     * [EntityConfig.GetPlayer()](EntityConfig.md#getplayer)
 
@@ -22,7 +24,7 @@ tags:
 ___
 ### GetAchievementID () {: aria-label='Functions' }
 #### [Achievement](enums/Achievement.md) GetAchievementID ( ) {: .copyable aria-label='Functions' }
-Returns -1 if the character is not locked behind a vanilla achievement (or -2 for "hidden" vanilla characters).
+Returns -1 if the character is not locked behind a vanilla achievement, or -2 for a "hidden" vanilla character.
 
 ___
 ### GetBirthrightDescription () {: aria-label='Functions' }
@@ -43,11 +45,9 @@ ___
 ___
 ### GetCard () {: aria-label='Functions' }
 #### [Card](https://wofsauge.github.io/IsaacDocs/rep/enums/Card.html) GetCard ( ) {: .copyable aria-label='Functions' }
-Returns 0 if the character does not start with any vanilla card.
+Returns 0 if the character does not start with a vanilla card.
 
-Does not include starting cards obtained via unlocks.
-
-Does not include cards added by mods.
+Does not include starting cards obtained through unlocks or cards added by mods.
 
 ___
 ### GetCoins () {: aria-label='Functions' }
@@ -56,22 +56,22 @@ ___
 ___
 ### GetCollectibles () {: aria-label='Functions' }
 #### [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html)[] GetCollectibles ( ) {: .copyable aria-label='Functions' }
-Returns a table of [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html)s for the character's starting items.
+Returns a table containing the [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) values for the character's starting items.
 
 ___
 ### GetCostumeID () {: aria-label='Functions' }
 #### int GetCostumeID ( ) {: .copyable aria-label='Functions' }
-Returns -1 if the character does not have any XML-defined starting costume (like Maggy's hair).
+Returns -1 if the character has no XML-defined starting costume (such as Maggy's hair).
 
 ___
 ### GetCostumeSuffix () {: aria-label='Functions' }
 #### string GetCostumeSuffix ( ) {: .copyable aria-label='Functions' }
-Directory suffix used for character-specific costume sprites.
+Directory suffix for character-specific costume sprites.
 
 ___
 ### GetExtraPortraitPath () {: aria-label='Functions' }
 #### string GetExtraPortraitPath ( ) {: .copyable aria-label='Functions' }
-Path to a `.anm2` file displayed on top of the character's level transition and boss VS screen portrait.
+Path to the `.anm2` file displayed over the character's level-transition and boss VS-screen portrait.
 
 ___
 ### GetKeys () {: aria-label='Functions' }
@@ -161,7 +161,7 @@ ___
 ___
 ### GetSkinPath () {: aria-label='Functions' }
 #### string GetSkinPath ( ) {: .copyable aria-label='Functions' }
-Path to the PNG file used for the character's primary sprite sheet.
+Path to the PNG file used for the character's main sprite sheet.
 
 ___
 ### GetSoulHearts () {: aria-label='Functions' }
@@ -186,7 +186,7 @@ ___
 #### boolean IsHidden ( ) {: .copyable aria-label='Functions' }
 Returns true if the character is not visible/selectable from the character select screen.
 
-Doesn't include characters who are only hidden until unlocked.
+Does not include characters that are hidden only until unlocked.
 
 ___
 ### IsTainted () {: aria-label='Functions' }

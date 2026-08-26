@@ -25,12 +25,12 @@ tags:
 ___
 ### GetBossHPBarFill () {: aria-label='Functions' }
 #### float GetBossHPBarFill ( ) {: .copyable aria-label='Functions' }
-获取boss血条的填充量
+获取 Boss 血条的填充量。
 
 ___
 ### GetCardsPillsSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetCardsPillsSprite ( ) {: .copyable aria-label='Functions' }
-用于在HUD中渲染药丸、卡牌和符文图标的精灵对象。
+用于在 HUD 中渲染药丸、卡牌和符文图标的精灵对象。
 
 ___
 ### GetChargeBarSprite () {: aria-label='Functions' }
@@ -44,12 +44,12 @@ ___
 ___
 ### GetCraftingSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetCraftingSprite ( ) {: .copyable aria-label='Functions' }
-用于制作物品栏HUD的精灵对象。
+用于制作物品栏 HUD 的精灵对象。
 
 ___
 ### GetFortuneSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetFortuneSprite ( ) {: .copyable aria-label='Functions' }
-用于幸运弹窗窗口的精灵对象。
+用于幸运弹窗的精灵对象。
 
 ___
 ### GetHeartsSprite () {: aria-label='Functions' }
@@ -58,7 +58,7 @@ ___
 ___
 ### GetInventorySprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetInventorySprite ( ) {: .copyable aria-label='Functions' }
-用于堕化以撒的物品栏系统的精灵对象。
+用于堕化以撒物品栏系统的精灵对象。
 
 ___
 ### GetPickupsHUDSprite () {: aria-label='Functions' }
@@ -71,14 +71,14 @@ ___
 ___
 ### GetPlayerStreakSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetPlayerStreakSprite ( int Index = 0 ) {: .copyable aria-label='Functions' }
-A set of 4 Sprite objects used for the "mini" Repentance+ item text streaks that get displayed near the players' individual HUDs. Valid indexes are 0~3.
+A set of 4 Sprite objects used for the "mini" Repentance+ item text streaks displayed near the players' individual HUDs. Valid indexes are 0~3.
 
 Used in place of the sprites provided by [GetStackedStreakSprite](HUD.md#getstackedstreaksprite) during co-op.
 
 ___
 ### GetPoopSpellSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetPoopSpellSprite ( ) {: .copyable aria-label='Functions' }
-堕化？？？的便便副主动的精灵对象
+堕化蓝宝宝便便法术的精灵对象。
 
 ___
 ### GetStackedStreakSprite () {: aria-label='Functions' }
@@ -90,11 +90,12 @@ During co-op, the Sprites provided by [GetPlayerStreakSprite](HUD.md#getplayerst
 ___
 ### GetStreakSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetStreakSprite ( ) {: .copyable aria-label='Functions' }
-用于文本连击弹出窗口的精灵对象。在 Repentance+ 中，此功能似乎仅用于楼层名称弹出窗口，因为物品相关的弹出窗口使用 [GetStackedStreakSprite](HUD.md#getstackedstreaksprite) 或 [GetPlayerStreakSprite](HUD.md#getplayerstreaksprite) 的精灵。
+用于文本连击弹出窗口的精灵对象。在 Repentance+ 中，此功能似乎仅用于楼层名称弹出窗口，因为物品相关的弹出窗口使用 [GetStackedStreakSprite](HUD.md#getstackedstreaksprite) 或 [GetPlayerStreakSprite](HUD.md#getplayerstreaksprite) 提供的精灵。
 
 ___
 ### SetBossHPBarFill () {: aria-label='Functions' }
 #### void SetBossHPBarFill ( float percent ) {: .copyable aria-label='Functions' }
-设置boss血条的填充量。接受0到1之间的值。小于0的数字会导致boss血条不被渲染。
+设置 Boss 血条的填充量。接受 0 到 1 之间的值。小于 0 的数字会导致 Boss 血条不被渲染。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

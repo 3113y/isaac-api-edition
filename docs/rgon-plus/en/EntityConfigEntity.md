@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityConfigEntity"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain this class through the following function:
 
     * [EntityConfig.GetEntity()](EntityConfig.md#getentity)
 
@@ -74,17 +76,17 @@ ___
 ___
 ### GetCollisionRadius () {: aria-label='Functions' }
 #### float GetCollisionRadius ( ) {: .copyable aria-label='Functions' }
-Also known as "Size".
+Also known as “Size”.
 
 ___
 ### GetCollisionRadiusMultiplier () {: aria-label='Functions' }
 #### [const Vector](Vector.md) GetCollisionRadiusMultiplier ( ) {: .copyable aria-label='Functions' }
-Also known as "SizeMulti".
+Also known as “SizeMulti”.
 
 ___
 ### GetCustomTags () {: aria-label='Functions' }
 #### table GetCustomTags ( ) {: .copyable aria-label='Functions' }
-Returns a table containing all the strings specified in the entity's `customtags` attribute in [entities2.xml](xml/entities.md). Tags are always provided in all lowercase. See [entities2.xml](xml/entities.md) for more information on `customtags`.
+Returns a table containing all strings specified in the entity's `customtags` attribute in [entities2.xml](xml/entities.md). Tags are always returned in lowercase. See [entities2.xml](xml/entities.md) for more information about `customtags`.
 
 ___
 ### GetDevolvedEntity () {: aria-label='Functions' }
@@ -122,9 +124,7 @@ ___
 ___
 ### GetModName () {: aria-label='Functions' }
 #### string GetModName ( ) {: .copyable aria-label='Functions' }
-Name string of the mod that entity is from.
-
-Returns nil for vanilla entities.
+Returns the name of the mod that the entity comes from. Returns nil for vanilla entities.
 
 ___
 ### GetName () {: aria-label='Functions' }
@@ -137,12 +137,12 @@ ___
 ___
 ### GetShadowSize () {: aria-label='Functions' }
 #### float GetShadowSize ( ) {: .copyable aria-label='Functions' }
-Note that this value is the "shadowSize" specified in the XML divided by 100.
+Note that this value is the `shadowSize` specified in the XML, divided by 100.
 
 ___
 ### GetShieldStrength () {: aria-label='Functions' }
 #### float GetShieldStrength ( ) {: .copyable aria-label='Functions' }
-The amount of armor the entity has.
+Returns the amount of armor the entity has.
 
 ___
 ### GetStageHP () {: aria-label='Functions' }
@@ -163,12 +163,12 @@ ___
 ___
 ### HasCustomTag () {: aria-label='Functions' }
 #### boolean HasCustomTag ( string tag ) {: .copyable aria-label='Functions' }
-Returns true if the entity has the provided string specified in its `customtags` attribute in [entities2.xml](xml/entities.md). Capitalization does not matter. See [entities2.xml](xml/entities.md) for more information on `customtags`.
+Returns true if the entity's `customtags` attribute in [entities2.xml](xml/entities.md) contains the provided string. The check is case-insensitive. See [entities2.xml](xml/entities.md) for more information about `customtags`.
 
 ___
 ### HasEntityTags () {: aria-label='Functions' }
 #### boolean HasEntityTags ( int Tags ) {: .copyable aria-label='Functions' }
-Returns true if the entity has all [EntityTag](enums/EntityTag.md)s specified in the provided bitset.
+Returns true if the entity has all [EntityTag](enums/EntityTag.md) values specified in the provided bitset.
 
 ___
 ### HasFloorAlts () {: aria-label='Functions' }
@@ -177,7 +177,7 @@ ___
 ___
 ### HasGibFlags () {: aria-label='Functions' }
 #### boolean HasGibFlags ( int Flags ) {: .copyable aria-label='Functions' }
-Returns true if the entity has all [GibFlag](enums/GibFlag.md)s specified in the provided bitset.
+Returns true if the entity has all [GibFlag](enums/GibFlag.md) values specified in the provided bitset.
 
 ___
 ### IsBoss () {: aria-label='Functions' }

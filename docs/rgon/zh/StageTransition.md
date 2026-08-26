@@ -24,13 +24,13 @@ tags:
 
 ### GetSameStage () {: aria-label='Functions' }
 #### boolean GetSameStage ( ) {: .copyable aria-label='Functions' }
-Indicate if the stage transition screen will display Isaac's head moving from one stage to the other (`false`) or not (`true`).
+Indicates whether the stage transition screen will display Isaac's head moving from one stage to the other (`false`) or not (`true`).
 
 ### SetSameStage () {: aria-label='Functions' }
 #### void SetSameStage ( boolean Value ) {: .copyable aria-label='Functions' }
-Calling this method before the current stage transition has called `SetNextStage` will override the transition itself. This means that instead of merely displaying Isaac's head not moving, it will actually change whether the next stage will be a repeat of the current one, or the actual next stage. Ideally, you should use this function in the context of the `ModCallbacks.MC_PRE_LEVEL_SELECT` callback.
+Calling this method before the current stage transition has called `SetNextStage` will override the transition itself. Instead of merely displaying Isaac's head as stationary, it will actually determine whether the next stage repeats the current one or is the actual next stage. Ideally, you should use this function in the context of the `ModCallbacks.MC_PRE_LEVEL_SELECT` callback.
 * If transitioning back to the first floor, and `SameStage` is not set to `true`, Isaac's head will appear outside of the progress bar. Otherwise, Isaac's head will appear on the first floor.
 * If repeating the last floor, and `SameStage` is not set to `true`, Isaac's head will move from the previous stage to the last one. Otherwise, Isaac's head will appear on the last floor.
 ???+ warning "Warning"
 This function is useful if you want to move the player to the first stage, or want to repeat the last stage on the progress bar of the transition screen, and have it be less jarring.
-Configure whether the stage transition will display Isaac's head moving from one stage to the other (`false`) or not (`true`).
+Configures whether the stage transition will display Isaac's head moving from one stage to the other (`false`) or not (`true`).

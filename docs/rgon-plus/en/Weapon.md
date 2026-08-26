@@ -5,7 +5,7 @@ tags:
 # Class "Weapon"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can access this class through the following function:
 
     * [EntityPlayer:GetWeapon()](EntityPlayer.md#getweapon)
 
@@ -34,9 +34,9 @@ ___
 ___
 ### GetMainEntity () {: aria-label='Functions' }
 #### [Entity](Entity.md) GetMainEntity ( ) {: .copyable aria-label='Functions' }
-Returns active entity used by weapon (Brimstone - EntityLaser, Mom's Knife -  EntityKnife and etc.).
+Returns the active entity used by the weapon (for example, EntityLaser for Brimstone or EntityKnife for Mom's Knife).
 
-Returns `nil` if it cannot be found.
+Returns `nil` if no active entity can be found.
 
 ___
 ### GetMaxCharge () {: aria-label='Functions' }

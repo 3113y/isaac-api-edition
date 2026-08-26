@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityFamiliar"
 
 ## Class Diagram
@@ -58,7 +60,7 @@ Returns nil if the familiar was not spawned by an item.
 ___
 ### GetMoveDelayNum () {: aria-label='Functions' }
 #### int GetMoveDelayNum ( ) {: .copyable aria-label='Functions' }
-Returns the amount in frames that the familiar's movements are delayed from the player's. 30 frames = 1 second.
+Returns the familiar's movement delay relative to the player's, in frames. 30 frames = 1 second.
 
 ___
 ### GetMultiplier () {: aria-label='Functions' }
@@ -88,7 +90,7 @@ Returns `nil` for familiars that don't mimic the player's attacks (Incubus, etc)
 ___
 ### InvalidateCachedMultiplier () {: aria-label='Functions' }
 #### void InvalidateCachedMultiplier ( ) {: .copyable aria-label='Functions' }
-Makes it so that the next time [GetMultiplier](EntityFamiliar.md#getmultiplier) is called, [MC_EVALUATE_FAMILIAR_MULTIPLIER](enums/ModCallbacks.md#mc_evaluate_familiar_multiplier) is triggered to recalculate/allow modifying the multiplier.
+Causes [MC_EVALUATE_FAMILIAR_MULTIPLIER](enums/ModCallbacks.md#mc_evaluate_familiar_multiplier) to trigger the next time [GetMultiplier](EntityFamiliar.md#getmultiplier) is called, allowing the multiplier to be recalculated or modified.
 
 ___
 ### IsCharmed () {: aria-label='Functions' }
@@ -110,7 +112,7 @@ ___
 ___
 ### SetMoveDelayNum () {: aria-label='Functions' }
 #### void SetMoveDelayNum ( int Delay ) {: .copyable aria-label='Functions' }
-Sets the amount in frames that the familiar's movements are delayed from the player's. 30 frames = 1 second.
+Sets the familiar's movement delay relative to the player's, in frames. 30 frames = 1 second.
 
 ___
 ### TriggerRoomClear () {: aria-label='Functions' }
@@ -120,10 +122,10 @@ ___
 ### TryAimAtMarkedTarget () {: aria-label='Functions' }
 #### [Vector](Vector.md) TryAimAtMarkedTarget ( [Vector](Vector.md) AimDirection, [Direction](https://wofsauge.github.io/IsaacDocs/rep/enums/Direction.html) Direction = Direction.NO_DIRECTION ) {: .copyable aria-label='Functions' }
 #### boolean, table TryAimAtMarkedTarget ( [Vector](Vector.md) AimDirection = nil, [Direction](https://wofsauge.github.io/IsaacDocs/rep/enums/Direction.html) Direction = Direction.NO_DIRECTION, [Vector](Vector.md) TargetPos = nil ) {: .copyable aria-label='Functions' }
-Return `true` if player's mark from Marked or Eye of the Occult/Gello target exists, `false` otherwise.
-Return a table containing the changed AimDirection, Direction, and TargetPos.
+Returns `true` if the player's mark from Marked or an Eye of the Occult/Gello target exists, and `false` otherwise.
+Returns a table containing the updated AimDirection, Direction, and TargetPos.
 
-Legacy version returns modified TargetPos, `nil` if unsuccessful.
+The legacy version returns the modified TargetPos, or `nil` if unsuccessful.
 
 ___
 ### UpdateDirtColor () {: aria-label='Functions' }

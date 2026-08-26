@@ -4,7 +4,7 @@ tags:
 ---
 # Class "WeightedOutcomePicker"
 
-An example mod using the WeightedOutcomePicker class can be found [here.](./examples/WeightedOutcomes.md)
+有关 WeightedOutcomePicker 类的使用示例，请参阅[此模组示例](./examples/WeightedOutcomes.md)。
 
 ???+ info
     This class can be obtained using its constructor:
@@ -24,7 +24,7 @@ ___
 ### AddOutcomeFloat () {: aria-label='Functions' }
 #### void AddOutcomeFloat ( int Value, float Weight, int ScaleFactor = 100 ) {: .copyable aria-label='Functions' }
 picker:AddOutcomeFloat(3, 0.2) -- ~9%
-Adds an outcome to the outcome selector with the specified `Weight`. The internal weight is still an integer calculated like this: `fWeight * scaleFactor`, where `ScaleFactor` is the maximum weight (equivalent to 1.0).
+使用指定的 `Weight` 向选择器添加一个结果。内部权重仍为整数，计算方式为 `fWeight * scaleFactor`；其中 `ScaleFactor` 是最大权重（相当于 1.0）。
 picker:AddOutcomeFloat(2, 1.0) -- ~45%
 local picker = WeightedOutcomePicker()
 ```lua
@@ -39,21 +39,21 @@ picker:AddOutcomeWeight(1, 65) -- 65%
 local picker = WeightedOutcomePicker()
 ```lua
 picker:AddOutcomeWeight(2, 30) -- 30%
-Adds an outcome to the outcome selector with the specified `Weight`.
+使用指定的 `Weight` 向选择器添加一个结果。
 ???+ example "Example Code"
 ```
 
 ### ClearOutcomes () {: aria-label='Functions' }
 #### void ClearOutcomes ( ) {: .copyable aria-label='Functions' }
-Clears all outcomes from the outcome picker.
+清除选择器中的所有结果。
 
 ### GetNumOutcomes () {: aria-label='Functions' }
 #### int GetNumOutcomes ( ) {: .copyable aria-label='Functions' }
-Returns the number of outcomes in the outcome picker.
+返回选择器中的结果数量。
 
 ### GetOutcomes () {: aria-label='Functions' }
 #### table[] GetOutcomes ( ) {: .copyable aria-label='Functions' }
-Returns a table containing a list of all outcomes in the outcome picker.
+返回一个包含选择器中所有结果的表。
 print(outcome.Value, outcome.Weight)
 end
 ```lua
@@ -66,8 +66,8 @@ for i, outcome in ipairs(p:GetOutcomes()) do
 
 ### PickOutcome () {: aria-label='Functions' }
 #### int PickOutcome ( [RNG](RNG.md) RNG ) {: .copyable aria-label='Functions' }
-Returns a random outcome from the list in WeightedOutcomePicker. Accepts [RNG](RNG.md).
+从 WeightedOutcomePicker 的结果列表中随机返回一个结果。接受 [RNG](RNG.md)。
 
 ### RemoveOutcome () {: aria-label='Functions' }
 #### void RemoveOutcome ( int Value ) {: .copyable aria-label='Functions' }
-Removes an outcome from the outcome picker with the given `Value`.
+从选择器中移除 `Value` 指定的结果。

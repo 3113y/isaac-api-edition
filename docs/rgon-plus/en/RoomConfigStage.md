@@ -5,7 +5,7 @@ tags:
 # Class "RoomConfigStage"
 
 ???+ info
-    You can get this class by using the following function:
+    This class can be obtained with the following function:
 
     - [RoomConfig.GetStage()](RoomConfig.md#getstage)
     
@@ -18,12 +18,12 @@ tags:
 
 ### GetBackdrop () {: aria-label='Functions' }
 #### [BackdropType](https://wofsauge.github.io/IsaacDocs/rep/enums/BackdropType.html?h=backdrop) GetBackdrop ( ) {: .copyable aria-label='Functions' }
-Returns the `BackdropType` used in default rooms on the stage.
+Returns the `BackdropType` used by default rooms on the stage.
 
 ___
 ### GetBossSpot () {: aria-label='Functions' }
 #### string GetBossSpot ( ) {: .copyable aria-label='Functions' }
-Returns the sprite path for the boss spot used in the boss intro.
+Returns the sprite path for the boss spot used in the boss introduction.
 
 ___
 ### GetDisplayName () {: aria-label='Functions' }
@@ -37,7 +37,7 @@ ___
 ___
 ### GetMusic () {: aria-label='Functions' }
 #### [Music](https://wofsauge.github.io/IsaacDocs/rep/enums/Music.html?h=music) GetMusic ( ) {: .copyable aria-label='Functions' }
-Returns the `Music` used in default rooms on the stage.
+Returns the `Music` used by default rooms on the stage.
 
 ___
 ### GetPlayerSpot () {: aria-label='Functions' }
@@ -47,13 +47,13 @@ Returns the sprite path for the player spot used in the boss intro and nightmare
 ___
 ### GetRoomSet () {: aria-label='Functions' }
 #### [RoomConfigSet](CcpContainer_RoomConfigSet.md) GetRoomSet ( int Mode ) {: .copyable aria-label='Functions' }
-Returns a [RoomConfigSet](CcpContainer_RoomConfigSet.md), which contains every [RoomConfigRoom](https://wofsauge.github.io/IsaacDocs/rep/RoomConfig_Room.html) in the stage.
+Returns a [RoomConfigSet](CcpContainer_RoomConfigSet.md) containing every [RoomConfigRoom](https://wofsauge.github.io/IsaacDocs/rep/RoomConfig_Room.html) in the stage.
 
-`Mode` is `0` for Normal Mode, `1` for Greed Mode
+`Mode` is `0` for Normal Mode and `1` for Greed Mode.
 ___
 ### GetSuffix () {: aria-label='Functions' }
 #### string GetSuffix ( ) {: .copyable aria-label='Functions' }
-Returns the suffix used by the stage for stage-unique sprites, such as the boss/player spot and unique variants for enemies.
+Returns the suffix used by the stage for stage-specific sprites, such as the boss/player spot and unique enemy variants.
 
 ___
 ### GetXMLName () {: aria-label='Functions' }
@@ -66,12 +66,12 @@ ___
 ___
 ### SetBackdrop () {: aria-label='Functions' }
 #### void SetBackdrop ( [BackdropType](https://wofsauge.github.io/IsaacDocs/rep/enums/BackdropType.html?h=backdrop) Backdrop ) {: .copyable aria-label='Functions' }
-Sets the `BackdropType` used in default rooms on the stage.
+Sets the `BackdropType` used by default rooms on the stage.
 
 ___
 ### SetBossSpot () {: aria-label='Functions' }
 #### void SetBossSpot ( string PngFilename ) {: .copyable aria-label='Functions' }
-Sets the sprite path for the boss spot used in the boss intro.
+Sets the sprite path for the boss spot used in the boss introduction.
 
 ___
 ### SetDisplayName () {: aria-label='Functions' }
@@ -81,7 +81,7 @@ Sets the name of the stage.
 ___
 ### SetMusic () {: aria-label='Functions' }
 #### void SetMusic ( [Music](https://wofsauge.github.io/IsaacDocs/rep/enums/Music.html?h=music) Music ) {: .copyable aria-label='Functions' }
-Sets the `Music` used in default rooms on the stage.
+Sets the `Music` used by default rooms on the stage.
 
 ___
 ### SetPlayerSpot () {: aria-label='Functions' }
@@ -91,7 +91,7 @@ Sets the sprite path for the player spot used in the boss intro and nightmare tr
 ___
 ### SetSuffix () {: aria-label='Functions' }
 #### void SetSuffix ( string Suffix ) {: .copyable aria-label='Functions' }
-Sets the suffix used by the stage for stage-unique sprites, such as the boss/player spot and unique variants for enemies.
+Sets the suffix used by the stage for stage-specific sprites, such as the boss/player spot and unique enemy variants.
 
 ___
 ### SetXMLName () {: aria-label='Functions' }

@@ -57,6 +57,9 @@ def test_version_badge_styles_preserve_rep_and_all_dlcs() -> None:
     assert '.rep::before { content: "REP"; }' in stylesheet
     assert '.repplus::before { content: "REP+"; }' in stylesheet
     assert '.alldlc::before { content: "ALL DLCs"; }' in stylesheet
+    assert '.rgon::before { content: "RGON"; }' in stylesheet
+    assert '.rgonplus::before { content: "RGON+"; }' in stylesheet
+    assert '.rgonorplus::before { content: "RGON / RGON+"; }' in stylesheet
 
 
 def test_profile_script_marks_upstream_badges_as_compatible_entries() -> None:
@@ -69,13 +72,14 @@ def test_profile_script_marks_upstream_badges_as_compatible_entries() -> None:
     assert "all-dlcs" in script
 
 
-def test_profile_script_routes_extensions_to_their_available_source_roots() -> None:
+def test_profile_script_uses_only_original_and_unified_rgon_roots() -> None:
     script = (ROOT / "docs" / "assets" / "javascripts" / "profile.js").read_text(
         encoding="utf-8"
     )
 
-    assert '"rgon": { language: "zh", root: "/rgon/zh/" }' in script
-    assert '"rgon+": { language: "en", root: "/rgon-plus/en/" }' in script
+    assert '"rgon": "/rgon/"' in script
+    assert 'rgon-plus/en' not in script
+    assert '"rgon+"' not in script
 
 
 def test_original_extension_handler_routes_back_to_the_vanilla_profile() -> None:
@@ -98,11 +102,10 @@ def test_api_pages_are_present_in_the_primary_navigation() -> None:
     assert 'href="../EntityPlayer/" class="md-nav__link"' in entity_page
 
 
-def test_deployment_generates_docs_from_both_upstream_sources() -> None:
+def test_deployment_builds_committed_sources_without_fetching_upstream() -> None:
     workflow = (ROOT / ".github" / "workflows" / "deploy-pages.yml").read_text(encoding="utf-8")
 
-    assert "schedule:" in workflow
-    assert "https://github.com/wofsauge/IsaacDocs.git" in workflow
-    assert "https://github.com/cuerzor/IsaacDocs.git" in workflow
-    assert "scripts/sync_upstream_docs.py" in workflow
-    assert workflow.index("scripts/sync_upstream_docs.py") < workflow.index("mkdocs build --strict")
+    assert "scripts/build_rgon_docs.py" in workflow
+    assert "git clone" not in workflow
+    assert "scripts/sync_upstream_docs.py" not in workflow
+    assert workflow.index("scripts/build_rgon_docs.py") < workflow.index("mkdocs build --strict")

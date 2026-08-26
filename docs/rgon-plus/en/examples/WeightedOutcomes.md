@@ -1,5 +1,7 @@
 # Weighted Outcomes Example
-The [WeightedOutcomePicker](../WeightedOutcomePicker.md) class allows choosing a random outcome from a weighted list using an RNG object.
+The [WeightedOutcomePicker](../WeightedOutcomePicker.md) class chooses a random outcome from a weighted list using an RNG object.
+
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
 
 A weighted chance system is commonly used by games to determine loot tables and other things where some items in a list of possible outcomes should have a lower chance than others. An outcome's chance to be chosen is determined by its weight divided by the sum of the weight of all outcomes.
 

@@ -11,7 +11,7 @@ tags:
 ___
 ### GetEntries () {: aria-label='Functions' }
 #### int[] GetEntries ( ) {: .copyable aria-label='Functions' }
-返回的表包括以下内容
+返回的表包括以下内容：
 
 |:--|:--|:--|
 | bossID | [BossType](enums/BossType.md) | |
@@ -33,3 +33,4 @@ ___
 #### float GetWeight ( ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -17,9 +17,9 @@ ___
 
 ### FireSplitTear () {: aria-label='Functions' }
 #### [EntityTear](EntityTear.md) FireSplitTear ( [Vector](Vector.md) Position, [Vector](Vector.md) Velocity, float DamageMultiplier = 0.5, float SizeMultiplier = 0.6, int Variant = 0, [SplitTearType](enums/SplitTearType.md) splitType = SplitTearType.SPLIT_GENERIC ) {: .copyable aria-label='Functions' }
-Fire a new tear that inherits many attributes from this tear (flags, damage, size, color, etc).
+发射一颗继承该眼泪诸多属性（标记、伤害、大小、颜色等）的新眼泪。
 
-This will also trigger the `MC_POST_FIRE_SPLIT_TEAR` callback. For custom effects, a string may be passed in place of the [SplitTearType](enums/SplitTearType.md).
+此操作还会触发 `MC_POST_FIRE_SPLIT_TEAR` 回调。对于自定义效果，可以传入字符串代替 [SplitTearType](enums/SplitTearType.md)。
 
 ___
 ### GetDeadEyeIntensity () {: aria-label='Functions' }
@@ -34,7 +34,7 @@ ___
 ___
 ### GetHitList () {: aria-label='Functions' }
 #### int[] GetHitList ( ) {: .copyable aria-label='Functions' }
-Returns an array of hit entities using their [Index](https://wofsauge.github.io/IsaacDocs/rep/Entity.html#index) field.
+返回一个数组，其中包含使用其 [Index](https://wofsauge.github.io/IsaacDocs/rep/Entity.html#index) 字段标识的已命中实体。
 
 
 ___
@@ -65,7 +65,7 @@ ___
 ___
 ### SetMultidimensionalTouched () {: aria-label='Functions' }
 #### void SetMultidimensionalTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-设置该眼泪是否是通过“天使棱镜”效果创建的。
+设置该眼泪是否是通过“多维宝宝”效果创建的。
 
 ___
 ### SetPrismTouched () {: aria-label='Functions' }
@@ -75,9 +75,9 @@ ___
 ___
 ### SetInitSound () {: aria-label='Functions' }
 #### void SetInitSound ( [SoundEffect](https://wofsauge.github.io/IsaacDocs/rep/enums/SoundEffect.html) SoundID ) {: .copyable aria-label='Functions' }
-Sets the sound that will be automatically played when the tear is spawned. Can be set to `SoundEffect.SOUND_NULL` to make no sound play.
+设置眼泪生成时自动播放的声音。可以设为 `SoundEffect.SOUND_NULL` 以不播放声音。
 
-Should be set on [MC_POST_TEAR_INIT](https://wofsauge.github.io/IsaacDocs/rep/enums/ModCallbacks.html#mc_post_tear_init) or at any point prior to the tear's first Update, otherwise it will have no effect.
+应在 [MC_POST_TEAR_INIT](https://wofsauge.github.io/IsaacDocs/rep/enums/ModCallbacks.html#mc_post_tear_init) 中设置，或在眼泪第一次 Update 之前的任意时间设置，否则不会生效。
 
 ???-info "Example"
     ```lua
@@ -91,3 +91,4 @@ Should be set on [MC_POST_TEAR_INIT](https://wofsauge.github.io/IsaacDocs/rep/en
     ```
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

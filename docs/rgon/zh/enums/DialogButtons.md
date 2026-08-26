@@ -13,3 +13,4 @@ tags:
 |5 |RETRY_CANCEL {: .copyable } |  |
 |6 |CANCEL_TRY_CONTINUE {: .copyable } |  |
 |16384 |HELP {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

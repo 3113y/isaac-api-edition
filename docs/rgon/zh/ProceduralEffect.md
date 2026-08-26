@@ -18,20 +18,20 @@ tags:
 ### GetActionProperty () {: aria-label='Functions' }
 #### table GetActionProperty ( ) {: .copyable aria-label='Functions' }
 | toType | int | target type |
-When `GetActionType` returns `SPAWN_ENTITY`, the returned table has the following fields.
+当 `GetActionType` 返回 `SPAWN_ENTITY` 时，返回的表包含以下字段。
 | scale | float | |
-When `GetActionType` returns `CONVERT_ENTITY`, the returned table has the following fields.
+当 `GetActionType` 返回 `CONVERT_ENTITY` 时，返回的表包含以下字段。
 | fromVariant | int | |
-When `GetActionType` returns `FART`, the returned table has the following fields.
+当 `GetActionType` 返回 `FART` 时，返回的表包含以下字段。
 | damage | float | |
-When `GetActionType` returns `AREA_DAMAGE`, the returned table has the following fields.
+当 `GetActionType` 返回 `AREA_DAMAGE` 时，返回的表包含以下字段。
 | id | int | |
 | fromType | int | |
 |:--|:--|:--|
 | variant | int | |
-When `GetActionType` returns `ADD_TEMPRORY_EFFECT`, the returned table has the following fields.
-Returns a table that describes the action argument.
-When `GetActionType` returns `USE_ACTIVE_ITEM`, the returned table has the following fields.
+当 `GetActionType` 返回 `ADD_TEMPRORY_EFFECT` 时，返回的表包含以下字段。
+返回一个描述动作参数的表。
+当 `GetActionType` 返回 `USE_ACTIVE_ITEM` 时，返回的表包含以下字段。
 |Field|Type|Comment|
 | type | int | |
 | radius | float | |
@@ -39,35 +39,35 @@ When `GetActionType` returns `USE_ACTIVE_ITEM`, the returned table has the follo
 
 ### GetActionType () {: aria-label='Functions' }
 #### [ProceduralEffectActionType](enums/ProceduralEffectActionType.md) GetActionType ( ) {: .copyable aria-label='Functions' }
-Returns what to do after the effect is triggered.
+返回触发效果后要执行的操作。
 
 ### GetConditionProperty () {: aria-label='Functions' }
 #### table GetConditionProperty ( ) {: .copyable aria-label='Functions' }
 | type |  int |
 | variant |  int |
-Returns a table that describes the condition argument.
-When `GetConditionType` returns `ENTITY_SPAWN`, the returned table has the following fields.
+返回一个描述条件参数的表。
+当 `GetConditionType` 返回 `ENTITY_SPAWN` 时，返回的表包含以下字段。
 |:--|:--|
 |Field|Type|
 
 ### GetConditionType () {: aria-label='Functions' }
 #### [ProceduralEffectConditionType](enums/ProceduralEffectConditionType.md) GetConditionType ( ) {: .copyable aria-label='Functions' }
-Returns the timing when the effect was triggered.
+返回触发效果的时机。
 
 ___
 ### GetScore () {: aria-label='Functions' }
 #### float GetScore ( ) {: .copyable aria-label='Functions' }
 
-The score is used to generate the `ProceduralItem`. Each `ProceduralItem` has a score limit when generating its effects. If the limit is reached, no more effect will be added.
+该分数用于生成 `ProceduralItem`。每个 `ProceduralItem` 在生成效果时都有分数上限；达到上限后，不会再添加效果。
 ___
 ### GetTriggerChance () {: aria-label='Functions' }
 #### float GetTriggerChance ( ) {: .copyable aria-label='Functions' }
 
-This is the chance that the game actually uses. In most cases, this value ranges from `0` to `1`. This is the value that the result of `GetTriggerChanceScale` has been applied.
+这是游戏实际使用该效果的概率。通常，此值的范围为 `0` 到 `1`。该值已经应用了 `GetTriggerChanceScale` 的结果。
 
 ___
 ### GetTriggerChanceScale () {: aria-label='Functions' }
 #### float GetTriggerChanceScale ( ) {: .copyable aria-label='Functions' }
 
-In most cases, this value should be `1`.
+通常，此值应为 `1`。
 ___

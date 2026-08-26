@@ -20,12 +20,13 @@ tags:
 
 ### GetCollectiblesHistory () {: aria-label='Functions' }
 #### [HistoryItems](HistoryItem.md)[] GetCollectiblesHistory ( ) {: .copyable aria-label='Functions' }
-返回收藏品[HistoryItems](HistoryItem.md)的表格.
+返回玩家收藏品对应的 [HistoryItems](HistoryItem.md) 表格。
 
 ___
 ### RemoveHistoryItemByIndex () {: aria-label='Functions' }
 #### boolean RemoveHistoryItemByIndex ( int Index ) {: .copyable aria-label='Functions' }
-从屏幕右侧的物品历史追踪器中移除一个物品。请注意，这不会从玩家身上移除该物品的效果。
-如果物品被成功移除，返回`true`；否则，返回`false`.
+从屏幕右侧的物品历史记录器中移除一个物品。请注意，这不会移除该物品对玩家的效果。
+如果成功移除物品，则返回 `true`；否则返回 `false`。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

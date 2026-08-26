@@ -3,12 +3,14 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "StageTransition"
 
 ???+ info
-    This class gives access to data exclusive to the stage transition screen.
+    This class provides access to data specific to the stage transition screen.
     
-    Please note that the `StageTransition` is only used to configure how the stage transition plays. If you want to manipulate the content of the screen during a stage transition, you need to use the NightmareScene class.
+    Please note that `StageTransition` is used only to configure how the stage transition is displayed. If you want to manipulate the screen's content during a stage transition, you need to use the `NightmareScene` class.
     
     You can get this class by using the `StageTransition` global table.
     
@@ -25,7 +27,7 @@ tags:
 ### GetSameStage () {: aria-label='Functions' }
 #### boolean GetSameStage ( ) {: .copyable aria-label='Functions' }
 
-Indicate if the stage transition screen will display Isaac's head moving from one stage to the other (`false`) or not (`true`).
+Indicates whether the stage transition screen will display Isaac's head moving from one stage to the other (`false`) or not (`true`).
 ___
 
 ### SetSameStage () {: aria-label='Functions' }

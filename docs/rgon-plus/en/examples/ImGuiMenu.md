@@ -1,5 +1,7 @@
 # Custom ImGui Menu
-The [ImGui](../ImGui.md) class allows us to create custom menus for our mods. This can be used to create configuration menus, and also to hold useful information while debugging.
+The [ImGui](../ImGui.md) class lets mods create custom menus for configuration and debugging information.
+
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
 
 ImGui menus are found in the top bar when pressing the Debug Console button, which is `~` by default.
 

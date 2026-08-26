@@ -28,12 +28,12 @@ Returns a table containing all the strings specified in the item's `customtags` 
 ___
 ### HasCustomCacheTag () {: aria-label='Functions' }
 #### boolean HasCustomCacheTag ( string tag ) {: .copyable aria-label='Functions' }
-Returns true if the items has the provided string specified in its `customcache` attribute in [items.xml](xml/items.md). Capitalization does not matter. See [items.xml](xml/items.md) for more information on `customcache`.
+Returns true if the item has the provided string in its `customcache` attribute in [items.xml](xml/items.md). Capitalization does not matter. See [items.xml](xml/items.md) for more information on `customcache`.
 
 ___
 ### HasCustomTag () {: aria-label='Functions' }
 #### boolean HasCustomTag ( string tag ) {: .copyable aria-label='Functions' }
-Returns true if the items has the provided string specified in its `customtags` attribute in [items.xml](xml/items.md). Capitalization does not matter. See [items.xml](xml/items.md) for more information on `customtags`.
+Returns true if the item has the provided string in its `customtags` attribute in [items.xml](xml/items.md). Capitalization does not matter. See [items.xml](xml/items.md) for more information on `customtags`.
 
 ___
 ### RemoveCustomCacheTag () {: aria-label='Functions' }

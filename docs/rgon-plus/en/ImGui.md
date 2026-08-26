@@ -18,15 +18,15 @@ An example mod using the ImGui class can be found [here.](./examples/ImGuiMenu.m
     For element types we use the same names as in ImGui itself. Check out the **[interactive ImGui example](https://pthom.github.io/imgui_manual_online/manual/imgui_manual.html)**.
     
     ### Icons
-    All imgui text supports the usage of icons. Right now, we use "FontAwesome 6", which provides ~1400 icons. You can search for fitting icons here: [https://fontawesome.com/search?o=r&m=free&s=solid](https://fontawesome.com/search?o=r&m=free&s=solid)
+    All ImGui text supports the use of icons. We currently use "FontAwesome 6", which provides approximately 1,400 icons. You can search for suitable icons here: [https://fontawesome.com/search?o=r&m=free&s=solid](https://fontawesome.com/search?o=r&m=free&s=solid)
 
     **Icon usage in Lua:**
 
-    If you want to add an Icon into your widget, just use the "Unicode" representation of the icon and put it in between a `\u{ }` string. You can find this, by selecting the icon on the fontawesome page, and looking in the top right corner of the popup-window. You can add it to your element like this:
+    If you want to add an icon to your widget, use the icon's "Unicode" representation inside a `\u{ }` string. You can find it by selecting the icon on the Font Awesome page and looking in the top-right corner of the pop-up window. You can add it to your element like this:
 
     `"\u{f0f9} My Text"`
 
-    This will add the "truck-medical" icon in front of the text "My text".
+    This adds the "truck-medical" icon before the text "My Text".
 
     Result: ":fontawesome-solid-truck-medical: My Text"
 
@@ -67,7 +67,7 @@ ___
 #### void AddInputColor ( string ParentId, string ElementId, string Label = "", function ChangeCallback = nil, float r = 0, float g = 0, float b = 0, float a = 1 ) {: .copyable aria-label='Functions' }
 Adds a color input element. If the parameter `a` is set, it acts as an RGBA input. Otherwise its just an RGB input. The float values are between `0` and `1`.
 
-The callback gets passed the r,g,b and a values as seperate parameters.
+The callback receives the r, g, b, and a values as separate parameters.
 
 ???+ example "Example Code"
     ```lua
@@ -104,11 +104,11 @@ Adds a text input element that allows to input multiple lines of text. The attri
 ___
 ### AddPlotHistogram () {: aria-label='Functions' }
 #### void AddPlotHistogram ( string ParentId, string ElementId, string Label = "", table Values, string OverlayText = "", float Minimum = FLT_MIN, float Maximum = FLT_MAX, float Height = 40 ) {: .copyable aria-label='Functions' }
-Adds a bar-diagram displaying the given data as vertical bars. On default, minimum and maximum are set "dynamicaly", making the diagram fit its content perfectly.
+Adds a bar chart displaying the given data as vertical bars. By default, the minimum and maximum are set dynamically, making the chart fit its content.
 ___
 ### AddPlotLines () {: aria-label='Functions' }
 #### void AddPlotLines ( string ParentId, string ElementId, string Label = "", table Values, string OverlayText = "", float Minimum = FLT_MIN, float Maximum = FLT_MAX, float Height = 40 ) {: .copyable aria-label='Functions' }
-Adds a line-diagram connecting the given values using lines. On default, minimum and maximum are set "dynamicaly", making the diagram fit its content perfectly.
+Adds a line chart connecting the given values. By default, the minimum and maximum are set dynamically, making the chart fit its content.
 ___
 ### AddProgressBar () {: aria-label='Functions' }
 #### void AddProgressBar ( string ParentId, string ElementId, string Label = "", float Progress = 0, string OverlayText = "__DEFAULT__" ) {: .copyable aria-label='Functions' }
@@ -164,7 +164,7 @@ ___
 #### void GetMousePosition ( ) {: .copyable aria-label='Functions' }
 Returns the mouse position in Screen coordinates.
 
-Use this instead of `Input.GetMousePosition()` when working with imgui!
+Use this instead of `Input.GetMousePosition()` when working with ImGui.
 ___
 ### GetVisible () {: aria-label='Functions' }
 #### boolean GetVisible ( string ElementId ) {: .copyable aria-label='Functions' }
@@ -172,7 +172,7 @@ Get if a window element is visible or not.
 ___
 ### GetWindowChildFlags () {: aria-label='Functions' }
 #### [ImGuiChildFlags](enums/ImGuiChildFlags.md) GetWindowChildFlags ( ) {: .copyable aria-label='Functions' }
-Get visual setting flags for the window, specific for its usecase as a child.
+Gets the window's visual setting flags when it is used as a child.
 ___
 ### GetWindowFlags () {: aria-label='Functions' }
 #### [ImGuiWindowFlags](enums/ImGuiWindowFlags.md) GetWindowFlags ( ) {: .copyable aria-label='Functions' }
@@ -270,7 +270,7 @@ ___
 ___
 ### SetWindowChildFlags () {: aria-label='Functions' }
 #### void SetWindowChildFlags ( [ImGuiChildFlags](enums/ImGuiChildFlags.md) newFlags ) {: .copyable aria-label='Functions' }
-Set visual setting flags for the window, specific for its usecase as a child.
+Sets the window's visual setting flags when it is used as a child.
 ___
 ### SetWindowFlags () {: aria-label='Functions' }
 #### void SetWindowFlags ( [ImGuiWindowFlags](enums/ImGuiWindowFlags.md) newFlags ) {: .copyable aria-label='Functions' }

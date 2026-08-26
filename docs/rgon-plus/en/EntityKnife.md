@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityKnife"
 
 ## Class Diagram
@@ -17,7 +19,7 @@ This will also trigger the `MC_POST_FIRE_SPLIT_TEAR` callback. For custom effect
 ___
 ### GetHitboxParentKnife () {: aria-label='Functions' }
 #### [EntityKnife](EntityKnife.md) GetHitboxParentKnife ( ) {: .copyable aria-label='Functions' }
-For a "hitbox" [EntityKnife](EntityKnife.md) ([KnifeSubType.CLUB_HITBOX](enums/KnifeSubType.md)) created by melee weapon "swings" (Bone Club, Spirit Sword, etc) this function returns the "main" [EntityKnife](EntityKnife.md) of that melee weapon. Returns `nil` otherwise, and will return nil for hitbox entities spawned via other means.
+For a "hitbox" [EntityKnife](EntityKnife.md) ([KnifeSubType.CLUB_HITBOX](enums/KnifeSubType.md)) created by a melee weapon's "swing" (Bone Club, Spirit Sword, etc.), this function returns that weapon's "main" [EntityKnife](EntityKnife.md). It returns `nil` otherwise, including for hitbox entities spawned by other means.
 
 ___
 ### GetHitList () {: aria-label='Functions' }
@@ -35,12 +37,12 @@ ___
 ___
 ### IsMultidimensionalTouched () {: aria-label='Functions' }
 #### boolean IsMultidimensionalTouched ( ) {: .copyable aria-label='Functions' }
-Returns if the knife was created through the Multi Dimensional Baby effect.
+Returns whether the knife was created through the Multi Dimensional Baby effect.
 
 ___
 ### IsPrismTouched () {: aria-label='Functions' }
 #### boolean IsPrismTouched ( ) {: .copyable aria-label='Functions' }
-Returns if the knife was created through the Angelic Prism effect.
+Returns whether the knife was created through the Angelic Prism effect.
 
 ___
 ### SetHitboxParentKnife () {: aria-label='Functions' }
@@ -68,7 +70,7 @@ ___
 ___
 ### SetMultidimensionalTouched () {: aria-label='Functions' }
 #### void SetMultidimensionalTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-Sets if the knife was created through the Angelic Prism effect.
+Sets whether the knife was created through the Multi Dimensional Baby effect.
 
 ___
 ### SetPrismTouched () {: aria-label='Functions' }

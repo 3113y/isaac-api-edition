@@ -30,7 +30,7 @@ ___
 ___
 ### GetFlipCollectible () {: aria-label='Functions' }
 #### [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) GetFlipCollectible ( ) {: .copyable aria-label='Functions' }
-Returns [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) if Flip save state exists, `nil` otherwise.
+如果存在 Flip 保存状态，则返回 [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html)，否则返回 `nil`。
 
 ___
 ### GetLootList () {: aria-label='Functions' }
@@ -42,17 +42,17 @@ ___
 ___
 ### GetMegaChestLeftCollectible () {: aria-label='Functions' }
 #### [EntityPickup](EntityPickup.md) GetMegaChestLeftCollectible ( ) {: .copyable aria-label='Functions' }
-If called on an EntityPickup for the right-side of an open Mega Chest, returns the left-side collectible. Otherwise returns `nil`.
+如果对打开的 Mega Chest 右侧的 EntityPickup 调用，则返回左侧的收藏品；否则返回 `nil`。
 
 ___
 ### GetMegaChestOtherCollectible () {: aria-label='Functions' }
 #### [EntityPickup](EntityPickup.md), boolean GetMegaChestRightCollectible ( ) {: .copyable aria-label='Functions' }
-If called on an EntityPickup belonging to an open Mega Chest, returns the other collectible and a boolean indicating if this collectible is on the right-side. Otherwise, returns `nil`.
+如果对属于打开的 Mega Chest 的 EntityPickup 调用，则返回另一个收藏品，以及一个表示当前收藏品是否位于右侧的布尔值；否则返回 `nil`。
 
 ___
 ### GetMegaChestRightCollectible () {: aria-label='Functions' }
 #### [EntityPickup](EntityPickup.md) GetMegaChestRightCollectible ( ) {: .copyable aria-label='Functions' }
-If called on an EntityPickup for the left-side of an open Mega Chest, returns the right-side collectible. Otherwise returns `nil`.
+如果对打开的 Mega Chest 左侧的 EntityPickup 调用，则返回右侧的收藏品；否则返回 `nil`。
 
 ___
 ### GetPickupGhost () {: aria-label='Functions' }
@@ -80,12 +80,12 @@ ___
 ___
 ### HasFlipData () {: aria-label='Functions' }
 #### boolean HasFlipData ( ) {: .copyable aria-label='Functions' }
-Returns `true` if pickup is collectible and has Flip save state.
+如果拾取物是收藏品且具有 Flip 保存状态，则返回 `true`。
 
 ___
 ### InitFlipState () {: aria-label='Functions' }
 #### void InitFlipState ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) = CollectibleType.COLLECTIBLE_NULL, boolean SetupCollectibleGraphics = true ) {: .copyable aria-label='Functions' }
-Initiates the flip state for the pickup with the provided [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html).
+使用提供的 [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) 为拾取物初始化翻转状态。
 
 ___
 ### IsBlind () {: aria-label='Functions' }
@@ -131,7 +131,7 @@ ___
 ### SetupCollectibleGraphics () {: aria-label='Functions' }
 [ ](#){: .static .tooltip .badge }
 #### static void SetupCollectibleGraphics ( [Sprite](Sprite.md) Sprite, integer Layer, [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) Collectible, boolean Blind = false, integer Seed = Random(), boolean LoadGraphics = false  ) {: .copyable aria-label='Functions' }
-Static method. Used to replace layer's spritesheet of the sprite object with collectible sprite. Seed is used for April Fools challenge to choose random collectible.
+静态方法。用于将精灵对象指定图层的 spritesheet 替换为收藏品精灵。Seed 用于在愚人节挑战中选择随机收藏品。
 
 ___
 ### SetVarData () {: aria-label='Functions' }
@@ -164,3 +164,4 @@ ___
 根据拾取物当前的 [LootList](LootList.md) 更新 `EffectVariant.PICKUP_GHOST` 实体效果。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

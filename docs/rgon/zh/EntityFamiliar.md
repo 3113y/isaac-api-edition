@@ -50,18 +50,19 @@ ___
 ___
 ### GetItemConfig () {: aria-label='Functions' }
 #### [ItemConfigItem](ItemConfig_Item.md) GetItemConfig ( ) {: .copyable aria-label='Functions' }
+返回赋予此跟班的道具所对应的 ItemConfigItem 对象。
+
 如果跟班不是由道具生成的，则返回 nil。
-返回与赋予此跟班的道具相对应的 ItemConfigItem 对象。
 
 ___
 ### GetMoveDelayNum () {: aria-label='Functions' }
 #### int GetMoveDelayNum ( ) {: .copyable aria-label='Functions' }
-返回跟班的移动相对于玩家的移动延迟的帧数。30 帧 = 1 秒。
+返回跟班相对于玩家移动的延迟帧数。30 帧 = 1 秒。
 
 ___
 ### GetMultiplier () {: aria-label='Functions' }
 #### float GetMultiplier ( ) {: .copyable aria-label='Functions' }
-返回跟班的“乘数”，该乘数受诸如 **BFFS!** 或 **Hive Mind** 等效果的影响。通常用于乘以跟班的伤害等属性。
+返回跟班的“乘数”；该值会受到 **BFFS!** 或 **Hive Mind** 等效果的影响，通常用于乘算跟班伤害等属性。
 
 ???- info "乘数"
 
@@ -108,7 +109,7 @@ ___
 ___
 ### SetMoveDelayNum () {: aria-label='Functions' }
 #### void SetMoveDelayNum ( int Delay ) {: .copyable aria-label='Functions' }
-设置跟班的移动相对于玩家的移动延迟的帧数。30 帧 = 1 秒。
+设置跟班相对于玩家移动的延迟帧数。30 帧 = 1 秒。
 
 ___
 ### TriggerRoomClear () {: aria-label='Functions' }
@@ -118,13 +119,14 @@ ___
 ### TryAimAtMarkedTarget () {: aria-label='Functions' }
 #### [Vector](Vector.md) TryAimAtMarkedTarget ( [Vector](Vector.md) AimDirection, [Direction](https://wofsauge.github.io/IsaacDocs/rep/enums/Direction.html) Direction = Direction.NO_DIRECTION ) {: .copyable aria-label='Functions' }
 #### boolean, table TryAimAtMarkedTarget ( [Vector](Vector.md) AimDirection = nil, [Direction](https://wofsauge.github.io/IsaacDocs/rep/enums/Direction.html) Direction = Direction.NO_DIRECTION, [Vector](Vector.md) TargetPos = nil ) {: .copyable aria-label='Functions' }
-Return `true` if player's mark from Marked or Eye of the Occult/Gello target exists, `false` otherwise.
-Return a table containing the changed AimDirection, Direction, and TargetPos.
+如果存在来自 Marked 或 Eye of the Occult/Gello 目标的玩家标记，则返回 `true`，否则返回 `false`。
+返回包含修改后 AimDirection、Direction 和 TargetPos 的表。
 
-Legacy version returns modified TargetPos, `nil` if unsuccessful.
+旧版本会返回修改后的 TargetPos；如果失败，则返回 `nil`。
 
 ___
 ### UpdateDirtColor () {: aria-label='Functions' }
 #### void UpdateDirtColor ( ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

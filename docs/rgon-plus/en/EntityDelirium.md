@@ -2,13 +2,15 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityDelirium"
 
 ## Functions
 
 ### GetTeleportationTimer () {: aria-label='Functions' }
 #### int GetTeleportationTimer ( ) {: .copyable aria-label='Functions' }
-Return the number of frames before Delirium teleports.
+Return the number of frames remaining before Delirium teleports.
     
 ___
 ### IsRedMode () {: aria-label='Functions' }
@@ -16,13 +18,13 @@ ___
 Returns a boolean indicating if the red mode is activated or not.
 
 ???+ info "About red mode"
-    Red mode is mechanic in the Delirium fight where Delirium's sprite is tinted red. 
+    Red mode is a mechanic in the Delirium fight in which Delirium's sprite is tinted red.
     While this mode is active, Delirium's movement speed is increased in a way that cannot be observed through the modding API as it occurs outside of the update callbacks.
     
 ___
 ### SetRedMode () {: aria-label='Functions' }
 #### void SetRedMode ( boolean On ) {: .copyable aria-label='Functions' }
-Enable or disable red mode according to the parameter `on`. 
+Enable or disable red mode according to the parameter `on`.
 
 ???+ info "About red mode"
     Please refer to the note in the documentation of [IsRedMode](EntityDelirium.md#isredmode) for an explanation of red mode.
@@ -35,7 +37,7 @@ Set the number of frames before Delirium teleports. Negative values are not allo
 ___
 ### Transform () {: aria-label='Functions' }
 #### void Transform ( int Type, int Variant = 0 ) {: .copyable aria-label='Functions' }
-Transform Delirium into the entity with the specified type and variant. 
+Transform Delirium into the entity with the specified `type` and `variant`.
 
 ???+ warn "Warning"
     The validation of the type and variant is only as strong as the validation performed by the game when it attempts to transform Delirium.
@@ -54,13 +56,13 @@ ___
 Angle of Delirium's projectiles. 
 
 ???+ warn "Geometric system"
-    This variable is an eight bit integers, so the allowed values are the integers from 0 to 255 (inclusive).
-    You can use a linear interpolation between the \[0: 255] and the \[0: 360\[ ranges in order to convert angles in degree to this system.
+    This variable is an eight-bit integer, so the allowed values are the integers from 0 to 255 (inclusive).
+    You can use a linear interpolation between the \[0: 255] and the \[0: 360\[ ranges to convert angles in degrees to this system.
 
 ???+ info "WTH"
     All of Delirium bullet hell patterns can be influenced by this variable. Unlike most bosses, Delirium does not aim its projectiles at the player, instead spawning them in random directions (with some control to prevent "absurd" patterns).
     For instance, if Delirium spawns eight tears around it, and `Angle` is set to 0, the 8 tears will fire in the cardinal and ordinal directions. If `Angle` is set to 32, all tears will be rotated by 45°.
-    No, I have no idea why Nicalis used an eight bits integer to represent an angle (analyzing the memory layout of Delirium shows that it would have made no difference using a 32 bits float).
+    No, I have no idea why Nicalis used an eight-bit integer to represent an angle (analyzing Delirium's memory layout shows that using a 32-bit float would have made no difference).
 ___
 ### AttackID {: aria-label='Variables' }
 #### int AttackID {: .copyable aria-label='Variables' }
@@ -97,7 +99,7 @@ ___
 Number of attacks remaining before Delirium transforms into another boss.
 
 ???+ info "About remaining attacks" 
-    This variable is Nicalis answer to prevent Delirium from performing too many attacks as a single boss before transforming.
+    This variable is Nicalis's answer to prevent Delirium from performing too many attacks as a single boss before transforming.
     Under certain conditions, the game will decrement this value by 1. If it reaches 0, Delirium transforms regardless of the transformation timer.
     The conditions that must be met (simultaneously) are: the [StateFrame](https://wofsauge.github.io/IsaacDocs/rep/EntityNPC.html#stateframe) variable must be 1 during the current frame, and the [State](https://wofsauge.github.io/IsaacDocs/rep/EntityNPC.md#state) variable must be set to any of the attack states.
     This is the reason why Delirium will sometimes initiate an attack as a boss and immediately transform. 

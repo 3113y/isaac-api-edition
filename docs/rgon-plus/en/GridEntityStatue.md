@@ -4,4 +4,4 @@ tags:
 ---
 # Class "GridEntityStatue"
 
-Currently used as a distinct object from [GridEntity](GridEntity.md). No content at this point, sorry!
+GridEntityStatue is currently treated as a distinct object from [GridEntity](GridEntity.md). No further information is available at this time.

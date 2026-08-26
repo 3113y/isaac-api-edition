@@ -5,7 +5,7 @@ tags:
 # Class "LootListEntry"
 
 ???+ info
-    You can get this class by using the following function:
+    You can get an instance of this class by calling the following function:
 
     - [LootList:GetEntries()](LootList.md#getentries)
 

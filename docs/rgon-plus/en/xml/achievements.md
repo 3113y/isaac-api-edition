@@ -2,6 +2,8 @@
 tags:
   - File
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # File "achievements.xml"
 
 **Resource-Folder**{: .xmlInfo .red}: Using this file in a resource folder of a mod will replace the original file.

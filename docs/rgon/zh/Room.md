@@ -11,11 +11,11 @@ tags:
 ___
 ### GetLRoomAreaDesc () {: aria-label='Modified Functions' }
 #### [LRoomAreaDesc](LRoomAreaDesc.md) GetLRoomAreaDesc ( ) {: .copyable aria-label='Modified Functions' }
-Now returns a usable class. Describes the corners of an L-room shape (as divided horizontally into two rectangles), in worldspace.
+Now returns a usable class. It describes the corners of an L-room shape (divided horizontally into two rectangles) in world space.
 
 ### GetLRoomTileDesc () {: aria-label='Modified Functions' }
 #### [LRoomTileDesc](LRoomTileDesc.md) GetLRoomTileDesc ( ) {: .copyable aria-label='Modified Functions' }
-Now returns a usable class. Describes the corners of an L-room shape (as divided horizontally into two rectangles), in grid coordinates.
+Now returns a usable class. It describes the corners of an L-room shape (divided horizontally into two rectangles) in grid coordinates.
 
 ### SpawnGridEntity () {: aria-label='Modified Functions' }
 #### boolean SpawnGridEntity ( int GridIndex, [GridEntityType](https://wofsauge.github.io/IsaacDocs/rep/enums/GridEntityType.html) Type, int Variant = 0, int Seed = nil, int VarData = 0 ) {: .copyable aria-label='Modified Functions' }
@@ -27,7 +27,7 @@ An `IgnoreStageType` parameter has been added to allow spawning the Mirror & Min
 
 ### CanPickupGridEntity () {: aria-label='Functions' }
 #### boolean CanPickupGridEntity ( int GridIndex ) {: .copyable aria-label='Functions' }
-Returns true if the gridentity at the given position can be picked up.
+Returns `true` if the grid entity at the given position can be picked up.
 
 ### CanSpawnObstacleAtPosition () {: aria-label='Functions' }
 #### boolean CanSpawnObstacleAtPosition ( int GridIndex, boolean Force ) {: .copyable aria-label='Functions' }
@@ -56,7 +56,7 @@ Returns a [Camera](Camera.md) object.
 
 ### GetChampionBossChance () {: aria-label='Functions' }
 #### float GetChampionBossChance ( ) {: .copyable aria-label='Functions' }
-Return the probability that boss spawns in this room will be champions.
+Returns the probability that bosses spawned in this room will be champions.
 
 ### GetEffects () {: aria-label='Functions' }
 #### [TemporaryEffects](https://wofsauge.github.io/IsaacDocs/rep/TemporaryEffects.html) GetEffects ( ) {: .copyable aria-label='Functions' }
@@ -95,7 +95,7 @@ Gets the intensity of the lightning effect used in Downpour. This variable will 
 ### GetNumRainSpawners () {: aria-label='Functions' }
 #### int GetNumRainSpawners ( ) {: .copyable aria-label='Functions' }
 ???+ info
-There's more to this than just the number of them, but I'm having trouble identifying how this works.
+There's more to this than just their number, but it is not yet clear how this works.
 The number of areas in a room that spawn rain effects in a tight radius.
 
 ### GetRail () {: aria-label='Functions' }
@@ -108,7 +108,7 @@ ___
 ___
 ### GetRainIntensity () {: aria-label='Functions' }
 #### float GetRainIntensity ( ) {: .copyable aria-label='Functions' }
-Used by the positional rain effect spawners in Downpour. No noticable effect beyond `1.0`.
+Used by the positional rain-effect spawners in Downpour. There is no noticeable effect above `1.0`.
 
 ### GetRoomClearDelay () {: aria-label='Functions' }
 #### int GetRoomClearDelay ( ) {: .copyable aria-label='Functions' }

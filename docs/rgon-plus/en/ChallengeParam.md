@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "ChallengeParam"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain an instance of this class with the following functions:
 
     * [Game():GetChallengeParams()](Game.md#getchallengeparams)
     * [DailyChallenge.GetChallengeParams()](DailyChallenge.md#getchallengeparams)

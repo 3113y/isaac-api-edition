@@ -8,7 +8,7 @@ tags:
 
 请注意，插值和根动画已预先计算并包含在这些值中。
 
-此外，这些值与 ANM2 编辑器中可见的值相对应，并且命名方式相同.
+此外，这些值与 ANM2 编辑器中显示的值相对应，命名方式也相同。
 
 可通过 [AnimationLayer:GetFrame()](AnimationLayer.md#getframe) 获取.
 
@@ -24,8 +24,10 @@ ___
 ___
 ### GetEndFrame () {: aria-label='Functions' }
 #### int GetEndFrame ( ) {: .copyable aria-label='Functions' }
-也就是说，本动画帧（AnimationFrame）在此帧之后将不再显示。
-请注意，“结束帧”是下一动画帧（AnimationFrame）的起始帧。### GetHeight () {: aria-label='Functions' }
+也就是说，本动画帧（AnimationFrame）从此帧开始将不再显示。
+请注意，“结束帧”是下一动画帧（AnimationFrame）的起始帧。
+
+### GetHeight () {: aria-label='Functions' }
 #### float GetHeight ( ) {: .copyable aria-label='Functions' }
 
 ___
@@ -61,3 +63,4 @@ ___
 #### boolean IsVisible ( ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

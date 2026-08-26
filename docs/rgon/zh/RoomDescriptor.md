@@ -8,11 +8,11 @@ tags:
 
 ### AllowedDoors {: aria-label='Modified Variables' }
 #### DoorSet AllowedDoors {: .copyable aria-label='Modified Variables' }
-Now properly returns a value.
+现在可以正确返回值。
 
-Returns a bitmask corresponding to which door slots are currently enabled.
+返回一个位掩码，表示当前启用的门槽位。
 
-Doors are typically only included in this bitmask when there is a door currently present, even if the room would allow a door in that slot.
+通常只有当前实际存在门时，该门才会包含在此位掩码中，即使房间允许在该槽位设置门也是如此。
 
 ???+ example "Example"
     This tests if the DoorSlot `LEFT0` is enabled.
@@ -36,7 +36,7 @@ ___
 ___
 ### GetDimension () {: aria-label='Functions' }
 #### [Dimension](https://wofsauge.github.io/IsaacDocs/rep/enums/Dimension.html) GetDimension ( ) {: .copyable aria-label='Functions' }
-Returns the [Dimension](enums/Dimension.md) that this room exists in.
+返回该房间所在的 [Dimension](enums/Dimension.md)。
 
 ### GetEntitiesSaveState () {: aria-label='Functions' }
 #### [EntitiesSaveStateVector](EntitiesSaveStateVector.md) GetEntitiesSaveState ( ) {: .copyable aria-label='Functions' }
@@ -50,9 +50,9 @@ ___
 #### table GetNeighboringRooms ( ) {: .copyable aria-label='Functions' }
 if roomType == RoomType.ROOM_SECRET or roomType == RoomType.ROOM_SUPERSECRET or roomType == RoomType.ROOM_ULTRASECRET then
 return false
-Returns a table that maps [DoorSlot](https://wofsauge.github.io/IsaacDocs/rep/enums/DoorSlot.html) to [RoomDescriptor](https://wofsauge.github.io/IsaacDocs/rep/RoomDescriptor.html) for all of the current neighbors of this room.
+返回一个表，将 [DoorSlot](https://wofsauge.github.io/IsaacDocs/rep/enums/DoorSlot.html) 映射到该房间当前所有邻居的 [RoomDescriptor](https://wofsauge.github.io/IsaacDocs/rep/RoomDescriptor.html)。
 end
-Don't use `ipairs` to iterate over this, use `pairs`!
+遍历此表时不要使用 `ipairs`，应使用 `pairs`！
 ```lua
 local function HasSecretRoomNeighbor(roomDesc)
 local roomType = neighborDesc.Data.Type
@@ -68,7 +68,7 @@ for doorSlot, neighborDesc in pairs(roomDesc:GetNeighboringRooms()) do
 ___
 ### GetTaintedKeeperCoinSpawns () {: aria-label='Functions' }
 #### int GetTaintedKeeperCoinSpawns ( ) {: .copyable aria-label='Functions' }
-Prevent coin spawn from killed enemies on room reenter when counter reaches 10.
+当计数器达到 10 时，防止玩家重新进入房间时被击杀的敌人生成硬币。
 
 ___
 ### InitSeeds () {: aria-label='Functions' }
@@ -88,12 +88,12 @@ ___
 ___
 ### Doors {: aria-label='Variables' }
 #### const int[] Doors {: .copyable aria-label='Variables' }
-Allows you to check which level grid index each [DoorSlot](https://wofsauge.github.io/IsaacDocs/rep/enums/DoorSlot.html) in the room connects to.
+用于检查房间中的每个 [DoorSlot](https://wofsauge.github.io/IsaacDocs/rep/enums/DoorSlot.html) 连接到哪个关卡网格索引。
 
-For example, `roomdesc.Doors[DoorSlot.UP0]` provides the level grid index that the upwards door would connect to.
+例如，`roomdesc.Doors[DoorSlot.UP0]` 会返回上方门所连接的关卡网格索引。
 
-The value will be `-1` if the [RoomShape](https://wofsauge.github.io/IsaacDocs/rep/enums/RoomShape.html) does not allow a door in that slot.
+如果 [RoomShape](https://wofsauge.github.io/IsaacDocs/rep/enums/RoomShape.html) 不允许在该槽位设置门，则值为 `-1`。
 
-Note that this typically provides a valid index even if there is no door present, and even if the room itself does not allow a door in that slot.
+请注意，即使当前没有门，或房间本身不允许在该槽位设置门，此属性通常仍会提供有效索引。
 
 ___

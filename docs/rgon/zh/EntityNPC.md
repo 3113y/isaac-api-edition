@@ -15,7 +15,7 @@ Returns a [Pathfinder](Pathfinder.md) class with fixed versions of its functions
 
 ### PlaySound () {: aria-label='Modified Functions' }
 #### void PlaySound ( int ID, float Volume = 1.0, int FrameDelay = 2, boolean Loop = true, float Pitch = 1.0 ) {: .copyable aria-label='Modified Functions' }
-除 `ID` 之外的所有参数现在都是可选的。
+除 `ID` 外，所有参数现在均为可选参数。
 
 ___
 
@@ -23,19 +23,19 @@ ___
 
 ### ApplyTearflagEffects () {: aria-label='Functions' }
 #### void ApplyTearflagEffects ( [Vector](Vector.md) Position, [TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html) TearFlags, [Entity](Entity.md) Source = nil, float Damage = 3.5 ) {: .copyable aria-label='Functions' }
-Attempt to the on-hit effects of the provided [TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html) to this enemy, credited to the provided source [Entity](Entity.md), if any.
+尝试将所提供 [TearFlags](https://wofsauge.github.io/IsaacDocs/rep/enums/TearFlags.html) 的命中效果应用于此敌人；如果提供了来源 [Entity](Entity.md)，效果将归因于该实体。
 
-Will also trigger [MC_POST_APPLY_TEARFLAG_EFFECTS](enums/ModCallbacks.md#mc_post_apply_tearflag_effects) if successful.
+如果成功，还会触发 [MC_POST_APPLY_TEARFLAG_EFFECTS](enums/ModCallbacks.md#mc_post_apply_tearflag_effects)。
 
 ___
 ### ClearFlyingOverride () {: aria-label='Functions' }
 #### void ClearFlyingOverride ( ) {: .copyable aria-label='Functions' }
-移除由 [SetFlyingOverride](EntityNPC.md#setflyingoverride) 设置的任何值。
+移除 [SetFlyingOverride](EntityNPC.md#setflyingoverride) 设置的值。
 
 ___
 ### FireBossProjectilesEx () {: aria-label='Functions' }
 #### [EntityProjectile](EntityProjectile.md)[] FireBossProjectilesEx ( int NumProjectiles, [Vector](Vector.md) TargetPos, float TrajectoryModifier, [ProjectileParams](https://wofsauge.github.io/IsaacDocs/rep/ProjectileParams.html) Params ) {: .copyable aria-label='Functions' }
-与 [FireBossProjectiles](https://wofsauge.github.io/IsaacDocs/rep/EntityNPC.html#firebossprojectiles) 相同，但返回一个包含已生成弹幕列表的表。
+与 [FireBossProjectiles](https://wofsauge.github.io/IsaacDocs/rep/EntityNPC.html#firebossprojectiles) 相同，但会返回包含已生成弹幕列表的表。
 
 ___
 ### FireGridEntity () {: aria-label='Functions' }
@@ -44,17 +44,17 @@ ___
 ___
 ### FireProjectilesEx () {: aria-label='Functions' }
 #### [EntityProjectile](EntityProjectile.md)[] FireProjectilesEx ([Vector](Vector.md) Position, [Vector](Vector.md) Velocity, ProjectilesMode Mode, [ProjectileParams](https://wofsauge.github.io/IsaacDocs/rep/ProjectileParams.html) Params) {: .copyable aria-label='Functions' }
-与 [FireProjectiles](https://wofsauge.github.io/IsaacDocs/rep/EntityNPC.html#fireprojectiles) 相同，但返回一个包含已生成弹幕列表的表。
+与 [FireProjectiles](https://wofsauge.github.io/IsaacDocs/rep/EntityNPC.html#fireprojectiles) 相同，但会返回包含已生成弹幕列表的表。
 
 ___
 ### GetBossColorIdx () {: aria-label='Functions' }
 #### int GetBossColorIdx ( ) {: .copyable aria-label='Functions' }
-返回 bosscoloridx（通常就是子类型），如果不是 bosscolor（或者不适用 bosscolor）则返回 -1。
+返回 `bosscoloridx`（通常就是子类型）；如果不是 boss color，或 boss color 不适用，则返回 `-1`。
 
 ___
 ### GetControllerId () {: aria-label='Functions' }
 #### int GetControllerId ( ) {: .copyable aria-label='Functions' }
-返回 NPC 的控制器 ID，该 ID 指示哪个玩家正在控制它。当没有被任何玩家控制时将返回 `-1`。
+返回 NPC 的控制器 ID，表示当前由哪个玩家控制。未由任何玩家控制时返回 `-1`。
 
 ___
 ### GetDarkRedChampionRegenTimer () {: aria-label='Functions' }
@@ -77,7 +77,7 @@ ___
 ___
 ### GetHitList () {: aria-label='Functions' }
 #### int[] GetHitList ( ) {: .copyable aria-label='Functions' }
-Returns an array of hit entities using their [Index](https://wofsauge.github.io/IsaacDocs/rep/Entity.html#index) field.
+返回命中实体的数组，数组元素使用实体的 [Index](https://wofsauge.github.io/IsaacDocs/rep/Entity.html#index) 字段表示。
 
 ___
 ### GetShieldStrength () {: aria-label='Functions' }
@@ -104,12 +104,12 @@ ___
 ___
 ### SetControllerId () {: aria-label='Functions' }
 #### int SetControllerId ( int ControllerId ) {: .copyable aria-label='Functions' }
-设置 NPC 的控制器 ID，该 ID 指示哪个玩家将控制它。将其设置为 `-1` 表示没有玩家控制（恢复正常行为）。
+设置 NPC 的控制器 ID，表示将由哪个玩家控制它。设为 `-1` 表示取消玩家控制并恢复正常行为。
 
 ___
 ### SetFlyingOverride () {: aria-label='Functions' }
 #### void SetFlyingOverride ( boolean CanFly ) {: .copyable aria-label='Functions' }
-设置对 IsFlying 返回值的覆盖，IsFlying 通常基于 [EntityGridCollisionClass](https://wofsauge.github.io/IsaacDocs/rep/enums/EntityGridCollisionClass.html)。可用于使地面敌人忽略水迹，或使飞行敌人被水迹击中。
+设置对 IsFlying 返回值的覆盖；IsFlying 通常基于 [EntityGridCollisionClass](https://wofsauge.github.io/IsaacDocs/rep/enums/EntityGridCollisionClass.html)。可用于让地面敌人忽略水迹，或让飞行敌人受到水迹影响。
 
 ___
 ### SetShieldStrength () {: aria-label='Functions' }
@@ -181,3 +181,4 @@ ___
 修复后的原函数现在能正确返回一个指向向量（Vector）的指针。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

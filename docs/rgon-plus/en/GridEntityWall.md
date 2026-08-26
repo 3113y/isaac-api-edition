@@ -4,4 +4,4 @@ tags:
 ---
 # Class "GridEntityWall"
 
-Currently used as a distinct object from [GridEntity](GridEntity.md). No content at this point, sorry!
+It is currently treated as an object distinct from [GridEntity](GridEntity.md). No additional content is available at this time.

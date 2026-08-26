@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "Backdrop"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain an instance of this class with the following function:
 
     * [Room:GetBackdrop()](Room.md#getbackdrop)
 
@@ -34,11 +36,11 @@ ___
 ___
 ### GetFloorImage () {: aria-label='Functions' }
 #### [Image](renderer/Image.md) GetFloorImage ( ) {: .copyable aria-label='Functions' }
-Returns the buffer containing the floor texture of the current room.
+Returns a buffer containing the current room's floor texture.
 
 ___
 ### GetWallImage () {: aria-label='Functions' }
 #### [Image](renderer/Image.md) GetWallImage ( ) {: .copyable aria-label='Functions' }
-Returns the buffer containing the wall texture of the current room.
+Returns a buffer containing the current room's wall texture.
 
 ___

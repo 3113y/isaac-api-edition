@@ -2,9 +2,11 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "AnimationLayer"
 
-Cached data for one layer of an animation from a loaded ANM2 file. Shared by all [Sprites](Sprite.md) using the same ANM2 and cannot be modified.
+Cached data for one animation layer in a loaded ANM2 file. It is shared by all [Sprites](Sprite.md) using the same ANM2 and cannot be modified.
 
 Obtained via [AnimationData:GetLayer()](AnimationData.md#getlayer).
 

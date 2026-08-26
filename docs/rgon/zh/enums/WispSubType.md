@@ -25,3 +25,4 @@ tags:
 |65552 |DELIRIOUS_LOKI {: .copyable } |  |
 |65553 |DELIRIOUS_HAUNT {: .copyable } |  |
 |65554 |LEMEGETON_VIRTUE {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

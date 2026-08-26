@@ -3,10 +3,12 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "Minimap"
 
 ???+ info
-    You can get this class by using the `Minimap` global table.
+    You can access this class through the `Minimap` global table.
 
     **Note that to call these functions, you must use a `.` (period) instead of a `:` (colon)!**
     
@@ -19,7 +21,7 @@ tags:
 
 ### GetDisplayedSize () {: aria-label='Functions' }
 #### [Vector](Vector.md) GetDisplayedSize ( ) {: .copyable aria-label='Functions' }
-Returns the current display size of the minimap. When not expanded this is always `Vector(47,47)`.
+Returns the minimap's current display size. When the minimap is not expanded, this is always `Vector(47,47)`.
 
 ___
 ### GetHoldTime () {: aria-label='Functions' }

@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityDesc"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain this class with the following function:
 
     * [EntityPlayer.FriendBallEnemy](EntityPlayer.md#friendballenemy)
 

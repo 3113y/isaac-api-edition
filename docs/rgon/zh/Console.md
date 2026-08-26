@@ -22,18 +22,18 @@ tags:
 
 ### GetCommandHistory () {: aria-label='Functions' }
 #### string[] GetCommandHistory ( ) {: .copyable aria-label='Functions' }
-返回一个包含当前命令历史记录的表格。
+返回包含当前命令历史记录的表格。
 
 ___
 ### GetHistory () {: aria-label='Functions' }
 #### string[] GetHistory ( ) {: .copyable aria-label='Functions' }
-返回一个包含本次游戏运行期间所有先前打印到控制台条目的表格。
-该表格的排列顺序是从最新到最旧 —— 第一个条目将是当前等待用户输入的空白行，接着是上一次打印的内容，依此类推。最后一行始终是 `忏悔版控制台`。
+返回包含本次游戏运行期间之前打印到控制台的所有条目的表格。
+该表格按从最新到最旧的顺序排列：第一个条目是当前等待用户输入的空白行，接着是上一次打印的内容，依此类推。最后一行始终是 `忏悔版控制台`。
 
 ___
 ### PopHistory () {: aria-label='Functions' }
 #### void PopHistory ( int Amount = 1 ) {: .copyable aria-label='Functions' }
-从历史记录中移除先前的行。可以选择使用 `amount` 参数来指定应移除多少个条目。控制台中当前等待用户输入的行算作历史记录的一部分，但在 C++ 端已经对此进行了处理。
+从历史记录中移除之前的行。可以使用 `amount` 参数指定要移除的条目数。控制台中当前等待用户输入的行也算作历史记录的一部分，但 C++ 端已经对此进行了处理。
 
 ___
 ### PrintError () {: aria-label='Functions' }
@@ -43,7 +43,7 @@ ___
 ___
 ### PrintWarning () {: aria-label='Functions' }
 #### void PrintWarning ( string Warning ) {: .copyable aria-label='Functions' }
-将Warning信息打印到控制台，Warning信息以黄色文本显示。
+将警告信息打印到控制台，并以黄色文本显示。
 
 ___
 ### RegisterCommand () {: aria-label='Functions' }
@@ -56,7 +56,8 @@ ___
 ___
 ### RegisterMacro () {: aria-label='Functions' }
 #### void RegisterMacro ( string Name, string[] Commands ) {: .copyable aria-label='Functions' }
-* `Commands`（命令）是一个字符串表格，包含应按顺序执行的命令。
 在新控制台中注册一个宏。这些宏将显示在新控制台 `macro` 命令的自动补全列表中。
+* `Commands`（命令）是一个字符串表格，其中包含应按顺序执行的命令。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

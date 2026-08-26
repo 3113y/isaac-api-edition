@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> 本文档的说明文字已由受约束的语言模型统一润色；API 事实与签名仍保留上游来源。
+
 # Class "NullFrame"
 
 ## Functions

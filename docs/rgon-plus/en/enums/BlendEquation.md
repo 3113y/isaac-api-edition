@@ -2,6 +2,8 @@
 tags:
   - Enum
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 
 ???+ info
     These are the enums used by [glBlendEquationSeparate](https://registry.khronos.org/OpenGL-Refpages/gl2.1/xhtml/glBlendEquationSeparate.xml).

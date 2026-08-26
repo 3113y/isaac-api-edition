@@ -5,7 +5,7 @@ tags:
 # Class "PlayerHUDHeart"
 
 ???+ info
-    你可以通过以下函数获取此类:
+    你可以使用以下函数获取此类：
 
     * [PlayerHUD.GetHeartByIndex()](PlayerHUD.md#getheartbyindex)
 

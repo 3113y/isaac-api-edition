@@ -58,7 +58,7 @@ The `PoolItems` parameter can be either a single Lua PoolItem object or an array
     All field names are case insensitive
 
 ???- info "Temporary Collectible behavior"
-    Temporary Collectibles are automatically Added and Removed on Run Continue/Exit; as well as when returning to a previous state that had/didn't have the Collectible when using Glowing Hourglass.
+    Temporary collectibles are automatically added and removed when continuing or exiting a run, as well as when returning to a previous state that did or did not contain the collectible while using Glowing Hourglass.
 
 ___
 ### CanSpawnCollectible () {: aria-label='Functions' }
@@ -72,12 +72,12 @@ ___
 ___
 ### GetBibleUpgrades () {: aria-label='Functions' }
 #### int GetBibleUpgrades ( [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) PoolType ) {: .copyable aria-label='Functions' }
-Returns number of Bible collectibles added to a pool.
+Returns the number of Bible collectibles added to a pool.
 
 ___
 ### GetCardEx () {: aria-label='Functions' }
 #### [Card](https://wofsauge.github.io/IsaacDocs/rep/enums/Card.html) GetCardEx ( int Seed, int SpecialChance, int RuneChance, int SuitChance, boolean AllowNonCards ) {: .copyable aria-label='Functions' }
-More sophisticated version of [ItemPool:GetCard()](https://wofsauge.github.io/IsaacDocs/rep/ItemPool.html#getcard) that allows to define individual chances.
+A more sophisticated version of [ItemPool:GetCard()](https://wofsauge.github.io/IsaacDocs/rep/ItemPool.html#getcard) that allows individual chances to be defined.
 
 ___
 ### GetCollectibleFromList () {: aria-label='Functions' }
@@ -110,24 +110,24 @@ Retrieves the total number of item pools in the game, including custom item pool
 ___
 ### GetPillColor () {: aria-label='Functions' }
 #### [PillColor](https://wofsauge.github.io/IsaacDocs/rep/enums/PillColor.html) GetPillColor ( [PillEffect](https://wofsauge.github.io/IsaacDocs/rep/enums/PillEffect.html) ID ) {: .copyable aria-label='Functions' }
-Returns a PillColor matching the specificed PillEffect, returns -1 if the Effect is not in the rotation.
+Returns the `PillColor` matching the specified `PillEffect`, or `-1` if the effect is not in the rotation.
 
-Currently not applied by pill modifications, such as PHD/False PHD.
+This is currently unaffected by pill modifiers such as PHD and False PHD.
 
 ___
 ### GetRandomPool () {: aria-label='Functions' }
 #### [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html) GetRandomPool ( [RNG](RNG.md) RNG, boolean AdvancedSearch = false, [ItemPoolType](https://wofsauge.github.io/IsaacDocs/rep/enums/ItemPoolType.html)[] Filter = {}, boolean IsWhitelist = false) {: .copyable aria-label='Functions' }
 Picks a random pool in an identical manner to Chaos, where pools with more items have a higher probability of being chosen compared to those with fewer items.
 
-Normally this function is tied to the same rules as Chaos, meaning that you can only get the pools for the current mode, but by setting `Advanced Search` to true you can bypass these restrictions.
+By default, this function follows the same rules as Chaos, so it can return only pools for the current mode. Set `Advanced Search` to true to bypass these restrictions.
 
 ???+ info "Advanced Search"
     Setting `Advanced Search` to true allows you to make use of the `Filter` parameter.
 
-    Normally the `Filter` acts as a blacklist of unwanted itemPools, however setting `IsWhitelist` to true turns it into a list from which to choose from.
+    Normally, `Filter` acts as a blacklist of unwanted item pools. Setting `IsWhitelist` to true instead makes it the list of pools to choose from.
 
 ???+ example "Pick Pool From List"
-    This code picks a random pool from any of the "Beggar" pools
+    This code picks a random pool from the available Beggar pools.
 
     ```lua
     local PoolList = {
@@ -144,7 +144,7 @@ Normally this function is tied to the same rules as Chaos, meaning that you can 
     ```
 
 ???+ example "Pick Pool From Vanilla"
-    This code picks a random pool from any of the vanilla
+    This code picks a random pool from the vanilla pools.
 
     ```lua
     local itemPool = Game():GetItemPool()
@@ -210,7 +210,7 @@ ___
 Returns the raw result of [GetCollectible()](ItemPool.md#getcollectible), without any of the filtering applied by the original function.
 If the pool has completely ran out of repicks then this function will return `nil`.
 
-If RNG is not set, its initialized with `RNG(Random(), 4)`
+If `RNG` is not set, it is initialized with `RNG(Random(), 4)`.
 
 The table contains the following fields:
 
@@ -262,7 +262,7 @@ The `PoolItems` parameter can be either a single Lua PoolItem object or an array
 ___
 ### ResetCollectible () {: aria-label='Functions' }
 #### void ResetCollectible ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) Collectible ) {: .copyable aria-label='Functions' }
-Makes the available once again, allowing it to naturally spawned even if previously remove. Also restores all instances of the collectible to it's **initialWeight** in every item pool.
+Makes the collectible available again, allowing it to spawn naturally even if it was previously removed. It also restores all instances of the collectible to their **initialWeight** in every item pool.
 
 ___
 
@@ -272,6 +272,6 @@ ___
 ___
 ### UnidentifyPill () {: aria-label='Functions' }
 #### void UnidentifyPill ( [PillColor](https://wofsauge.github.io/IsaacDocs/rep/enums/PillColor.html) Pill ) {: .copyable aria-label='Functions' }
-Will reset a pill back to unidentified (???) state.
+Resets a pill to its unidentified (???) state.
 
 ___

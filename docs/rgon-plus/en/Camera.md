@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "Camera"
 
 ???+ info
@@ -18,14 +20,14 @@ tags:
 
 ### IsPosVisible () {: aria-label='Functions' }
 #### boolean IsPosVisible ( [Vector](Vector.md) Pos ) {: .copyable aria-label='Functions' }
-Returns if the in-world position is visible to the camera.
+Returns whether the in-world position is visible to the camera.
 
 ___
 ### SetFocusPosition () {: aria-label='Functions' }
 #### void SetFocusPosition ( [Vector](Vector.md) Pos ) {: .copyable aria-label='Functions' }
-Sets the camera's current focus position, causing it to shift towards the specified position
+Sets the camera's current focus position, causing it to move towards the specified position.
 
-The camera will only move if the current room size is larger than 1x1. If the room size is 1x1 or smaller, the camera will remain stationary and this function will do nothing. 
+The camera will only move if the current room size is larger than 1x1. If the room size is 1x1 or smaller, the camera will remain stationary and this function will do nothing.
 
 This function must be called inside an update callback such as `ModCallbacks.MC_POST_UPDATE`, otherwise the game will override the camera's position.
 

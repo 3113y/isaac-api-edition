@@ -1,4 +1,6 @@
 # General changes to the game or game engine
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 
 In addition to the API changes listed in the docs, REPENTOGON makes the following general behavior changes to the game:
 

@@ -40,13 +40,13 @@ tags:
 ## Constructors
 ### GenericPrompt () {: aria-label='Constructors' }
 #### [GenericPrompt](GenericPrompt.md) GenericPrompt ( ) {: .copyable aria-label='Constructors' }
-Returns a GenericPrompt object. Allows for rendering a popup paper with the option to include text and tracking input for a yes/no decision.
+Returns a GenericPrompt object. Allows rendering a popup paper with optional text and tracks input for a yes/no decision.
 
 ## Functions
 
 ### GetCurrentSelection () {: aria-label='Functions' }
 #### int GetCurrentSelection ( ) {: .copyable aria-label='Functions' }
-Returns what selection the player is currently hovering over.
+Returns the selection the player is currently hovering over.
 
 ???+ info "Return info"
 	- `0` - No
@@ -55,12 +55,12 @@ Returns what selection the player is currently hovering over.
 ___
 ### GetSprite () {: aria-label='Functions' }
 #### [Sprite](Sprite.md) GetSprite ( ) {: .copyable aria-label='Functions' }
-Returns the paper sprite of the prompt.
+Returns the prompt's paper sprite.
 
 ___
 ### GetSubmittedSelection () {: aria-label='Functions' }
 #### int GetSubmittedSelection ( ) {: .copyable aria-label='Functions' }
-Returns the chosen selection. 
+Returns the selected option.
 
 ???+ info "Return info"
 	- `0` - None (Returns if the player dismisses the prompt).
@@ -90,7 +90,7 @@ ___
 #### void SetText ( string Text1 = "", string Text2 = "", string Text3 = "", string Text4 = "", string Text5 = "", ) {: .copyable aria-label='Functions' }
 Set text that will appear on the paper.
 
-Text strings are associated with their position on the prompt from top to bottom. The first two strings should used as header text, being bolded and at a higher font size, while the rest as description text.
+Text strings are associated with their positions on the prompt from top to bottom. The first two strings should be used as header text; they are bold and use a larger font size, while the rest are used as description text.
 
 ___
 ### Show () {: aria-label='Functions' }
@@ -100,6 +100,6 @@ Starts showing the prompt on-screen.
 ___
 ### Update () {: aria-label='Functions' }
 #### void Update ( boolean ProcessInput ) {: .copyable aria-label='Functions' }
-Updates the animation of the prompt paper. Set `ProcessInput` to `true` to track the player's input for selecting yes/no, `false` otherwise.
+Updates the animation of the prompt paper. Set `ProcessInput` to `true` to track the player's yes/no selection input, or to `false` otherwise.
 
 ___

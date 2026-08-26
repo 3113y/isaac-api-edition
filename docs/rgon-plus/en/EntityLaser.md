@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityLaser"
 
 ## Class Diagram
@@ -10,7 +12,7 @@ tags:
 ___
 ### HomingType {: aria-label='Modified Variables' }
 #### int HomingType  {: .copyable aria-label='Modified Variables' }
-Same as default, but now returns a proper integer value instead of userdata.
+Same as the default, but now returns a proper integer value instead of userdata.
 
 ___
 
@@ -38,7 +40,7 @@ Returns an array of hit entities using their [Index](https://wofsauge.github.io/
 ___
 ### GetNumChainedLasers () {: aria-label='Functions' }
 #### int GetNumChainedLasers ( ) {: .copyable aria-label='Functions' }
-Related to the effect used by the Monstro's Lung + Technology synergy. If >0, may cause an additional laser to spawn at the end point of this laser, up to this many times.
+Related to the effect used by the Monstro's Lung + Technology synergy. If greater than 0, this may cause an additional laser to spawn at the endpoint of this laser, up to this many times.
 
 ___
 ### GetOneHit () {: aria-label='Functions' }
@@ -59,17 +61,17 @@ ___
 ___
 ### IsMultidimensionalTouched () {: aria-label='Functions' }
 #### boolean IsMultidimensionalTouched ( ) {: .copyable aria-label='Functions' }
-Returns if the laser was created through the Multi Dimensional Baby effect.
+Returns whether the laser was created through the Multi Dimensional Baby effect.
 
 ___
 ### IsPrismTouched () {: aria-label='Functions' }
 #### boolean IsPrismTouched ( ) {: .copyable aria-label='Functions' }
-Returns if the laser was created through the Angelic Prism effect.
+Returns whether the laser was created through the Angelic Prism effect.
 
 ___
 ### RecalculateSamplesNextUpdate () {: aria-label='Functions' }
 #### void RecalculateSamplesNextUpdate ( ) {: .copyable aria-label='Functions' }
-Requests the laser's shape to be fully recalculated next time it updates. Can be used to force the laser to instantly change its MaxDistance/Radius instead of transitioning to it. No effect for OneHit or non-sample lasers.
+Requests that the laser's shape be fully recalculated the next time it updates. This can force the laser to instantly change its MaxDistance/Radius instead of transitioning to the new value. Has no effect on OneHit or non-sample lasers.
 
 ___
 ### ResetSpriteScale () {: aria-label='Functions' }
@@ -90,17 +92,17 @@ ___
 ___
 ### SetInitSound () {: aria-label='Functions' }
 #### void SetInitSound ( [SoundEffect](https://wofsauge.github.io/IsaacDocs/rep/enums/SoundEffect.html) Sound ) {: .copyable aria-label='Functions' }
-Set after a laser is spawned but before it updates (for example, [MC_POST_LASER_INIT](https://wofsauge.github.io/IsaacDocs/rep/enums/ModCallbacks.html#mc_post_laser_init)) to change the sound it makes. Can be set to `SoundEffect.SOUND_NULL` to make no sound play.
+Set this after a laser is spawned but before it updates (for example, in [MC_POST_LASER_INIT](https://wofsauge.github.io/IsaacDocs/rep/enums/ModCallbacks.html#mc_post_laser_init)) to change the sound it makes. Set it to `SoundEffect.SOUND_NULL` to prevent any sound from playing.
 
 ___
 ### SetNumChainedLasers () {: aria-label='Functions' }
 #### void SetNumChainedLasers ( int Value ) {: .copyable aria-label='Functions' }
-Controls the effect used by the Monstro's Lung + Technology synergy. If >0, may cause an additional laser to spawn at the end point of this laser, up to this many times. May not function for all laser variants.
+Controls the effect used by the Monstro's Lung + Technology synergy. If greater than 0, this may cause an additional laser to spawn at the endpoint of this laser, up to this many times. May not function for all laser variants.
 
 ___
 ### SetPrismTouched () {: aria-label='Functions' }
 #### void SetPrismTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-Sets if the laser was created through the Angelic Prism effect.
+Sets whether the laser was created through the Angelic Prism effect.
 
 ___
 ### SetScale () {: aria-label='Functions' }

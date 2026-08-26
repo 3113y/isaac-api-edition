@@ -1,4 +1,6 @@
 # Enum "DeliriumCallbacks"
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 
 This is a list of callbacks exclusive to the behavior of Delirium. These callbacks live under a different namespace as they are too specific when compared to the more general ones found in [ModCallbacks](ModCallbacks.md).
 

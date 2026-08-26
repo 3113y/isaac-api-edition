@@ -5,7 +5,7 @@ tags:
 # Class "GridEntityLock"
 
 ???+ info
-    You can get this class by using the following functions:
+    You can obtain this class by calling the following function:
 
     * [GridEntity:ToLock()](GridEntity.md#tolock)
 
@@ -14,5 +14,5 @@ tags:
 ### TryUnlock () {: aria-label='Functions' }
 #### void TryUnlock ( [EntityPlayer](EntityPlayer.md) Player, boolean TryPayToPlay ) {: .copyable aria-label='Functions' }
 
-Attempts to break the lock, consuming a key (or coin with `TryPayToPlay`) from the player.
+Attempts to break the lock by consuming a key from the player, or a coin when `TryPayToPlay` is enabled.
 ___

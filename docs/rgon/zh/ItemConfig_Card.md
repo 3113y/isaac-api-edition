@@ -14,12 +14,12 @@ Sets an additional function that runs when [IsAvailable()](https://wofsauge.gith
 
 The function must return a boolean that determines whether or not the card is available.
 
-This is function is only checked after the GreedModeAllowed, Achievement and Hidden check have all being passed, as such this cannot be used to overwrite those evaluations
+This function is only checked after the GreedModeAllowed, Achievement, and Hidden checks have all passed, so it cannot be used to override those checks.
 
 ???+ warning "Function Errors"
-    If at any point the function errors whilst being executed, then it will be treated the same as if `true` was returned.
+    If the function errors at any point while it is being executed, it is treated as though `true` was returned.
 
-    If this is not your intended behavior then it is suggested to wrap your actual function around a `pcall` or `xpcall` and return false if they fail.
+    If this is not the intended behavior, wrap your actual function in a `pcall` or `xpcall` and return `false` if the call fails.
 
 
     ```lua
@@ -45,12 +45,13 @@ This is function is only checked after the GreedModeAllowed, Achievement and Hid
     Isaac.GetItemConfig():GetCard(YourCardId):SetAvailabilityCondition(AvailabilityWrapper)
     ```
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。
 
 ### ClearAvailabilityCondition
 
 #### void ClearAvailabilityCondition ( ) {: .copyable aria-label='Modified Functions' }
 
-Sets the availability condition to `nil`, useful if the condition is no longer needed and increase performance.
+Sets the availability condition to `nil`, which is useful when the condition is no longer needed and can improve performance.
 ___
 
 ### GetAvailabilityCondition

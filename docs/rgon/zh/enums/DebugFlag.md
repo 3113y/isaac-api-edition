@@ -21,3 +21,4 @@ tags:
 |1 << 11 |PLAYER_ITEM_INFO {: .copyable } |  |
 |1 << 12 |GRID_COLLISION_POINTS {: .copyable } |  |
 |1 << 13 |LUA_MEMORY_USAGE {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

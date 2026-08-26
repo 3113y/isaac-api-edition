@@ -2,6 +2,8 @@
 tags:
   - File
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # File "stringtable.sta"
 
 **Content-Folder**{: .xmlInfo .green }: Using this file in a content folder will add new strings.

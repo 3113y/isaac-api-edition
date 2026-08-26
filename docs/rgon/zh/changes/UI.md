@@ -30,3 +30,4 @@ The Dailies menu now displays extended stats, including:
 ## Mods menu
 
 The Mods menu now uses a slightly smaller font to render mod names, making it less common for text to render outside the backdrop boundaries.
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

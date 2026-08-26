@@ -1,5 +1,7 @@
 # Beams Example
-[Beams](../renderer/Beam.md) are used internally for rendering cords, such as Gello's umbilical cord. Note that this *only handles rendering* and not physics.
+[Beams](../renderer/Beam.md) are used internally to render cords, such as Gello's umbilical cord. Note that this *only handles rendering* and not physics.
+
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
 
 Beams are best demonstrated by looking at the Ball and Chain enemies found in Gehenna, which have a chain that dynamically moves and stretches depending on how far away the spiked ball is from where it is chained.
 

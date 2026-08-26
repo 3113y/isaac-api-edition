@@ -528,3 +528,4 @@ tags:
 |519 |ONLINE_SIN_LUSTFUL {: .copyable } |  |
 |520 |ONLINE_SIN_SLOTHFUL {: .copyable } |  |
 |521 |NUM_EVENT_COUNTERS {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

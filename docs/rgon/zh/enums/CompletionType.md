@@ -22,3 +22,4 @@ tags:
 |15 |TAINTED {: .copyable } | not supported |
 |16 |TAINTED_GROUP1 {: .copyable } | not supported |
 |17 |TAINTED_GROUP2 {: .copyable } | not supported |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

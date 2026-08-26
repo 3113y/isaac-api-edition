@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "EntityBomb"
 
 ## Class Diagram
@@ -31,17 +33,17 @@ Returns an array of hit entities using their [Index](https://wofsauge.github.io/
 ___
 ### GetRocketAngle () {: aria-label='Functions' }
 #### float GetRocketAngle ( ) {: .copyable aria-label='Functions' }
-Target angle for rocket bombs. It influences both their movement and the orientation of their sprite.
+Returns the target angle for rocket bombs. It affects both their movement and sprite orientation.
 
 ___
 ### GetRocketSpeed () {: aria-label='Functions' }
 #### float GetRocketSpeed ( ) {: .copyable aria-label='Functions' }
-Target speed for rocket bombs. Naturally increases by 1 every frame.
+Returns the target speed for rocket bombs. Under normal conditions, it increases by 1 every frame.
 
 ___
 ### GetScale () {: aria-label='Functions' }
 #### float GetScale ( ) {: .copyable aria-label='Functions' }
-Used to apply animation set for bomb costume.
+Used to apply the animation set for the bomb costume.
 
 ___
 ### IsLoadingCostumes () {: aria-label='Functions' }
@@ -50,7 +52,7 @@ ___
 ___
 ### IsPrismTouched () {: aria-label='Functions' }
 #### boolean IsPrismTouched ( ) {: .copyable aria-label='Functions' }
-Returns if the bomb was created through the Angelic Prism effect.
+Returns whether the bomb was created by the Angelic Prism effect.
 
 ___
 ### SetFallAcceleration () {: aria-label='Functions' }
@@ -67,22 +69,22 @@ ___
 ___
 ### SetPrismTouched () {: aria-label='Functions' }
 #### void SetPrismTouched ( boolean IsTouched ) {: .copyable aria-label='Functions' }
-Sets if the bomb was created through the Angelic Prism effect.
+Sets whether the bomb was created by the Angelic Prism effect.
 
 ___
 ### SetRocketAngle () {: aria-label='Functions' }
 #### void SetRocketAngle ( float Angle ) {: .copyable aria-label='Functions' }
-Set the target angle for a rocket bomb. It influences both their movement and the orientation of their sprite.
+Sets the target angle for a rocket bomb. It affects both its movement and sprite orientation.
 
 ___
 ### SetRocketSpeed () {: aria-label='Functions' }
 #### void SetRocketSpeed ( float Speed ) {: .copyable aria-label='Functions' }
-Set the target speed for a rocket bomb. Note that this will naturally increase by 1 every frame.
+Sets the target speed for a rocket bomb. Under normal conditions, it increases by 1 every frame.
 
 ___
 ### SetScale () {: aria-label='Functions' }
 #### void SetScale ( float Scale ) {: .copyable aria-label='Functions' }
-Should be used with [SetLoadCostumes](#setloadcostumes) method.
+Should be used with the [SetLoadCostumes](#setloadcostumes) method.
 
 ___
 ### UpdateDirtColor () {: aria-label='Functions' }

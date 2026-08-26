@@ -3,10 +3,12 @@ tags:
   - Global
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Global Class "EntityConfig"
 
 ???+ info
-    These functions can be accessed via the `EntityConfig` global table.
+    These functions are available through the `EntityConfig` global table.
 
     **Note that to call these functions, you must use a `.` (period) instead of a `:` (colon)!**
 
@@ -19,19 +21,19 @@ tags:
 
 ### GetBaby () {: aria-label='Functions' }
 #### [EntityConfigBaby](EntityConfigBaby.md) GetBaby ( [BabySubType](https://wofsauge.github.io/IsaacDocs/rep/enums/BabySubType.html) Type ) {: .copyable aria-label='Functions' }
-Returns nil if there is no co-op baby with the given ID.
+Returns nil if no co-op baby exists with the specified ID.
 
 ___
 ### GetEntity () {: aria-label='Functions' }
 #### [EntityConfigEntity](EntityConfigEntity.md) GetEntity ( [EntityType](https://wofsauge.github.io/IsaacDocs/rep/enums/EntityType.html) Type, int Variant = -1, int SubType = -1 ) {: .copyable aria-label='Functions' }
-Returns nil if no entity exists with the specified Type.
+Returns nil if no entity exists with the specified type.
 
-Providing Variant and/or SubType is optional. If a non-existent Variant/SubType is requested, returns the base version of that entity.
+Providing Variant and/or SubType is optional. If a non-existent Variant/SubType is requested, the base version of that entity is returned.
 
 ___
 ### GetMaxBabyID () {: aria-label='Functions' }
 #### int GetMaxBabyID ( ) {: .copyable aria-label='Functions' }
-Returns the highest ID (corresponds to SubType) currently assigned to a valid co-op baby.
+Returns the highest ID (corresponding to SubType) currently assigned to a valid co-op baby.
 
 ___
 ### GetMaxPlayerType () {: aria-label='Functions' }

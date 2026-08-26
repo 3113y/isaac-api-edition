@@ -6,7 +6,7 @@ tags:
 
 ???+ info
 
-    你可以通过以下函数获取此类:
+    你可以通过以下函数获取此类：
 
     * [EntityConfig.GetEntity()](EntityConfig.md#getentity)
 
@@ -76,15 +76,15 @@ ___
 ___
 ### GetCollisionRadius () {: aria-label='Functions' }
 #### float GetCollisionRadius ( ) {: .copyable aria-label='Functions' }
-也称为 “大小”。
+也称为“大小”。
 
 ### GetCollisionRadiusMultiplier () {: aria-label='Functions' }
 #### [const Vector](Vector.md) GetCollisionRadiusMultiplier ( ) {: .copyable aria-label='Functions' }
-也称为 “大小乘数”。
+也称为“大小乘数”。
 
 ### GetCustomTags () {: aria-label='Functions' }
 #### table GetCustomTags ( ) {: .copyable aria-label='Functions' }
-返回一个表格，其中包含实体在 [entities2.xml](xml/entities.md) 的 `customtags` 属性中指定的所有字符串。标签始终以全小写形式提供。有关 `customtags` 的更多信息，请参阅 [entities2.xml](xml/entities.md)。
+返回一个表格，其中包含实体在 [entities2.xml](xml/entities.md) 的 `customtags` 属性中指定的所有字符串。标签始终以小写形式提供。有关 `customtags` 的更多信息，请参阅 [entities2.xml](xml/entities.md)。
 
 ___
 ### GetDevolvedEntity () {: aria-label='Functions' }
@@ -133,11 +133,11 @@ ___
 ___
 ### GetShadowSize () {: aria-label='Functions' }
 #### float GetShadowSize ( ) {: .copyable aria-label='Functions' }
-请注意，此值是 XML 中指定的 “shadowSize” 除以 100 的结果。
+请注意，此值是 XML 中指定的“shadowSize”除以 100 的结果。
 
 ### GetShieldStrength () {: aria-label='Functions' }
 #### float GetShieldStrength ( ) {: .copyable aria-label='Functions' }
-实体拥有的护甲值。
+返回实体拥有的护甲值。
 
 ### GetStageHP () {: aria-label='Functions' }
 #### float GetStageHP ( ) {: .copyable aria-label='Functions' }
@@ -169,8 +169,11 @@ ___
 ___
 ### HasGibFlags () {: aria-label='Functions' }
 #### boolean HasGibFlags ( int Flags ) {: .copyable aria-label='Functions' }
-如果实体具有提供的位集中指定的所有 [GibFlag](enums/GibFlag.md)，则返回 true。### IsBoss () {: aria-label='Functions' }
+如果实体具有给定位集中指定的所有 [GibFlag](enums/GibFlag.md)，则返回 true。
+
+### IsBoss () {: aria-label='Functions' }
 #### boolean IsBoss ( ) {: .copyable aria-label='Functions' }
 
 ___
 
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -2,13 +2,15 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "AnimationFrame"
 
-Cached data for a single frame of one layer of an animation from an ANM2 file. Shared by all Sprites using the same ANM2 and cannot be modified.
+Cached data for a single frame of one animation layer from an ANM2 file. It is shared by all Sprites that use the same ANM2 and cannot be modified.
 
 Note that interpolation and root animations have already been baked into these values.
 
-Otherwise, these values correspond to the same ones viewable in the ANM2 editor, and have been named the same way.
+Additionally, these values correspond to those shown in the ANM2 editor and use the same names.
 
 Obtained via [AnimationLayer:GetFrame()](AnimationLayer.md#getframe).
 
@@ -24,9 +26,9 @@ ___
 ___
 ### GetEndFrame () {: aria-label='Functions' }
 #### int GetEndFrame ( ) {: .copyable aria-label='Functions' }
-Note that the "end frame" is the start frame of the NEXT AnimationFrame.
+The "end frame" is the start frame of the next AnimationFrame.
 
-That is, THIS AnimationFrame is no longer shown on this frame.
+This AnimationFrame is no longer displayed from that frame onward.
 
 ___
 ### GetHeight () {: aria-label='Functions' }

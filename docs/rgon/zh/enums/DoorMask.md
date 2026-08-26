@@ -15,3 +15,4 @@ tags:
 |1 << 5 |UP1 {: .copyable } |  |
 |1 << 6 |RIGHT1 {: .copyable } |  |
 |1 << 7 |DOWN1 {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

@@ -2,6 +2,8 @@
 tags:
   - Enum
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Enum "CompletionType"
 |Value|Enumerator|Comment|
 |:--|:--|:--|

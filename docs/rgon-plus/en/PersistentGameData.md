@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "PersistentGameData"
 
 ???+ info
@@ -14,7 +16,7 @@ tags:
         local persistentGameData = Isaac.GetPersistentGameData()
         ```
 ???+ warning "Warning"
-    This class' functions should not be called until the game fully initializes! Make sure not to try using them outside of callbacks
+    The functions in this class should not be called until the game has fully initialized! Do not try to use them outside of callbacks.
     
 ## Functions
 
@@ -59,19 +61,19 @@ Checks if a challenge is completed.
 ___
 ### IsItemInCollection () {: aria-label='Functions' }
 #### boolean IsItemInCollection ( [CollectibleType](https://wofsauge.github.io/IsaacDocs/rep/enums/CollectibleType.html) CollectibleId ) {: .copyable aria-label='Functions' }
-Checks if an item is in the collection. Aka. its at least picked up once in any run.
+Checks whether an item is in the collection; that is, whether it has been picked up at least once in any run.
 
 ___
 ### TryUnlock () {: aria-label='Functions' }
 #### boolean TryUnlock ( [Achievement](enums/Achievement.md) Unlock, boolean BlockPaperPopup = false ) {: .copyable aria-label='Functions' }
-Returns `true` if successful, `false` if unlocking failed or the secret was already unlocked. Will fail if achievements are disabled.
+Returns `true` if successful, or `false` if unlocking failed or the secret was already unlocked. It will fail if achievements are disabled.
 
 Setting `BlockPaperPopup` to `true` prevents popping up the achievement paper for modded achievements.
 
 ___
 ### Unlock () {: aria-label='Functions' }
 #### boolean Unlock ( [Achievement](enums/Achievement.md) Unlock, boolean BlockPaperPopup = false ) {: .copyable aria-label='Functions' }
-Returns `true` if successful, `false` if unlocking failed or the secret was already unlocked. It will almost never fail tho, unlike TryUnlock, which will fail if achievements are disabled.
+Returns `true` if successful, or `false` if unlocking failed or the secret was already unlocked. It almost never fails, unlike `TryUnlock`, which fails if achievements are disabled.
 
 Setting `BlockPaperPopup` to `true` prevents popping up the achievement paper for modded achievements.
 ___

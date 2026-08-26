@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "Color"
 
 ???+ info
-    This class can be accessed using its constructor:
+    This class is accessed through its constructor:
     ???+ example "Example Code"
         ```lua
         local redColor = Color(1,0,0,1)
@@ -16,26 +18,26 @@ tags:
 ### Color () {: aria-label='Modified Constructors' }
 #### [Color](Color.md) Color ( float R = 1, float G = 1, float B = 1, float A = 1, float RO = 0, float GO = 0, float BO = 0, float RC = 0, float GC = 0, float BC = 0, float AC = 0 ) {: .copyable aria-label='Modified Constructors' }
 
-All arguments are now optional. `Colorize` can now be set through the constructor.
+All arguments are optional, and `Colorize` can be set through the constructor.
 
 ___
 ## Functions
 
 ### GetColorize () {: aria-label='Functions' }
 #### table GetColorize ( ) {: .copyable aria-label='Functions' }
-Returns a table corresponding to the color's current Colorize values: `{R, G, B, A}`
+Returns a table containing the color's current Colorize values: `{R, G, B, A}`
 
 ___
 ### GetOffset () {: aria-label='Functions' }
 #### table GetOffset ( ) {: .copyable aria-label='Functions' }
-Returns a table corresponding to the color's current Offset values: `{R, G, B}`
+Returns a table containing the color's current Offset values: `{R, G, B}`
 
-While the [Color](https://wofsauge.github.io/IsaacDocs/rep/Color.html) class does already contain [.RO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#ro), [.GO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#go) and [.BO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#bo) variables for this, GetOffset() has been measured to be ~30% faster in cases where access to all three values is necessary and is recommended in that scenario as a result. Performance is near identical when accessing two variables, and worse when accessing one. In cases where only one or two offset values are needed, stick with the variables.
+Although the [Color](https://wofsauge.github.io/IsaacDocs/rep/Color.html) class already provides [.RO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#ro), [.GO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#go), and [.BO](https://wofsauge.github.io/IsaacDocs/rep/Color.html#bo) for this purpose, GetOffset() is measured to be ~30% faster when all three values are needed, so use it in that case. Performance is nearly identical when accessing two variables and worse when accessing one. If only one or two offset values are needed, use the variables instead.
 
 ___
 ### GetTint () {: aria-label='Functions' }
 #### table GetTint ( ) {: .copyable aria-label='Functions' }
-Returns a table corresponding to the color's current Tint values: `{R, G, B, A}`
+Returns a table containing the color's current Tint values: `{R, G, B, A}`
 
 ___
 ### Print () {: aria-label='Functions' }
@@ -45,9 +47,7 @@ Returns a string representation of the color object.
 ___
 ### __tostring () {: aria-label='Functions' }
 #### string __tostring ( ) {: .copyable aria-label='Operators' }
-Creates a string representation of the color object.
-
-This enables direct printing of the object by doing `print(myColorObj)`
+Creates a string representation of the color object, allowing it to be printed directly with `print(myColorObj)`.
 
 ___
 

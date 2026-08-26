@@ -2,10 +2,12 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "ColorParams"
 
 ???+ info
-    This class can be accessed using its constructor:
+    This class can be accessed through its constructor:
     ???+ example "Example Code"
         ```lua
         local fiveSecondRedColor = ColorParams(Color(1,0,0,1),255,150,false,false)
@@ -26,7 +28,7 @@ ___
 ___
 ### GetDuration () {: aria-label='Functions' }
 #### int GetDuration ( ) {: .copyable aria-label='Functions' }
-Defines the time in update frames that these parameters should last. Has no effect on how many frames are left, but does affect fadeout speed (calculated as `Lifespan / Duration`) if `Fadeout` is enabled.
+Defines how long these parameters should last in update frames. This does not affect the number of frames remaining, but it does affect the fadeout speed (calculated as `Lifespan / Duration`) when `Fadeout` is enabled.
 
 ___
 ### GetFadeout () {: aria-label='Functions' }
@@ -35,7 +37,7 @@ ___
 ___
 ### GetLifespan () {: aria-label='Functions' }
 #### int GetLifespan ( ) {: .copyable aria-label='Functions' }
-Defines how many update frames are _left_ before this expires. This is decremented by `1` each non-interpolation update at a rate of `30` per second. Altering this will directly effect how many frames are left before these parameters expire.
+Defines how many update frames remain before these parameters expire. This value is decremented by `1` on each non-interpolation update, at a rate of `30` updates per second. Changing it directly affects how many frames remain before these parameters expire.
 
 ___
 ### GetPriority () {: aria-label='Functions' }

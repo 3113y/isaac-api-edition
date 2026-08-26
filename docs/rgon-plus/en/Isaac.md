@@ -53,10 +53,10 @@ ___
 ___
 ### CenterCursor () {: aria-label='Functions' }
 #### void CenterCursor ( ) {: .copyable aria-label='Functions' }
-Moves the windows mouse cursor to the center of the game's window. This is incredibly niche but useful if you want to use cursor controls for anything fancy and have full control over it. It wont move the cursor if Isaac.exe becomes out of focus.
+Moves the Windows mouse cursor to the center of the game window. This is a niche but useful feature if you want precise cursor control. It will not move the cursor if Isaac.exe loses focus.
 
 ???- info "Note"
-    Take in mind the screen center is NOT the center of the room necessarily, it's just the center of the game's window(center of the actual screen if you are on fullscreen).
+    Keep in mind that the screen center is not necessarily the center of the room; it is the center of the game window (or the actual screen when running in fullscreen).
 
 ___
 ### ClearChallenge () {: aria-label='Functions' }
@@ -71,7 +71,7 @@ Deletes all completion marks for a given character.
 ___
 ### CreateTimer () {: aria-label='Functions' }
 #### [EntityEffect](https://wofsauge.github.io/IsaacDocs/rep/EntityEffect.html) CreateTimer ( function Function, int Interval, int Times, boolean Persistent ) {: .copyable aria-label='Functions' }
-Spawns a timer EntityEffect. This entity will starting running `Function` function after `Interval` frames, and will repeat it `Times` amount of times. `Persistent` controls whether or not this timer "dies" in the current room, or persists across rooms.
+Spawns a timer EntityEffect. This entity starts running the `Function` function after `Interval` frames and repeats it `Times` times. `Persistent` controls whether this timer "dies" in the current room or persists across rooms.
 
 ???- info "Timer behavior"
     This timer is called every game update. This means the timer only takes into consideration frames in which the game is actively running, not paused, and uses update frames for its Delay parameter (30 frames per second). 
@@ -153,11 +153,11 @@ ___
 ___
 ### GetBossColorIdxByName () {: aria-label='Functions' }
 #### int GetBossColorIdxByName ( string Name ) {: .copyable aria-label='Functions' }
-Gets the boss color idx By Name, the idx is usually the subtype the boss needs to become the desired color. Granted, you actually need to give your color entry a name on the xml for this to work (suffix wont work usually, since its not mandatory).
+Gets the boss color index by name. The index is usually the subtype the boss needs to become the desired color. You must give your color entry a name in the XML for this to work; a suffix usually does not work because it is not mandatory.
 ___
 ### GetButtonsSprite () {: aria-label='Modified Functions' }
 #### [Sprite](Sprite.md) GetButtonsSprite ( ) {: .copyable aria-label='Functions' }
-Controllers buttons sprite
+Returns the controller-buttons sprite.
 
 ___
 ### GetClipboard () {: aria-label='Functions' }
@@ -379,17 +379,17 @@ ___
 
 ### SetCurrentFloorBackdrop () {: aria-label='Functions' }
 #### void SetCurrentFloorBackdrop ( int BackdropId ) {: .copyable aria-label='Functions' }
-Changes the default room backdrop for the current floor to match the input id. This change wont persists on save/continue so make sure to account for that.
+Changes the default room backdrop for the current floor to match the input ID. This change does not persist when saving or continuing, so account for that.
 
 ___
 ### SetCurrentFloorMusic () {: aria-label='Functions' }
 #### void SetCurrentFloorMusic ( int MusicId ) {: .copyable aria-label='Functions' }
-Changes the music track for the current floor to match the input id. This change wont persists on save/continue so make sure to account for that.
+Changes the music track for the current floor to match the input ID. This change does not persist when saving or continuing, so account for that.
 ___
 
 ### SetCurrentFloorName () {: aria-label='Functions' }
 #### void SetCurrentFloorName ( string Name ) {: .copyable aria-label='Functions' }
-Changes the display name for the current floor to match the input id. This change wont persists on save/continue so make sure to account for that.
+Changes the display name for the current floor to match the input ID. This change does not persist when saving or continuing, so account for that.
 
 ___
 ### SetDwmWindowAttribute () {: aria-label='Functions' }
@@ -417,11 +417,11 @@ ___
 Displays a Win32 message box. Can be controlled with the `icon` and `buttons` parameters. Returns a [`DialogReturn`](enums/DialogReturn.md) value that indicates the button pressed.
 
 ???- info "Note"
-	Take in mind that gamepad wont work for this popup, you'll need to use mouse/keyboard or touchscreen, and the window title wont show up on some enviroments like the steam deck, so dont rely on it too much.
+	Keep in mind that a gamepad will not work for this popup; you will need to use a mouse, keyboard, or touchscreen. The window title may not appear in some environments, such as Steam Deck, so do not rely on it too heavily.
 ___
 ### SpawnBoss () {: aria-label='Functions' }
 #### [EntityNPC](EntityNPC.md) SpawnBoss ( int Type, int Variant, int SubType, [Vector](Vector.md) Position, [Vector](Vector.md) Velocity, [Entity](Entity.md) Spawner, int Seed = ? ) {: .copyable aria-label='Functions' }
-Spawns an NPC forcing it to be a Boss, returning true for IsBoss(), giving it a boss bar, playing the boss end single on kill in appropiate rooms and other qualities that you may expect from a boss entity, even if the entity is normally not a Boss.
+Spawns an NPC and forces it to be a boss. It returns true for IsBoss(), gives the entity a boss bar, plays the boss-end jingle on death in appropriate rooms, and provides other qualities expected of a boss entity, even if the entity is not normally a boss.
 
 ___
 ### StartNewGame () {: aria-label='Functions' }

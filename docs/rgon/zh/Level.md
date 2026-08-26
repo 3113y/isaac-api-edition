@@ -21,6 +21,7 @@ Returns true if the provided room (represented by the [RoomConfigRoom](https://w
 #### boolean CanSpawnDoorOutline ( int RoomIdx, [DoorSlot](https://wofsauge.github.io/IsaacDocs/rep/enums/DoorSlot.html) DoorSlot ) {: .copyable aria-label='Functions' }
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实和签名仍保留其上游来源。
 ### FindValidRoomPlacementLocations () {: aria-label='Functions' }
 #### int[] FindValidRoomPlacementLocations ( [RoomConfigRoom](https://wofsauge.github.io/IsaacDocs/rep/RoomConfig_Room.html) RoomConfig, [Dimension](enums/Dimension.md) Dimension = -1, boolean AllowMultipleDoors = true, boolean AllowSpecialNeighbors = false ) {: .copyable aria-label='Functions' }
 #### int[] FindValidRoomPlacementLocations ( [RoomShape](https://wofsauge.github.io/IsaacDocs/rep/enums/RoomShape.html) RoomShape, [DoorMask](enums/DoorMask.md) DoorMask, [Dimension](enums/Dimension.md) Dimension = -1, boolean AllowMultipleDoors = true, boolean AllowSpecialNeighbors = false ) {: .copyable aria-label='Functions' }

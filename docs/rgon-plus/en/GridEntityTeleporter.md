@@ -4,4 +4,4 @@ tags:
 ---
 # Class "GridEntityTeleporter"
 
-Currently used as a distinct object from [GridEntity](GridEntity.md). No content at this point, sorry!
+It is currently used as an object distinct from [GridEntity](GridEntity.md). No further information is available at this time.

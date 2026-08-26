@@ -6,7 +6,7 @@ tags:
 
 ???+ info
 
-	你可以通过其构造函数获取此类 or using the following functions:
+	你可以通过其构造函数或以下函数获取此类：
 
 	* [Game:GetGenericPrompt()](Game.md#getgenericprompt)
 
@@ -44,9 +44,8 @@ tags:
 
 ### GenericPrompt () {: aria-label='Constructors' }
 #### [GenericPrompt](GenericPrompt.md) GenericPrompt ( ) {: .copyable aria-label='Constructors' }
-## 函数
 返回一个 GenericPrompt 对象。允许渲染一个弹出式纸张，可选择包含文本并跟踪玩家的是/否决策输入。
-返回玩家当前悬停的选择项。
+## 函数
 
 ???+ info "Return info"
 
@@ -56,7 +55,7 @@ tags:
 ___
 ### GetCurrentSelection () {: aria-label='Functions' }
 #### int GetCurrentSelection ( ) {: .copyable aria-label='Functions' }
-Returns what selection the player is currently hovering over.
+返回玩家当前悬停的选择项。
 
 ???+ info "Return info"
 
@@ -114,3 +113,4 @@ ___
 更新提示框纸张的动画。将 `ProcessInput` 设置为 `true` 以跟踪玩家选择是/否的输入，设置为 `false` 则不跟踪。
 
 ___
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。

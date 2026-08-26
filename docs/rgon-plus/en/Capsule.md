@@ -2,6 +2,8 @@
 tags:
   - Class
 ---
+> Documentation prose polished by a constrained language model; API facts and signatures retain their upstream source.
+
 # Class "Capsule"
 
 An example mod using the Capsule class can be found [here.](./examples/Capsules.md)

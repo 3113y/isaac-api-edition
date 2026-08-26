@@ -21,3 +21,4 @@ tags:
 |1 << 11 |C_SECTION {: .copyable } |  |
 |1 << 30 |FAMILIAR {: .copyable } |  |
 |1 << 31 |BONE {: .copyable } |  |
+> 文档说明已由受约束的语言模型统一润色；API 事实与签名仍保留其上游来源。
