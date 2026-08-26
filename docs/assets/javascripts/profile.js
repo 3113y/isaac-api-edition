@@ -134,8 +134,14 @@
       const linkPath = new URL(link.href, window.location.origin).pathname.replace(/\/+$/, "/");
       if (linkPath !== currentPath) return;
       link.classList.add("md-nav__link--active");
+      const item = link.closest("li.md-nav__item");
+      if (item) item.classList.add("md-nav__item--active");
       for (let nav = link.closest("nav.md-nav"); nav; nav = nav.parentElement?.closest("nav.md-nav")) {
-        const toggle = nav.parentElement?.querySelector(":scope > input.md-nav__toggle[type='checkbox']");
+        const item = nav.parentElement;
+        if (!item) continue;
+        item.classList.add("md-nav__item--active");
+        item.classList.add("md-nav__item--section");
+        const toggle = item.querySelector(":scope > input.md-nav__toggle[type='checkbox']");
         if (toggle) {
           toggle.checked = true;
           nav.setAttribute("aria-expanded", "true");

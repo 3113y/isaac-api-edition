@@ -75,7 +75,9 @@ def test_profile_script_marks_upstream_badges_as_compatible_entries() -> None:
     assert "markerBlock.remove()" in script
     assert "function syncNavigationState()" in script
     assert 'link.classList.add("md-nav__link--active")' in script
-    assert 'nav.parentElement?.querySelector(":scope > input.md-nav__toggle[type=\'checkbox\']")' in script
+    assert 'item.classList.add("md-nav__item--active")' in script
+    assert 'item.classList.add("md-nav__item--section")' in script
+    assert 'item.querySelector(":scope > input.md-nav__toggle[type=\'checkbox\']")' in script
     assert "toggle.checked = true" in script
 
 
