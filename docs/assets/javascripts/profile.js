@@ -135,8 +135,11 @@
       if (linkPath !== currentPath) return;
       link.classList.add("md-nav__link--active");
       for (let nav = link.closest("nav.md-nav"); nav; nav = nav.parentElement?.closest("nav.md-nav")) {
-        const toggle = nav.querySelector(":scope > input.md-nav__toggle[type='checkbox']");
-        if (toggle) toggle.checked = true;
+        const toggle = nav.parentElement?.querySelector(":scope > input.md-nav__toggle[type='checkbox']");
+        if (toggle) {
+          toggle.checked = true;
+          nav.setAttribute("aria-expanded", "true");
+        }
       }
     });
   }
