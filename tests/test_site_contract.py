@@ -88,6 +88,13 @@ def test_sidebar_uses_entity_and_grid_entity_sections() -> None:
     assert '          - EntityPlayer: en/EntityPlayer.md' in config
     assert '      - GridEntity:' in config
     assert '          - GridEntityDoor: en/GridEntityDoor.md' in config
+    assert '      - Enumerations: en/enums/index.md' in config
+
+
+def test_table_of_contents_excludes_call_signatures() -> None:
+    config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
+
+    assert "toc_depth: 3" in config
 
 
 def test_unified_site_excludes_the_rgon_plus_source_tree() -> None:
@@ -151,6 +158,9 @@ def test_deployment_builds_committed_sources_without_fetching_upstream() -> None
     workflow = (ROOT / ".github" / "workflows" / "deploy-pages.yml").read_text(encoding="utf-8")
 
     assert "scripts/build_rgon_docs.py" in workflow
+    assert "scripts/build_enum_indexes.py" in workflow
+    assert "--fallback-en docs/en" in workflow
+    assert "--fallback-zh docs/zh" in workflow
     assert "git clone" not in workflow
     assert "scripts/sync_upstream_docs.py" not in workflow
     assert workflow.index("scripts/build_rgon_docs.py") < workflow.index("mkdocs build --strict")

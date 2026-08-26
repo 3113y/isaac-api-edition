@@ -28,11 +28,18 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - name: Generate source enumeration indexes
+        run: |
+          python scripts/build_enum_indexes.py \
+            --english-source docs/en \
+            --chinese-source docs/zh
       - name: Generate unified RGON documentation from committed sources
         run: |
           python scripts/build_rgon_docs.py \
             --rgon-source docs/rgon/zh \
             --rgon-plus-source docs/rgon-plus/en \
+            --fallback-en docs/en \
+            --fallback-zh docs/zh \
             --output docs/rgon
       - run: mkdocs build --strict
       - uses: actions/configure-pages@v5

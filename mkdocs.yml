@@ -45,6 +45,7 @@ nav:
           - RoomConfig entry: en/RoomConfig_Entry.md
           - RoomConfig room: en/RoomConfig_Room.md
           - RoomConfig spawn: en/RoomConfig_Spawn.md
+      - Enumerations: en/enums/index.md
       - Other API:
           - Color: en/Color.md
           - EntityRef: en/EntityRef.md
@@ -69,6 +70,8 @@ theme:
 plugins:
   - search
 markdown_extensions:
+  - toc:
+      toc_depth: 3
   - admonition
   - attr_list
   - pymdownx.highlight

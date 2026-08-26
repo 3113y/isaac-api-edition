@@ -49,3 +49,60 @@ def test_build_allows_output_to_contain_the_rgon_source_tree(tmp_path: Path) -> 
     build_rgon_documents(rgon, plus, docs / "rgon")
 
     assert (docs / "rgon" / "zh" / "img" / "guide.png").read_bytes() == b"image"
+
+
+def test_build_normalizes_signatures_deduplicates_localized_names_and_falls_back_to_english(
+    tmp_path: Path,
+) -> None:
+    rgon = tmp_path / "rgon" / "zh"
+    rgon_plus = tmp_path / "rgon-plus" / "en"
+    fallback_en = tmp_path / "en"
+    output = tmp_path / "output"
+    for root, text in (
+        (
+            rgon,
+            "# Entity\n\n### AddKnockback () 添加击退效果\n\n"
+            "#### void AddKnockback ( ) {: .copyable }\n\n中文说明。\n\n"
+            "### RgonOnly ()\n\n#### void RgonOnly ( ) {: .copyable }\n\n仅 RGON。\n",
+        ),
+        (
+            rgon_plus,
+            "# Entity\n\n### AddKnockback ()\n\n#### void AddKnockback ( ) {: .copyable }\n\n"
+            "English RGON+ description.\n\n### RNG ()\n\n"
+            "#### RNG RNG ( ) { :.copyable }\n",
+        ),
+        (
+            fallback_en,
+            "# Entity\n\n### RgonOnly ()\n\n#### void RgonOnly ( ) {: .copyable }\n\n"
+            "Original English fallback.\n",
+        ),
+    ):
+        root.mkdir(parents=True)
+        (root / "Entity.md").write_text(text, encoding="utf-8")
+
+    build_rgon_documents(rgon, rgon_plus, output, fallback_en=fallback_en)
+
+    english = (output / "en" / "Entity.md").read_text(encoding="utf-8")
+    assert english.count("### AddKnockback ()") == 1
+    assert "添加击退效果" not in english
+    assert "English RGON+ description." in english
+    assert "Original English fallback." in english
+    assert "{ :.copyable" not in english
+    assert "{: .copyable" in english
+
+
+def test_build_creates_enum_indexes_for_both_published_languages(tmp_path: Path) -> None:
+    rgon = tmp_path / "rgon" / "zh"
+    rgon_plus = tmp_path / "rgon-plus" / "en"
+    output = tmp_path / "output"
+    for root in (rgon, rgon_plus):
+        (root / "enums").mkdir(parents=True)
+    (rgon / "enums" / "StatusEffect.md").write_text("# StatusEffect\n", encoding="utf-8")
+    (rgon_plus / "enums" / "WeaponModifier.md").write_text("# WeaponModifier\n", encoding="utf-8")
+
+    build_rgon_documents(rgon, rgon_plus, output)
+
+    for language in ("zh", "en"):
+        index = (output / language / "enums" / "index.md").read_text(encoding="utf-8")
+        assert "StatusEffect" in index
+        assert "WeaponModifier" in index
