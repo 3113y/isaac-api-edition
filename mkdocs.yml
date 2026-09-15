@@ -73,7 +73,8 @@ theme:
     - search.suggest
     - search.highlight
 plugins:
-  - search
+  - search:
+      separator: '[\s\-\._·]+'
 markdown_extensions:
   - md_in_html
   - toc:
