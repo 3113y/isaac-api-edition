@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+import json
+import re
 import subprocess
 import sys
 from functools import lru_cache
@@ -177,6 +179,18 @@ def test_profile_script_reference_is_cache_busted() -> None:
     config = (ROOT / "mkdocs.yml").read_text(encoding="utf-8")
 
     assert "assets/javascripts/profile.js?rev=" in config
+
+
+def test_search_index_splits_underscored_api_identifiers() -> None:
+    build_site()
+
+    search_index = json.loads(
+        (ROOT / "site" / "search" / "search_index.json").read_text(encoding="utf-8")
+    )
+    separator = search_index["config"]["separator"]
+    tokens = re.split(separator, "MC_PRE_NPC_UPDATE")
+
+    assert tokens == ["MC", "PRE", "NPC", "UPDATE"]
 
 
 def test_extension_handler_does_not_navigate_to_another_document_tree() -> None:
