@@ -25,6 +25,8 @@ Find classes, global APIs, and enumerations through the navigation. This page is
 
 The left navigation groups related APIs together. Expand a group to move between a base class and its specialized forms, or open **Enumerations** to select a specific enum directly.
 
+Use the search box in the header to find API names and documentation. Identifier parts separated by underscores or dots are searchable: for example, `PRE_NPC` can find `MC_PRE_NPC_UPDATE`. Results can include related matches from both languages.
+
 ## Choose the active API profile
 
 - **REP / REP+** controls compatibility highlighting for the original API. Only a call signature that is unavailable in the selected base version is dimmed.
